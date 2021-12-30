@@ -3,7 +3,6 @@
         public Main() { }
 
         public Data LoadData(string aPathName, Enumerations.LanguageEnum aLanguage) {
-            List<Components.Notification> lNotifications = new();
             Data lData = new();
             Json.EnemyClassesLoader lEnemyClasses = new(this);
             Json.ItemQualitiesLoader lItemQualitites = new(this);
