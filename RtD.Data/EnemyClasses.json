@@ -1,0 +1,24 @@
+{
+  "EnemyClasses": [
+    {
+      "ID": 0,
+      "Name": "Kämpfer",
+      "Description": ""
+    },
+    {
+      "ID": 1,
+      "Name": "Kleriker",
+      "Description": ""
+    },
+    {
+      "ID": 2,
+      "Name": "Schurke",
+      "Description": ""
+    },
+    {
+      "ID": 3,
+      "Name": "Magier",
+      "Description": ""
+    }
+  ]
+}

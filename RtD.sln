@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RtD.Data", "RtD.Data\RtD.Data.csproj", "{E88D4235-9097-4CE2-8E27-B19616075005}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RtD.Components", "RtD.Components\RtD.Components.csproj", "{C14F9B36-80D0-4AE5-9F64-0D8B08F4A673}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{B5AF9527-86EF-4A44-A529-6F9A07ED6B41}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E88D4235-9097-4CE2-8E27-B19616075005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E88D4235-9097-4CE2-8E27-B19616075005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E88D4235-9097-4CE2-8E27-B19616075005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E88D4235-9097-4CE2-8E27-B19616075005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C14F9B36-80D0-4AE5-9F64-0D8B08F4A673}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C14F9B36-80D0-4AE5-9F64-0D8B08F4A673}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C14F9B36-80D0-4AE5-9F64-0D8B08F4A673}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C14F9B36-80D0-4AE5-9F64-0D8B08F4A673}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5AF9527-86EF-4A44-A529-6F9A07ED6B41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5AF9527-86EF-4A44-A529-6F9A07ED6B41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5AF9527-86EF-4A44-A529-6F9A07ED6B41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5AF9527-86EF-4A44-A529-6F9A07ED6B41}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FC91925A-027A-425F-B590-5E0F4CB560C8}
+	EndGlobalSection
+EndGlobal

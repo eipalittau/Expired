@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "5066b6e0-80f5-46d3-9744-f1f00082de38": {
+      "ProjectGuid": "5066b6e0-80f5-46d3-9744-f1f00082de38",
+      "DisplayName": "RtD",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Sonstige Dateien",
+      "ColorIndex": -1
+    },
+    "e88d4235-9097-4ce2-8e27-b19616075005": {
+      "ProjectGuid": "e88d4235-9097-4ce2-8e27-b19616075005",
+      "DisplayName": "RtD.Data",
+      "ColorIndex": 1
+    },
+    "c14f9b36-80d0-4ae5-9f64-0d8b08f4a673": {
+      "ProjectGuid": "c14f9b36-80d0-4ae5-9f64-0d8b08f4a673",
+      "DisplayName": "RtD.Components",
+      "ColorIndex": 2
+    },
+    "b5af9527-86ef-4a44-a529-6f9a07ed6b41": {
+      "ProjectGuid": "b5af9527-86ef-4a44-a529-6f9a07ed6b41",
+      "DisplayName": "Test",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}

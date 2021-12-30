@@ -1,0 +1,67 @@
+{
+  "Loots": [
+    {
+      "DiceResult": 10,
+      "Items": [
+        {
+          "EnemyClasses_ID": 0,
+          "Items_ID": 0
+        },
+        {
+          "EnemyClasses_ID": 1,
+          "Items_ID": 1
+        },
+        {
+          "EnemyClasses_ID": 2,
+          "Items_ID": 2
+        },
+        {
+          "EnemyClasses_ID": 3,
+          "Items_ID": 3
+        }
+      ]
+    },
+    {
+      "DiceResult": 11,
+      "Items": [
+        {
+          "EnemyClasses_ID": 0,
+          "Items_ID": 4
+        },
+        {
+          "EnemyClasses_ID": 1,
+          "Items_ID": 5
+        },
+        {
+          "EnemyClasses_ID": 2,
+          "Items_ID": 6
+        },
+        {
+          "EnemyClasses_ID": 3,
+          "Items_ID": 7
+        }
+      ]
+    },
+    {
+      "DiceResult": 12,
+      "Items": [
+        {
+          "EnemyClasses_ID": 0,
+          "Items_ID": 8
+        },
+        {
+          "EnemyClasses_ID": 1,
+          "Items_ID": 9
+        },
+        {
+          "EnemyClasses_ID": 2,
+          "Items_ID": 10
+        },
+        {
+          "EnemyClasses_ID": 3,
+          "Items_ID": 11
+        }
+      ]
+    }
+  ]
+}

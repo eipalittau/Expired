@@ -1,0 +1,103 @@
+{
+  "Items": [
+    {
+      "ID": 0,
+      "Name": "Stoffrüstung des besiegten Kämpfers",
+      "Description": "",
+      "ItemTypeEnum_ID": 0,
+      "ArmorClass": {
+        "Modifier": 6,
+        "Effect": "Primary",
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 1,
+      "Name": "Stoffrüstung des überforderten Klerikers",
+      "Description": "",
+      "ItemTypeEnum_ID": 0,
+      "ArmorClass": {
+        "Modifier": 6,
+        "Effect": "Primary"
+      }
+    },
+    {
+      "ID": 2,
+      "Name": "Stoffrüstung des erwischten Schurkens",
+      "Description": "",
+      "ItemTypeEnum_ID": 0,
+      "ArmorClass": {
+        "Modifier": 4,
+        "Effect": "Primary"
+      }
+    },
+    {
+      "ID": 3,
+      "Name": "Stoffrüstung des gescheiterten Magiers",
+      "Description": "",
+      "ItemTypeEnum_ID": 0,
+      "ArmorClass": {
+        "Modifier": 2,
+        "Effect": "Primary"
+      }
+    },
+    {
+      "ID": 4,
+      "Name": "Kurzschwert",
+      "Description": "",
+      "ItemTypeEnum_ID": 1,
+      "Damage": {
+        "Dice": {
+          "Count": 1,
+          "Faces": 6
+        },
+        "Effect": "Primary"
+      },
+      "Attack": {
+        "Effect": "Secondary"
+      }
+    },
+    {
+      "ID": 5,
+      "Name": "Kurzschwert",
+      "Description": "",
+      "ItemTypeEnum_ID": 1,
+      "Damage": {
+        "Dice": {
+          "Count": 1,
+          "Faces": 6
+        },
+        "Effect": "Primary"
+      },
+      "Attack": {
+        "Effect": "Secondary"
+      }
+    },
+    {
+      "ID": 6,
+      "Name": "Bogen",
+      "Description": "",
+      "ItemTypeEnum_ID": 4,
+      "Damage": {
+        "Dice": {
+          "Count": 1,
+          "Faces": 6
+        },
+        "Effect": "Primary"
+      },
+      "Attack": {
+        "Effect": "Secondary"
+      }
+    },
+    {
+      "ID": 7,
+      "Name": "Kugel",
+      "Description": "",
+      "ItemTypeEnum_ID": 11,
+      "Mana": {
+        "Modifier": 1,
+        "Effect": "Primary"
+      }
+    }
+  ]
+}
