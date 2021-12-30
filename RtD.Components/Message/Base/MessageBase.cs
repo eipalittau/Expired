@@ -9,6 +9,14 @@
         #endregion
 
         #region Methoden
+        protected void RaiseMessage(EventArgs.InternalMessageEventArgs[] aMessages) {
+            if (aMessages != null && aMessages.Length > 0) {
+                foreach (EventArgs.InternalMessageEventArgs aMessage in aMessages) {
+                    Message?.Invoke(this, aMessage);
+                }
+            }
+        }
+
         #region Debug
         protected void RaiseDebug(long aID) {
             Message?.Invoke(this, new EventArgs.InternalMessageEventArgs(aID, Enumerations.PriorityEnum.Debug));

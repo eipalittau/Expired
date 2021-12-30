@@ -1,13 +1,13 @@
 ﻿namespace RtD.Data.Json {
     internal class LoaderBase<T> : Components.Filesystem.JsonBase<T> {
         #region Properties / Felder
-        protected Main Parent;
-        private List<Components.Notification> mNotifications = new List<Components.Notification>();
+        protected Main mParent;
+        private readonly List<Components.EventArgs.InternalMessageEventArgs> mNotifications = new();
         #endregion
 
         #region Konstruktor
         protected LoaderBase(Main aParent) : base() { 
-            Parent = aParent;
+            mParent = aParent;
         }
         #endregion
 
@@ -51,15 +51,15 @@
 
         #region Notifications
         protected void AddWarning(long aID) {
-            mNotifications.Add(new Components.Notification(Enumerations.PriorityEnum.Warning, aID));
+            mNotifications.Add(new Components.EventArgs.InternalMessageEventArgs(aID, Enumerations.PriorityEnum.Warning));
         }
 
         protected void AddWarning(long aID, string aArguments) {
-            mNotifications.Add(new Components.Notification(Enumerations.PriorityEnum.Warning, aID, aArguments));
+            mNotifications.Add(new Components.EventArgs.InternalMessageEventArgs(aID, Enumerations.PriorityEnum.Warning, aArguments));
         }
 
-        protected Components.Notification[] GetNotifications(bool aClear = true) {
-            Components.Notification[] lResult = new Components.Notification[mNotifications.Count];
+        protected Components.EventArgs.InternalMessageEventArgs[] GetNotifications(bool aClear = true) {
+            Components.EventArgs.InternalMessageEventArgs[] lResult = new Components.EventArgs.InternalMessageEventArgs[mNotifications.Count];
 
             mNotifications.CopyTo(lResult);
             if (aClear) {

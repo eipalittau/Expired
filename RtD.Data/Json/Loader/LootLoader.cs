@@ -9,7 +9,7 @@
         #endregion
 
         #region Methoden
-        public Components.Notification[] LoadData(string aPathName) {
+        public Components.EventArgs.InternalMessageEventArgs[] LoadData(string aPathName) {
             base.LoadData(aPathName, "Loots.json");
 
             if (base.Json == null) {

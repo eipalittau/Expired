@@ -1,18 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RtD.Data {
-    public sealed class Main {
+﻿namespace RtD.Data {
+    public sealed class Main : Components.MessageBase {
         public Main() { }
 
-        public void LoadData(string aPathName, Enumerations.LanguageEnum aLanguage) {
-            var lEnemyClasses = new Json.EnemyClassesLoader(this);
+        public Data LoadData(string aPathName, Enumerations.LanguageEnum aLanguage) {
+            List<Components.Notification> lNotifications = new();
+            Data lData = new();
+            Json.EnemyClassesLoader lEnemyClasses = new(this);
+            Json.ItemQualitiesLoader lItemQualitites = new(this);
+            Json.ItemsLoader lItems = new(this);
+            Json.LootLoader lLoots = new(this);
 
-            lEnemyClasses.LoadData(aPathName);
+            base.RaiseMessage(lEnemyClasses.LoadData(aPathName));
+            lData.EnemyClasses = lEnemyClasses.Data;
 
+            base.RaiseMessage(lItemQualitites.LoadData(aPathName));
+            lData.ItemQualities = lItemQualitites.Data;
+            
+            base.RaiseMessage(lItems.LoadData(aPathName));
+            lData.Items = lItems.Data;
+            
+            base.RaiseMessage(lLoots.LoadData(aPathName));
+            lData.Loot = lLoots.Data;
+
+            return lData;
         }
     }
 }
