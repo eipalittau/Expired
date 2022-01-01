@@ -13,3 +13,6 @@ Projekte:
 Typen:
 00  Meldungen im Projekt
 01  Json
+
+Beispiel:
+01010001  Kämpfer
