@@ -1,0 +1,44 @@
+{
+  "Items": [
+    {
+      "ID": 0,
+      "Name": "Stoffrüstung des besiegten Kämpfers",
+      "Description": ""
+    },
+    {
+      "ID": 1,
+      "Name": "Stoffrüstung des überforderten Klerikers",
+      "Description": ""
+    },
+    {
+      "ID": 2,
+      "Name": "Stoffrüstung des erwischten Schurkens",
+      "Description": ""
+    },
+    {
+      "ID": 3,
+      "Name": "Stoffrüstung des gescheiterten Magiers",
+      "Description": ""
+    },
+    {
+      "ID": 4,
+      "Name": "Kurzschwert",
+      "Description": ""
+    },
+    {
+      "ID": 5,
+      "Name": "Kurzschwert",
+      "Description": ""
+    },
+    {
+      "ID": 6,
+      "Name": "Bogen",
+      "Description": ""
+    },
+    {
+      "ID": 7,
+      "Name": "Kugel",
+      "Description": ""
+    }
+  ]
+}

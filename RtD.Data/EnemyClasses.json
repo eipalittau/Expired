@@ -2,8 +2,14 @@
   "EnemyClasses": [
     {
       "ID": 0,
-      "Name": "Kämpfer",
-      "Description": ""
+      "Name": {
+        "ID": 1010000,
+        "Value": "Kämpfer"
+      },
+      "Description": {
+        "ID": 1010001,
+        "Value": ""
+      }
     },
     {
       "ID": 1,

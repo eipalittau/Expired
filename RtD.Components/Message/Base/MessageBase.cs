@@ -1,7 +1,7 @@
 ﻿namespace RtD.Components {
     public abstract class MessageBase : IDisposable {
         #region Events
-        public event EventHandler<EventArgs.InternalMessageEventArgs>? Message;
+        public event EventHandler<EventArgs.MessageEventArgs>? Message;
         #endregion
 
         #region Properties / Felder
@@ -9,9 +9,9 @@
         #endregion
 
         #region Methoden
-        protected void RaiseMessage(EventArgs.InternalMessageEventArgs[] aMessages) {
+        protected void RaiseMessage(EventArgs.MessageEventArgs[] aMessages) {
             if (aMessages != null && aMessages.Length > 0) {
-                foreach (EventArgs.InternalMessageEventArgs aMessage in aMessages) {
+                foreach (EventArgs.MessageEventArgs aMessage in aMessages) {
                     Message?.Invoke(this, aMessage);
                 }
             }
@@ -19,31 +19,31 @@
 
         #region Debug
         protected void RaiseDebug(long aID) {
-            Message?.Invoke(this, new EventArgs.InternalMessageEventArgs(aID, Enumerations.PriorityEnum.Debug));
+            Message?.Invoke(this, new EventArgs.MessageEventArgs(aID, Enumerations.PriorityEnum.Debug));
         }
 
         protected void RaiseDebug(long aID, params string[] aParams) {
-            Message?.Invoke(this, new EventArgs.InternalMessageEventArgs(aID, Enumerations.PriorityEnum.Debug, aParams));
+            Message?.Invoke(this, new EventArgs.MessageEventArgs(aID, Enumerations.PriorityEnum.Debug, aParams));
         }
         #endregion
 
         #region Information
         protected void RaiseInformation(long aID) {
-            Message?.Invoke(this, new EventArgs.InternalMessageEventArgs(aID, Enumerations.PriorityEnum.Information));
+            Message?.Invoke(this, new EventArgs.MessageEventArgs(aID, Enumerations.PriorityEnum.Information));
         }
 
         protected void RaiseInformation(long aID, params string[] aParams) {
-            Message?.Invoke(this, new EventArgs.InternalMessageEventArgs(aID, Enumerations.PriorityEnum.Information, aParams));
+            Message?.Invoke(this, new EventArgs.MessageEventArgs(aID, Enumerations.PriorityEnum.Information, aParams));
         }
         #endregion
 
         #region Warning
         protected void RaiseWarning(long aID) {
-            Message?.Invoke(this, new EventArgs.InternalMessageEventArgs(aID, Enumerations.PriorityEnum.Warning));
+            Message?.Invoke(this, new EventArgs.MessageEventArgs(aID, Enumerations.PriorityEnum.Warning));
         }
 
         protected void RaiseWarning(long aID, params string[] aParams) {
-            Message?.Invoke(this, new EventArgs.InternalMessageEventArgs(aID, Enumerations.PriorityEnum.Warning, aParams));
+            Message?.Invoke(this, new EventArgs.MessageEventArgs(aID, Enumerations.PriorityEnum.Warning, aParams));
         }
         #endregion
 

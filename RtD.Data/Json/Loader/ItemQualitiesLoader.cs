@@ -5,12 +5,13 @@
         #endregion
 
         #region Konstruktor
-        public ItemQualitiesLoader(Main aParent) : base(aParent) { }
+        public ItemQualitiesLoader(Main aParent, Enumerations.LanguageEnum aLanguage)
+            : base(aParent, aLanguage) { }
         #endregion
 
         #region Methoden
-        public Components.EventArgs.InternalMessageEventArgs[] LoadData(string aPathName) {
-            base.LoadData(aPathName, "ItemQualities.json");
+        public Components.EventArgs.MessageEventArgs[] LoadData(string aPathName) {
+            base.LoadData(aPathName, Constants.GetJsonFileName(1));
 
             if (base.Json == null) {
                 throw new Exceptions.MissingDataException();
@@ -21,25 +22,25 @@
                 base.Check4Dublicates(lData);
 
                 if (lData.Where(x => x.Downgrade == null).Count() != 1) { // Es darf nur 1 Downgrade NULL sein.
-                                                                          // TODO: Exception
+                    throw new Exceptions.DublicateDataException(nameof(ItemQualitiesJsonData.Downgrade));
                 }
 
                 if (lData.Where(x => x.Upgrade == null).Count() != 1) { // Es darf nur 1 Upgrade NULL sein.
-                                                                        // TODO: Exception
+                    throw new Exceptions.DublicateDataException(nameof(ItemQualitiesJsonData.Upgrade));
                 }
 
                 if (lData.GroupBy(x => x.Downgrade)
                     .Where(g => g.Skip(1).Any())
                     .SelectMany(x => x)
                     .Any()) {
-                    // TODO: Exception
+                    throw new Exceptions.DublicateDataException(nameof(ItemQualitiesJsonData.Downgrade));
                 }
 
                 if (lData.GroupBy(x => x.Upgrade)
                    .Where(g => g.Skip(1).Any())
                    .SelectMany(x => x)
                    .Any()) {
-                    // TODO: Exception
+                    throw new Exceptions.DublicateDataException(nameof(ItemQualitiesJsonData.Upgrade));
                 }
 
                 foreach (ItemQualitiesJsonData lJsonData in lData
@@ -69,8 +70,7 @@
             aData = base.RemoveEmpty(aData);
 
             if (aData.Where(x => x.Effect == null).Any()) {
-                // TODO: Warning
-                base.AddWarning(0);
+                base.AddWarning(010000, nameof(ItemQualitiesJsonData.Effect));
             }
 
             return aData.Where(x => x.Effect != null);

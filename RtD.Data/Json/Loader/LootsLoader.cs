@@ -1,23 +1,23 @@
 ﻿namespace RtD.Data.Json {
-    internal sealed class LootLoader : LoaderBase<LootLoader.JsonData> {
+    internal sealed class LootsLoader : LoaderBase<LootsLoader.JsonData> {
         #region Properties / Felder
         public List<LootData> Data { get; } = new List<LootData>();
         #endregion
 
         #region Konstruktor
-        internal LootLoader(Main aParent) : base(aParent) { }
+        internal LootsLoader(Main aParent, Enumerations.LanguageEnum aLanguage)
+            : base(aParent, aLanguage) { }
         #endregion
 
         #region Methoden
-        public Components.EventArgs.InternalMessageEventArgs[] LoadData(string aPathName) {
-            base.LoadData(aPathName, "Loots.json");
+        public Components.EventArgs.MessageEventArgs[] LoadData(string aPathName) {
+            base.LoadData(aPathName, Constants.GetJsonFileName(3));
 
             if (base.Json == null) {
                 throw new Exceptions.MissingDataException();
             } else {
                 if (base.Json.Data.Where(x => x.DiceResult < 1).Any()) {
-                    // TODO: Warning
-                    base.AddWarning(0);
+                    base.AddWarning(010002);
                     base.Json.Data
                         .Where(x => x.DiceResult < 1)
                         .ToList()
@@ -29,7 +29,7 @@
                     .Where(g => g.Skip(1).Any())
                     .SelectMany(x => x)
                     .Any()) {
-                    //TODO: Exception
+                    throw new Exceptions.DublicateDataException(nameof(LootJsonData.DiceResult));
                 }
 
                 foreach (LootJsonData lJsonData in base.Json.Data
@@ -39,9 +39,10 @@
                         .Where(g => g.Skip(1).Any())
                         .SelectMany(x => x)
                         .Any()) {
-                        //TODO: Exception
+                        throw new Exceptions.DublicateDataException(nameof(LootItemJsonData.EnemyClass_ID));
                     }
 
+                    base.Parent.
                     foreach (LootItemJsonData lSubJsonData in lJsonData.Items) {
 
                         lSubJsonData.Item_ID

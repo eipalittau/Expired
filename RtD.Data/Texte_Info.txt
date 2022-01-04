@@ -1,0 +1,5 @@
+﻿00  Components
+01  Data
+
+CON Constants
+MSG Exceptions/Meldung

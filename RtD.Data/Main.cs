@@ -2,26 +2,39 @@
     public sealed class Main : Components.MessageBase {
         public Main() { }
 
-        public Data LoadData(string aPathName, Enumerations.LanguageEnum aLanguage) {
-            Data lData = new();
-            Json.EnemyClassesLoader lEnemyClasses = new(this);
-            Json.ItemQualitiesLoader lItemQualitites = new(this);
-            Json.ItemsLoader lItems = new(this);
-            Json.LootLoader lLoots = new(this);
+        public GameData LoadData(string aPathName, Enumerations.LanguageEnum aLanguage) {
+            GameData lData = new();
 
-            base.RaiseMessage(lEnemyClasses.LoadData(aPathName));
-            lData.EnemyClasses = lEnemyClasses.Data;
-
-            base.RaiseMessage(lItemQualitites.LoadData(aPathName));
-            lData.ItemQualities = lItemQualitites.Data;
-            
-            base.RaiseMessage(lItems.LoadData(aPathName));
-            lData.Items = lItems.Data;
-            
-            base.RaiseMessage(lLoots.LoadData(aPathName));
-            lData.Loot = lLoots.Data;
+            lData.EnemyClasses = StartLoader(new Json.EnemyClassesLoader(this, aLanguage), aPathName);
+            lData.ItemQualities = StartLoader(new Json.ItemQualitiesLoader(this, aLanguage), aPathName);
+            lData.Items = StartLoader(new Json.ItemsLoader(this, aLanguage), aPathName);
+            lData.Loots = StartLoader(new Json.LootsLoader(this, aLanguage), aPathName);
 
             return lData;
+        }
+
+        private List<EnemyClassData> StartLoader(Json.EnemyClassesLoader aLoader, string aPathName) {
+            base.RaiseMessage(aLoader.LoadData(aPathName));
+
+            return aLoader.Data;
+        }
+
+        private List<ItemQualityData> StartLoader(Json.ItemQualitiesLoader aLoader, string aPathName) {
+            base.RaiseMessage(aLoader.LoadData(aPathName));
+
+            return aLoader.Data;
+        }
+
+        private List<ItemData> StartLoader(Json.ItemsLoader aLoader, string aPathName) {
+            base.RaiseMessage(aLoader.LoadData(aPathName));
+
+            return aLoader.Data;
+        }
+
+        private List<LootData> StartLoader(Json.LootsLoader aLoader, string aPathName) {
+            base.RaiseMessage(aLoader.LoadData(aPathName));
+
+            return aLoader.Data;
         }
     }
 }

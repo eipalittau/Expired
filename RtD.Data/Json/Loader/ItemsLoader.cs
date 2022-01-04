@@ -5,12 +5,13 @@
         #endregion
 
         #region Konstruktor
-        public ItemsLoader(Main aParent) : base(aParent) { }
+        public ItemsLoader(Main aParent, Enumerations.LanguageEnum aLanguage)
+            : base(aParent, aLanguage) { }
         #endregion
 
         #region Methoden
-        public Components.EventArgs.InternalMessageEventArgs[] LoadData(string aPathName) {
-            base.LoadData(aPathName, "Items.json");
+        public Components.EventArgs.MessageEventArgs[] LoadData(string aPathName) {
+            base.LoadData(aPathName, Constants.GetJsonFileName(2));
 
             if (base.Json == null) {
                 throw new Exceptions.MissingDataException();

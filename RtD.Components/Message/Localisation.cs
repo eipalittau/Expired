@@ -31,17 +31,17 @@ namespace RtD.Components {
         }
 
         internal static string GetMessageText(long aID) {
-            // $"MSG_{aID:D5}";
+            // $"MSG{aID:D5}";
             return string.Empty;
         }
 
         internal static string GetMessageText(long aID, params string[] aArguments) {
-            // $"MSG_{aID:D5}";
+            // $"MSG{aID:D5}";
             return string.Empty;
         }
 
         internal static string Translate(string aID, string aValue) {
-
+            return string.Empty;
         }
         #endregion
     }

@@ -1,14 +1,16 @@
 ﻿namespace RtD.Data.Json {
     internal class LoaderBase<T> : Components.Filesystem.JsonBase<T> {
         #region Properties / Felder
-        protected Main mParent;
-        private readonly List<Components.EventArgs.InternalMessageEventArgs> mNotifications = new();
+        protected Main Parent { get; private set; }
+        protected Enumerations.LanguageEnum Language { get; private set; }
+
+        private readonly List<Components.EventArgs.MessageEventArgs> mNotifications = new();
         #endregion
 
         #region Konstruktor
-        protected LoaderBase(Main aParent) : base() { 
-            mParent = aParent;
-        }
+        protected LoaderBase(Main aParent, Enumerations.LanguageEnum aLanguage)
+            : base()
+            => (Parent, Language) = (aParent, aLanguage);
         #endregion
 
         #region Methoden
@@ -18,8 +20,7 @@
 
         protected IEnumerable<TT> RemoveEmpty<TT>(IEnumerable<TT> aData) where TT : JsonDataBase {
             if (aData.Where(x => string.IsNullOrWhiteSpace(x.Name)).Any()) {
-                // TODO: Warning
-                AddWarning(0);
+                AddWarning(010000, nameof(JsonDataBase.Name));
 
                 return aData.Where(x => !string.IsNullOrWhiteSpace(x.Name));
             } else {
@@ -37,7 +38,7 @@
                 .Where(g => g.Skip(1).Any())
                 .SelectMany(x => x)
                 .Any()) {
-                //TODO: Exception
+                throw new Exceptions.DublicateDataException(nameof(JsonDataBase.ID));
             }
 
             if (aData
@@ -45,21 +46,21 @@
                 .Where(g => g.Skip(1).Any())
                 .SelectMany(x => x)
                 .Any()) {
-                //TODO: Exception
+                throw new Exceptions.DublicateDataException(nameof(JsonDataBase.Name));
             }
         }
 
         #region Notifications
         protected void AddWarning(long aID) {
-            mNotifications.Add(new Components.EventArgs.InternalMessageEventArgs(aID, Enumerations.PriorityEnum.Warning));
+            mNotifications.Add(new Components.EventArgs.MessageEventArgs(aID, Enumerations.PriorityEnum.Warning));
         }
 
         protected void AddWarning(long aID, string aArguments) {
-            mNotifications.Add(new Components.EventArgs.InternalMessageEventArgs(aID, Enumerations.PriorityEnum.Warning, aArguments));
+            mNotifications.Add(new Components.EventArgs.MessageEventArgs(aID, Enumerations.PriorityEnum.Warning, aArguments));
         }
 
-        protected Components.EventArgs.InternalMessageEventArgs[] GetNotifications(bool aClear = true) {
-            Components.EventArgs.InternalMessageEventArgs[] lResult = new Components.EventArgs.InternalMessageEventArgs[mNotifications.Count];
+        protected Components.EventArgs.MessageEventArgs[] GetNotifications(bool aClear = true) {
+            Components.EventArgs.MessageEventArgs[] lResult = new Components.EventArgs.MessageEventArgs[mNotifications.Count];
 
             mNotifications.CopyTo(lResult);
             if (aClear) {
