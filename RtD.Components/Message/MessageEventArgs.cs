@@ -10,19 +10,20 @@ namespace RtD.Components.EventArgs {
         #endregion
 
         #region Konstruktor
-        public MessageEventArgs(long aID, Enumerations.PriorityEnum aPriority) {
-            ID = aID;
-            Priority = aPriority;
-            Position = new PositionData(new StackTrace(true).GetFrame(3));
-            Text = Localisation.GetMessageText(aID);
-        }
+        private MessageEventArgs(long aID, Enumerations.PriorityEnum aPriority, string aText, PositionData aPosition)
+            => (ID, Priority, Position, Text) = (aID, aPriority, aPosition, aText);
 
-        public MessageEventArgs(long aID, Enumerations.PriorityEnum aPriority, params string[] aArguments) {
-            ID = aID;
-            Priority = aPriority;
-            Position = new PositionData(new StackTrace(true).GetFrame(3));
-            Text = Localisation.GetMessageText(aID, aArguments);
-        }
+        public MessageEventArgs(long aID, Enumerations.PriorityEnum aPriority)
+            : this(aID, aPriority, Localisation.GetMessageText(aID), new PositionData(new StackTrace(true).GetFrame(3))) { }
+
+        public MessageEventArgs(long aID, Enumerations.PriorityEnum aPriority, params string[] aArguments)
+            : this(aID, aPriority, Localisation.GetMessageText(aID, aArguments), new PositionData(new StackTrace(true).GetFrame(3))) { }
+
+        public MessageEventArgs(Exceptions.ExceptionBase aEx)
+            : this(aEx.ID, aEx.Priority, aEx.Message, aEx.Position) { }
+
+        public MessageEventArgs(System.Exception aEx)
+            : this(-1, Enumerations.PriorityEnum.Critical, aEx.Message, new PositionData(new StackTrace(true).GetFrame(3))) { }
         #endregion
     }
 }

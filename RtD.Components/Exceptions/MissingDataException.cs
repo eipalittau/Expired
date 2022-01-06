@@ -3,6 +3,6 @@
     public class MissingDataException : ExceptionBase
     {
         public MissingDataException() 
-            : base(000000) { }
+            : base(0000) { }
     }
 }

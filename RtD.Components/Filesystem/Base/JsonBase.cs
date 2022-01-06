@@ -10,6 +10,7 @@ namespace RtD.Components.Filesystem {
                 return Json != null;
             } 
         }
+        protected FileInfo? PathFile { get; private set; }
         #endregion
 
         #region Konstruktor
@@ -24,8 +25,10 @@ namespace RtD.Components.Filesystem {
 
         protected void LoadJson(FileInfo aPathFile, bool aReload) {
             if (aPathFile.Exists) {
+                PathFile = aPathFile;
+
                 using (StreamReader lStreamReader = new(aPathFile.FullName)) {
-                    LoadJson(lStreamReader.ReadToEnd());
+                    LoadJson(lStreamReader.ReadToEnd(), aReload);
                     lStreamReader.Close();
                     lStreamReader.Dispose();
                 }
@@ -58,7 +61,7 @@ namespace RtD.Components.Filesystem {
         }
         #endregion
 
-        private string GetArgument() {
+        private static string GetArgument() {
             Type? lDeclaringType = typeof(T).DeclaringType;
 
             return lDeclaringType == null ? typeof(T).Name : lDeclaringType.Name;

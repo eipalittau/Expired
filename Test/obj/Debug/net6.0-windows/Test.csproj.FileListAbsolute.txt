@@ -20,4 +20,3 @@ D:\Projekte\RtD\Test\obj\Debug\net6.0-windows\Test.genruntimeconfig.cache
 D:\Projekte\RtD\Test\bin\Debug\net6.0-windows\RtD.Components.dll
 D:\Projekte\RtD\Test\bin\Debug\net6.0-windows\RtD.Components.pdb
 D:\Projekte\RtD\Test\bin\Debug\net6.0-windows\de\RtD.Components.resources.dll
-D:\Projekte\RtD\Test\bin\Debug\net6.0-windows\en\RtD.Components.resources.dll

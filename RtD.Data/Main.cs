@@ -1,40 +1,52 @@
 ﻿namespace RtD.Data {
     public sealed class Main : Components.MessageBase {
+        #region Properties / Felder
+        internal GameData Data { get; } = new();
+
+        private static readonly List<Components.EventArgs.MessageEventArgs> mNotifications = new();
+        #endregion
+
         public Main() { }
 
+        #region Methoden
         public GameData LoadData(string aPathName, Enumerations.LanguageEnum aLanguage) {
-            GameData lData = new();
+            try {
+                Data.Clear();
 
-            lData.EnemyClasses = StartLoader(new Json.EnemyClassesLoader(this, aLanguage), aPathName);
-            lData.ItemQualities = StartLoader(new Json.ItemQualitiesLoader(this, aLanguage), aPathName);
-            lData.Items = StartLoader(new Json.ItemsLoader(this, aLanguage), aPathName);
-            lData.Loots = StartLoader(new Json.LootsLoader(this, aLanguage), aPathName);
+                Data.EnemyClasses = new Json.EnemyClassesLoader(this, aLanguage).LoadData(aPathName);
+                Data.ItemQualities = new Json.ItemQualitiesLoader(this, aLanguage).LoadData(aPathName);
+                Data.Items = new Json.ItemsLoader(this, aLanguage).LoadData(aPathName);
+                Data.Loots = new Json.LootsLoader(this, aLanguage).LoadData(aPathName);
 
-            return lData;
+            } catch (Exceptions.ExceptionBase aEx) {
+                mNotifications.Add(new Components.EventArgs.MessageEventArgs(aEx));
+
+            } catch (System.Exception aEx) {
+                mNotifications.Add(new Components.EventArgs.MessageEventArgs(aEx));
+
+            } finally {
+                if (mNotifications.Any()) {
+                    base.RaiseMessage(mNotifications.ToArray());
+                    mNotifications.Clear();
+                }
+            }
+            
+            return Data;
         }
 
-        private List<EnemyClassData> StartLoader(Json.EnemyClassesLoader aLoader, string aPathName) {
-            base.RaiseMessage(aLoader.LoadData(aPathName));
+        #region Notifications
+        internal static void AddWarning(long aID, params string[] aArguments) {
+            if (aArguments == null) {
+                mNotifications.Add(new Components.EventArgs.MessageEventArgs(aID, Enumerations.PriorityEnum.Warning));
+            } else {
+                if (aArguments.Where(x => x == null).Any()) {
+                    aArguments.Where(x => x == null).ToList().ForEach(x => x = string.Empty);
+                }
 
-            return aLoader.Data;
+                mNotifications.Add(new Components.EventArgs.MessageEventArgs(aID, Enumerations.PriorityEnum.Warning, aArguments));
+            }
         }
-
-        private List<ItemQualityData> StartLoader(Json.ItemQualitiesLoader aLoader, string aPathName) {
-            base.RaiseMessage(aLoader.LoadData(aPathName));
-
-            return aLoader.Data;
-        }
-
-        private List<ItemData> StartLoader(Json.ItemsLoader aLoader, string aPathName) {
-            base.RaiseMessage(aLoader.LoadData(aPathName));
-
-            return aLoader.Data;
-        }
-
-        private List<LootData> StartLoader(Json.LootsLoader aLoader, string aPathName) {
-            base.RaiseMessage(aLoader.LoadData(aPathName));
-
-            return aLoader.Data;
-        }
+        #endregion
+        #endregion
     }
 }

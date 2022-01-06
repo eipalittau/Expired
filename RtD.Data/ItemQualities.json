@@ -6,7 +6,7 @@
       "Description": "",
       "Downgrade": null,
       "Upgrade": 1,
-      "CanBreak": true,
+      "CanBeDestroyed": true,
       "IsDefault": false,
       "Effect": {
         "Primary": -1,
@@ -19,7 +19,7 @@
       "Description": "",
       "Downgrade": 0,
       "Upgrade": 2,
-      "CanBreak": true,
+      "CanBeDestroyed": true,
       "IsDefault": false,
       "Effect": {
         "Primary": -1,
@@ -32,7 +32,7 @@
       "Description": "",
       "Downgrade": 1,
       "Upgrade": 3,
-      "CanBreak": true,
+      "CanBeDestroyed": true,
       "IsDefault": true,
       "Effect": {
         "Primary": 0,
@@ -45,7 +45,7 @@
       "Description": "",
       "Downgrade": 2,
       "Upgrade": 4,
-      "CanBreak": true,
+      "CanBeDestroyed": true,
       "IsDefault": false,
       "Effect": {
         "Primary": 1,
@@ -58,7 +58,7 @@
       "Description": "",
       "Downgrade": 3,
       "Upgrade": null,
-      "CanBreak": false,
+      "CanBeDestroyed": false,
       "IsDefault": false,
       "Effect": {
         "Primary": 1,

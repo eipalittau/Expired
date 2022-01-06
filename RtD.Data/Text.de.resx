@@ -117,7 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="01010000" xml:space="preserve">
-    <value />
+  <data name="MSG0000" xml:space="preserve">
+    <value>Das Feld '{0}' muss Daten enthalten.</value>
+  </data>
+  <data name="MSG0001" xml:space="preserve">
+    <value>Es sind doppelte Daten vorhanden. Das Feld '{0}' darf nur einmalige Daten enhalten.</value>
+  </data>
+  <data name="MSG0002" xml:space="preserve">
+    <value>Das Würfelresultat muss mindestens 1 sein. Die Daten werden angepasst.</value>
+  </data>
+  <data name="MSG0003" xml:space="preserve">
+    <value>Für die {0} {1} gibt es keine Entsprechung in den Json-Daten der Datei '{2}'</value>
+  </data>
+  <data name="MSG0004" xml:space="preserve">
+    <value>Das Würfelresultat {0} der Json-Datei '{1}' wird keiner EnemyClass oder Item zugeordnet.</value>
   </data>
 </root>

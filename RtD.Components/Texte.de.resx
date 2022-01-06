@@ -117,19 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="MSG000000" xml:space="preserve">
+  <data name="MSG0000" xml:space="preserve">
     <value>Es fehlen Daten!</value>
-  </data>
-  <data name="MSG000001" xml:space="preserve">
-    <value>Vor der Verwendung der Klasse '{0}' muss diese instanziert werden.</value>
-  </data>
-  <data name="MSG010000" xml:space="preserve">
-    <value>Das Feld '{0}' muss Daten enthalten.</value>
-  </data>
-  <data name="MSG010001" xml:space="preserve">
-    <value>Es sind doppelte Daten vorhanden. Das Feld '{0}' darf nur einmalige Daten enhalten.</value>
-  </data>
-  <data name="MSG010002" xml:space="preserve">
-    <value>Das Würfelresultat muss mindestens 1 sein. Die Daten werden angepasst.</value>
   </data>
 </root>

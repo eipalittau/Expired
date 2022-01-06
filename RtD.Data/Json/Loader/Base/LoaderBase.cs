@@ -3,8 +3,11 @@
         #region Properties / Felder
         protected Main Parent { get; private set; }
         protected Enumerations.LanguageEnum Language { get; private set; }
-
-        private readonly List<Components.EventArgs.MessageEventArgs> mNotifications = new();
+        protected  string FileName {
+            get {
+                return base.PathFile == null ? string.Empty : base.PathFile.Name;
+            }
+        }
         #endregion
 
         #region Konstruktor
@@ -20,7 +23,7 @@
 
         protected IEnumerable<TT> RemoveEmpty<TT>(IEnumerable<TT> aData) where TT : JsonDataBase {
             if (aData.Where(x => string.IsNullOrWhiteSpace(x.Name)).Any()) {
-                AddWarning(010000, nameof(JsonDataBase.Name));
+                Main.AddWarning(0000, nameof(JsonDataBase.Name));
 
                 return aData.Where(x => !string.IsNullOrWhiteSpace(x.Name));
             } else {
@@ -49,27 +52,6 @@
                 throw new Exceptions.DublicateDataException(nameof(JsonDataBase.Name));
             }
         }
-
-        #region Notifications
-        protected void AddWarning(long aID) {
-            mNotifications.Add(new Components.EventArgs.MessageEventArgs(aID, Enumerations.PriorityEnum.Warning));
-        }
-
-        protected void AddWarning(long aID, string aArguments) {
-            mNotifications.Add(new Components.EventArgs.MessageEventArgs(aID, Enumerations.PriorityEnum.Warning, aArguments));
-        }
-
-        protected Components.EventArgs.MessageEventArgs[] GetNotifications(bool aClear = true) {
-            Components.EventArgs.MessageEventArgs[] lResult = new Components.EventArgs.MessageEventArgs[mNotifications.Count];
-
-            mNotifications.CopyTo(lResult);
-            if (aClear) {
-                mNotifications.Clear();
-            }
-
-            return lResult;
-        }
-        #endregion
         #endregion
     }
 }

@@ -1,7 +1,6 @@
 ﻿namespace RtD.Data.Json {
     internal sealed class LootsLoader : LoaderBase<LootsLoader.JsonData> {
         #region Properties / Felder
-        public List<LootData> Data { get; } = new List<LootData>();
         #endregion
 
         #region Konstruktor
@@ -10,14 +9,16 @@
         #endregion
 
         #region Methoden
-        public Components.EventArgs.MessageEventArgs[] LoadData(string aPathName) {
+        public List<LootData> LoadData(string aPathName) {
+            List<LootData> lResult = new();
+
             base.LoadData(aPathName, Constants.GetJsonFileName(3));
 
             if (base.Json == null) {
                 throw new Exceptions.MissingDataException();
             } else {
                 if (base.Json.Data.Where(x => x.DiceResult < 1).Any()) {
-                    base.AddWarning(010002);
+                    Main.AddWarning(0002);
                     base.Json.Data
                         .Where(x => x.DiceResult < 1)
                         .ToList()
@@ -42,28 +43,36 @@
                         throw new Exceptions.DublicateDataException(nameof(LootItemJsonData.EnemyClass_ID));
                     }
 
-                    base.Parent.
+                    LootData lLootData = new() { DiceResult = lJsonData.DiceResult };
+
                     foreach (LootItemJsonData lSubJsonData in lJsonData.Items) {
+                        if (base.Parent.Data.EnemyClasses == null || base.Parent.Data.Items == null) {
+                            Main.AddWarning(0004, lLootData.DiceResult.ToString(), base.FileName);
+                        } else {
+                            EnemyClassData? lEnemyClass = base.Parent.Data.EnemyClasses.FirstOrDefault(x => x.ID == lSubJsonData.EnemyClass_ID);
+                            if (lEnemyClass == null) {
+                                Main.AddWarning(0003, nameof(lSubJsonData.EnemyClass_ID), lSubJsonData.EnemyClass_ID.ToString(), base.FileName);
+                                continue;
+                                
+                            }
 
-                        lSubJsonData.Item_ID
-                        LootItemData lLootItem = new LootItemData();
+                            ItemData? lItem = base.Parent.Data.Items.FirstOrDefault(x => x.ID == lSubJsonData.Item_ID);
+                            if (lItem == null) {
+                                Main.AddWarning(0003, nameof(lSubJsonData.Item_ID), lSubJsonData.Item_ID.ToString(), base.FileName);
+                                continue;
+                            }
 
+                            lLootData.LootItem.Add(new LootItemData(lEnemyClass, lItem));
+                        }
                     }
 
-                    LootData lLoot = new LootData(lJsonData);
-                    lLoot.LootItem
-                    Data.Add(new LootData(lJsonData));
-                }
-
-
-                    foreach (ItemJsonData lJsonData in lData
-                    .OrderBy(x => x.ItemTypeEnum_ID)
-                    .ThenBy(x => x.Name)) {
-                    Data.Add(new ItemData(lJsonData));
+                    if (lLootData.LootItem.Count > 0) {
+                        lResult.Add(lLootData);
+                    }
                 }
             }
 
-            return base.GetNotifications();
+            return lResult;
         }
         #endregion
 

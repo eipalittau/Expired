@@ -1,16 +1,14 @@
 ﻿namespace RtD.Data.Json {
     internal sealed class ItemQualitiesLoader : LoaderBase<ItemQualitiesLoader.JsonData> {
-        #region Properties / Felder
-        public List<ItemQualityData> Data { get; } = new List<ItemQualityData>();
-        #endregion
-
         #region Konstruktor
         public ItemQualitiesLoader(Main aParent, Enumerations.LanguageEnum aLanguage)
             : base(aParent, aLanguage) { }
         #endregion
 
         #region Methoden
-        public Components.EventArgs.MessageEventArgs[] LoadData(string aPathName) {
+        public List<ItemQualityData> LoadData(string aPathName) {
+            List<ItemQualityData> lResult = new();
+            
             base.LoadData(aPathName, Constants.GetJsonFileName(1));
 
             if (base.Json == null) {
@@ -48,29 +46,29 @@
                     .Concat(lData
                         .Where(x => x.Downgrade != null)
                         .OrderBy(x => x.Downgrade))) {
-                    Data.Add(new ItemQualityData(lJsonData, lSortOrder++));
+                    lResult.Add(new ItemQualityData(lJsonData, lSortOrder++));
                 }
 
                 foreach (ItemQualitiesJsonData lJsonData in lData) {
-                    ItemQualityData lItem = Data.Where(x => x.ID == lJsonData.ID).First();
+                    ItemQualityData lItem = lResult.Where(x => x.ID == lJsonData.ID).First();
 
                     if (lJsonData.Downgrade != null) {
-                        lItem.Downgrade = Data.Where(x => x.ID == lJsonData.Downgrade).First();
+                        lItem.Downgrade = lResult.Where(x => x.ID == lJsonData.Downgrade).First();
                     }
                     if (lJsonData.Upgrade != null) {
-                        lItem.Upgrade = Data.Where(x => x.ID == lJsonData.Upgrade).First();
+                        lItem.Upgrade = lResult.Where(x => x.ID == lJsonData.Upgrade).First();
                     }
                 }
             }
         
-            return base.GetNotifications();
+            return lResult;
         }
 
         private IEnumerable<ItemQualitiesJsonData> RemoveEmpty(IEnumerable<ItemQualitiesJsonData> aData) {
             aData = base.RemoveEmpty(aData);
 
             if (aData.Where(x => x.Effect == null).Any()) {
-                base.AddWarning(010000, nameof(ItemQualitiesJsonData.Effect));
+                Main.AddWarning(0000, nameof(ItemQualitiesJsonData.Effect));
             }
 
             return aData.Where(x => x.Effect != null);

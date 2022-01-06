@@ -1,7 +1,6 @@
 ﻿namespace RtD.Data.Json {
     internal sealed class EnemyClassesLoader : LoaderBase<EnemyClassesLoader.JsonData> {
         #region Properties / Felder
-        public List<EnemyClassData> Data { get; } = new List<EnemyClassData>();
         #endregion
 
         #region Konstruktor
@@ -10,7 +9,9 @@
         #endregion
 
         #region Methoden
-        public Components.EventArgs.MessageEventArgs[] LoadData(string aPathName) {
+        public List<EnemyClassData> LoadData(string aPathName) {
+            List<EnemyClassData> lResult = new();
+
             base.LoadData(aPathName, Constants.GetJsonFileName(0));
 
             if (base.Json == null) {
@@ -23,14 +24,14 @@
 
                 foreach (EnemyClassJsonData lJsonData in lData
                     .OrderBy(x => x.Name)) {
-                    Data.Add(new EnemyClassData(lJsonData, lSortOrder++));
+                    lResult.Add(new EnemyClassData(lJsonData, lSortOrder++));
                 }
             }
 
             // TODO: Sprache laden
             base.LoadData(aPathName, Constants.GetJsonFileName(0, base.Language));
 
-            return base.GetNotifications();
+            return lResult;
         }
         #endregion
 
