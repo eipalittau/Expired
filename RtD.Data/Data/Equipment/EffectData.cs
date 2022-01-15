@@ -29,4 +29,4 @@
         public EffectEnum Effect { get; set; } = EffectEnum.None;
         public RangeEnum Range { get; set; } = RangeEnum.None;
     }
-}
+}//TODO: !!!Wie Meldungen. Nur Nr oder auch Text?
