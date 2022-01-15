@@ -24,6 +24,8 @@
                     lResult.Add(new ItemData(lJsonData));
                 }
             }
+
+            // TODO: Sprache laden
             
             return lResult;
         }

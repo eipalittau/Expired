@@ -72,6 +72,8 @@
                 }
             }
 
+            // TODO: Sprache laden
+
             return lResult;
         }
         #endregion
