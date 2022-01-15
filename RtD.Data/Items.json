@@ -7,7 +7,7 @@
       "ItemTypeEnum_ID": 1,
       "ArmorClass": {
         "Modifier": 6,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -17,7 +17,7 @@
       "ItemTypeEnum_ID": 1,
       "ArmorClass": {
         "Modifier": 6,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -27,7 +27,7 @@
       "ItemTypeEnum_ID": 1,
       "ArmorClass": {
         "Modifier": 4,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -37,7 +37,7 @@
       "ItemTypeEnum_ID": 1,
       "ArmorClass": {
         "Modifier": 2,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -50,11 +50,11 @@
           "Count": 1,
           "Faces": 6
         },
-        "Range": "Item"
+        "Affects": "Item"
       },
       "Attack": {
         "Modifier": 1,
-        "Range": "Item"
+        "Affects": "Item"
       }
     },
     {
@@ -67,11 +67,11 @@
           "Count": 1,
           "Faces": 6
         },
-        "Range": "Item"
+        "Affects": "Item"
       },
       "Attack": {
         "Modifier": 1,
-        "Range": "Item"
+        "Affects": "Item"
       }
     },
     {
@@ -81,7 +81,7 @@
       "ItemTypeEnum_ID": 11,
       "Mana": {
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -91,7 +91,7 @@
       "ItemTypeEnum_ID": 10,
       "ArmorClass": {
         "Modifier": 2,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -101,7 +101,7 @@
       "ItemTypeEnum_ID": 9,
       "Attack": {
         "Modifier": 2,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -111,7 +111,7 @@
       "ItemTypeEnum_ID": 11,
       "WonderLevel": {
         "Modifier": 2,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -121,7 +121,7 @@
       "ItemTypeEnum_ID": 12,
       "Wizardry": {
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -131,7 +131,7 @@
       "ItemTypeEnum_ID": 13,
       "ArmorClass": {
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -141,7 +141,7 @@
       "ItemTypeEnum_ID": 13,
       "Damage": {
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -151,7 +151,7 @@
       "ItemTypeEnum_ID": 13,
       "Mana": {
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -161,7 +161,7 @@
       "ItemTypeEnum_ID": 18,
       "Smithing": {
         "Modifier": 2,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -171,7 +171,7 @@
       "ItemTypeEnum_ID": 18,
       "Poison": {
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -179,25 +179,13 @@
       "Name": "Spruchrolle Diamantrüstung",
       "Description": "",
       "ItemTypeEnum_ID": 18,
-      "Duration": {
-        "Type": "Day",
-        "Count": 1
-      },
-      "ArmorClass": {
-        "Modifier": 2,
-        "Range": "Character"
-      },
-      "Damage": {
-        "LevelModifier": {
-          "Modifier": -5,
-          "Divisor": 1,
-          "LevelType": "WonderLevel"
-        },
-        "Range": "Character"
+      "Talent": {
+        "Type": "Wonder",
+        "ID": 9
       },
       "WonderLevel": {
         "Override": "Playerlevel",
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -205,22 +193,9 @@
       "Name": "Spruchrolle Feuerball",
       "Description": "",
       "ItemTypeEnum_ID": 18,
-      "Damage": {
-        "LevelModifier": {
-          "Modifier": -5,
-          "Divisor": 1,
-          "LevelType": "Wizardry",
-          "Dice": {
-            "Count": 1,
-            "Faces": 6
-          },
-          "Range": "Item"          
-        },
-        "Range": "Character"
-      },
       "Wizardry": {
         "Override": "Playerlevel",
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -230,7 +205,7 @@
       "ItemTypeEnum_ID": 14,
       "Damage": {
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -240,7 +215,7 @@
       "ItemTypeEnum_ID": 14,
       "Mana": {
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -250,7 +225,7 @@
       "ItemTypeEnum_ID": 15,
       "Attack": {
         "Modifier": 1,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -260,7 +235,7 @@
       "ItemTypeEnum_ID": 15,
       "SaveingThrow": {
         "Modifier": 1,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -270,7 +245,7 @@
       "ItemTypeEnum_ID": 15,
       "Mana": {
         "Modifier": 1,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -280,7 +255,7 @@
       "ItemTypeEnum_ID": 15,
       "Attack": {
         "Modifier": 1,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -290,7 +265,7 @@
       "ItemTypeEnum_ID": 15,
       "Mana": {
         "Modifier": 1,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -300,7 +275,7 @@
       "ItemTypeEnum_ID": 18,
       "Memory": {
         "Modifier": 1,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -310,7 +285,7 @@
       "ItemTypeEnum_ID": 18,
       "Exp": {
         "Modifier": 1,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -320,7 +295,7 @@
       "ItemTypeEnum_ID": 1,
       "ArmorClass": {
         "Modifier": 7,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -330,7 +305,7 @@
       "ItemTypeEnum_ID": 1,
       "ArmorClass": {
         "Modifier": 5,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -340,7 +315,7 @@
       "ItemTypeEnum_ID": 1,
       "ArmorClass": {
         "Modifier": 3,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -354,11 +329,11 @@
           "Faces": 6
         },
         "Modifier": "1",
-        "Range": "Item"
+        "Affects": "Item"
       },
       "Attack": {
         "Modifier": "1",
-        "Range": "Item"
+        "Affects": "Item"
       }
     },
     {
@@ -372,11 +347,11 @@
           "Faces": 6
         },
         "Modifier": "1",
-        "Range": "Item"
+        "Affects": "Item"
       },
       "Attack": {
         "Modifier": "1",
-        "Range": "Item"
+        "Affects": "Item"
       }
     },
     {
@@ -386,7 +361,7 @@
       "ItemTypeEnum_ID": 11,
       "Mana": {
         "Modifier": 2,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -396,7 +371,7 @@
       "ItemTypeEnum_ID": 10,
       "ArmorClass": {
         "Modifier": 3,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -406,7 +381,7 @@
       "ItemTypeEnum_ID": 9,
       "Attack": {
         "Modifier": 3,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -416,7 +391,7 @@
       "ItemTypeEnum_ID": 11,
       "WonderLevel": {
         "Modifier": 2,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -426,7 +401,7 @@
       "ItemTypeEnum_ID": 12,
       "Wizardry": {
         "Modifier": 2,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -436,11 +411,11 @@
       "ItemTypeEnum_ID": 13,
       "ArmorClass": {
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       },
       "Damage": {
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -450,11 +425,11 @@
       "ItemTypeEnum_ID": 13,
       "Damage": {
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       },
       "Attack": {
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -464,7 +439,7 @@
       "ItemTypeEnum_ID": 13,
       "WonderLevel": {
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -474,7 +449,7 @@
       "ItemTypeEnum_ID": 13,
       "Wizardry": {
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -484,7 +459,7 @@
       "ItemTypeEnum_ID": 18,
       "Smithing": {
         "Modifier": 3,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -494,7 +469,7 @@
       "ItemTypeEnum_ID": 18,
       "Poison": {
         "Modifier": 2,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -502,26 +477,14 @@
       "Name": "Spruchrolle Diamantrüstung",
       "Description": "",
       "ItemTypeEnum_ID": 18,
-      "Duration": {
-        "Type": "Day",
-        "Count": 1
-      },
-      "ArmorClass": {
-        "Modifier": 2,
-        "Range": "Character"
-      },
-      "Damage": {
-        "LevelModifier": {
-          "Modifier": -5,
-          "Divisor": 1,
-          "LevelType": "WonderLevel"
-        },
-        "Range": "Character"
+      "Talent": {
+        "Type": "Wonder",
+        "ID": 9
       },
       "WonderLevel": {
         "Override": "Playerlevel",
         "Modifier": 2,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -544,7 +507,7 @@
           "Faces": 6
         },
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -554,12 +517,12 @@
       "ItemTypeEnum_ID": 14,
       "Mana": {
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       },
       "Heal": {
         //TODO: +1 Selbstheilung für Wunder
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -569,12 +532,12 @@
       "ItemTypeEnum_ID": 14,
       "Mana": {
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       },
       "Damage": {
         //TODO: +1 Schaden pro Würfel
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -584,11 +547,11 @@
       "ItemTypeEnum_ID": 15,
       "Attack": {
         "Modifier": 1,
-        "Range": "Character"        
+        "Affects": "Character"        
       },
       "Damage": {
         "Modifier": 1,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -598,11 +561,11 @@
       "ItemTypeEnum_ID": 15,
       "SavingThrow": {
         "Modifier": 1,
-        "Range": "Character"        
+        "Affects": "Character"        
       },
       "Health": {
         "Modifier": 1,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -612,7 +575,7 @@
       "ItemTypeEnum_ID": 15,
       "WonderLevel": {
         "Modifier": 1,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -622,7 +585,7 @@
       "ItemTypeEnum_ID": 15,
       "Wizardry": {
         "Modifier": 1,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -632,11 +595,11 @@
       "ItemTypeEnum_ID": 15,
       "Attack": {
         "Modifier": 1,
-        "Range": "Character"        
+        "Affects": "Character"        
       },
       "Damage": {
         "Modifier": 1,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -646,7 +609,7 @@
       "ItemTypeEnum_ID": 15,
       "WonderLevel": {
         "Modifier": 1,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -656,7 +619,7 @@
       "ItemTypeEnum_ID": 15,
       "Wizardry": {
         "Modifier": 1,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -666,11 +629,11 @@
       "ItemTypeEnum_ID": 18,
       "Memory": {
         "Modifier": 1,
-        "Range": "Character"        
+        "Affects": "Character"        
       },
       "Bonus": {
         "Modifier": 2,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -680,7 +643,7 @@
       "ItemTypeEnum_ID": 18,
       "Exp": {
         "Modifier": 2,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -690,7 +653,7 @@
       "ItemTypeEnum_ID": 1,
       "ArmorClass": {
         "Modifier": 8,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -700,7 +663,7 @@
       "ItemTypeEnum_ID": 1,
       "ArmorClass": {
         "Modifier": 6,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -710,7 +673,7 @@
       "ItemTypeEnum_ID": 1,
       "ArmorClass": {
         "Modifier": 4,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -724,11 +687,11 @@
           "Faces": 6
         },
         "Modifier": "2",
-        "Range": "Character"        
+        "Affects": "Character"        
       },
       "Attack": {
         "Modifier": "2",
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -742,11 +705,11 @@
           "Faces": 6
         },
         "Modifier": "2",
-        "Range": "Character"        
+        "Affects": "Character"        
       },
       "Attack": {
         "Modifier": "2",
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -756,7 +719,7 @@
       "ItemTypeEnum_ID": 11,
       "Mana": {
         "Modifier": 3,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -766,7 +729,7 @@
       "ItemTypeEnum_ID": 10,
       "ArmorClass": {
         "Modifier": 4,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -776,7 +739,7 @@
       "ItemTypeEnum_ID": 9,
       "Attack": {
         "Modifier": 4,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -786,7 +749,7 @@
       "ItemTypeEnum_ID": 11,
       "WonderLevel": {
         "Modifier": 3,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -796,7 +759,7 @@
       "ItemTypeEnum_ID": 12,
       "Wizardry": {
         "Modifier": 3,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -806,15 +769,15 @@
       "ItemTypeEnum_ID": 13,
       "ArmorClass": {
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       },
       "Damage": {
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       },
       "Attack": {
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -824,11 +787,11 @@
       "ItemTypeEnum_ID": 13,
       "Damage": {
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       },
       "Attack": {
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       },
       "Backstab": {
         "Dice": {
@@ -844,11 +807,11 @@
       "ItemTypeEnum_ID": 13,
       "WonderLevel": {
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       },
       "Heal": {
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -858,12 +821,12 @@
       "ItemTypeEnum_ID": 13,
       "Wizardry": {
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       },
       "Damage": {
         //TODO: Pro Zauberlevel
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -873,7 +836,7 @@
       "ItemTypeEnum_ID": 18,
       "Smithing": {
         "Modifier": 4,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -883,7 +846,7 @@
       "ItemTypeEnum_ID": 18,
       "Poison": {
         "Modifier": 3,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -891,26 +854,14 @@
       "Name": "Spruchrolle Diamantrüstung",
       "Description": "",
       "ItemTypeEnum_ID": 18,
-      "Duration": {
-        "Type": "Day",
-        "Count": 1
-      },
-      "ArmorClass": {
-        "Modifier": 2,
-        "Range": "Character"
-      },
-      "Damage": {
-        "LevelModifier": {
-          "Modifier": -5,
-          "Divisor": 1,
-          "LevelType": "WonderLevel"
-        },
-        "Range": "Character"
+      "Talent": {
+        "Type": "Wonder",
+        "ID": 9
       },
       "WonderLevel": {
         "Override": "Playerlevel",
         "Modifier": 4,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -933,7 +884,7 @@
           "Faces": 4
         },
         "Modifier": 2,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -943,12 +894,12 @@
       "ItemTypeEnum_ID": 14,
       "WonderLevel": {
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       },
       "Heal": {
         //TODO: +2 Selbstheilung für Wunder
         "Modifier": 2,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -958,12 +909,12 @@
       "ItemTypeEnum_ID": 14,
       "Wizardry": {
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       },
       "Damage": {
         //TODO: +2 Schaden pro Würfel
         "Modifier": 2,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -973,11 +924,11 @@
       "ItemTypeEnum_ID": 15,
       "Attack": {
         "Modifier": 2,
-        "Range": "Character"        
+        "Affects": "Character"        
       },
       "Damage": {
         "Modifier": 2,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -987,11 +938,11 @@
       "ItemTypeEnum_ID": 15,
       "SavingThrow": {
         "Modifier": 2,
-        "Range": "Character"        
+        "Affects": "Character"        
       },
       "Health": {
         "Modifier": 2,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -1001,7 +952,7 @@
       "ItemTypeEnum_ID": 15,
       "WonderLevel": {
         "Modifier": 2,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -1011,7 +962,7 @@
       "ItemTypeEnum_ID": 15,
       "Wizardry": {
         "Modifier": 2,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -1021,11 +972,11 @@
       "ItemTypeEnum_ID": 15,
       "Attack": {
         "Modifier": 1,
-        "Range": "Character"        
+        "Affects": "Character"        
       },
       "Damage": {
         "Modifier": 1,
-        "Range": "Character",
+        "Affects": "Character",
         "Dice": {
           "Count": 1,
           "Faces": 4
@@ -1039,11 +990,11 @@
       "ItemTypeEnum_ID": 15,
       "WonderLevel": {
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       },
       "ArmorClass": {
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -1053,11 +1004,11 @@
       "ItemTypeEnum_ID": 15,
       "Wizardry": {
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       },
       "ArmorClass": {
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -1067,11 +1018,11 @@
       "ItemTypeEnum_ID": 18,
       "Memory": {
         "Modifier": 1,
-        "Range": "Character"        
+        "Affects": "Character"        
       },
       "Bonus": {
         "Modifier": 4,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -1081,7 +1032,7 @@
       "ItemTypeEnum_ID": 18,
       "Exp": {
         "Modifier": 3,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -1091,7 +1042,7 @@
       "ItemTypeEnum_ID": 1,
       "ArmorClass": {
         "Modifier": 9,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -1101,7 +1052,7 @@
       "ItemTypeEnum_ID": 1,
       "ArmorClass": {
         "Modifier": 7,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -1111,7 +1062,7 @@
       "ItemTypeEnum_ID": 1,
       "ArmorClass": {
         "Modifier": 5,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -1125,11 +1076,11 @@
           "Faces": 6
         },
         "Modifier": "3",
-        "Range": "Item"
+        "Affects": "Item"
       },
       "Attack": {
         "Modifier": "3",
-        "Range": "Item"
+        "Affects": "Item"
       }
     },
     {
@@ -1143,11 +1094,11 @@
           "Faces": 6
         },
         "Modifier": "3",
-        "Range": "Item"        
+        "Affects": "Item"        
       },
       "Attack": {
         "Modifier": "3",
-        "Range": "Item"
+        "Affects": "Item"
       }
     },
     {
@@ -1157,7 +1108,7 @@
       "ItemTypeEnum_ID": 11,
       "Mana": {
         "Modifier": 4,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -1167,7 +1118,7 @@
       "ItemTypeEnum_ID": 10,
       "ArmorClass": {
         "Modifier": 5,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -1177,7 +1128,7 @@
       "ItemTypeEnum_ID": 9,
       "Attack": {
         "Modifier": 5,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -1187,7 +1138,7 @@
       "ItemTypeEnum_ID": 11,
       "WonderLevel": {
         "Modifier": 4,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -1197,7 +1148,7 @@
       "ItemTypeEnum_ID": 12,
       "Wizardry": {
         "Modifier": 4,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -1207,15 +1158,15 @@
       "ItemTypeEnum_ID": 13,
       "ArmorClass": {
         "Modifier": 2,
-        "Range": "Character"
+        "Affects": "Character"
       },
       "Damage": {
         "Modifier": 2,
-        "Range": "Character"
+        "Affects": "Character"
       },
       "Attack": {
         "Modifier": 2,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -1225,11 +1176,11 @@
       "ItemTypeEnum_ID": 13,
       "Damage": {
         "Modifier": 2,
-        "Range": "Character"
+        "Affects": "Character"
       },
       "Attack": {
         "Modifier": 2,
-        "Range": "Character"
+        "Affects": "Character"
       },
       "Backstab": {
         "Dice": {
@@ -1245,11 +1196,11 @@
       "ItemTypeEnum_ID": 13,
       "WonderLevel": {
         "Modifier": 2,
-        "Range": "Character"
+        "Affects": "Character"
       },
       "Heal": {
         "Modifier": 2,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -1259,12 +1210,12 @@
       "ItemTypeEnum_ID": 13,
       "Wizardry": {
         "Modifier": 2,
-        "Range": "Character"
+        "Affects": "Character"
       },
       "Damage": {
         //TODO: Pro Zauberlevel
         "Modifier": 2,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -1274,7 +1225,7 @@
       "ItemTypeEnum_ID": 18,
       "Smithing": {
         "Modifier": 5,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -1284,7 +1235,7 @@
       "ItemTypeEnum_ID": 18,
       "Poison": {
         "Modifier": 4,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -1292,26 +1243,14 @@
       "Name": "Spruchrolle Diamantrüstung",
       "Description": "",
       "ItemTypeEnum_ID": 18,
-      "Duration": {
-        "Type": "Day",
-        "Count": 1
-      },
-      "ArmorClass": {
-        "Modifier": 2,
-        "Range": "Character"
-      },
-      "Damage": {
-        "LevelModifier": {
-          "Modifier": -5,
-          "Divisor": 1,
-          "LevelType": "WonderLevel"
-        },
-        "Range": "Character"
+      "Talent": {
+        "Type": "Wonder",
+        "ID": 9
       },
       "WonderLevel": {
         "Override": "Playerlevel",
         "Modifier": 6,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -1329,12 +1268,13 @@
       "Description": "",
       "ItemTypeEnum_ID": 14,
       "Damage": {
+        "Type": "Melee",
         "Dice": {
           "Count": 3,
           "Faces": 4
         },
         "Modifier": 3,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -1343,12 +1283,13 @@
       "Description": "",
       "ItemTypeEnum_ID": 14,
       "Damage": {
+        "Type": "Affectsd",
         "Dice": {
           "Count": 3,
           "Faces": 4
         },
         "Modifier": 3,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -1358,13 +1299,12 @@
       "ItemTypeEnum_ID": 14,
       "WonderLevel": {
         "Modifier": 3,
-        "Range": "Character"
+        "Affects": "Character"
       },
       "Heal": {
         //TODO: +1 Selbstheilung für Wunder
         "Modifier": 3,
-        ,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -1374,12 +1314,12 @@
       "ItemTypeEnum_ID": 14,
       "Wizardry": {
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       },
       "Damage": {
         //TODO: +1 Schaden pro Würfel
         "Modifier": 1,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -1389,11 +1329,11 @@
       "ItemTypeEnum_ID": 15,
       "Attack": {
         "Modifier": 3,
-        "Range": "Character"        
+        "Affects": "Character"        
       },
       "Damage": {
         "Modifier": 3,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -1403,12 +1343,12 @@
       "ItemTypeEnum_ID": 15,
       "SavingThrow": {
         "Modifier": 3,
-        "Range": "Character"
+        "Affects": "Character"
         
       },
       "Health": {
         "Modifier": 3,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -1418,7 +1358,7 @@
       "ItemTypeEnum_ID": 15,
       "WonderLevel": {
         "Modifier": 3,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -1428,7 +1368,7 @@
       "ItemTypeEnum_ID": 15,
       "Wizardry": {
         "Modifier": 3,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -1438,11 +1378,11 @@
       "ItemTypeEnum_ID": 15,
       "Attack": {
         "Modifier": 2,
-        "Range": "Character"        
+        "Affects": "Character"        
       },
       "Damage": {
         "Modifier": 2,
-        "Range": "Character",
+        "Affects": "Character",
         "Dice": {
           "Count": 2,
           "Faces": 4
@@ -1456,11 +1396,11 @@
       "ItemTypeEnum_ID": 15,
       "WonderLevel": {
         "Modifier": 2,
-        "Range": "Character"        
+        "Affects": "Character"        
       },
       "ArmorClass": {
         "Modifier": 2,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -1470,11 +1410,11 @@
       "ItemTypeEnum_ID": 15,
       "Wizardry": {
         "Modifier": 2,
-        "Range": "Character"        
+        "Affects": "Character"        
       },
       "ArmorClass": {
         "Modifier": 2,
-        "Range": "Character"
+        "Affects": "Character"
       }
     },
     {
@@ -1484,11 +1424,11 @@
       "ItemTypeEnum_ID": 18,
       "Memory": {
         "Modifier": 2,
-        "Range": "Character"        
+        "Affects": "Character"        
       },
       "Bonus": {
         "Modifier": 4,
-        "Range": "Character"        
+        "Affects": "Character"        
       }
     },
     {
@@ -1498,7 +1438,7 @@
       "ItemTypeEnum_ID": 18,
       "Exp": {
         "Modifier": 6,
-        "Range": "Character"        
+        "Affects": "Character"        
       }      
     }// Nächste freie ID: 119
   ]
