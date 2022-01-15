@@ -1,13 +1,12 @@
 {
   "Items": [
     {
-      "ID": 0,
+      "ID": 118,
       "Name": "Stoffrüstung des besiegten Kämpfers",
       "Description": "",
-      "ItemTypeEnum_ID": 0,
+      "ItemTypeEnum_ID": 1,
       "ArmorClass": {
         "Modifier": 6,
-        "Effect": "Primary",
         "Range": "Character"
       }
     },
@@ -15,51 +14,338 @@
       "ID": 1,
       "Name": "Stoffrüstung des überforderten Klerikers",
       "Description": "",
-      "ItemTypeEnum_ID": 0,
+      "ItemTypeEnum_ID": 1,
       "ArmorClass": {
         "Modifier": 6,
-        "Effect": "Primary"
+        "Range": "Character"
       }
     },
     {
       "ID": 2,
       "Name": "Stoffrüstung des erwischten Schurkens",
       "Description": "",
-      "ItemTypeEnum_ID": 0,
+      "ItemTypeEnum_ID": 1,
       "ArmorClass": {
         "Modifier": 4,
-        "Effect": "Primary"
+        "Range": "Character"
       }
     },
     {
       "ID": 3,
       "Name": "Stoffrüstung des gescheiterten Magiers",
       "Description": "",
-      "ItemTypeEnum_ID": 0,
+      "ItemTypeEnum_ID": 1,
       "ArmorClass": {
         "Modifier": 2,
-        "Effect": "Primary"
+        "Range": "Character"
       }
     },
     {
       "ID": 4,
       "Name": "Kurzschwert",
       "Description": "",
-      "ItemTypeEnum_ID": 1,
+      "ItemTypeEnum_ID": 3,
       "Damage": {
         "Dice": {
           "Count": 1,
           "Faces": 6
         },
-        "Effect": "Primary"
+        "Range": "Item"
       },
       "Attack": {
-        "Effect": "Secondary"
+        "Modifier": 1,
+        "Range": "Item"
       }
     },
     {
       "ID": 5,
-      "Name": "Kurzschwert",
+      "Name": "Kurzbogen",
+      "Description": "",
+      "ItemTypeEnum_ID": 5,
+      "Damage": {
+        "Dice": {
+          "Count": 1,
+          "Faces": 6
+        },
+        "Range": "Item"
+      },
+      "Attack": {
+        "Modifier": 1,
+        "Range": "Item"
+      }
+    },
+    {
+      "ID": 6,
+      "Name": "Kugel",
+      "Description": "",
+      "ItemTypeEnum_ID": 11,
+      "Mana": {
+        "Modifier": 1,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 7,
+      "Name": "Schild",
+      "Description": "",
+      "ItemTypeEnum_ID": 10,
+      "ArmorClass": {
+        "Modifier": 2,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 8,
+      "Name": "Dolch",
+      "Description": "",
+      "ItemTypeEnum_ID": 9,
+      "Attack": {
+        "Modifier": 2,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 9,
+      "Name": "Heiliges Symbol des Novizen",
+      "Description": "",
+      "ItemTypeEnum_ID": 11,
+      "WonderLevel": {
+        "Modifier": 2,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 10,
+      "Name": "Zauberbuch des Novizen",
+      "Description": "",
+      "ItemTypeEnum_ID": 12,
+      "Wizardry": {
+        "Modifier": 1,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 11,
+      "Name": "Ring des Kämpfers",
+      "Description": "",
+      "ItemTypeEnum_ID": 13,
+      "ArmorClass": {
+        "Modifier": 1,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 12,
+      "Name": "Ring des Schurken",
+      "Description": "",
+      "ItemTypeEnum_ID": 13,
+      "Damage": {
+        "Modifier": 1,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 13,
+      "Name": "Ring des Zaubernden",
+      "Description": "",
+      "ItemTypeEnum_ID": 13,
+      "Mana": {
+        "Modifier": 1,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 14,
+      "Name": "Schleifstein",
+      "Description": "",
+      "ItemTypeEnum_ID": 18,
+      "Smithing": {
+        "Modifier": 2,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 15,
+      "Name": "Beerengift",
+      "Description": "",
+      "ItemTypeEnum_ID": 18,
+      "Poison": {
+        "Modifier": 1,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 16,
+      "Name": "Spruchrolle Diamantrüstung",
+      "Description": "",
+      "ItemTypeEnum_ID": 18,
+      "Duration": {
+        "Type": "Day",
+        "Count": 1
+      },
+      "ArmorClass": {
+        "Modifier": 2,
+        "Range": "Character"
+      },
+      "Damage": {
+        "LevelModifier": {
+          "Modifier": -5,
+          "Divisor": 1,
+          "LevelType": "WonderLevel"
+        },
+        "Range": "Character"
+      },
+      "WonderLevel": {
+        "Override": "Playerlevel",
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 17,
+      "Name": "Spruchrolle Feuerball",
+      "Description": "",
+      "ItemTypeEnum_ID": 18,
+      "Damage": {
+        "LevelModifier": {
+          "Modifier": -5,
+          "Divisor": 1,
+          "LevelType": "Wizardry",
+          "Dice": {
+            "Count": 1,
+            "Faces": 6
+          },
+          "Range": "Item"          
+        },
+        "Range": "Character"
+      },
+      "Wizardry": {
+        "Override": "Playerlevel",
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 18,
+      "Name": "Amulett des Kämpfers",
+      "Description": "",
+      "ItemTypeEnum_ID": 14,
+      "Damage": {
+        "Modifier": 1,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 19,
+      "Name": "Amulett des Magiers",
+      "Description": "",
+      "ItemTypeEnum_ID": 14,
+      "Mana": {
+        "Modifier": 1,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 20,
+      "Name": "Umhang des Kämpfers",
+      "Description": "",
+      "ItemTypeEnum_ID": 15,
+      "Attack": {
+        "Modifier": 1,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 21,
+      "Name": "Umhang des Schurken",
+      "Description": "",
+      "ItemTypeEnum_ID": 15,
+      "SaveingThrow": {
+        "Modifier": 1,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 22,
+      "Name": "Umhang des Magiers",
+      "Description": "",
+      "ItemTypeEnum_ID": 15,
+      "Mana": {
+        "Modifier": 1,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 23,
+      "Name": "Stirnreif des Kämpfers",
+      "Description": "",
+      "ItemTypeEnum_ID": 15,
+      "Attack": {
+        "Modifier": 1,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 24,
+      "Name": "Stirnreif des Magiers",
+      "Description": "",
+      "ItemTypeEnum_ID": 15,
+      "Mana": {
+        "Modifier": 1,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 25,
+      "Name": "Erinnerungsversuch",
+      "Description": "",
+      "ItemTypeEnum_ID": 18,
+      "Memory": {
+        "Modifier": 1,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 26,
+      "Name": "Erfahrung",
+      "Description": "",
+      "ItemTypeEnum_ID": 18,
+      "Exp": {
+        "Modifier": 1,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 27,
+      "Name": "Lederrüstung des Nahkämpfers",
+      "Description": "",
+      "ItemTypeEnum_ID": 1,
+      "ArmorClass": {
+        "Modifier": 7,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 28,
+      "Name": "Lederrüstung Schurkens",
+      "Description": "",
+      "ItemTypeEnum_ID": 1,
+      "ArmorClass": {
+        "Modifier": 5,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 29,
+      "Name": "Lederrüstung Magiers",
+      "Description": "",
+      "ItemTypeEnum_ID": 1,
+      "ArmorClass": {
+        "Modifier": 3,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 30,
+      "Name": "Langschwert",
       "Description": "",
       "ItemTypeEnum_ID": 1,
       "Damage": {
@@ -67,15 +353,17 @@
           "Count": 1,
           "Faces": 6
         },
-        "Effect": "Primary"
+        "Modifier": "1",
+        "Range": "Item"
       },
       "Attack": {
-        "Effect": "Secondary"
+        "Modifier": "1",
+        "Range": "Item"
       }
     },
     {
-      "ID": 6,
-      "Name": "Bogen",
+      "ID": 31,
+      "Name": "Langbogen",
       "Description": "",
       "ItemTypeEnum_ID": 4,
       "Damage": {
@@ -83,21 +371,1135 @@
           "Count": 1,
           "Faces": 6
         },
-        "Effect": "Primary"
+        "Modifier": "1",
+        "Range": "Item"
       },
       "Attack": {
-        "Effect": "Secondary"
+        "Modifier": "1",
+        "Range": "Item"
       }
     },
     {
-      "ID": 7,
-      "Name": "Kugel",
+      "ID": 32,
+      "Name": "Kristallkugel",
       "Description": "",
       "ItemTypeEnum_ID": 11,
       "Mana": {
-        "Modifier": 1,
-        "Effect": "Primary"
+        "Modifier": 2,
+        "Range": "Character"        
       }
-    }
+    },
+    {
+      "ID": 33,
+      "Name": "Rundschild",
+      "Description": "",
+      "ItemTypeEnum_ID": 10,
+      "ArmorClass": {
+        "Modifier": 3,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 34,
+      "Name": "Spitzer Dolch",
+      "Description": "",
+      "ItemTypeEnum_ID": 9,
+      "Attack": {
+        "Modifier": 3,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 116,
+      "Name": "Heiliges Symbol des Adepten",
+      "Description": "",
+      "ItemTypeEnum_ID": 11,
+      "WonderLevel": {
+        "Modifier": 2,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 35,
+      "Name": "Zauberbuch des Adepten",
+      "Description": "",
+      "ItemTypeEnum_ID": 12,
+      "Wizardry": {
+        "Modifier": 2,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 36,
+      "Name": "Ring des guten Kämpfers",
+      "Description": "",
+      "ItemTypeEnum_ID": 13,
+      "ArmorClass": {
+        "Modifier": 1,
+        "Range": "Character"
+      },
+      "Damage": {
+        "Modifier": 1,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 37,
+      "Name": "Ring des geschickten Schurken",
+      "Description": "",
+      "ItemTypeEnum_ID": 13,
+      "Damage": {
+        "Modifier": 1,
+        "Range": "Character"
+      },
+      "Attack": {
+        "Modifier": 1,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 38,
+      "Name": "Ring des Klerikers",
+      "Description": "",
+      "ItemTypeEnum_ID": 13,
+      "WonderLevel": {
+        "Modifier": 1,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 39,
+      "Name": "Ring des Magiers",
+      "Description": "",
+      "ItemTypeEnum_ID": 13,
+      "Wizardry": {
+        "Modifier": 1,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 40,
+      "Name": "Schleifstein",
+      "Description": "",
+      "ItemTypeEnum_ID": 18,
+      "Smithing": {
+        "Modifier": 3,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 41,
+      "Name": "Leichengift",
+      "Description": "",
+      "ItemTypeEnum_ID": 18,
+      "Poison": {
+        "Modifier": 2,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 42,
+      "Name": "Spruchrolle Diamantrüstung",
+      "Description": "",
+      "ItemTypeEnum_ID": 18,
+      "Duration": {
+        "Type": "Day",
+        "Count": 1
+      },
+      "ArmorClass": {
+        "Modifier": 2,
+        "Range": "Character"
+      },
+      "Damage": {
+        "LevelModifier": {
+          "Modifier": -5,
+          "Divisor": 1,
+          "LevelType": "WonderLevel"
+        },
+        "Range": "Character"
+      },
+      "WonderLevel": {
+        "Override": "Playerlevel",
+        "Modifier": 2,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 43,
+      "Name": "Spruchrolle Feuerball",
+      "Description": "",
+      "ItemTypeEnum_ID": 18,
+      "Attack": {
+        //TODO: Effekt Schriftrolle Feuerball 
+      }
+    },
+    {
+      "ID": 44,
+      "Name": "Amulett des Kämpfers",
+      "Description": "",
+      "ItemTypeEnum_ID": 14,
+      "Damage": {
+        "Dice": {
+          "Count": 1,
+          "Faces": 6
+        },
+        "Modifier": 1,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 45,
+      "Name": "Amulett des Mönchs",
+      "Description": "",
+      "ItemTypeEnum_ID": 14,
+      "Mana": {
+        "Modifier": 1,
+        "Range": "Character"
+      },
+      "Heal": {
+        //TODO: +1 Selbstheilung für Wunder
+        "Modifier": 1,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 46,
+      "Name": "Amulett des Zauberers",
+      "Description": "",
+      "ItemTypeEnum_ID": 14,
+      "Mana": {
+        "Modifier": 1,
+        "Range": "Character"
+      },
+      "Damage": {
+        //TODO: +1 Schaden pro Würfel
+        "Modifier": 1,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 47,
+      "Name": "Umhang des Kämpfers",
+      "Description": "",
+      "ItemTypeEnum_ID": 15,
+      "Attack": {
+        "Modifier": 1,
+        "Range": "Character"        
+      },
+      "Damage": {
+        "Modifier": 1,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 48,
+      "Name": "Umhang des Schurken",
+      "Description": "",
+      "ItemTypeEnum_ID": 15,
+      "SavingThrow": {
+        "Modifier": 1,
+        "Range": "Character"        
+      },
+      "Health": {
+        "Modifier": 1,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 49,
+      "Name": "Umhang des Klerikers",
+      "Description": "",
+      "ItemTypeEnum_ID": 15,
+      "WonderLevel": {
+        "Modifier": 1,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 50,
+      "Name": "Umhang des Magiers",
+      "Description": "",
+      "ItemTypeEnum_ID": 15,
+      "Wizardry": {
+        "Modifier": 1,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 51,
+      "Name": "Stirnreif des Kämpfers",
+      "Description": "",
+      "ItemTypeEnum_ID": 15,
+      "Attack": {
+        "Modifier": 1,
+        "Range": "Character"        
+      },
+      "Damage": {
+        "Modifier": 1,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 52,
+      "Name": "Stirnreif des Klerikers",
+      "Description": "",
+      "ItemTypeEnum_ID": 15,
+      "WonderLevel": {
+        "Modifier": 1,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 53,
+      "Name": "Stirnreif des Magiers",
+      "Description": "",
+      "ItemTypeEnum_ID": 15,
+      "Wizardry": {
+        "Modifier": 1,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 54,
+      "Name": "Erinnerungsversuch",
+      "Description": "",
+      "ItemTypeEnum_ID": 18,
+      "Memory": {
+        "Modifier": 1,
+        "Range": "Character"        
+      },
+      "Bonus": {
+        "Modifier": 2,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 55,
+      "Name": "Erfahrung",
+      "Description": "",
+      "ItemTypeEnum_ID": 18,
+      "Exp": {
+        "Modifier": 2,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 56,
+      "Name": "Kettenrüstung des Nahkämpfers",
+      "Description": "",
+      "ItemTypeEnum_ID": 1,
+      "ArmorClass": {
+        "Modifier": 8,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 57,
+      "Name": "Kettenrüstung des Schurkens",
+      "Description": "",
+      "ItemTypeEnum_ID": 1,
+      "ArmorClass": {
+        "Modifier": 6,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 58,
+      "Name": "Kettenrüstung Magiers",
+      "Description": "",
+      "ItemTypeEnum_ID": 1,
+      "ArmorClass": {
+        "Modifier": 4,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 59,
+      "Name": "Bastardschwert",
+      "Description": "",
+      "ItemTypeEnum_ID": 1,
+      "Damage": {
+        "Dice": {
+          "Count": 1,
+          "Faces": 6
+        },
+        "Modifier": "2",
+        "Range": "Character"        
+      },
+      "Attack": {
+        "Modifier": "2",
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 60,
+      "Name": "Rekursionsbogen",
+      "Description": "",
+      "ItemTypeEnum_ID": 4,
+      "Damage": {
+        "Dice": {
+          "Count": 1,
+          "Faces": 6
+        },
+        "Modifier": "2",
+        "Range": "Character"        
+      },
+      "Attack": {
+        "Modifier": "2",
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 61,
+      "Name": "Drachenauge",
+      "Description": "",
+      "ItemTypeEnum_ID": 11,
+      "Mana": {
+        "Modifier": 3,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 62,
+      "Name": "Turmschild",
+      "Description": "",
+      "ItemTypeEnum_ID": 10,
+      "ArmorClass": {
+        "Modifier": 4,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 63,
+      "Name": "Ausgezeichneter Dolch",
+      "Description": "",
+      "ItemTypeEnum_ID": 9,
+      "Attack": {
+        "Modifier": 4,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 64,
+      "Name": "Heiliges Symbol des Magiers",
+      "Description": "",
+      "ItemTypeEnum_ID": 11,
+      "WonderLevel": {
+        "Modifier": 3,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 65,
+      "Name": "Zauberbuch des Magiers",
+      "Description": "",
+      "ItemTypeEnum_ID": 12,
+      "Wizardry": {
+        "Modifier": 3,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 66,
+      "Name": "Ring des starken Kämpfers",
+      "Description": "",
+      "ItemTypeEnum_ID": 13,
+      "ArmorClass": {
+        "Modifier": 1,
+        "Range": "Character"
+      },
+      "Damage": {
+        "Modifier": 1,
+        "Range": "Character"
+      },
+      "Attack": {
+        "Modifier": 1,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 67,
+      "Name": "Ring des gerissenen Schurken",
+      "Description": "",
+      "ItemTypeEnum_ID": 13,
+      "Damage": {
+        "Modifier": 1,
+        "Range": "Character"
+      },
+      "Attack": {
+        "Modifier": 1,
+        "Range": "Character"
+      },
+      "Backstab": {
+        "Dice": {
+          "Count": 1,
+          "Faces": 6
+        }
+      }
+    },
+    {
+      "ID": 68,
+      "Name": "Ring des Klerikers",
+      "Description": "",
+      "ItemTypeEnum_ID": 13,
+      "WonderLevel": {
+        "Modifier": 1,
+        "Range": "Character"
+      },
+      "Heal": {
+        "Modifier": 1,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 69,
+      "Name": "Ring des Magiers",
+      "Description": "",
+      "ItemTypeEnum_ID": 13,
+      "Wizardry": {
+        "Modifier": 1,
+        "Range": "Character"
+      },
+      "Damage": {
+        //TODO: Pro Zauberlevel
+        "Modifier": 1,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 70,
+      "Name": "Schleifstein",
+      "Description": "",
+      "ItemTypeEnum_ID": 18,
+      "Smithing": {
+        "Modifier": 4,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 71,
+      "Name": "Krötengift",
+      "Description": "",
+      "ItemTypeEnum_ID": 18,
+      "Poison": {
+        "Modifier": 3,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 72,
+      "Name": "Spruchrolle Diamantrüstung",
+      "Description": "",
+      "ItemTypeEnum_ID": 18,
+      "Duration": {
+        "Type": "Day",
+        "Count": 1
+      },
+      "ArmorClass": {
+        "Modifier": 2,
+        "Range": "Character"
+      },
+      "Damage": {
+        "LevelModifier": {
+          "Modifier": -5,
+          "Divisor": 1,
+          "LevelType": "WonderLevel"
+        },
+        "Range": "Character"
+      },
+      "WonderLevel": {
+        "Override": "Playerlevel",
+        "Modifier": 4,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 73,
+      "Name": "Spruchrolle Feuerball",
+      "Description": "",
+      "ItemTypeEnum_ID": 18,
+      "Attack": {
+        //TODO: Effekt Schriftrolle Feuerball 
+      }
+    },
+    {
+      "ID": 74,
+      "Name": "Amulett des Kämpfers",
+      "Description": "",
+      "ItemTypeEnum_ID": 14,
+      "Damage": {
+        "Dice": {
+          "Count": 2,
+          "Faces": 4
+        },
+        "Modifier": 2,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 75,
+      "Name": "Amulett des Klerikers",
+      "Description": "",
+      "ItemTypeEnum_ID": 14,
+      "WonderLevel": {
+        "Modifier": 1,
+        "Range": "Character"
+      },
+      "Heal": {
+        //TODO: +2 Selbstheilung für Wunder
+        "Modifier": 2,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 76,
+      "Name": "Amulett des Magiers",
+      "Description": "",
+      "ItemTypeEnum_ID": 14,
+      "Wizardry": {
+        "Modifier": 1,
+        "Range": "Character"
+      },
+      "Damage": {
+        //TODO: +2 Schaden pro Würfel
+        "Modifier": 2,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 77,
+      "Name": "Umhang des starken Kämpfers",
+      "Description": "",
+      "ItemTypeEnum_ID": 15,
+      "Attack": {
+        "Modifier": 2,
+        "Range": "Character"        
+      },
+      "Damage": {
+        "Modifier": 2,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 78,
+      "Name": "Umhang des gerissenen Schurken",
+      "Description": "",
+      "ItemTypeEnum_ID": 15,
+      "SavingThrow": {
+        "Modifier": 2,
+        "Range": "Character"        
+      },
+      "Health": {
+        "Modifier": 2,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 79,
+      "Name": "Umhang des Klerikers",
+      "Description": "",
+      "ItemTypeEnum_ID": 15,
+      "WonderLevel": {
+        "Modifier": 2,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 80,
+      "Name": "Umhang des Magiers",
+      "Description": "",
+      "ItemTypeEnum_ID": 15,
+      "Wizardry": {
+        "Modifier": 2,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 81,
+      "Name": "Stirnreif des Kämpfers",
+      "Description": "",
+      "ItemTypeEnum_ID": 15,
+      "Attack": {
+        "Modifier": 1,
+        "Range": "Character"        
+      },
+      "Damage": {
+        "Modifier": 1,
+        "Range": "Character",
+        "Dice": {
+          "Count": 1,
+          "Faces": 4
+        }
+      }
+    },
+    {
+      "ID": 82,
+      "Name": "Stirnreif des Klerikers",
+      "Description": "",
+      "ItemTypeEnum_ID": 15,
+      "WonderLevel": {
+        "Modifier": 1,
+        "Range": "Character"
+      },
+      "ArmorClass": {
+        "Modifier": 1,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 83,
+      "Name": "Stirnreif des Magiers",
+      "Description": "",
+      "ItemTypeEnum_ID": 15,
+      "Wizardry": {
+        "Modifier": 1,
+        "Range": "Character"
+      },
+      "ArmorClass": {
+        "Modifier": 1,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 84,
+      "Name": "Erinnerungsversuch",
+      "Description": "",
+      "ItemTypeEnum_ID": 18,
+      "Memory": {
+        "Modifier": 1,
+        "Range": "Character"        
+      },
+      "Bonus": {
+        "Modifier": 4,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 85,
+      "Name": "Erfahrung",
+      "Description": "",
+      "ItemTypeEnum_ID": 18,
+      "Exp": {
+        "Modifier": 3,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 86,
+      "Name": "Plattenrüstung des Nahkämpfers",
+      "Description": "",
+      "ItemTypeEnum_ID": 1,
+      "ArmorClass": {
+        "Modifier": 9,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 87,
+      "Name": "Plattenrüstung des Schurkens",
+      "Description": "",
+      "ItemTypeEnum_ID": 1,
+      "ArmorClass": {
+        "Modifier": 7,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 88,
+      "Name": "Plattenrüstung Magiers",
+      "Description": "",
+      "ItemTypeEnum_ID": 1,
+      "ArmorClass": {
+        "Modifier": 5,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 89,
+      "Name": "Gutes Bastardschwert",
+      "Description": "",
+      "ItemTypeEnum_ID": 1,
+      "Damage": {
+        "Dice": {
+          "Count": 1,
+          "Faces": 6
+        },
+        "Modifier": "3",
+        "Range": "Item"
+      },
+      "Attack": {
+        "Modifier": "3",
+        "Range": "Item"
+      }
+    },
+    {
+      "ID": 90,
+      "Name": "Guter Rekursionsbogen",
+      "Description": "",
+      "ItemTypeEnum_ID": 4,
+      "Damage": {
+        "Dice": {
+          "Count": 1,
+          "Faces": 6
+        },
+        "Modifier": "3",
+        "Range": "Item"        
+      },
+      "Attack": {
+        "Modifier": "3",
+        "Range": "Item"
+      }
+    },
+    {
+      "ID": 91,
+      "Name": "Ätherkugel",
+      "Description": "",
+      "ItemTypeEnum_ID": 11,
+      "Mana": {
+        "Modifier": 4,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 92,
+      "Name": "Grosser Turmschild",
+      "Description": "",
+      "ItemTypeEnum_ID": 10,
+      "ArmorClass": {
+        "Modifier": 5,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 93,
+      "Name": "Tödlicher Dolch",
+      "Description": "",
+      "ItemTypeEnum_ID": 9,
+      "Attack": {
+        "Modifier": 5,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 94,
+      "Name": "Göttliches Symbol",
+      "Description": "",
+      "ItemTypeEnum_ID": 11,
+      "WonderLevel": {
+        "Modifier": 4,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 95,
+      "Name": "Zauberbuch des Magiers",
+      "Description": "",
+      "ItemTypeEnum_ID": 12,
+      "Wizardry": {
+        "Modifier": 4,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 96,
+      "Name": "Ring des Kriegers",
+      "Description": "",
+      "ItemTypeEnum_ID": 13,
+      "ArmorClass": {
+        "Modifier": 2,
+        "Range": "Character"
+      },
+      "Damage": {
+        "Modifier": 2,
+        "Range": "Character"
+      },
+      "Attack": {
+        "Modifier": 2,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 97,
+      "Name": "Ring des teuflischen Schurken",
+      "Description": "",
+      "ItemTypeEnum_ID": 13,
+      "Damage": {
+        "Modifier": 2,
+        "Range": "Character"
+      },
+      "Attack": {
+        "Modifier": 2,
+        "Range": "Character"
+      },
+      "Backstab": {
+        "Dice": {
+          "Count": 2,
+          "Faces": 6
+        }
+      }
+    },
+    {
+      "ID": 98,
+      "Name": "Ring des gesegneten Klerikers",
+      "Description": "",
+      "ItemTypeEnum_ID": 13,
+      "WonderLevel": {
+        "Modifier": 2,
+        "Range": "Character"
+      },
+      "Heal": {
+        "Modifier": 2,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 99,
+      "Name": "Ring des auserwählten Magiers",
+      "Description": "",
+      "ItemTypeEnum_ID": 13,
+      "Wizardry": {
+        "Modifier": 2,
+        "Range": "Character"
+      },
+      "Damage": {
+        //TODO: Pro Zauberlevel
+        "Modifier": 2,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 100,
+      "Name": "Schleifstein",
+      "Description": "",
+      "ItemTypeEnum_ID": 18,
+      "Smithing": {
+        "Modifier": 5,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 101,
+      "Name": "Schlangengift",
+      "Description": "",
+      "ItemTypeEnum_ID": 18,
+      "Poison": {
+        "Modifier": 4,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 102,
+      "Name": "Spruchrolle Diamantrüstung",
+      "Description": "",
+      "ItemTypeEnum_ID": 18,
+      "Duration": {
+        "Type": "Day",
+        "Count": 1
+      },
+      "ArmorClass": {
+        "Modifier": 2,
+        "Range": "Character"
+      },
+      "Damage": {
+        "LevelModifier": {
+          "Modifier": -5,
+          "Divisor": 1,
+          "LevelType": "WonderLevel"
+        },
+        "Range": "Character"
+      },
+      "WonderLevel": {
+        "Override": "Playerlevel",
+        "Modifier": 6,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 103,
+      "Name": "Spruchrolle Feuerball",
+      "Description": "",
+      "ItemTypeEnum_ID": 18,
+      "Attack": {
+        //TODO: Effekt Schriftrolle Feuerball 
+      }
+    },
+    {
+      "ID": 104,
+      "Name": "Amulett des Kriegers",
+      "Description": "",
+      "ItemTypeEnum_ID": 14,
+      "Damage": {
+        "Dice": {
+          "Count": 3,
+          "Faces": 4
+        },
+        "Modifier": 3,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 117,
+      "Name": "Amulett des Schurkens",
+      "Description": "",
+      "ItemTypeEnum_ID": 14,
+      "Damage": {
+        "Dice": {
+          "Count": 3,
+          "Faces": 4
+        },
+        "Modifier": 3,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 105,
+      "Name": "Amulett des Kardinals",
+      "Description": "",
+      "ItemTypeEnum_ID": 14,
+      "WonderLevel": {
+        "Modifier": 3,
+        "Range": "Character"
+      },
+      "Heal": {
+        //TODO: +1 Selbstheilung für Wunder
+        "Modifier": 3,
+        ,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 106,
+      "Name": "Amulett des Erzmagiers",
+      "Description": "",
+      "ItemTypeEnum_ID": 14,
+      "Wizardry": {
+        "Modifier": 1,
+        "Range": "Character"
+      },
+      "Damage": {
+        //TODO: +1 Schaden pro Würfel
+        "Modifier": 1,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 107,
+      "Name": "Umhang des Kriegers",
+      "Description": "",
+      "ItemTypeEnum_ID": 15,
+      "Attack": {
+        "Modifier": 3,
+        "Range": "Character"        
+      },
+      "Damage": {
+        "Modifier": 3,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 108,
+      "Name": "Umhang des teuflischen Schurken",
+      "Description": "",
+      "ItemTypeEnum_ID": 15,
+      "SavingThrow": {
+        "Modifier": 3,
+        "Range": "Character"
+        
+      },
+      "Health": {
+        "Modifier": 3,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 109,
+      "Name": "Umhang des Kardinals",
+      "Description": "",
+      "ItemTypeEnum_ID": 15,
+      "WonderLevel": {
+        "Modifier": 3,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 110,
+      "Name": "Umhang des Erzmagiers",
+      "Description": "",
+      "ItemTypeEnum_ID": 15,
+      "Wizardry": {
+        "Modifier": 3,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 111,
+      "Name": "Stirnreif des Kriegers",
+      "Description": "",
+      "ItemTypeEnum_ID": 15,
+      "Attack": {
+        "Modifier": 2,
+        "Range": "Character"        
+      },
+      "Damage": {
+        "Modifier": 2,
+        "Range": "Character",
+        "Dice": {
+          "Count": 2,
+          "Faces": 4
+        }
+      }
+    },
+    {
+      "ID": 112,
+      "Name": "Stirnreif des Kardinals",
+      "Description": "",
+      "ItemTypeEnum_ID": 15,
+      "WonderLevel": {
+        "Modifier": 2,
+        "Range": "Character"        
+      },
+      "ArmorClass": {
+        "Modifier": 2,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 113,
+      "Name": "Stirnreif des Erzmagiers",
+      "Description": "",
+      "ItemTypeEnum_ID": 15,
+      "Wizardry": {
+        "Modifier": 2,
+        "Range": "Character"        
+      },
+      "ArmorClass": {
+        "Modifier": 2,
+        "Range": "Character"
+      }
+    },
+    {
+      "ID": 114,
+      "Name": "Erinnerungsversuch",
+      "Description": "",
+      "ItemTypeEnum_ID": 18,
+      "Memory": {
+        "Modifier": 2,
+        "Range": "Character"        
+      },
+      "Bonus": {
+        "Modifier": 4,
+        "Range": "Character"        
+      }
+    },
+    {
+      "ID": 115,
+      "Name": "Erfahrung",
+      "Description": "",
+      "ItemTypeEnum_ID": 18,
+      "Exp": {
+        "Modifier": 6,
+        "Range": "Character"        
+      }      
+    }// Nächste freie ID: 119
   ]
 }
