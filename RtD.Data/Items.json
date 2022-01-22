@@ -179,10 +179,7 @@
       "Name": "Spruchrolle Diamantrüstung",
       "Description": "",
       "ItemTypeEnum_ID": 18,
-      "Talent": {
-        "Type": "Wonder",
-        "ID": 9
-      },
+      "WonderTalentEnum_ID": 9,
       "WonderLevel": {
         "Override": "Playerlevel",
         "Affects": "Character"
@@ -193,6 +190,7 @@
       "Name": "Spruchrolle Feuerball",
       "Description": "",
       "ItemTypeEnum_ID": 18,
+      "WizardryTalentEnum_ID": 10,
       "Wizardry": {
         "Override": "Playerlevel",
         "Affects": "Character"
@@ -328,11 +326,11 @@
           "Count": 1,
           "Faces": 6
         },
-        "Modifier": "1",
+        "Modifier": 1,
         "Affects": "Item"
       },
       "Attack": {
-        "Modifier": "1",
+        "Modifier": 1,
         "Affects": "Item"
       }
     },
@@ -346,11 +344,11 @@
           "Count": 1,
           "Faces": 6
         },
-        "Modifier": "1",
+        "Modifier": 1,
         "Affects": "Item"
       },
       "Attack": {
-        "Modifier": "1",
+        "Modifier": 1,
         "Affects": "Item"
       }
     },
@@ -477,10 +475,7 @@
       "Name": "Spruchrolle Diamantrüstung",
       "Description": "",
       "ItemTypeEnum_ID": 18,
-      "Talent": {
-        "Type": "Wonder",
-        "ID": 9
-      },
+      "WonderTalentEnum_ID": 9,
       "WonderLevel": {
         "Override": "Playerlevel",
         "Modifier": 2,
@@ -492,8 +487,11 @@
       "Name": "Spruchrolle Feuerball",
       "Description": "",
       "ItemTypeEnum_ID": 18,
-      "Attack": {
-        //TODO: Effekt Schriftrolle Feuerball 
+      "WizardryTalentEnum_ID": 10,
+      "Wizardry": {
+        "Override": "Playerlevel",
+        "Modifier": 2,
+        "Affects": "Character"
       }
     },
     {
@@ -686,11 +684,11 @@
           "Count": 1,
           "Faces": 6
         },
-        "Modifier": "2",
+        "Modifier": 2,
         "Affects": "Character"        
       },
       "Attack": {
-        "Modifier": "2",
+        "Modifier": 2,
         "Affects": "Character"        
       }
     },
@@ -704,11 +702,11 @@
           "Count": 1,
           "Faces": 6
         },
-        "Modifier": "2",
+        "Modifier": 2,
         "Affects": "Character"        
       },
       "Attack": {
-        "Modifier": "2",
+        "Modifier": 2,
         "Affects": "Character"        
       }
     },
@@ -854,10 +852,7 @@
       "Name": "Spruchrolle Diamantrüstung",
       "Description": "",
       "ItemTypeEnum_ID": 18,
-      "Talent": {
-        "Type": "Wonder",
-        "ID": 9
-      },
+      "WonderTalentEnum_ID": 9,
       "WonderLevel": {
         "Override": "Playerlevel",
         "Modifier": 4,
@@ -869,8 +864,11 @@
       "Name": "Spruchrolle Feuerball",
       "Description": "",
       "ItemTypeEnum_ID": 18,
-      "Attack": {
-        //TODO: Effekt Schriftrolle Feuerball 
+      "WizardryTalentEnum_ID": 10,
+      "Wizardry": {
+        "Override": "Playerlevel",
+        "Modifier": 4,
+        "Affects": "Character"
       }
     },
     {
@@ -1075,11 +1073,11 @@
           "Count": 1,
           "Faces": 6
         },
-        "Modifier": "3",
+        "Modifier": 3,
         "Affects": "Item"
       },
       "Attack": {
-        "Modifier": "3",
+        "Modifier": 3,
         "Affects": "Item"
       }
     },
@@ -1093,11 +1091,11 @@
           "Count": 1,
           "Faces": 6
         },
-        "Modifier": "3",
+        "Modifier": 3,
         "Affects": "Item"        
       },
       "Attack": {
-        "Modifier": "3",
+        "Modifier": 3,
         "Affects": "Item"
       }
     },
@@ -1243,10 +1241,7 @@
       "Name": "Spruchrolle Diamantrüstung",
       "Description": "",
       "ItemTypeEnum_ID": 18,
-      "Talent": {
-        "Type": "Wonder",
-        "ID": 9
-      },
+      "WonderTalentEnum_ID": 9,
       "WonderLevel": {
         "Override": "Playerlevel",
         "Modifier": 6,
@@ -1258,8 +1253,11 @@
       "Name": "Spruchrolle Feuerball",
       "Description": "",
       "ItemTypeEnum_ID": 18,
-      "Attack": {
-        //TODO: Effekt Schriftrolle Feuerball 
+      "WizardryTalentEnum_ID": 10,
+      "Wizardry": {
+        "Override": "Playerlevel",
+        "Modifier": 6,
+        "Affects": "Character"
       }
     },
     {
@@ -1438,8 +1436,14 @@
       "ItemTypeEnum_ID": 18,
       "Exp": {
         "Modifier": 6,
-        "Affects": "Character"        
-      }      
-    }// Nächste freie ID: 119
+        "Affects": "Character"
+      }
+    },
+    {
+      "ID": 119,
+      "Name": "Sammlung",
+      "Description": "",
+      "Mechanism": "DouleLoot"
+    }
   ]
 }
