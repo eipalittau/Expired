@@ -1,5 +1,4 @@
 ﻿namespace RtD.Data {
-    //Tarik: Englische Namen prüfen
     public class WizardryTalentEnum : TalentEnumBase<WizardryTalentEnum> {
         #region Properties / Felder
         internal static WizardryTalentEnum None = new WizardryTalentEnum(0, nameof(None), string.Empty, 0);
@@ -11,7 +10,7 @@
         public static WizardryTalentEnum FitOfLaughter = new WizardryTalentEnum(6, "Lachanfall", "", 1);
         public static WizardryTalentEnum SpellFocus = new WizardryTalentEnum(7, "Zauberfokus", "", 1);
         public static WizardryTalentEnum MagicPower = new WizardryTalentEnum(8, "Zaubermacht", "", 1);
-        public static WizardryTalentEnum ColdIceBlow = new WizardryTalentEnum(9, "Kalter Eisschlag", "", 2, ActionTypeEnum.Move);
+        public static WizardryTalentEnum Icicle = new WizardryTalentEnum(9, "Eiszapfen", "", 2, ActionTypeEnum.Move);
         public static WizardryTalentEnum Fireball = new WizardryTalentEnum(10, "Feuerball", "", 2);
         public static WizardryTalentEnum HoldPerson = new WizardryTalentEnum(11, "Person Festhalten", "", 2);
         public static WizardryTalentEnum Metamagic = new WizardryTalentEnum(12, "Metamagie", "", 2);
