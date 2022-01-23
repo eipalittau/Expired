@@ -16,7 +16,7 @@
             : base(aID, aName, aDescription)
             => (Weight, Limit) = (aWeight, Full.Weight);
         #endregion
-        //TODO: Patrik: Methoden umsetzen.
+
         #region Methoden
         public static List<ActionTypeEnum> Enumerate() {
             return Enumerations.EnumerationBase.Enumerate<ActionTypeEnum>(DirectionEnum.ASC);

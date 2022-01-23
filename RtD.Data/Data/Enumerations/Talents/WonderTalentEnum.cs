@@ -1,6 +1,6 @@
 ﻿namespace RtD.Data {
     public class WonderTalentEnum : TalentEnumBase<WonderTalentEnum> {
-        //TODO: Patrik: Klasse ist nur kopiert!
+        //Patrik: Klasse ist nur kopiert!
         #region Properties / Felder
         internal static WonderTalentEnum None = new WonderTalentEnum(0, nameof(None), string.Empty, 0);
         public static WonderTalentEnum BattleHardened = new WonderTalentEnum(1, "Kampferprobt", "", 1);
@@ -38,7 +38,7 @@
         private WonderTalentEnum(byte aID, string aName, string aDescription, int aTier, ActionTypeEnum? aActionType, params WonderTalentEnum[]? aPrerequisite)
             : base(aID, aName, aDescription, aTier, aActionType, aPrerequisite) { }
         #endregion
-        //TODO: Patrik: Methoden umsetzen.
+
         #region Methoden
         public static List<WonderTalentEnum> Enumerate() {
             return Enumerations.EnumerationBase.Enumerate<WonderTalentEnum>(DirectionEnum.ASC);

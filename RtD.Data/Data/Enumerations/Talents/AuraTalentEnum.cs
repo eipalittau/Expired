@@ -1,6 +1,6 @@
 ﻿namespace RtD.Data {
     public class AuraTalentEnum : TalentEnumBase<AuraTalentEnum> {
-        //TODO: Patrik: Klasse ist nur kopiert!
+        //Patrik: Klasse ist nur kopiert!
         #region Properties / Felder
         internal static AuraTalentEnum None = new AuraTalentEnum(0, nameof(None), string.Empty, 0);
         public static AuraTalentEnum BattleHardened = new AuraTalentEnum(1, "Kampferprobt", "", 1);
@@ -38,7 +38,7 @@
         private AuraTalentEnum(byte aID, string aName, string aDescription, int aTier, ActionTypeEnum? aActionType, params AuraTalentEnum[]? aPrerequisite)
             : base(aID, aName, aDescription, aTier, aActionType, aPrerequisite) { }
         #endregion
-        //TODO: Patrik: Methoden umsetzen.
+
         #region Methoden
         public static List<AuraTalentEnum> Enumerate() {
             return Enumerations.EnumerationBase.Enumerate<AuraTalentEnum>(DirectionEnum.ASC);

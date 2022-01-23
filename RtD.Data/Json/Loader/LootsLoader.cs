@@ -72,7 +72,7 @@
                 }
             }
 
-            // TODO: Sprache laden
+            // Patrik: Sprache laden
 
             return lResult;
         }

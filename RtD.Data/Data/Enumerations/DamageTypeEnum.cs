@@ -11,7 +11,7 @@
         private DamageTypeEnum(byte aID, string aName, string aDescription)
             : base(aID, aName, aDescription) { }
         #endregion
-        //TODO: Patrik: Methoden umsetzen.
+
         #region Methoden
         public static List<DamageTypeEnum> Enumerate() {
             return Enumerations.EnumerationBase.Enumerate<DamageTypeEnum>(DirectionEnum.ASC);

@@ -37,7 +37,7 @@
         private OffensiveTalentsEnum(byte aID, string aName, string aDescription, int aTier, ActionTypeEnum? aActionType, params OffensiveTalentsEnum[]? aPrerequisite)
             : base(aID, aName, aDescription, aTier, aActionType, aPrerequisite) { }
         #endregion
-        //TODO: Patrik: Methoden umsetzen.
+
         #region Methoden
         public static List<OffensiveTalentsEnum> Enumerate() {
             return Enumerations.EnumerationBase.Enumerate<OffensiveTalentsEnum>(DirectionEnum.ASC);

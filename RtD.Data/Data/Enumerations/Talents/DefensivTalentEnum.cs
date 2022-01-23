@@ -32,7 +32,7 @@
         private DefensivTalentEnum(byte aID, string aName, string aDescription, int aTier, params DefensivTalentEnum[]? aPrerequisite)
             : base(aID, aName, aDescription, aTier, null, aPrerequisite) { }
         #endregion
-        //TODO: Patrik: Methoden umsetzen.
+
         #region Methoden
         public static List<DefensivTalentEnum> Enumerate() {
             return Enumerations.EnumerationBase.Enumerate<DefensivTalentEnum>(DirectionEnum.ASC);

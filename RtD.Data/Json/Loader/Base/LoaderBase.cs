@@ -1,5 +1,5 @@
 ﻿namespace RtD.Data.Json {
-    //TODO: Json als Property, nicht als Vererbung.
+    //Patrik: Json als Property, nicht als Vererbung.
     internal class LoaderBase<T> : Components.Filesystem.JsonBase<T> {
         #region Properties / Felder
         protected Main Parent { get; private set; }

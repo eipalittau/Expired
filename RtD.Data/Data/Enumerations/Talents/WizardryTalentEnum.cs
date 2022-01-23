@@ -33,7 +33,7 @@
         private WizardryTalentEnum(byte aID, string aName, string aDescription, int aTier, params WizardryTalentEnum[]? aPrerequisite)
             : base(aID, aName, aDescription, aTier, null, aPrerequisite) { }
         #endregion
-        //Patrik: Methoden umsetzen.
+
         #region Methoden
         public static List<WizardryTalentEnum> Enumerate() {
             return Enumerations.EnumerationBase.Enumerate<WizardryTalentEnum>(DirectionEnum.ASC);

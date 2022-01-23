@@ -28,7 +28,7 @@
                 }
             }
 
-            // TODO: Sprache laden
+            // Patrik: Sprache laden
             base.LoadData(aPathName, Constants.GetJsonFileName(0, base.Language));
 
             return lResult;
