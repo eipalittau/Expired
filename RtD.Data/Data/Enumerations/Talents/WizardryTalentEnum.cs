@@ -1,5 +1,5 @@
 ﻿namespace RtD.Data {
-    //TODO: Tarik: Englische Namen prüfen
+    //Tarik: Englische Namen prüfen
     public class WizardryTalentEnum : TalentEnumBase<WizardryTalentEnum> {
         #region Properties / Felder
         internal static WizardryTalentEnum None = new WizardryTalentEnum(0, nameof(None), string.Empty, 0);
@@ -33,7 +33,7 @@
         private WizardryTalentEnum(byte aID, string aName, string aDescription, int aTier, params WizardryTalentEnum[]? aPrerequisite)
             : base(aID, aName, aDescription, aTier, null, aPrerequisite) { }
         #endregion
-        //TODO: Patrik: Methoden umsetzen.
+        //Patrik: Methoden umsetzen.
         #region Methoden
         public static List<WizardryTalentEnum> Enumerate() {
             return Enumerations.EnumerationBase.Enumerate<WizardryTalentEnum>(DirectionEnum.ASC);
