@@ -1,42 +1,37 @@
 ﻿namespace RtD.Data {
-    //TODO: Patrik: Klasse ist nur kopiert!
+    //TODO: Tarik: Englische Namen prüfen
     public class WizardryTalentEnum : TalentEnumBase<WizardryTalentEnum> {
         #region Properties / Felder
         internal static WizardryTalentEnum None = new WizardryTalentEnum(0, nameof(None), string.Empty, 0);
-        public static WizardryTalentEnum BattleHardened = new WizardryTalentEnum(1, "Kampferprobt", "", 1);
-        public static WizardryTalentEnum Stonethrower = new WizardryTalentEnum(2, "Steinwerfer", "", 1, ActionTypeEnum.Standard);
-        public static WizardryTalentEnum EloquentInsulte = new WizardryTalentEnum(3, "Eloquent beleidigen", "", 1, ActionTypeEnum.Standard);
-        public static WizardryTalentEnum PreciseShot = new WizardryTalentEnum(4, "Präziser Schuss", "", 1);
-        public static WizardryTalentEnum SweepingBlow = new WizardryTalentEnum(5, "Rundumschlag", "", 1, ActionTypeEnum.Standard);
-        public static WizardryTalentEnum Charge = new WizardryTalentEnum(6, "CHARGE!", "", 1, ActionTypeEnum.Full);
-        public static WizardryTalentEnum Teamplayer = new WizardryTalentEnum(7, "Teamplayer", "", 1);
-        public static WizardryTalentEnum TwoWeapons = new WizardryTalentEnum(8, "Kampf mit zwei Waffen", "", 1);
-        public static WizardryTalentEnum StrongCharge = new WizardryTalentEnum(9, "CHAAAARGE!!!", "", 2, ActionTypeEnum.Full);
+        public static WizardryTalentEnum MagicWave = new WizardryTalentEnum(1, "Magische Welle", "", 1);
+        public static WizardryTalentEnum StinkyCloud = new WizardryTalentEnum(2, "Stinkende Wolke", "", 1);
+        public static WizardryTalentEnum Reflection = new WizardryTalentEnum(3, "Spiegelbild", "", 1);
+        public static WizardryTalentEnum Shield = new WizardryTalentEnum(4, "Schild", "", 1, ActionTypeEnum.Free);
+        public static WizardryTalentEnum Fright = new WizardryTalentEnum(5, "Schrek", "", 1);
+        public static WizardryTalentEnum FitOfLaughter = new WizardryTalentEnum(6, "Lachanfall", "", 1);
+        public static WizardryTalentEnum SpellFocus = new WizardryTalentEnum(7, "Zauberfokus", "", 1);
+        public static WizardryTalentEnum MagicPower = new WizardryTalentEnum(8, "Zaubermacht", "", 1);
+        public static WizardryTalentEnum ColdIceBlow = new WizardryTalentEnum(9, "Kalter Eisschlag", "", 2, ActionTypeEnum.Move);
         public static WizardryTalentEnum Fireball = new WizardryTalentEnum(10, "Feuerball", "", 2);
-        public static WizardryTalentEnum QuickMouth = new WizardryTalentEnum(11, "Schnelles Mundwerk", "", 2, ActionTypeEnum.Move, EloquentInsulte);
-        public static WizardryTalentEnum Guileful = new WizardryTalentEnum(12, "Hinterhältig", "", 2, ActionTypeEnum.Standard);
-        public static WizardryTalentEnum QuickShot = new WizardryTalentEnum(13, "Schnellschuss", "", 2);
-        public static WizardryTalentEnum Anatomy = new WizardryTalentEnum(14, "Anatomie", "", 2);
-        public static WizardryTalentEnum BetterTwoWeapons = new WizardryTalentEnum(15, "Besserer Kampf mit zwei Waffen", "", 2, TwoWeapons);
-        public static WizardryTalentEnum Riposte = new WizardryTalentEnum(16, "Riposte", "", 2);
-        public static WizardryTalentEnum ThornSkin = new WizardryTalentEnum(17, "Dornenhaut", "", 2);
-        public static WizardryTalentEnum Cthulhu = new WizardryTalentEnum(18, "Cthulhu", "", 3);
-        public static WizardryTalentEnum Chaos = new WizardryTalentEnum(19, "Chaos", "", 3);
-        public static WizardryTalentEnum Hades = new WizardryTalentEnum(20, "Hades", "", 3);
+        public static WizardryTalentEnum HoldPerson = new WizardryTalentEnum(11, "Person Festhalten", "", 2);
+        public static WizardryTalentEnum Metamagic = new WizardryTalentEnum(12, "Metamagie", "", 2);
+        public static WizardryTalentEnum ImprovedMagicWave = new WizardryTalentEnum(13, "Verbesserte Magische Welle", "", 2, MagicWave);
+        public static WizardryTalentEnum SpellFocus2 = new WizardryTalentEnum(14, "Zauberfokus++", "", 2, SpellFocus);
+        public static WizardryTalentEnum MagicPower2 = new WizardryTalentEnum(15, "Zaubermacht++", "", 2, MagicPower);
+        public static WizardryTalentEnum Chronos = new WizardryTalentEnum(16, "Chronos", "", 3);
+        public static WizardryTalentEnum Dionysos = new WizardryTalentEnum(17, "Dionysos", "", 3);
+        public static WizardryTalentEnum Thanos = new WizardryTalentEnum(18, "Thanos", "", 3);
         #endregion
 
         #region Konstruktor
         private WizardryTalentEnum(byte aID, string aName, string aDescription, int aTier)
-            : base(aID, aName, aDescription, aTier, null, null) { }
+            : base(aID, aName, aDescription, aTier, ActionTypeEnum.Standard, null) { }
 
         private WizardryTalentEnum(byte aID, string aName, string aDescription, int aTier, ActionTypeEnum? aActionType)
             : base(aID, aName, aDescription, aTier, aActionType, null) { }
 
         private WizardryTalentEnum(byte aID, string aName, string aDescription, int aTier, params WizardryTalentEnum[]? aPrerequisite)
             : base(aID, aName, aDescription, aTier, null, aPrerequisite) { }
-
-        private WizardryTalentEnum(byte aID, string aName, string aDescription, int aTier, ActionTypeEnum? aActionType, params WizardryTalentEnum[]? aPrerequisite)
-            : base(aID, aName, aDescription, aTier, aActionType, aPrerequisite) { }
         #endregion
         //TODO: Patrik: Methoden umsetzen.
         #region Methoden
