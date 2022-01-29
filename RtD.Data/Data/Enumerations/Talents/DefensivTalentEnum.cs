@@ -11,7 +11,7 @@
         public static DefensivTalentEnum Teamplayer = new DefensivTalentEnum(7, "Teamplayer", "", 1);
         public static DefensivTalentEnum Pindown = new DefensivTalentEnum(8, "Anpinnen", "", 1);
         public static DefensivTalentEnum Shadowy = new DefensivTalentEnum(9, "Schattenhaft", "", 2);
-        public static DefensivTalentEnum SecondWind  = new DefensivTalentEnum(10, "Zweiter Wind", "", 2);
+        public static DefensivTalentEnum SecondWind  = new DefensivTalentEnum(10, "Zweiter Wind", "", 2, ActionTypeEnum.Standard);
         public static DefensivTalentEnum Teamwork = new DefensivTalentEnum(11, "Teamwork", "", 2, Teamplayer);
         public static DefensivTalentEnum StoneSkin = new DefensivTalentEnum(12, "Steinhaut", "", 2);
         public static DefensivTalentEnum ImprovedDodge = new DefensivTalentEnum(13, "Verbessertes Ausweichen", "", 2, Dodge);
