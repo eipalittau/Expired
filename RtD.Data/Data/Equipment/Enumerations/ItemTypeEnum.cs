@@ -24,6 +24,11 @@
         public static ItemTypeEnum Bracers = new ItemTypeEnum(17, "Armschutz", "", EquipmentSlotEnum.WristLeft, EquipmentSlotEnum.WristRight);
         public static ItemTypeEnum Consumable = new ItemTypeEnum(18, "Konsumierbar", "", EquipmentSlotEnum.Bag);
 
+        internal static ItemTypeEnum[] Weapons = { Onehandweapon, Twohandweapon, Bow, Crossbow, Arrows, Bolts, Dagger };
+        internal static ItemTypeEnum[] Protection = { Armor, Boots, Shield, Bracers, Headgear };
+        internal static ItemTypeEnum[] Jewelry = { Ring, Amulet};
+        internal static ItemTypeEnum[] MagicAccessories = { Ring, Amulet, Cloak, Focus, Tome, Headgear, Bracers, Boots};
+        
         public List<EquipmentSlotEnum> EquipmentSlot { get; } = new List<EquipmentSlotEnum>();
         public ItemTypeEnum? Parent { get; private set; }
         #endregion
