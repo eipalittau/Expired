@@ -1,5 +1,5 @@
 ﻿namespace RtD.Data {
-    //Tarik: Available On Start: Liste der Items, welche am Startpunkt erhältlich sind.
+    //Tarik: Available On Start: Liste der Items, welche am Startpunkt erhältlich sind. (Items.json)
     public sealed class ItemData : DataBase {
         internal ItemData(Json.ItemJsonData aJsonData)
             : base(aJsonData.ID) {

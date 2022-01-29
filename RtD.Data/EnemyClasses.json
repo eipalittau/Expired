@@ -2,29 +2,27 @@
   "EnemyClasses": [
     {
       "ID": 0,
-      "Name": {
-        "ID": 1010000,
-        "Value": "Kämpfer"
-      },
-      "Description": {
-        "ID": 1010001,
-        "Value": ""
-      }
+      "Name": "Kämpfer",
+      "Description": "",
+      "Initiative": 100
     },
     {
       "ID": 1,
       "Name": "Kleriker",
-      "Description": ""
+      "Description": "",
+      "Initiative": 300
     },
     {
       "ID": 2,
       "Name": "Schurke",
-      "Description": ""
+      "Description": "",
+      "Initiative": 200
     },
     {
       "ID": 3,
       "Name": "Magier",
-      "Description": ""
+      "Description": "",
+      "Initiative": 400
     }
   ]
 }
