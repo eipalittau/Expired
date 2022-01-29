@@ -47,18 +47,18 @@
 
                     foreach (LootItemJsonData lSubJsonData in lJsonData.Items) {
                         if (base.Parent.Data.EnemyClasses == null || base.Parent.Data.Items == null) {
-                            Main.AddWarning(0004, lLootData.DiceResult.ToString(), base.FileName);
+                            Main.AddWarning(0004, lLootData.DiceResult.ToString(), base.FileNameData);
                         } else {
                             EnemyClassData? lEnemyClass = base.Parent.Data.EnemyClasses.FirstOrDefault(x => x.ID == lSubJsonData.EnemyClass_ID);
                             if (lEnemyClass == null) {
-                                Main.AddWarning(0003, nameof(lSubJsonData.EnemyClass_ID), lSubJsonData.EnemyClass_ID.ToString(), base.FileName);
+                                Main.AddWarning(0003, nameof(lSubJsonData.EnemyClass_ID), lSubJsonData.EnemyClass_ID.ToString(), base.FileNameData);
                                 continue;
                                 
                             }
 
                             ItemData? lItem = base.Parent.Data.Items.FirstOrDefault(x => x.ID == lSubJsonData.Item_ID);
                             if (lItem == null) {
-                                Main.AddWarning(0003, nameof(lSubJsonData.Item_ID), lSubJsonData.Item_ID.ToString(), base.FileName);
+                                Main.AddWarning(0003, nameof(lSubJsonData.Item_ID), lSubJsonData.Item_ID.ToString(), base.FileNameData);
                                 continue;
                             }
 

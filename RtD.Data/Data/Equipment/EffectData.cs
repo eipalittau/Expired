@@ -1,5 +1,5 @@
 ﻿namespace RtD.Data {
-    // TODO: Wenn Dice == null -> Modifier ist allgemein, sonst nur auf Item
+    //Achtung: Wenn Dice == null -> Modifier ist allgemein, sonst nur auf Item
     public sealed class EffectData {
         internal EffectData(Json.ArmorClassJsonData aJsonData) {
             Modifier = aJsonData.Modifier;

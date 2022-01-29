@@ -4,26 +4,26 @@ using System.Text;
 namespace RtD.Components.Filesystem {
     public class JsonHandler<T> {
         #region Properties / Felder
-        internal T? Json { get; private set; } = default;
-        internal bool IsLoaded {
+        public T? Json { get; private set; } = default;
+        public bool IsLoaded {
             get {
                 return Json != null;
             }
         }
-        internal FileInfo? PathFile { get; private set; }
+        public FileInfo? PathFile { get; private set; }
         #endregion
 
         #region Konstruktor
-        internal JsonHandler() { }
+        public JsonHandler() { }
         #endregion
 
         #region Methoden
         #region LoadJson
-        internal void LoadJson(FileInfo aPathFile) {
+        public void LoadJson(FileInfo aPathFile) {
             LoadJson(aPathFile, false);
         }
 
-        internal void LoadJson(FileInfo aPathFile, bool aReload) {
+        public void LoadJson(FileInfo aPathFile, bool aReload) {
             if (aPathFile.Exists) {
                 PathFile = aPathFile;
 
@@ -37,31 +37,31 @@ namespace RtD.Components.Filesystem {
             }
         }
 
-        internal void LoadJson(byte[] aJson) {
+        public void LoadJson(byte[] aJson) {
             LoadJson(aJson, false);
         }
 
-        internal void LoadJson(byte[] aJson, bool aReload) {
+        public void LoadJson(byte[] aJson, bool aReload) {
             LoadJson(Encoding.Default.GetString(aJson), aReload);
         }
 
-        internal void LoadJson(string aJson) {
+        public void LoadJson(string aJson) {
             LoadJson(aJson, false);
         }
 
-        internal void LoadJson(string aJson, bool aReload) {
+        public void LoadJson(string aJson, bool aReload) {
             try {
                 if (Json == null || aReload) {
                     Json = JsonConvert.DeserializeObject<T>(aJson);
                 }
 
             } catch (System.Exception aEx) {
-                throw new Exceptions.Json.WrongJsonFormatException(aEx, GetArgument());
+                throw new Exceptions.Json.WrongJsonFormatException(aEx, GetArgument<T>());
             }
         }
         #endregion
 
-        private static string GetArgument() {
+        private static string GetArgument<T>() {
             Type? lDeclaringType = typeof(T).DeclaringType;
 
             return lDeclaringType == null ? typeof(T).Name : lDeclaringType.Name;

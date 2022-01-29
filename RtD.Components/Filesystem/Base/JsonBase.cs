@@ -5,10 +5,10 @@ namespace RtD.Components.Filesystem {
     public abstract class JsonBase<T> {
         #region Properties / Felder
         protected T? Json { get; private set; } = default;
-        protected bool IsLoaded { 
+        protected bool IsLoaded {
             get {
                 return Json != null;
-            } 
+            }
         }
         protected FileInfo? PathFile { get; private set; }
         #endregion

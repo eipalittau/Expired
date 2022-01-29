@@ -17,7 +17,7 @@
             if (base.Json == null) {
                 throw new Exceptions.MissingDataException();
             } else {
-                IEnumerable<EnemyClassJsonData> lData = base.RemoveEmpty(base.Json.Data);
+                IEnumerable<EnemyClassJsonData> lData = base.RemoveEmpty(base.Json.Json.DataList);
                 uint lSortOrder = 0;
 
                 base.Check4Dublicates(lData);
@@ -37,7 +37,7 @@
 
         #region Verschachtete Klassen
         public class JsonData {
-            public List<EnemyClassJsonData> Data { get; } = new();
+            public List<EnemyClassJsonData> DataList { get; } = new();
         }
         #endregion
     }
