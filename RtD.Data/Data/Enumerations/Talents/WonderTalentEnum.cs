@@ -1,13 +1,12 @@
 ﻿namespace RtD.Data {
     public class WonderTalentEnum : TalentEnumBase<WonderTalentEnum> {
-        //Tarik: Englische Übersetzung prüfen.
         #region Properties / Felder
         internal static WonderTalentEnum None = new WonderTalentEnum(0, nameof(None), string.Empty, 0);
         public static WonderTalentEnum IceArmor = new WonderTalentEnum(1, "Eisrüstung", "", 1);
         public static WonderTalentEnum MagicWeapon = new WonderTalentEnum(2, "Magische Waffe", "", 1, ActionTypeEnum.Standard);
         public static WonderTalentEnum MiracleDoll = new WonderTalentEnum(3, "Wunderpuppe", "", 1, ActionTypeEnum.Standard);
         public static WonderTalentEnum ThingT = new WonderTalentEnum(4, "Eiskaltes Händchen", "", 1, ActionTypeEnum.Standard); //Englische Übersetzung aus "Addams Family"
-        public static WonderTalentEnum Rush = new WonderTalentEnum(5, "Hast", "", 1, ActionTypeEnum.Standard);
+        public static WonderTalentEnum Haste = new WonderTalentEnum(5, "Hast", "", 1, ActionTypeEnum.Standard);
         public static WonderTalentEnum Lubricate = new WonderTalentEnum(6, "Schmieren", "", 1, ActionTypeEnum.Standard);
         public static WonderTalentEnum MiracleFocus = new WonderTalentEnum(7, "Wunderfokus", "", 1);
         public static WonderTalentEnum MiraculousPower = new WonderTalentEnum(8, "Wundermacht", "", 1);

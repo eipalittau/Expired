@@ -1,6 +1,6 @@
 ﻿namespace RtD.Data {
     public class AuraTalentEnum : TalentEnumBase<AuraTalentEnum> {
-        //Tarik: Englische Übersetzung prüfen.
+
         #region Properties / Felder
         internal static AuraTalentEnum None = new AuraTalentEnum(0, nameof(None), string.Empty, 0);
         public static AuraTalentEnum Fencer = new AuraTalentEnum(1, "Aura des Fechters", "", 1);
@@ -13,7 +13,7 @@
         public static AuraTalentEnum EnhancedAura = new AuraTalentEnum(8, "Verstärkte Aura", "", 1);
         public static AuraTalentEnum Flatulence = new AuraTalentEnum(9, "Blähungen", "", 1);
         public static AuraTalentEnum BrokenWingsGambit = new AuraTalentEnum(10, "Gambit der gebrochenen Flügel", "", 1, ActionTypeEnum.Free);
-        public static AuraTalentEnum Skillful = new AuraTalentEnum(11, "Geschickt", "", 1);
+        public static AuraTalentEnum Agile = new AuraTalentEnum(11, "Geschickt", "", 1);
         public static AuraTalentEnum Coordinated = new AuraTalentEnum(12, "Koordiniert", "", 1);
         public static AuraTalentEnum LoveAndPieces = new AuraTalentEnum(13, "Love and Pieces", "", 1, ActionTypeEnum.Move);
         public static AuraTalentEnum Sadist = new AuraTalentEnum(14, "Sadist", "", 1);
