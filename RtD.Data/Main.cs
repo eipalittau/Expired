@@ -2,6 +2,7 @@
     public sealed class Main : Components.MessageBase {
         #region Properties / Felder
         internal GameData Data { get; } = new();
+        internal List<CharacterSheet> CharacterSheetList { get; } = new();
 
         private static readonly List<Components.EventArgs.MessageEventArgs> mNotifications = new();
         #endregion
@@ -17,6 +18,8 @@
                 Data.ItemQualities = new Json.ItemQualitiesLoader(this, aLanguage).LoadData(aPathName);
                 Data.Items = new Json.ItemsLoader(this, aLanguage).LoadData(aPathName);
                 Data.Loots = new Json.LootsLoader(this, aLanguage).LoadData(aPathName);
+                Data.PlayerClass = new Json.PlayerClassesLoader(this, aLanguage).LoadData(aPathName);
+                Data.LevelUp = new Json.LevelUpLoader(this, aLanguage).LoadData(aPathName);
 
             } catch (Exceptions.ExceptionBase aEx) {
                 mNotifications.Add(new Components.EventArgs.MessageEventArgs(aEx));
@@ -32,6 +35,11 @@
             }
             
             return Data;
+        }
+
+        public CharacterSheet CreateNewCharacter(PlayerClassData aPlayerClass) {
+            CharacterSheetList.Add(new CharacterSheet())
+            CharacterSheet
         }
 
         #region Notifications

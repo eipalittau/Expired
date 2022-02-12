@@ -1,0 +1,15 @@
+{
+  "LevelUp": [
+    {
+      "Attribute": {
+        "Modifier": 1
+      },
+      "Skill": {
+        "Modifier": 1
+      },
+      "Health": {
+        "Modifier": 4
+      }
+    }
+  ]
+}

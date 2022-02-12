@@ -1,5 +1,5 @@
 ﻿namespace RtD.Data.Json {
-    internal sealed class ItemsLoader : LoaderBase<ItemsLoader.JsonData> {
+    internal sealed class ItemsLoader : LoaderBase<ItemJsonData> {
         #region Konstruktor
         public ItemsLoader(Main aParent, Enumerations.LanguageEnum aLanguage)
             : base(aParent, aLanguage) { }
@@ -9,31 +9,19 @@
         public List<ItemData> LoadData(string aPathName) {
             List<ItemData> lResult = new();
 
-            base.LoadData(aPathName, Constants.GetJsonFileName(2));
+            base.LoadData(aPathName, 2);
+            base.RemoveEmpty();
+            base.Check4Dublicates();
 
-            if (base.Json == null) {
-                throw new Exceptions.MissingDataException();
-            } else {
-                IEnumerable<ItemJsonData> lData = base.RemoveEmpty(base.Json.Data);
-
-                base.Check4Dublicates(lData);
-
-                foreach (ItemJsonData lJsonData in lData
-                    .OrderBy(x => x.ItemTypeEnum_ID)
-                    .ThenBy(x => x.Name)) {
-                    lResult.Add(new ItemData(lJsonData));
-                }
+            foreach (ItemJsonData lJsonData in base.JsonData
+                .OrderBy(x => x.ItemTypeEnum_ID)
+                .ThenBy(x => x.Name)) {
+                lResult.Add(new ItemData(lJsonData));
             }
 
             // Patrik: Sprache laden
 
             return lResult;
-        }
-        #endregion
-
-        #region Verschachtete Klassen
-        public class JsonData {
-            public List<ItemJsonData> Data { get; } = new();
         }
         #endregion
     }

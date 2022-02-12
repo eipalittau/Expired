@@ -1,6 +1,6 @@
 ﻿namespace RtD.Data {
     public sealed class ItemQualityData : DataBase {
-        internal ItemQualityData(Json.ItemQualitiesJsonData aJsonData, uint aSortOrder)
+        internal ItemQualityData(Json.ItemQualityJsonData aJsonData, uint aSortOrder)
             : base(aJsonData.ID, aJsonData.Name, aJsonData.Description, aSortOrder) {
             CanBeDestroyed = aJsonData.CanBeDestroyed;
             IsDefault = aJsonData.IsDefault;

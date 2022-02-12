@@ -1,4 +1,4 @@
 ﻿namespace RtD.Data {
-    internal interface ITalent {
+    public interface ITalent {
     }
 }
