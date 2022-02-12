@@ -19,10 +19,10 @@
             }
         }
 
-        public ItemTypeEnum ItemType { get; set; }
-        public EffectData? ArmorClass { get; set; }
-        public EffectData? Damage { get; set; }
-        public EffectData? Attack { get; set; }
-        public EffectData? Mana { get; set; }
+        public ItemTypeEnum ItemType { get; private set; }
+        public EffectData? ArmorClass { get; private set; }
+        public EffectData? Damage { get; private set; }
+        public EffectData? Attack { get; private set; }
+        public EffectData? Mana { get; private set; }
     }
 }

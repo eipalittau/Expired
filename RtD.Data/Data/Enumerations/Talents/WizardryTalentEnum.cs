@@ -1,5 +1,5 @@
 ﻿namespace RtD.Data {
-    public class WizardryTalentEnum : TalentEnumBase<WizardryTalentEnum> {
+    public class WizardryTalentEnum : TalentEnumBase<WizardryTalentEnum>, ITalent {
         #region Properties / Felder
         internal static WizardryTalentEnum None = new WizardryTalentEnum(0, nameof(None), string.Empty, 0);
         public static WizardryTalentEnum MagicWave = new WizardryTalentEnum(1, "Magische Welle", "", 1, ActionTypeEnum.Standard);

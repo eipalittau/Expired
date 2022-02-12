@@ -1,5 +1,5 @@
 ﻿namespace RtD.Data {
-    public class WonderTalentEnum : TalentEnumBase<WonderTalentEnum> {
+    public class WonderTalentEnum : TalentEnumBase<WonderTalentEnum>, ITalent {
         #region Properties / Felder
         internal static WonderTalentEnum None = new WonderTalentEnum(0, nameof(None), string.Empty, 0);
         public static WonderTalentEnum IceArmor = new WonderTalentEnum(1, "Eisrüstung", "", 1);

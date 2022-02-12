@@ -25,6 +25,8 @@
         public static ItemTypeEnum Consumable = new ItemTypeEnum(18, "Konsumierbar", "", EquipmentSlotEnum.Bag);
 
         internal static ItemTypeEnum[] Weapons = { Onehandweapon, Twohandweapon, Bow, Crossbow, Arrows, Bolts, Dagger };
+        internal static ItemTypeEnum[] MeleeWeapons = { Onehandweapon, Twohandweapon };
+        internal static ItemTypeEnum[] RangedWeapons = { Bow, Crossbow };
         internal static ItemTypeEnum[] Protection = { Armor, Boots, Shield, Bracers, Headgear };
         internal static ItemTypeEnum[] Jewelry = { Ring, Amulet};
         internal static ItemTypeEnum[] MagicAccessories = { Ring, Amulet, Cloak, Focus, Tome, Headgear, Bracers, Boots};

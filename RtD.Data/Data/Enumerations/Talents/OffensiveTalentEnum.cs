@@ -1,5 +1,5 @@
 ﻿namespace RtD.Data {
-    public class OffensiveTalentsEnum : TalentEnumBase<OffensiveTalentsEnum> {
+    public class OffensiveTalentsEnum : TalentEnumBase<OffensiveTalentsEnum>, ITalent {
         #region Properties / Felder
         internal static OffensiveTalentsEnum None = new OffensiveTalentsEnum(0, nameof(None), string.Empty, 0);
         public static OffensiveTalentsEnum BattleHardened  = new OffensiveTalentsEnum(1, "Kampferprobt", "", 1);

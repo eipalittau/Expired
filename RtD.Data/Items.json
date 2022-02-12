@@ -518,7 +518,6 @@
         "Affects": "Character"
       },
       "Heal": {
-        //TODO: +1 Selbstheilung für Wunder
         "Modifier": 1,
         "Affects": "Character"
       }
@@ -533,8 +532,9 @@
         "Affects": "Character"
       },
       "Damage": {
-        //TODO: +1 Schaden pro Würfel
-        "Modifier": 1,
+        "Dice": {
+          "Modifier": 1
+        },
         "Affects": "Character"
       }
     },
@@ -1510,7 +1510,7 @@
         "Modifier": 1,
         "Affects": "Character"
       },
-      "AlwaysAvailable" : true
+      "AlwaysAvailable": true
     }
   ]
 }

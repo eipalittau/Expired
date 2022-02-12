@@ -1,5 +1,5 @@
 ﻿namespace RtD.Data {
-    public class AuraTalentEnum : TalentEnumBase<AuraTalentEnum> {
+    public class AuraTalentEnum : TalentEnumBase<AuraTalentEnum>, ITalent {
 
         #region Properties / Felder
         internal static AuraTalentEnum None = new AuraTalentEnum(0, nameof(None), string.Empty, 0);

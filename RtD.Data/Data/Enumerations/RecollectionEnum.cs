@@ -45,7 +45,7 @@
         public static RecollectionEnum Recollection38 = new RecollectionEnum(38, "- Frei erzählen -", "", 98, 98);
         public static RecollectionEnum Recollection39 = new RecollectionEnum(39, "Kalender verloren", "", 99, 99);
         public static RecollectionEnum Recollection40 = new RecollectionEnum(40, "Geistesblitz", "", 100, 100);
-        public static RecollectionEnum Recollection41 = new RecollectionEnum(41, "Jemand hat mal gesagt du bist cool", "", 100, 200);
+        public static RecollectionEnum Recollection41 = new RecollectionEnum(41, "Jemand hat mal gesagt du bist cool", "", 100, int.MaxValue);
 
 
         public int DiceStart { get; }
@@ -79,6 +79,24 @@
 
         public static RecollectionEnum Convert(string? aName) {
             return Enumerations.EnumerationBase.Convert<RecollectionEnum>(aName ?? string.Empty, None);
+        }
+
+        public static bool IsBetween(int aValue) {
+            return Get(aValue) != null;
+        }
+
+        public static RecollectionEnum? Get(int aValue) {
+            RecollectionEnum? lResult = RecollectionEnum.Enumerate()
+                .Where(x => x.GetType().IsPublic)
+                .Where(x => aValue >= x.DiceStart)
+                .Where(x => aValue <= x.DiceEnd)
+                .FirstOrDefault();
+
+            if (lResult == null) {
+                return null;
+            } else {
+                return lResult;
+            }
         }
         #endregion
     }
