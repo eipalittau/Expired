@@ -223,7 +223,7 @@
       "ItemTypeEnum_ID": 15,
       "Attack": {
         "Modifier": 1,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -233,7 +233,7 @@
       "ItemTypeEnum_ID": 15,
       "SaveingThrow": {
         "Modifier": 1,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -243,7 +243,7 @@
       "ItemTypeEnum_ID": 15,
       "Mana": {
         "Modifier": 1,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -253,7 +253,7 @@
       "ItemTypeEnum_ID": 15,
       "Attack": {
         "Modifier": 1,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -263,7 +263,7 @@
       "ItemTypeEnum_ID": 15,
       "Mana": {
         "Modifier": 1,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -273,7 +273,7 @@
       "ItemTypeEnum_ID": 18,
       "Memory": {
         "Modifier": 1,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -283,7 +283,7 @@
       "ItemTypeEnum_ID": 18,
       "Exp": {
         "Modifier": 1,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -293,7 +293,7 @@
       "ItemTypeEnum_ID": 1,
       "ArmorClass": {
         "Modifier": 7,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -303,7 +303,7 @@
       "ItemTypeEnum_ID": 1,
       "ArmorClass": {
         "Modifier": 5,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -313,7 +313,7 @@
       "ItemTypeEnum_ID": 1,
       "ArmorClass": {
         "Modifier": 3,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -359,7 +359,7 @@
       "ItemTypeEnum_ID": 11,
       "Mana": {
         "Modifier": 2,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -369,7 +369,7 @@
       "ItemTypeEnum_ID": 10,
       "ArmorClass": {
         "Modifier": 3,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -379,7 +379,7 @@
       "ItemTypeEnum_ID": 9,
       "Attack": {
         "Modifier": 3,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -389,7 +389,7 @@
       "ItemTypeEnum_ID": 11,
       "WonderLevel": {
         "Modifier": 2,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -545,11 +545,11 @@
       "ItemTypeEnum_ID": 15,
       "Attack": {
         "Modifier": 1,
-        "Affects": "Character"        
+        "Affects": "Character"
       },
       "Damage": {
         "Modifier": 1,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -559,11 +559,11 @@
       "ItemTypeEnum_ID": 15,
       "SavingThrow": {
         "Modifier": 1,
-        "Affects": "Character"        
+        "Affects": "Character"
       },
       "Health": {
         "Modifier": 1,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -573,7 +573,7 @@
       "ItemTypeEnum_ID": 15,
       "WonderLevel": {
         "Modifier": 1,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -583,7 +583,7 @@
       "ItemTypeEnum_ID": 15,
       "Wizardry": {
         "Modifier": 1,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -593,11 +593,11 @@
       "ItemTypeEnum_ID": 15,
       "Attack": {
         "Modifier": 1,
-        "Affects": "Character"        
+        "Affects": "Character"
       },
       "Damage": {
         "Modifier": 1,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -607,7 +607,7 @@
       "ItemTypeEnum_ID": 15,
       "WonderLevel": {
         "Modifier": 1,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -617,7 +617,7 @@
       "ItemTypeEnum_ID": 15,
       "Wizardry": {
         "Modifier": 1,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -627,11 +627,11 @@
       "ItemTypeEnum_ID": 18,
       "Memory": {
         "Modifier": 1,
-        "Affects": "Character"        
+        "Affects": "Character"
       },
       "Bonus": {
         "Modifier": 2,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -641,7 +641,7 @@
       "ItemTypeEnum_ID": 18,
       "Exp": {
         "Modifier": 2,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -651,7 +651,7 @@
       "ItemTypeEnum_ID": 1,
       "ArmorClass": {
         "Modifier": 8,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -661,7 +661,7 @@
       "ItemTypeEnum_ID": 1,
       "ArmorClass": {
         "Modifier": 6,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -671,7 +671,7 @@
       "ItemTypeEnum_ID": 1,
       "ArmorClass": {
         "Modifier": 4,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -685,11 +685,11 @@
           "Faces": 6
         },
         "Modifier": 2,
-        "Affects": "Character"        
+        "Affects": "Character"
       },
       "Attack": {
         "Modifier": 2,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -703,11 +703,11 @@
           "Faces": 6
         },
         "Modifier": 2,
-        "Affects": "Character"        
+        "Affects": "Character"
       },
       "Attack": {
         "Modifier": 2,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -717,7 +717,7 @@
       "ItemTypeEnum_ID": 11,
       "Mana": {
         "Modifier": 3,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -727,7 +727,7 @@
       "ItemTypeEnum_ID": 10,
       "ArmorClass": {
         "Modifier": 4,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -737,7 +737,7 @@
       "ItemTypeEnum_ID": 9,
       "Attack": {
         "Modifier": 4,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -747,7 +747,7 @@
       "ItemTypeEnum_ID": 11,
       "WonderLevel": {
         "Modifier": 3,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -922,11 +922,11 @@
       "ItemTypeEnum_ID": 15,
       "Attack": {
         "Modifier": 2,
-        "Affects": "Character"        
+        "Affects": "Character"
       },
       "Damage": {
         "Modifier": 2,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -936,11 +936,11 @@
       "ItemTypeEnum_ID": 15,
       "SavingThrow": {
         "Modifier": 2,
-        "Affects": "Character"        
+        "Affects": "Character"
       },
       "Health": {
         "Modifier": 2,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -950,7 +950,7 @@
       "ItemTypeEnum_ID": 15,
       "WonderLevel": {
         "Modifier": 2,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -960,7 +960,7 @@
       "ItemTypeEnum_ID": 15,
       "Wizardry": {
         "Modifier": 2,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -970,7 +970,7 @@
       "ItemTypeEnum_ID": 15,
       "Attack": {
         "Modifier": 1,
-        "Affects": "Character"        
+        "Affects": "Character"
       },
       "Damage": {
         "Modifier": 1,
@@ -1016,11 +1016,11 @@
       "ItemTypeEnum_ID": 18,
       "Memory": {
         "Modifier": 1,
-        "Affects": "Character"        
+        "Affects": "Character"
       },
       "Bonus": {
         "Modifier": 4,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -1030,7 +1030,7 @@
       "ItemTypeEnum_ID": 18,
       "Exp": {
         "Modifier": 3,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -1040,7 +1040,7 @@
       "ItemTypeEnum_ID": 1,
       "ArmorClass": {
         "Modifier": 9,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -1050,7 +1050,7 @@
       "ItemTypeEnum_ID": 1,
       "ArmorClass": {
         "Modifier": 7,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -1060,7 +1060,7 @@
       "ItemTypeEnum_ID": 1,
       "ArmorClass": {
         "Modifier": 5,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -1092,7 +1092,7 @@
           "Faces": 6
         },
         "Modifier": 3,
-        "Affects": "Item"        
+        "Affects": "Item"
       },
       "Attack": {
         "Modifier": 3,
@@ -1106,7 +1106,7 @@
       "ItemTypeEnum_ID": 11,
       "Mana": {
         "Modifier": 4,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -1116,7 +1116,7 @@
       "ItemTypeEnum_ID": 10,
       "ArmorClass": {
         "Modifier": 5,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -1126,7 +1126,7 @@
       "ItemTypeEnum_ID": 9,
       "Attack": {
         "Modifier": 5,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -1136,7 +1136,7 @@
       "ItemTypeEnum_ID": 11,
       "WonderLevel": {
         "Modifier": 4,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -1327,11 +1327,11 @@
       "ItemTypeEnum_ID": 15,
       "Attack": {
         "Modifier": 3,
-        "Affects": "Character"        
+        "Affects": "Character"
       },
       "Damage": {
         "Modifier": 3,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -1342,11 +1342,11 @@
       "SavingThrow": {
         "Modifier": 3,
         "Affects": "Character"
-        
+
       },
       "Health": {
         "Modifier": 3,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -1356,7 +1356,7 @@
       "ItemTypeEnum_ID": 15,
       "WonderLevel": {
         "Modifier": 3,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -1366,7 +1366,7 @@
       "ItemTypeEnum_ID": 15,
       "Wizardry": {
         "Modifier": 3,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -1376,7 +1376,7 @@
       "ItemTypeEnum_ID": 15,
       "Attack": {
         "Modifier": 2,
-        "Affects": "Character"        
+        "Affects": "Character"
       },
       "Damage": {
         "Modifier": 2,
@@ -1394,7 +1394,7 @@
       "ItemTypeEnum_ID": 15,
       "WonderLevel": {
         "Modifier": 2,
-        "Affects": "Character"        
+        "Affects": "Character"
       },
       "ArmorClass": {
         "Modifier": 2,
@@ -1408,7 +1408,7 @@
       "ItemTypeEnum_ID": 15,
       "Wizardry": {
         "Modifier": 2,
-        "Affects": "Character"        
+        "Affects": "Character"
       },
       "ArmorClass": {
         "Modifier": 2,
@@ -1422,11 +1422,11 @@
       "ItemTypeEnum_ID": 18,
       "Memory": {
         "Modifier": 2,
-        "Affects": "Character"        
+        "Affects": "Character"
       },
       "Bonus": {
         "Modifier": 4,
-        "Affects": "Character"        
+        "Affects": "Character"
       }
     },
     {
@@ -1444,6 +1444,73 @@
       "Name": "Sammlung",
       "Description": "",
       "Mechanism": "DouleLoot"
+    },
+    {
+      "ID": 120,
+      "Name": "Fetzen",
+      "Description": "",
+      "ItemTypeEnum_ID": 1,
+      "ArmorClass": {
+        "Modifier": 3,
+        "Affects": "Character"
+      },
+      "AlwaysAvailable": true
+    },
+    {
+      "ID": 121,
+      "Name": "Schimmlige Stiefel",
+      "Description": "",
+      "ItemTypeEnum_ID": 2,
+      "AlwaysAvailable": true
+    },
+    {
+      "ID": 122,
+      "Name": "Knüppel",
+      "Description": "",
+      "ItemTypeEnum_ID": 3,
+      "Damage": {
+        "Dice": {
+          "Count": 1,
+          "Faces": 6
+        },
+        "Modifier": -1,
+        "Affects": "Item"
+      },
+      "Attack": {
+        "Modifier": -1,
+        "Affects": "Item"
+      },
+      "AlwaysAvailable": true
+    },
+    {
+      "ID": 123,
+      "Name": "Alter Bogen",
+      "Description": "",
+      "ItemTypeEnum_ID": 5,
+      "Damage": {
+        "Dice": {
+          "Count": 1,
+          "Faces": 6
+        },
+        "Modifier": -1,
+        "Affects": "Item"
+      },
+      "Attack": {
+        "Modifier": -1,
+        "Affects": "Item"
+      },
+      "AlwaysAvailable": true
+    },
+    {
+      "ID": 124,
+      "Name": "Zersplitterter Schild",
+      "Description": "",
+      "ItemTypeEnum_ID": 10,
+      "ArmorClass": {
+        "Modifier": 1,
+        "Affects": "Character"
+      },
+      "AlwaysAvailable" : true
     }
   ]
 }

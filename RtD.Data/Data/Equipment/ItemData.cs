@@ -1,5 +1,5 @@
 ﻿namespace RtD.Data {
-    //Tarik: Available On Start: Liste der Items, welche am Startpunkt erhältlich sind. (Items.json)
+    //Patrik: Neues Property: AlwaysAvailable 
     public sealed class ItemData : DataBase {
         internal ItemData(Json.ItemJsonData aJsonData)
             : base(aJsonData.ID) {
