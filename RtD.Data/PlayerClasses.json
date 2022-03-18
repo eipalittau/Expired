@@ -55,7 +55,7 @@
       "Name": "Lich",
       "Description": "",
       "CharacterName": "Jacqueline",
-      "Wizardry": {
+      "WizardryLevel": {
         "Modifier": 1,
         "Affects": "Character"
       },

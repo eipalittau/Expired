@@ -18,8 +18,8 @@
                 Data.ItemQualities = new Json.ItemQualitiesLoader(this, aLanguage).LoadData(aPathName);
                 Data.Items = new Json.ItemsLoader(this, aLanguage).LoadData(aPathName);
                 Data.Loots = new Json.LootsLoader(this, aLanguage).LoadData(aPathName);
-                Data.PlayerClass = new Json.PlayerClassesLoader(this, aLanguage).LoadData(aPathName);
-                Data.LevelUp = new Json.LevelUpLoader(this, aLanguage).LoadData(aPathName);
+                Data.PlayerClasses = new Json.PlayerClassesLoader(this, aLanguage).LoadData(aPathName);
+                Data.LevelUps = new Json.LevelUpLoader(this, aLanguage).LoadData(aPathName);
 
             } catch (Exceptions.ExceptionBase aEx) {
                 mNotifications.Add(new Components.EventArgs.MessageEventArgs(aEx));

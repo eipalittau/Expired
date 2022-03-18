@@ -30,7 +30,7 @@
         protected static List<T> Enumerate<T>(DirectionEnum aDirection) where T : EnumerationBase {
             List<T> lList = new();
 
-            foreach (var lItem in typeof(T).GetFields().Where(x => x.IsStatic).Where(x => x.IsPublic) {
+            foreach (var lItem in typeof(T).GetFields().Where(x => x.IsStatic).Where(x => x.IsPublic)) {
                 T? lValue = (T?)lItem.GetValue(null);
                 if (lValue != null) {
                     lList.Add(lValue);

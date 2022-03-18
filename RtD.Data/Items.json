@@ -119,7 +119,7 @@
       "Name": "Zauberbuch des Novizen",
       "Description": "",
       "ItemTypeEnum_ID": 12,
-      "Wizardry": {
+      "WizardryLevel": {
         "Modifier": 1,
         "Affects": "Character"
       }
@@ -191,7 +191,7 @@
       "Description": "",
       "ItemTypeEnum_ID": 18,
       "WizardryTalentEnum_ID": 10,
-      "Wizardry": {
+      "WizardryLevel": {
         "Override": "Playerlevel",
         "Affects": "Character"
       }
@@ -397,7 +397,7 @@
       "Name": "Zauberbuch des Adepten",
       "Description": "",
       "ItemTypeEnum_ID": 12,
-      "Wizardry": {
+      "WizardryLevel": {
         "Modifier": 2,
         "Affects": "Character"
       }
@@ -445,7 +445,7 @@
       "Name": "Ring des Magiers",
       "Description": "",
       "ItemTypeEnum_ID": 13,
-      "Wizardry": {
+      "WizardryLevel": {
         "Modifier": 1,
         "Affects": "Character"
       }
@@ -488,7 +488,7 @@
       "Description": "",
       "ItemTypeEnum_ID": 18,
       "WizardryTalentEnum_ID": 10,
-      "Wizardry": {
+      "WizardryLevel": {
         "Override": "Playerlevel",
         "Modifier": 2,
         "Affects": "Character"
@@ -581,7 +581,7 @@
       "Name": "Umhang des Magiers",
       "Description": "",
       "ItemTypeEnum_ID": 15,
-      "Wizardry": {
+      "WizardryLevel": {
         "Modifier": 1,
         "Affects": "Character"
       }
@@ -615,7 +615,7 @@
       "Name": "Stirnreif des Magiers",
       "Description": "",
       "ItemTypeEnum_ID": 15,
-      "Wizardry": {
+      "WizardryLevel": {
         "Modifier": 1,
         "Affects": "Character"
       }
@@ -755,7 +755,7 @@
       "Name": "Zauberbuch des Magiers",
       "Description": "",
       "ItemTypeEnum_ID": 12,
-      "Wizardry": {
+      "WizardryLevel": {
         "Modifier": 3,
         "Affects": "Character"
       }
@@ -817,7 +817,7 @@
       "Name": "Ring des Magiers",
       "Description": "",
       "ItemTypeEnum_ID": 13,
-      "Wizardry": {
+      "WizardryLevel": {
         "Modifier": 1,
         "Affects": "Character"
       },
@@ -865,7 +865,7 @@
       "Description": "",
       "ItemTypeEnum_ID": 18,
       "WizardryTalentEnum_ID": 10,
-      "Wizardry": {
+      "WizardryLevel": {
         "Override": "Playerlevel",
         "Modifier": 4,
         "Affects": "Character"
@@ -905,7 +905,7 @@
       "Name": "Amulett des Magiers",
       "Description": "",
       "ItemTypeEnum_ID": 14,
-      "Wizardry": {
+      "WizardryLevel": {
         "Modifier": 1,
         "Affects": "Character"
       },
@@ -958,7 +958,7 @@
       "Name": "Umhang des Magiers",
       "Description": "",
       "ItemTypeEnum_ID": 15,
-      "Wizardry": {
+      "WizardryLevel": {
         "Modifier": 2,
         "Affects": "Character"
       }
@@ -1000,7 +1000,7 @@
       "Name": "Stirnreif des Magiers",
       "Description": "",
       "ItemTypeEnum_ID": 15,
-      "Wizardry": {
+      "WizardryLevel": {
         "Modifier": 1,
         "Affects": "Character"
       },
@@ -1144,7 +1144,7 @@
       "Name": "Zauberbuch des Magiers",
       "Description": "",
       "ItemTypeEnum_ID": 12,
-      "Wizardry": {
+      "WizardryLevel": {
         "Modifier": 4,
         "Affects": "Character"
       }
@@ -1206,7 +1206,7 @@
       "Name": "Ring des auserwählten Magiers",
       "Description": "",
       "ItemTypeEnum_ID": 13,
-      "Wizardry": {
+      "WizardryLevel": {
         "Modifier": 2,
         "Affects": "Character"
       },
@@ -1254,7 +1254,7 @@
       "Description": "",
       "ItemTypeEnum_ID": 18,
       "WizardryTalentEnum_ID": 10,
-      "Wizardry": {
+      "WizardryLevel": {
         "Override": "Playerlevel",
         "Modifier": 6,
         "Affects": "Character"
@@ -1310,7 +1310,7 @@
       "Name": "Amulett des Erzmagiers",
       "Description": "",
       "ItemTypeEnum_ID": 14,
-      "Wizardry": {
+      "WizardryLevel": {
         "Modifier": 1,
         "Affects": "Character"
       },
@@ -1364,7 +1364,7 @@
       "Name": "Umhang des Erzmagiers",
       "Description": "",
       "ItemTypeEnum_ID": 15,
-      "Wizardry": {
+      "WizardryLevel": {
         "Modifier": 3,
         "Affects": "Character"
       }
@@ -1406,7 +1406,7 @@
       "Name": "Stirnreif des Erzmagiers",
       "Description": "",
       "ItemTypeEnum_ID": 15,
-      "Wizardry": {
+      "WizardryLevel": {
         "Modifier": 2,
         "Affects": "Character"
       },
