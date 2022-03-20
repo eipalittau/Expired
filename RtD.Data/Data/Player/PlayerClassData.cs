@@ -1,8 +1,8 @@
 ﻿namespace RtD.Data {
     public sealed class PlayerClassData : DataBase {
         #region Properties / Felder
-        public string CharacterName { get; set; }
-        public ArmorClassData ArmorClass { get; set; }
+        public string CharacterName { get; private set; }
+        public ArmorClassData? ArmorClass { get; set; }
         public HealthData Health { get; set; }
         public SkillData Skill { get; set; }
         public string Mechanism { get; set; }
@@ -10,7 +10,9 @@
         #endregion
 
         #region Konstruktor
-        internal PlayerClassData(int aID, string aName, string aDescription) : base(aID,aName,aDescription) {
+        internal PlayerClassData(Json.PlayerClass.PlayerClassJsonData aJsonData, uint aSortOrder)
+            : base(aJsonData.ID, aJsonData.Name, aJsonData.Description, aSortOrder) {
+            CharacterName = aJsonData.CharacterName ?? string.Empty;
 
         }
         #endregion

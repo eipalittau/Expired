@@ -1,5 +1,5 @@
-﻿namespace RtD.Data.Json {
-    internal sealed class EnemyClassesLoader : LoaderBase<EnemyClassJsonData> {
+﻿namespace RtD.Data.Json { // Json/Loader
+    internal sealed class EnemyClassesLoader : LoaderBase<EnemyClass.EnemyClassJsonData> {
         #region Konstruktor
         public EnemyClassesLoader(Main aParent, Enumerations.LanguageEnum aLanguage)
             : base(aParent, aLanguage) { }
@@ -14,7 +14,7 @@
             base.RemoveEmpty();
             base.Check4Dublicates();
 
-            foreach (EnemyClassJsonData lJsonData in base.JsonData
+            foreach (EnemyClass.EnemyClassJsonData lJsonData in base.JsonData
                 .OrderBy(x => x.Name)) {
                 lResult.Add(new EnemyClassData(lJsonData, lSortOrder++));
             }

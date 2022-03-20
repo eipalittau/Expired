@@ -1,7 +1,7 @@
 ﻿namespace RtD.Data {
     //Patrik: Neues Property: AlwaysAvailable 
     public sealed class ItemData : DataBase {
-        internal ItemData(Json.ItemJsonData aJsonData)
+        internal ItemData(Json.Item.ItemJsonData aJsonData)
             : base(aJsonData.ID) {
             ItemType = ItemTypeEnum.Convert(aJsonData.ItemTypeEnum_ID);
 

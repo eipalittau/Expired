@@ -56,12 +56,12 @@ namespace RtD.Components.Filesystem {
                 }
 
             } catch (System.Exception aEx) {
-                throw new Exceptions.Json.WrongJsonFormatException(aEx, GetArgument<T>());
+                throw new Exceptions.Json.WrongJsonFormatException(aEx, GetArgument());
             }
         }
         #endregion
 
-        private static string GetArgument<T>() {
+        private static string GetArgument() {
             Type? lDeclaringType = typeof(T).DeclaringType;
 
             return lDeclaringType == null ? typeof(T).Name : lDeclaringType.Name;

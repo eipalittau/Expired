@@ -1,5 +1,5 @@
-﻿namespace RtD.Data.Json {
-    internal sealed class PlayerClassesLoader : LoaderBase<PlayerClassJsonData> {
+﻿namespace RtD.Data.Json { // Json/Loader
+    internal sealed class PlayerClassesLoader : LoaderBase<PlayerClass.PlayerClassJsonData> {
         #region Konstruktor
         public PlayerClassesLoader(Main aParent, Enumerations.LanguageEnum aLanguage)
             : base(aParent, aLanguage) { }
@@ -14,8 +14,7 @@
             base.RemoveEmpty();
             base.Check4Dublicates();
 
-            foreach (PlayerClassJsonData lJsonData in base.JsonData
-                .OrderBy(x => x.Name)) {
+            foreach (PlayerClass.PlayerClassJsonData lJsonData in base.JsonData.OrderBy(x => x.Name)) {
                 lResult.Add(new PlayerClassData(lJsonData, lSortOrder++));
             }
 

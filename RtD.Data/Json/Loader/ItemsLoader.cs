@@ -1,5 +1,5 @@
-﻿namespace RtD.Data.Json {
-    internal sealed class ItemsLoader : LoaderBase<ItemJsonData> {
+﻿namespace RtD.Data.Json { // Json/Loader
+    internal sealed class ItemsLoader : LoaderBase<Item.ItemJsonData> {
         #region Konstruktor
         public ItemsLoader(Main aParent, Enumerations.LanguageEnum aLanguage)
             : base(aParent, aLanguage) { }
@@ -13,7 +13,7 @@
             base.RemoveEmpty();
             base.Check4Dublicates();
 
-            foreach (ItemJsonData lJsonData in base.JsonData
+            foreach (Item.ItemJsonData lJsonData in base.JsonData
                 .OrderBy(x => x.ItemTypeEnum_ID)
                 .ThenBy(x => x.Name)) {
                 lResult.Add(new ItemData(lJsonData));

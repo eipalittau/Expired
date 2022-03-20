@@ -1,5 +1,5 @@
-﻿namespace RtD.Data.Json {
-    internal sealed class LootsLoader : LoaderBase<LootJsonData> {
+﻿namespace RtD.Data.Json { // Json/Loader
+    internal sealed class LootsLoader : LoaderBase<Loot.LootJsonData> {
         #region Konstruktor
         internal LootsLoader(Main aParent, Enumerations.LanguageEnum aLanguage)
             : base(aParent, aLanguage) { }
@@ -20,10 +20,10 @@
             }
 
             if (base.JsonData.GroupBy(x => x.DiceResult).Where(g => g.Skip(1).Any()).SelectMany(x => x).Any()) {
-                throw new Exceptions.DublicateDataException(nameof(LootJsonData.DiceResult));
+                throw new Exceptions.DublicateDataException(nameof(Loot.LootJsonData.DiceResult));
             }
 
-            foreach (LootJsonData lJsonData in base.JsonData.OrderBy(x => x.DiceResult)) {
+            foreach (Loot.LootJsonData lJsonData in base.JsonData.OrderBy(x => x.DiceResult)) {
                 if (lJsonData.Items
                     .GroupBy(x => x.EnemyClass_ID)
                     .Where(g => g.Skip(1).Any())

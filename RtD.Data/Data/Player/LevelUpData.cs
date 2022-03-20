@@ -7,7 +7,7 @@
         #endregion
 
         #region Konstruktor
-        internal LevelUpData(Json.LevelUpJsonData aJsonData) {
+        internal LevelUpData(Json.LevelUp.LevelUpJsonData aJsonData) {
             AttributeCount = aJsonData.Attribute == null ? 1 : aJsonData.Attribute.Modifier;
             SkillCount = aJsonData.Skill == null ? 1 : aJsonData.Skill.Modifier;
             Health = aJsonData.Health == null ? 4 : aJsonData.Health.Modifier;

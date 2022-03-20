@@ -1,5 +1,5 @@
-﻿namespace RtD.Data.Json {
-    internal sealed class ItemQualitiesLoader : LoaderBase<ItemQualityJsonData> {
+﻿namespace RtD.Data.Json { // Json/Loader
+    internal sealed class ItemQualitiesLoader : LoaderBase<ItemQuality.ItemQualityJsonData> {
         #region Konstruktor
         public ItemQualitiesLoader(Main aParent, Enumerations.LanguageEnum aLanguage)
             : base(aParent, aLanguage) { }
@@ -15,28 +15,28 @@
             base.Check4Dublicates();
 
             if (base.JsonData.Where(x => x.Downgrade == null).Count() != 1) { // Es darf nur 1 Downgrade NULL sein.
-                throw new Exceptions.DublicateDataException(nameof(ItemQualityJsonData.Downgrade));
+                throw new Exceptions.DublicateDataException(nameof(ItemQuality.ItemQualityJsonData.Downgrade));
             }
 
             if (base.JsonData.Where(x => x.Upgrade == null).Count() != 1) { // Es darf nur 1 Upgrade NULL sein.
-                throw new Exceptions.DublicateDataException(nameof(ItemQualityJsonData.Upgrade));
+                throw new Exceptions.DublicateDataException(nameof(ItemQuality.ItemQualityJsonData.Upgrade));
             }
 
             if (base.JsonData.GroupBy(x => x.Downgrade)
                 .Where(g => g.Skip(1).Any())
                 .SelectMany(x => x)
                 .Any()) {
-                throw new Exceptions.DublicateDataException(nameof(ItemQualityJsonData.Downgrade));
+                throw new Exceptions.DublicateDataException(nameof(ItemQuality.ItemQualityJsonData.Downgrade));
             }
 
             if (base.JsonData.GroupBy(x => x.Upgrade)
                 .Where(g => g.Skip(1).Any())
                 .SelectMany(x => x)
                 .Any()) {
-                throw new Exceptions.DublicateDataException(nameof(ItemQualityJsonData.Upgrade));
+                throw new Exceptions.DublicateDataException(nameof(ItemQuality.ItemQualityJsonData.Upgrade));
             }
 
-            foreach (ItemQualityJsonData lJsonData in base.JsonData
+            foreach (ItemQuality.ItemQualityJsonData lJsonData in base.JsonData
                 .Where(x => x.Downgrade == null)
                 .Concat(base.JsonData
                     .Where(x => x.Downgrade != null)
@@ -44,7 +44,7 @@
                 lResult.Add(new ItemQualityData(lJsonData, lSortOrder++));
             }
 
-            foreach (ItemQualityJsonData lJsonData in base.JsonData) {
+            foreach (ItemQuality.ItemQualityJsonData lJsonData in base.JsonData) {
                 ItemQualityData lItem = lResult.Where(x => x.ID == lJsonData.ID).First();
 
                 if (lJsonData.Downgrade != null) {
@@ -63,11 +63,11 @@
         private new void RemoveEmpty() {
             base.RemoveEmpty();
 
-            IEnumerable<ItemQualityJsonData>? lNullEffect = base.JsonData
+            IEnumerable<ItemQuality.ItemQualityJsonData>? lNullEffect = base.JsonData
                 .Where(x => x.Effect == null);
 
             if (base.Except(lNullEffect)) {
-                Main.AddWarning(0000, nameof(ItemQualityJsonData.Effect));
+                Main.AddWarning(0000, nameof(ItemQuality.ItemQualityJsonData.Effect));
             }
         }
         #endregion

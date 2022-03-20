@@ -1,5 +1,5 @@
-﻿namespace RtD.Data.Json {
-    internal sealed class LevelUpLoader : LoaderBase<LevelUpJsonData> {
+﻿namespace RtD.Data.Json { // Json/Loader
+    internal sealed class LevelUpLoader : LoaderBase<LevelUp.LevelUpJsonData> {
         #region Konstruktor
         public LevelUpLoader(Main aParent, Enumerations.LanguageEnum aLanguage)
             : base(aParent, aLanguage) { }

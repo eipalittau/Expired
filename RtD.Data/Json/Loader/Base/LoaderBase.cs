@@ -1,4 +1,4 @@
-﻿namespace RtD.Data.Json {
+﻿namespace RtD.Data.Json { // Json/Loader/Base
     internal class LoaderBase<T> where T : JsonDataBase {
         #region Properties / Felder
         protected Main Parent { get; private set; }
