@@ -38,8 +38,9 @@
         }
 
         public CharacterSheet CreateNewCharacter(PlayerClassData aPlayerClass) {
-            CharacterSheetList.Add(new CharacterSheet())
-            CharacterSheet
+            //CharacterSheetList.Add(new CharacterSheet())
+            //CharacterSheet
+            return null;
         }
 
         #region Notifications

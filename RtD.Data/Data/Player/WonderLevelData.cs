@@ -1,6 +1,6 @@
 ﻿namespace RtD.Data {
-    public sealed class HealthData {
-        internal HealthData(Json.PlayerClass.HealthJsonData aJsonData) {
+    public sealed class WonderLevelData {
+        internal WonderLevelData(Json.PlayerClass.WonderLevelJsonData aJsonData) {
             Modifier = aJsonData.Modifier;
 
             if (aJsonData.Affects == null) {

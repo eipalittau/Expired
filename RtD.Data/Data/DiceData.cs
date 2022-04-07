@@ -6,7 +6,7 @@
         #endregion
 
         #region Konstruktor
-        internal DiceData(Json.DiceJsonData? aData) {
+        internal DiceData(Json.Item.DiceJsonData? aData) {
             if (aData != null) {
                 Faces = DiceEnum.Convert(aData.Faces);
                 Count = (byte)aData.Count;

@@ -29,12 +29,12 @@
                     .Where(g => g.Skip(1).Any())
                     .SelectMany(x => x)
                     .Any()) {
-                    throw new Exceptions.DublicateDataException(nameof(LootItemJsonData.EnemyClass_ID));
+                    throw new Exceptions.DublicateDataException(nameof(Loot.LootItemJsonData.EnemyClass_ID));
                 }
 
                 LootData lLootData = new() { DiceResult = lJsonData.DiceResult };
 
-                foreach (LootItemJsonData lSubJsonData in lJsonData.Items) {
+                foreach (Loot.LootItemJsonData lSubJsonData in lJsonData.Items) {
                     if (base.Parent.Data.EnemyClasses == null || base.Parent.Data.Items == null) {
                         Main.AddWarning(0004, lLootData.DiceResult.ToString(), base.FileNameData);
                     } else {
