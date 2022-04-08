@@ -3,26 +3,22 @@
     {
       "ID": 1,
       "Name": "Kämpfer",
-      "Description": "",
-      "Initiative": 100
+      "Description": ""
     },
     {
       "ID": 2,
       "Name": "Kleriker",
-      "Description": "",
-      "Initiative": 300
+      "Description": ""
     },
     {
       "ID": 3,
       "Name": "Schurke",
-      "Description": "",
-      "Initiative": 200
+      "Description": ""
     },
     {
       "ID": 4,
       "Name": "Magier",
-      "Description": "",
-      "Initiative": 400
+      "Description": ""
     }
   ]
 }

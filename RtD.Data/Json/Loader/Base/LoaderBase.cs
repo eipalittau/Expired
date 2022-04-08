@@ -43,7 +43,6 @@
             try {
                 Components.Filesystem.JsonHandler<JsonLanguageData> lJsonHandlerLanguage = new();
 
-                _JsonHandlerData.LoadJson(new FileInfo(Path.Combine(aPathName, Constants.GetJsonFileName(aID))));
                 lJsonHandlerLanguage.LoadJson(new FileInfo(Path.Combine(aPathName, Constants.GetJsonFileName(aID, Language))));
 
                 if (lJsonHandlerLanguage.Json != null) {
@@ -111,11 +110,11 @@
 
     }
 
-    internal class JsonData<T> {
-        internal List<T> DataList { get; set; } = new();
+    public class JsonData<T> {
+        public List<T> DataList { get; set; } = new();
     }
 
-    internal class JsonLanguageData {
-        internal List<LanguageJsonData> DataList { get; set; } = new();
+    public class JsonLanguageData {
+        public List<LanguageJsonData> DataList { get; set; } = new();
     }
 }

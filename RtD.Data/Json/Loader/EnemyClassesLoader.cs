@@ -1,4 +1,6 @@
-﻿namespace RtD.Data.Json { // Json/Loader
+﻿using Newtonsoft.Json;
+
+namespace RtD.Data.Json { // Json/Loader
     internal sealed class EnemyClassesLoader : LoaderBase<EnemyClass.EnemyClassJsonData> {
         #region Konstruktor
         public EnemyClassesLoader(Main aParent, Enumerations.LanguageEnum aLanguage)

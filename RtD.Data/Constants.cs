@@ -19,7 +19,7 @@
         }
 
         public static string GetJsonFileName(int aID, Enumerations.LanguageEnum aLanguage) {
-            return Get(aID, $"{aLanguage.Name}.");
+            return Get(aID, $"{aLanguage.ISO}.");
         }
     }
 }
