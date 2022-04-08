@@ -8,7 +8,7 @@
         #region Methoden
         public List<ItemQualityData> LoadData(string aPathName) {
             List<ItemQualityData> lResult = new();
-             uint lSortOrder = 0;
+            uint lSortOrder = 0;
            
             base.LoadData(aPathName, 1);
             RemoveEmpty();
@@ -25,14 +25,14 @@
             if (base.JsonData.GroupBy(x => x.Downgrade)
                 .Where(g => g.Skip(1).Any())
                 .SelectMany(x => x)
-                .Any()) {
+                .Any()) { // Doppelte Downgrade's
                 throw new Exceptions.DublicateDataException(nameof(ItemQuality.ItemQualityJsonData.Downgrade));
             }
 
             if (base.JsonData.GroupBy(x => x.Upgrade)
                 .Where(g => g.Skip(1).Any())
                 .SelectMany(x => x)
-                .Any()) {
+                .Any()) { // Doppelte Upgrade's
                 throw new Exceptions.DublicateDataException(nameof(ItemQuality.ItemQualityJsonData.Upgrade));
             }
 
@@ -55,18 +55,13 @@
                 }
             }
 
-            // Patrik: Sprache laden
-
             return lResult;
         }
 
         private new void RemoveEmpty() {
             base.RemoveEmpty();
 
-            IEnumerable<ItemQuality.ItemQualityJsonData>? lNullEffect = base.JsonData
-                .Where(x => x.Effect == null);
-
-            if (base.Except(lNullEffect)) {
+            if (base.Except(base.JsonData.Where(x => x.Effect == null))) {
                 Main.AddWarning(0000, nameof(ItemQuality.ItemQualityJsonData.Effect));
             }
         }

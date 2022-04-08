@@ -1,0 +1,29 @@
+{
+  "DataList": [
+    {
+      "ID": 1,
+      "Name": "Rostig",
+      "Description": ""
+    },
+    {
+      "ID": 2,
+      "Name": "Schartig",
+      "Description": ""
+    },
+    {
+      "ID": 3,
+      "Name": "Normal",
+      "Description": ""
+    },
+    {
+      "ID": 4,
+      "Name": "Gehärtet",
+      "Description": ""
+    },
+    {
+      "ID": 5,
+      "Name": "Meisterhaft",
+      "Description": ""
+    }
+  ]
+}

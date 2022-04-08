@@ -1,5 +1,5 @@
 ﻿namespace RtD.Data.Json.ItemQuality { // Json/Data/ItemQualities
-    internal sealed class ItemQualityJsonData : JsonDataBase {
+    public sealed class ItemQualityJsonData : JsonDataBase {
         public int? Downgrade { get; set; }
         public int? Upgrade { get; set; }
         public bool CanBeDestroyed { get; set; }

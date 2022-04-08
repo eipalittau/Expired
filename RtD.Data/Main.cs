@@ -55,7 +55,11 @@
                 mNotifications.Add(new Components.EventArgs.MessageEventArgs(aID, Enumerations.PriorityEnum.Warning, aArguments));
             }
         }
-        #endregion
-        #endregion
+
+        internal static void AddWarning(System.Exception aEx) {
+            mNotifications.Add(new Components.EventArgs.MessageEventArgs(aEx, Enumerations.PriorityEnum.Warning));
+        }
     }
+    #endregion
+    #endregion
 }

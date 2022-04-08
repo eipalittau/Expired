@@ -1,7 +1,7 @@
 {
-  "ItemQualities": [
+  "DataList": [
     {
-      "ID": 0,
+      "ID": 1,
       "Name": "Rostig",
       "Description": "",
       "Downgrade": null,
@@ -14,11 +14,11 @@
       }
     },
     {
-      "ID": 1,
+      "ID": 2,
       "Name": "Schartig",
       "Description": "",
-      "Downgrade": 0,
-      "Upgrade": 2,
+      "Downgrade": 1,
+      "Upgrade": 3,
       "CanBeDestroyed": true,
       "IsDefault": false,
       "Effect": {
@@ -27,11 +27,11 @@
       }
     },
     {
-      "ID": 2,
+      "ID": 3,
       "Name": "Normal",
       "Description": "",
-      "Downgrade": 1,
-      "Upgrade": 3,
+      "Downgrade": 2,
+      "Upgrade": 4,
       "CanBeDestroyed": true,
       "IsDefault": true,
       "Effect": {
@@ -40,11 +40,11 @@
       }
     },
     {
-      "ID": 3,
+      "ID": 4,
       "Name": "Gehärtet",
       "Description": "",
-      "Downgrade": 2,
-      "Upgrade": 4,
+      "Downgrade": 3,
+      "Upgrade": 5,
       "CanBeDestroyed": true,
       "IsDefault": false,
       "Effect": {
@@ -53,10 +53,10 @@
       }
     },
     {
-      "ID": 4,
+      "ID": 5,
       "Name": "Meisterhaft",
       "Description": "",
-      "Downgrade": 3,
+      "Downgrade": 4,
       "Upgrade": null,
       "CanBeDestroyed": false,
       "IsDefault": false,

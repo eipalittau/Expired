@@ -48,7 +48,9 @@
                 if (lJsonHandlerLanguage.Json != null) {
                     lJsonLanguage = lJsonHandlerLanguage.Json.DataList;
                 }
-            } catch { }
+            } catch (System.Exception aEx) {
+                Main.AddWarning(aEx);
+            }
 
             if (lJsonLanguage != null) {
                 foreach (T lDataItem in JsonData) {
