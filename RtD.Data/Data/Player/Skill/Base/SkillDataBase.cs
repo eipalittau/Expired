@@ -32,7 +32,7 @@
         #region Methoden
         protected void Increase() {
             if (Progress == MaxProgress) {
-                throw new Exception("MaxLevel reached"); // Patrik: Exception wenn Maxlevel überschritten wird.
+                throw new Exceptions.MaxLevelReachedException(MaxProgress);
             }
 
             Progress++;

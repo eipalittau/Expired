@@ -17,12 +17,11 @@
         public ResourceData Health { get; } = new ResourceData();
         public int Reflex { get; private set; }
         public int Will { get; private set; }
-
         #endregion
 
         #region Konstruktor
         internal CharacterSheet(PlayerClassData aPlayerClass) {
-            Character =  new CharacterData(aPlayerClass);
+            Character = new CharacterData(aPlayerClass);
         }
         #endregion
 
@@ -34,6 +33,7 @@
 
         #region Verschachtelte Klassen
         public class CharacterData {
+            #region Properties / Felder
             public string Name {
                 get {
                     return PlayerClass.CharacterName;
@@ -50,10 +50,13 @@
                 }
             }
             internal PlayerClassData PlayerClass { get; }
+            #endregion
 
+            #region Konstruktor
             internal CharacterData(PlayerClassData aPlayerClass) {
                 PlayerClass = aPlayerClass;
             }
+            #endregion
         }
 
         public class AttributesData {

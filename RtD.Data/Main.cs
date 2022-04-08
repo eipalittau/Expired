@@ -38,7 +38,7 @@
         }
 
         public CharacterSheet CreateNewCharacter(PlayerClassData aPlayerClass) {
-            //CharacterSheetList.Add(new CharacterSheet())
+            CharacterSheetList.Add(new CharacterSheet(aPlayerClass));
             //CharacterSheet
             return null;
         }

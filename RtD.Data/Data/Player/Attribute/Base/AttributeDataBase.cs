@@ -32,13 +32,13 @@
         #region Methoden
         protected int Increase(T aTalent) {
             if (Progress == MaxProgress) {
-                throw new Exception("MaxLevel reached"); // Patrik: Exception wenn Maxlevel überschritten wird.
+                throw new Exceptions.MaxLevelReachedException(MaxProgress);
             }
             if (aTalent == null) {
                 throw new Exception(""); // Patrik: Exception
             }
             if (TalenentList.Contains(aTalent)) {
-                throw new Exception(""); // Patrik: Exception
+                throw new Exceptions.DublicateDataException(string.Empty);
             }
 
             Progress++;

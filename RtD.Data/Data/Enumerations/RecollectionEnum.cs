@@ -1,6 +1,5 @@
 ﻿namespace RtD.Data {
     /// <summary>Erinnerungen</summary>
-    /// 
 
     public class RecollectionEnum : Enumerations.EnumerationBase {
         #region Properties / Felder
