@@ -19,8 +19,6 @@
                 lResult.Add(new ItemData(lJsonData));
             }
 
-            // Patrik: Sprache laden
-
             return lResult;
         }
         #endregion
