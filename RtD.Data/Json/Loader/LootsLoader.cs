@@ -8,6 +8,7 @@
         #region Methoden
         public List<LootData> LoadData(string aPathName) {
             List<LootData> lResult = new();
+            IEnumerable<Loot.LootJsonData> lDouble;
 
             base.LoadData(aPathName, 3);
 
@@ -19,17 +20,16 @@
                     .ForEach(x => x.DiceResult = 1);
             }
 
-            if (base.JsonData.GroupBy(x => x.DiceResult).Where(g => g.Skip(1).Any()).SelectMany(x => x).Any()) {
-                throw new Exceptions.DublicateDataException(nameof(Loot.LootJsonData.DiceResult));
+            lDouble = base.JsonData.GroupBy(x => x.DiceResult).Where(g => g.Skip(1).Any()).SelectMany(x => x);
+            if (lDouble.Any()) {
+                throw new Exceptions.DublicateDataException(nameof(Loot.LootJsonData.DiceResult), lDouble.First().ID);
             }
 
             foreach (Loot.LootJsonData lJsonData in base.JsonData.OrderBy(x => x.DiceResult)) {
-                if (lJsonData.Items
-                    .GroupBy(x => x.EnemyClass_ID)
-                    .Where(g => g.Skip(1).Any())
-                    .SelectMany(x => x)
-                    .Any()) {
-                    throw new Exceptions.DublicateDataException(nameof(Loot.LootItemJsonData.EnemyClass_ID));
+                IEnumerable<Loot.LootItemJsonData> lDoubleItem = lJsonData.Items.GroupBy(x => x.EnemyClass_ID).Where(g => g.Skip(1).Any()).SelectMany(x => x);
+
+                if (lDoubleItem.Any()) {
+                    throw new Exceptions.DublicateDataException(nameof(Loot.LootItemJsonData.EnemyClass_ID), lDoubleItem.First().Item_ID);
                 }
 
                 LootData lLootData = new() { DiceResult = lJsonData.DiceResult };

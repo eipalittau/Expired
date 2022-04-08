@@ -9,31 +9,30 @@
         public List<ItemQualityData> LoadData(string aPathName) {
             List<ItemQualityData> lResult = new();
             uint lSortOrder = 0;
-           
+            IEnumerable<ItemQuality.ItemQualityJsonData> lDouble;
+            
             base.LoadData(aPathName, 1);
             RemoveEmpty();
             base.Check4Dublicates();
 
-            if (base.JsonData.Where(x => x.Downgrade == null).Count() != 1) { // Es darf nur 1 Downgrade NULL sein.
-                throw new Exceptions.DublicateDataException(nameof(ItemQuality.ItemQualityJsonData.Downgrade));
+            lDouble = base.JsonData.Where(x => x.Downgrade == null);
+            if (lDouble.Count() != 1) { // Es darf nur 1 Downgrade NULL sein.
+                throw new Exceptions.DublicateDataException(nameof(ItemQuality.ItemQualityJsonData.Downgrade), lDouble.Last().ID);
             }
 
+            lDouble = base.JsonData.Where(x => x.Upgrade == null);
             if (base.JsonData.Where(x => x.Upgrade == null).Count() != 1) { // Es darf nur 1 Upgrade NULL sein.
-                throw new Exceptions.DublicateDataException(nameof(ItemQuality.ItemQualityJsonData.Upgrade));
+                throw new Exceptions.DublicateDataException(nameof(ItemQuality.ItemQualityJsonData.Upgrade), lDouble.Last().ID);
             }
 
-            if (base.JsonData.GroupBy(x => x.Downgrade)
-                .Where(g => g.Skip(1).Any())
-                .SelectMany(x => x)
-                .Any()) { // Doppelte Downgrade's
-                throw new Exceptions.DublicateDataException(nameof(ItemQuality.ItemQualityJsonData.Downgrade));
+            lDouble = base.JsonData.GroupBy(x => x.Downgrade).Where(g => g.Skip(1).Any()).SelectMany(x => x);
+            if (lDouble.Any()) { // Doppelte Downgrade's
+                throw new Exceptions.DublicateDataException(nameof(ItemQuality.ItemQualityJsonData.Downgrade), lDouble.First().ID);
             }
 
-            if (base.JsonData.GroupBy(x => x.Upgrade)
-                .Where(g => g.Skip(1).Any())
-                .SelectMany(x => x)
-                .Any()) { // Doppelte Upgrade's
-                throw new Exceptions.DublicateDataException(nameof(ItemQuality.ItemQualityJsonData.Upgrade));
+            lDouble = base.JsonData.GroupBy(x => x.Upgrade).Where(g => g.Skip(1).Any()).SelectMany(x => x);
+            if (lDouble.Any()) { // Doppelte Upgrade's
+                throw new Exceptions.DublicateDataException(nameof(ItemQuality.ItemQualityJsonData.Upgrade), lDouble.First().ID);
             }
 
             foreach (ItemQuality.ItemQualityJsonData lJsonData in base.JsonData

@@ -1,43 +1,43 @@
 {
-  "Items": [
+  "DataList": [
     {
       "ID": 1,
-      "Name": "Stoffrüstung des besiegten Kämpfers",
-      "Description": ""
-    },
-    {
-      "ID": 2,
       "Name": "Stoffrüstung des überforderten Klerikers",
       "Description": ""
     },
     {
-      "ID": 3,
+      "ID": 2,
       "Name": "Stoffrüstung des erwischten Schurkens",
       "Description": ""
     },
     {
-      "ID": 4,
+      "ID": 3,
       "Name": "Stoffrüstung des gescheiterten Magiers",
       "Description": ""
     },
     {
-      "ID": 5,
+      "ID": 4,
       "Name": "Kurzschwert",
+      "Description": ""
+    },
+    {
+      "ID": 5,
+      "Name": "Kurzbogen",
       "Description": ""
     },
     {
       "ID": 6,
-      "Name": "Kurzschwert",
+      "Name": "Kugel",
       "Description": ""
     },
     {
       "ID": 7,
-      "Name": "Bogen",
+      "Name": "Schild",
       "Description": ""
     },
     {
-      "ID": 8,
-      "Name": "Kugel",
+      "ID": 118,
+      "Name": "Stoffrüstung des besiegten Kämpfers",
       "Description": ""
     }
   ]

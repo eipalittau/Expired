@@ -1,5 +1,6 @@
 ﻿namespace RtD.Data.Json.Item { // Json/Data/Items
     internal sealed class ItemJsonData : JsonDataBase {
+        public bool AlwaysAvailable { get; set; }
         public int ItemTypeEnum_ID { get; set; }
         public ArmorClassJsonData? ArmorClass { get; set; }
         public DamageJsonData? Damage { get; set; }

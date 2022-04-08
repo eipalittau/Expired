@@ -121,7 +121,7 @@
     <value>Das Feld '{0}' muss Daten enthalten.</value>
   </data>
   <data name="MSG0001" xml:space="preserve">
-    <value>Es sind doppelte Daten vorhanden. Das Feld '{0}' darf nur einmalige Daten enhalten.</value>
+    <value>Es sind doppelte Daten vorhanden. Das Feld '{0}' darf nur einmalige Daten enhalten. ID:{1}</value>
   </data>
   <data name="MSG0002" xml:space="preserve">
     <value>Das Würfelresultat muss mindestens 1 sein. Die Daten werden angepasst.</value>

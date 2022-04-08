@@ -1,9 +1,9 @@
 ﻿namespace RtD.Data {
-    //Patrik: Neues Property: AlwaysAvailable 
     public sealed class ItemData : DataBase {
         internal ItemData(Json.Item.ItemJsonData aJsonData)
             : base(aJsonData.ID) {
             ItemType = ItemTypeEnum.Convert(aJsonData.ItemTypeEnum_ID);
+            AlwaysAvailable = aJsonData.AlwaysAvailable;
 
             if (aJsonData.ArmorClass != null) {
                 ArmorClass = new EffectData(aJsonData.ArmorClass);
@@ -19,6 +19,7 @@
             }
         }
 
+        public bool AlwaysAvailable { get; private set; }
         public ItemTypeEnum ItemType { get; private set; }
         public EffectData? ArmorClass { get; private set; }
         public EffectData? Damage { get; private set; }

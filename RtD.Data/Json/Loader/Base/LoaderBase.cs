@@ -84,24 +84,20 @@
         }
 
         protected void Check4Dublicates() {
+            IEnumerable<T>? lDouble;
+
             if (!JsonData.Any()) {
                 throw new Exceptions.MissingDataException();
             }
 
-            if (JsonData
-                .GroupBy(x => x.ID)
-                .Where(g => g.Skip(1).Any())
-                .SelectMany(x => x)
-                .Any()) {
-                throw new Exceptions.DublicateDataException(nameof(JsonDataBase.ID));
+            lDouble = JsonData.GroupBy(x => x.ID).Where(g => g.Skip(1).Any()).SelectMany(x => x);
+            if (lDouble.Any()) {
+                throw new Exceptions.DublicateDataException(nameof(JsonDataBase.ID), lDouble.First().ID);
             }
 
-            if (JsonData
-                .GroupBy(x => x.Name)
-                .Where(g => g.Skip(1).Any())
-                .SelectMany(x => x)
-                .Any()) {
-                throw new Exceptions.DublicateDataException(nameof(JsonDataBase.Name));
+            lDouble = JsonData.GroupBy(x => x.Name).Where(g => g.Skip(1).Any()).SelectMany(x => x);
+            if (lDouble.Any()) {
+                throw new Exceptions.DublicateDataException(nameof(JsonDataBase.Name), lDouble.First().ID);
             }
         }
 

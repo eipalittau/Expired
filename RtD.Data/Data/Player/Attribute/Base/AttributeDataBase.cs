@@ -38,7 +38,7 @@
                 throw new Exception(""); // Patrik: Exception
             }
             if (TalenentList.Contains(aTalent)) {
-                throw new Exceptions.DublicateDataException(string.Empty);
+                throw new Exceptions.DublicateDataException(string.Empty, 0);
             }
 
             Progress++;

@@ -1,10 +1,11 @@
 {
-  "Items": [
+  "DataList": [
     {
       "ID": 118,
       "Name": "Stoffrüstung des besiegten Kämpfers",
       "Description": "",
       "ItemTypeEnum_ID": 1,
+      "AlwaysAvailable": false,
       "ArmorClass": {
         "Modifier": 6,
         "Affects": "Character"
@@ -15,6 +16,7 @@
       "Name": "Stoffrüstung des überforderten Klerikers",
       "Description": "",
       "ItemTypeEnum_ID": 1,
+      "AlwaysAvailable": false,
       "ArmorClass": {
         "Modifier": 6,
         "Affects": "Character"
@@ -25,6 +27,7 @@
       "Name": "Stoffrüstung des erwischten Schurkens",
       "Description": "",
       "ItemTypeEnum_ID": 1,
+      "AlwaysAvailable": false,
       "ArmorClass": {
         "Modifier": 4,
         "Affects": "Character"
@@ -35,6 +38,7 @@
       "Name": "Stoffrüstung des gescheiterten Magiers",
       "Description": "",
       "ItemTypeEnum_ID": 1,
+      "AlwaysAvailable": false,
       "ArmorClass": {
         "Modifier": 2,
         "Affects": "Character"
@@ -45,6 +49,7 @@
       "Name": "Kurzschwert",
       "Description": "",
       "ItemTypeEnum_ID": 3,
+      "AlwaysAvailable": false,
       "Damage": {
         "Dice": {
           "Count": 1,
@@ -62,6 +67,7 @@
       "Name": "Kurzbogen",
       "Description": "",
       "ItemTypeEnum_ID": 5,
+      "AlwaysAvailable": false,
       "Damage": {
         "Dice": {
           "Count": 1,
@@ -79,6 +85,7 @@
       "Name": "Kugel",
       "Description": "",
       "ItemTypeEnum_ID": 11,
+      "AlwaysAvailable": false,
       "Mana": {
         "Modifier": 1,
         "Affects": "Character"
@@ -89,6 +96,7 @@
       "Name": "Schild",
       "Description": "",
       "ItemTypeEnum_ID": 10,
+      "AlwaysAvailable": false,
       "ArmorClass": {
         "Modifier": 2,
         "Affects": "Character"
@@ -99,6 +107,7 @@
       "Name": "Dolch",
       "Description": "",
       "ItemTypeEnum_ID": 9,
+      "AlwaysAvailable": false,
       "Attack": {
         "Modifier": 2,
         "Affects": "Character"
@@ -108,6 +117,7 @@
       "ID": 9,
       "Name": "Heiliges Symbol des Novizen",
       "Description": "",
+      "AlwaysAvailable": false,
       "ItemTypeEnum_ID": 11,
       "WonderLevel": {
         "Modifier": 2,
@@ -119,6 +129,7 @@
       "Name": "Zauberbuch des Novizen",
       "Description": "",
       "ItemTypeEnum_ID": 12,
+      "AlwaysAvailable": false,
       "WizardryLevel": {
         "Modifier": 1,
         "Affects": "Character"
@@ -129,6 +140,7 @@
       "Name": "Ring des Kämpfers",
       "Description": "",
       "ItemTypeEnum_ID": 13,
+      "AlwaysAvailable": false,
       "ArmorClass": {
         "Modifier": 1,
         "Affects": "Character"
@@ -139,6 +151,7 @@
       "Name": "Ring des Schurken",
       "Description": "",
       "ItemTypeEnum_ID": 13,
+      "AlwaysAvailable": false,
       "Damage": {
         "Modifier": 1,
         "Affects": "Character"
@@ -149,6 +162,7 @@
       "Name": "Ring des Zaubernden",
       "Description": "",
       "ItemTypeEnum_ID": 13,
+      "AlwaysAvailable": false,
       "Mana": {
         "Modifier": 1,
         "Affects": "Character"
@@ -156,9 +170,10 @@
     },
     {
       "ID": 14,
-      "Name": "Schleifstein",
+      "Name": "Schartiger Schleifstein",
       "Description": "",
       "ItemTypeEnum_ID": 18,
+      "AlwaysAvailable": false,
       "Smithing": {
         "Modifier": 2,
         "Affects": "Character"
@@ -169,6 +184,7 @@
       "Name": "Beerengift",
       "Description": "",
       "ItemTypeEnum_ID": 18,
+      "AlwaysAvailable": false,
       "Poison": {
         "Modifier": 1,
         "Affects": "Character"
@@ -176,9 +192,10 @@
     },
     {
       "ID": 16,
-      "Name": "Spruchrolle Diamantrüstung",
+      "Name": "Schartige Spruchrolle Diamantrüstung",
       "Description": "",
       "ItemTypeEnum_ID": 18,
+      "AlwaysAvailable": false,
       "WonderTalentEnum_ID": 9,
       "WonderLevel": {
         "Override": "Playerlevel",
@@ -187,9 +204,10 @@
     },
     {
       "ID": 17,
-      "Name": "Spruchrolle Feuerball",
+      "Name": "Schartige Spruchrolle Feuerball",
       "Description": "",
       "ItemTypeEnum_ID": 18,
+      "AlwaysAvailable": false,
       "WizardryTalentEnum_ID": 10,
       "WizardryLevel": {
         "Override": "Playerlevel",
@@ -201,6 +219,7 @@
       "Name": "Amulett des Kämpfers",
       "Description": "",
       "ItemTypeEnum_ID": 14,
+      "AlwaysAvailable": false,
       "Damage": {
         "Modifier": 1,
         "Affects": "Character"
@@ -211,6 +230,7 @@
       "Name": "Amulett des Magiers",
       "Description": "",
       "ItemTypeEnum_ID": 14,
+      "AlwaysAvailable": false,
       "Mana": {
         "Modifier": 1,
         "Affects": "Character"
@@ -221,6 +241,7 @@
       "Name": "Umhang des Kämpfers",
       "Description": "",
       "ItemTypeEnum_ID": 15,
+      "AlwaysAvailable": false,
       "Attack": {
         "Modifier": 1,
         "Affects": "Character"
@@ -231,6 +252,7 @@
       "Name": "Umhang des Schurken",
       "Description": "",
       "ItemTypeEnum_ID": 15,
+      "AlwaysAvailable": false,
       "SaveingThrow": {
         "Modifier": 1,
         "Affects": "Character"
@@ -241,6 +263,7 @@
       "Name": "Umhang des Magiers",
       "Description": "",
       "ItemTypeEnum_ID": 15,
+      "AlwaysAvailable": false,
       "Mana": {
         "Modifier": 1,
         "Affects": "Character"
@@ -251,6 +274,7 @@
       "Name": "Stirnreif des Kämpfers",
       "Description": "",
       "ItemTypeEnum_ID": 15,
+      "AlwaysAvailable": false,
       "Attack": {
         "Modifier": 1,
         "Affects": "Character"
@@ -261,6 +285,7 @@
       "Name": "Stirnreif des Magiers",
       "Description": "",
       "ItemTypeEnum_ID": 15,
+      "AlwaysAvailable": false,
       "Mana": {
         "Modifier": 1,
         "Affects": "Character"
@@ -271,6 +296,7 @@
       "Name": "Erinnerungsversuch",
       "Description": "",
       "ItemTypeEnum_ID": 18,
+      "AlwaysAvailable": false,
       "Memory": {
         "Modifier": 1,
         "Affects": "Character"
@@ -281,6 +307,7 @@
       "Name": "Erfahrung",
       "Description": "",
       "ItemTypeEnum_ID": 18,
+      "AlwaysAvailable": false,
       "Exp": {
         "Modifier": 1,
         "Affects": "Character"
@@ -291,6 +318,7 @@
       "Name": "Lederrüstung des Nahkämpfers",
       "Description": "",
       "ItemTypeEnum_ID": 1,
+      "AlwaysAvailable": false,
       "ArmorClass": {
         "Modifier": 7,
         "Affects": "Character"
@@ -301,6 +329,7 @@
       "Name": "Lederrüstung Schurkens",
       "Description": "",
       "ItemTypeEnum_ID": 1,
+      "AlwaysAvailable": false,
       "ArmorClass": {
         "Modifier": 5,
         "Affects": "Character"
@@ -311,6 +340,7 @@
       "Name": "Lederrüstung Magiers",
       "Description": "",
       "ItemTypeEnum_ID": 1,
+      "AlwaysAvailable": false,
       "ArmorClass": {
         "Modifier": 3,
         "Affects": "Character"
@@ -321,6 +351,7 @@
       "Name": "Langschwert",
       "Description": "",
       "ItemTypeEnum_ID": 1,
+      "AlwaysAvailable": false,
       "Damage": {
         "Dice": {
           "Count": 1,
@@ -339,6 +370,7 @@
       "Name": "Langbogen",
       "Description": "",
       "ItemTypeEnum_ID": 4,
+      "AlwaysAvailable": false,
       "Damage": {
         "Dice": {
           "Count": 1,
@@ -357,6 +389,7 @@
       "Name": "Kristallkugel",
       "Description": "",
       "ItemTypeEnum_ID": 11,
+      "AlwaysAvailable": false,
       "Mana": {
         "Modifier": 2,
         "Affects": "Character"
@@ -367,6 +400,7 @@
       "Name": "Rundschild",
       "Description": "",
       "ItemTypeEnum_ID": 10,
+      "AlwaysAvailable": false,
       "ArmorClass": {
         "Modifier": 3,
         "Affects": "Character"
@@ -377,6 +411,7 @@
       "Name": "Spitzer Dolch",
       "Description": "",
       "ItemTypeEnum_ID": 9,
+      "AlwaysAvailable": false,
       "Attack": {
         "Modifier": 3,
         "Affects": "Character"
@@ -387,6 +422,7 @@
       "Name": "Heiliges Symbol des Adepten",
       "Description": "",
       "ItemTypeEnum_ID": 11,
+      "AlwaysAvailable": false,
       "WonderLevel": {
         "Modifier": 2,
         "Affects": "Character"
@@ -397,6 +433,7 @@
       "Name": "Zauberbuch des Adepten",
       "Description": "",
       "ItemTypeEnum_ID": 12,
+      "AlwaysAvailable": false,
       "WizardryLevel": {
         "Modifier": 2,
         "Affects": "Character"
@@ -407,6 +444,7 @@
       "Name": "Ring des guten Kämpfers",
       "Description": "",
       "ItemTypeEnum_ID": 13,
+      "AlwaysAvailable": false,
       "ArmorClass": {
         "Modifier": 1,
         "Affects": "Character"
@@ -421,6 +459,7 @@
       "Name": "Ring des geschickten Schurken",
       "Description": "",
       "ItemTypeEnum_ID": 13,
+      "AlwaysAvailable": false,
       "Damage": {
         "Modifier": 1,
         "Affects": "Character"
@@ -435,6 +474,7 @@
       "Name": "Ring des Klerikers",
       "Description": "",
       "ItemTypeEnum_ID": 13,
+      "AlwaysAvailable": false,
       "WonderLevel": {
         "Modifier": 1,
         "Affects": "Character"
@@ -445,6 +485,7 @@
       "Name": "Ring des Magiers",
       "Description": "",
       "ItemTypeEnum_ID": 13,
+      "AlwaysAvailable": false,
       "WizardryLevel": {
         "Modifier": 1,
         "Affects": "Character"
@@ -452,9 +493,10 @@
     },
     {
       "ID": 40,
-      "Name": "Schleifstein",
+      "Name": "Abgewetzter Schleifstein",
       "Description": "",
       "ItemTypeEnum_ID": 18,
+      "AlwaysAvailable": false,
       "Smithing": {
         "Modifier": 3,
         "Affects": "Character"
@@ -465,6 +507,7 @@
       "Name": "Leichengift",
       "Description": "",
       "ItemTypeEnum_ID": 18,
+      "AlwaysAvailable": false,
       "Poison": {
         "Modifier": 2,
         "Affects": "Character"
@@ -472,9 +515,10 @@
     },
     {
       "ID": 42,
-      "Name": "Spruchrolle Diamantrüstung",
+      "Name": "Abgewetzte Spruchrolle Diamantrüstung",
       "Description": "",
       "ItemTypeEnum_ID": 18,
+      "AlwaysAvailable": false,
       "WonderTalentEnum_ID": 9,
       "WonderLevel": {
         "Override": "Playerlevel",
@@ -484,9 +528,10 @@
     },
     {
       "ID": 43,
-      "Name": "Spruchrolle Feuerball",
+      "Name": "Abgewetzte Spruchrolle Feuerball",
       "Description": "",
       "ItemTypeEnum_ID": 18,
+      "AlwaysAvailable": false,
       "WizardryTalentEnum_ID": 10,
       "WizardryLevel": {
         "Override": "Playerlevel",
@@ -499,6 +544,7 @@
       "Name": "Amulett des Kämpfers",
       "Description": "",
       "ItemTypeEnum_ID": 14,
+      "AlwaysAvailable": false,
       "Damage": {
         "Dice": {
           "Count": 1,
@@ -513,6 +559,7 @@
       "Name": "Amulett des Mönchs",
       "Description": "",
       "ItemTypeEnum_ID": 14,
+      "AlwaysAvailable": false,
       "Mana": {
         "Modifier": 1,
         "Affects": "Character"
@@ -527,6 +574,7 @@
       "Name": "Amulett des Zauberers",
       "Description": "",
       "ItemTypeEnum_ID": 14,
+      "AlwaysAvailable": false,
       "Mana": {
         "Modifier": 1,
         "Affects": "Character"
@@ -543,6 +591,7 @@
       "Name": "Umhang des Kämpfers",
       "Description": "",
       "ItemTypeEnum_ID": 15,
+      "AlwaysAvailable": false,
       "Attack": {
         "Modifier": 1,
         "Affects": "Character"
@@ -557,6 +606,7 @@
       "Name": "Umhang des Schurken",
       "Description": "",
       "ItemTypeEnum_ID": 15,
+      "AlwaysAvailable": false,
       "SavingThrow": {
         "Modifier": 1,
         "Affects": "Character"
@@ -571,6 +621,7 @@
       "Name": "Umhang des Klerikers",
       "Description": "",
       "ItemTypeEnum_ID": 15,
+      "AlwaysAvailable": false,
       "WonderLevel": {
         "Modifier": 1,
         "Affects": "Character"
@@ -581,6 +632,7 @@
       "Name": "Umhang des Magiers",
       "Description": "",
       "ItemTypeEnum_ID": 15,
+      "AlwaysAvailable": false,
       "WizardryLevel": {
         "Modifier": 1,
         "Affects": "Character"
@@ -591,6 +643,7 @@
       "Name": "Stirnreif des Kämpfers",
       "Description": "",
       "ItemTypeEnum_ID": 15,
+      "AlwaysAvailable": false,
       "Attack": {
         "Modifier": 1,
         "Affects": "Character"
@@ -605,6 +658,7 @@
       "Name": "Stirnreif des Klerikers",
       "Description": "",
       "ItemTypeEnum_ID": 15,
+      "AlwaysAvailable": false,
       "WonderLevel": {
         "Modifier": 1,
         "Affects": "Character"
@@ -615,6 +669,7 @@
       "Name": "Stirnreif des Magiers",
       "Description": "",
       "ItemTypeEnum_ID": 15,
+      "AlwaysAvailable": false,
       "WizardryLevel": {
         "Modifier": 1,
         "Affects": "Character"
@@ -625,6 +680,7 @@
       "Name": "Erinnerungsversuch",
       "Description": "",
       "ItemTypeEnum_ID": 18,
+      "AlwaysAvailable": false,
       "Memory": {
         "Modifier": 1,
         "Affects": "Character"
@@ -639,6 +695,7 @@
       "Name": "Erfahrung",
       "Description": "",
       "ItemTypeEnum_ID": 18,
+      "AlwaysAvailable": false,
       "Exp": {
         "Modifier": 2,
         "Affects": "Character"
@@ -649,6 +706,7 @@
       "Name": "Kettenrüstung des Nahkämpfers",
       "Description": "",
       "ItemTypeEnum_ID": 1,
+      "AlwaysAvailable": false,
       "ArmorClass": {
         "Modifier": 8,
         "Affects": "Character"
@@ -659,6 +717,7 @@
       "Name": "Kettenrüstung des Schurkens",
       "Description": "",
       "ItemTypeEnum_ID": 1,
+      "AlwaysAvailable": false,
       "ArmorClass": {
         "Modifier": 6,
         "Affects": "Character"
@@ -669,6 +728,7 @@
       "Name": "Kettenrüstung Magiers",
       "Description": "",
       "ItemTypeEnum_ID": 1,
+      "AlwaysAvailable": false,
       "ArmorClass": {
         "Modifier": 4,
         "Affects": "Character"
@@ -679,6 +739,7 @@
       "Name": "Bastardschwert",
       "Description": "",
       "ItemTypeEnum_ID": 1,
+      "AlwaysAvailable": false,
       "Damage": {
         "Dice": {
           "Count": 1,
@@ -697,6 +758,7 @@
       "Name": "Rekursionsbogen",
       "Description": "",
       "ItemTypeEnum_ID": 4,
+      "AlwaysAvailable": false,
       "Damage": {
         "Dice": {
           "Count": 1,
@@ -715,6 +777,7 @@
       "Name": "Drachenauge",
       "Description": "",
       "ItemTypeEnum_ID": 11,
+      "AlwaysAvailable": false,
       "Mana": {
         "Modifier": 3,
         "Affects": "Character"
@@ -725,6 +788,7 @@
       "Name": "Turmschild",
       "Description": "",
       "ItemTypeEnum_ID": 10,
+      "AlwaysAvailable": false,
       "ArmorClass": {
         "Modifier": 4,
         "Affects": "Character"
@@ -735,6 +799,7 @@
       "Name": "Ausgezeichneter Dolch",
       "Description": "",
       "ItemTypeEnum_ID": 9,
+      "AlwaysAvailable": false,
       "Attack": {
         "Modifier": 4,
         "Affects": "Character"
@@ -745,6 +810,7 @@
       "Name": "Heiliges Symbol des Magiers",
       "Description": "",
       "ItemTypeEnum_ID": 11,
+      "AlwaysAvailable": false,
       "WonderLevel": {
         "Modifier": 3,
         "Affects": "Character"
@@ -755,6 +821,7 @@
       "Name": "Zauberbuch des Magiers",
       "Description": "",
       "ItemTypeEnum_ID": 12,
+      "AlwaysAvailable": false,
       "WizardryLevel": {
         "Modifier": 3,
         "Affects": "Character"
@@ -765,6 +832,7 @@
       "Name": "Ring des starken Kämpfers",
       "Description": "",
       "ItemTypeEnum_ID": 13,
+      "AlwaysAvailable": false,
       "ArmorClass": {
         "Modifier": 1,
         "Affects": "Character"
@@ -783,6 +851,7 @@
       "Name": "Ring des gerissenen Schurken",
       "Description": "",
       "ItemTypeEnum_ID": 13,
+      "AlwaysAvailable": false,
       "Damage": {
         "Modifier": 1,
         "Affects": "Character"
@@ -803,6 +872,7 @@
       "Name": "Ring des Klerikers",
       "Description": "",
       "ItemTypeEnum_ID": 13,
+      "AlwaysAvailable": false,
       "WonderLevel": {
         "Modifier": 1,
         "Affects": "Character"
@@ -817,12 +887,12 @@
       "Name": "Ring des Magiers",
       "Description": "",
       "ItemTypeEnum_ID": 13,
+      "AlwaysAvailable": false,
       "WizardryLevel": {
         "Modifier": 1,
         "Affects": "Character"
       },
       "Damage": {
-        //TODO: Pro Zauberlevel
         "Modifier": 1,
         "Affects": "Character"
       }
@@ -832,6 +902,7 @@
       "Name": "Schleifstein",
       "Description": "",
       "ItemTypeEnum_ID": 18,
+      "AlwaysAvailable": false,
       "Smithing": {
         "Modifier": 4,
         "Affects": "Character"
@@ -842,6 +913,7 @@
       "Name": "Krötengift",
       "Description": "",
       "ItemTypeEnum_ID": 18,
+      "AlwaysAvailable": false,
       "Poison": {
         "Modifier": 3,
         "Affects": "Character"
@@ -852,6 +924,7 @@
       "Name": "Spruchrolle Diamantrüstung",
       "Description": "",
       "ItemTypeEnum_ID": 18,
+      "AlwaysAvailable": false,
       "WonderTalentEnum_ID": 9,
       "WonderLevel": {
         "Override": "Playerlevel",
@@ -864,6 +937,7 @@
       "Name": "Spruchrolle Feuerball",
       "Description": "",
       "ItemTypeEnum_ID": 18,
+      "AlwaysAvailable": false,
       "WizardryTalentEnum_ID": 10,
       "WizardryLevel": {
         "Override": "Playerlevel",
@@ -876,6 +950,7 @@
       "Name": "Amulett des Kämpfers",
       "Description": "",
       "ItemTypeEnum_ID": 14,
+      "AlwaysAvailable": false,
       "Damage": {
         "Dice": {
           "Count": 2,
@@ -890,12 +965,12 @@
       "Name": "Amulett des Klerikers",
       "Description": "",
       "ItemTypeEnum_ID": 14,
+      "AlwaysAvailable": false,
       "WonderLevel": {
         "Modifier": 1,
         "Affects": "Character"
       },
       "Heal": {
-        //TODO: +2 Selbstheilung für Wunder
         "Modifier": 2,
         "Affects": "Character"
       }
@@ -905,12 +980,12 @@
       "Name": "Amulett des Magiers",
       "Description": "",
       "ItemTypeEnum_ID": 14,
+      "AlwaysAvailable": false,
       "WizardryLevel": {
         "Modifier": 1,
         "Affects": "Character"
       },
       "Damage": {
-        //TODO: +2 Schaden pro Würfel
         "Modifier": 2,
         "Affects": "Character"
       }
@@ -920,6 +995,7 @@
       "Name": "Umhang des starken Kämpfers",
       "Description": "",
       "ItemTypeEnum_ID": 15,
+      "AlwaysAvailable": false,
       "Attack": {
         "Modifier": 2,
         "Affects": "Character"
@@ -934,6 +1010,7 @@
       "Name": "Umhang des gerissenen Schurken",
       "Description": "",
       "ItemTypeEnum_ID": 15,
+      "AlwaysAvailable": false,
       "SavingThrow": {
         "Modifier": 2,
         "Affects": "Character"
@@ -948,6 +1025,7 @@
       "Name": "Umhang des Klerikers",
       "Description": "",
       "ItemTypeEnum_ID": 15,
+      "AlwaysAvailable": false,
       "WonderLevel": {
         "Modifier": 2,
         "Affects": "Character"
@@ -958,6 +1036,7 @@
       "Name": "Umhang des Magiers",
       "Description": "",
       "ItemTypeEnum_ID": 15,
+      "AlwaysAvailable": false,
       "WizardryLevel": {
         "Modifier": 2,
         "Affects": "Character"
@@ -968,6 +1047,7 @@
       "Name": "Stirnreif des Kämpfers",
       "Description": "",
       "ItemTypeEnum_ID": 15,
+      "AlwaysAvailable": false,
       "Attack": {
         "Modifier": 1,
         "Affects": "Character"
@@ -986,6 +1066,7 @@
       "Name": "Stirnreif des Klerikers",
       "Description": "",
       "ItemTypeEnum_ID": 15,
+      "AlwaysAvailable": false,
       "WonderLevel": {
         "Modifier": 1,
         "Affects": "Character"
@@ -1000,6 +1081,7 @@
       "Name": "Stirnreif des Magiers",
       "Description": "",
       "ItemTypeEnum_ID": 15,
+      "AlwaysAvailable": false,
       "WizardryLevel": {
         "Modifier": 1,
         "Affects": "Character"
@@ -1014,6 +1096,7 @@
       "Name": "Erinnerungsversuch",
       "Description": "",
       "ItemTypeEnum_ID": 18,
+      "AlwaysAvailable": false,
       "Memory": {
         "Modifier": 1,
         "Affects": "Character"
@@ -1028,6 +1111,7 @@
       "Name": "Erfahrung",
       "Description": "",
       "ItemTypeEnum_ID": 18,
+      "AlwaysAvailable": false,
       "Exp": {
         "Modifier": 3,
         "Affects": "Character"
@@ -1038,6 +1122,7 @@
       "Name": "Plattenrüstung des Nahkämpfers",
       "Description": "",
       "ItemTypeEnum_ID": 1,
+      "AlwaysAvailable": false,
       "ArmorClass": {
         "Modifier": 9,
         "Affects": "Character"
@@ -1048,6 +1133,7 @@
       "Name": "Plattenrüstung des Schurkens",
       "Description": "",
       "ItemTypeEnum_ID": 1,
+      "AlwaysAvailable": false,
       "ArmorClass": {
         "Modifier": 7,
         "Affects": "Character"
@@ -1058,6 +1144,7 @@
       "Name": "Plattenrüstung Magiers",
       "Description": "",
       "ItemTypeEnum_ID": 1,
+      "AlwaysAvailable": false,
       "ArmorClass": {
         "Modifier": 5,
         "Affects": "Character"
@@ -1068,6 +1155,7 @@
       "Name": "Gutes Bastardschwert",
       "Description": "",
       "ItemTypeEnum_ID": 1,
+      "AlwaysAvailable": false,
       "Damage": {
         "Dice": {
           "Count": 1,
@@ -1086,6 +1174,7 @@
       "Name": "Guter Rekursionsbogen",
       "Description": "",
       "ItemTypeEnum_ID": 4,
+      "AlwaysAvailable": false,
       "Damage": {
         "Dice": {
           "Count": 1,
@@ -1104,6 +1193,7 @@
       "Name": "Ätherkugel",
       "Description": "",
       "ItemTypeEnum_ID": 11,
+      "AlwaysAvailable": false,
       "Mana": {
         "Modifier": 4,
         "Affects": "Character"
@@ -1114,6 +1204,7 @@
       "Name": "Grosser Turmschild",
       "Description": "",
       "ItemTypeEnum_ID": 10,
+      "AlwaysAvailable": false,
       "ArmorClass": {
         "Modifier": 5,
         "Affects": "Character"
@@ -1124,6 +1215,7 @@
       "Name": "Tödlicher Dolch",
       "Description": "",
       "ItemTypeEnum_ID": 9,
+      "AlwaysAvailable": false,
       "Attack": {
         "Modifier": 5,
         "Affects": "Character"
@@ -1134,6 +1226,7 @@
       "Name": "Göttliches Symbol",
       "Description": "",
       "ItemTypeEnum_ID": 11,
+      "AlwaysAvailable": false,
       "WonderLevel": {
         "Modifier": 4,
         "Affects": "Character"
@@ -1144,6 +1237,7 @@
       "Name": "Zauberbuch des Magiers",
       "Description": "",
       "ItemTypeEnum_ID": 12,
+      "AlwaysAvailable": false,
       "WizardryLevel": {
         "Modifier": 4,
         "Affects": "Character"
@@ -1154,6 +1248,7 @@
       "Name": "Ring des Kriegers",
       "Description": "",
       "ItemTypeEnum_ID": 13,
+      "AlwaysAvailable": false,
       "ArmorClass": {
         "Modifier": 2,
         "Affects": "Character"
@@ -1172,6 +1267,7 @@
       "Name": "Ring des teuflischen Schurken",
       "Description": "",
       "ItemTypeEnum_ID": 13,
+      "AlwaysAvailable": false,
       "Damage": {
         "Modifier": 2,
         "Affects": "Character"
@@ -1192,6 +1288,7 @@
       "Name": "Ring des gesegneten Klerikers",
       "Description": "",
       "ItemTypeEnum_ID": 13,
+      "AlwaysAvailable": false,
       "WonderLevel": {
         "Modifier": 2,
         "Affects": "Character"
@@ -1206,21 +1303,22 @@
       "Name": "Ring des auserwählten Magiers",
       "Description": "",
       "ItemTypeEnum_ID": 13,
+      "AlwaysAvailable": false,
       "WizardryLevel": {
         "Modifier": 2,
         "Affects": "Character"
       },
       "Damage": {
-        //TODO: Pro Zauberlevel
         "Modifier": 2,
         "Affects": "Character"
       }
     },
     {
       "ID": 100,
-      "Name": "Schleifstein",
+      "Name": "Grossartiger Schleifstein",
       "Description": "",
       "ItemTypeEnum_ID": 18,
+      "AlwaysAvailable": false,
       "Smithing": {
         "Modifier": 5,
         "Affects": "Character"
@@ -1231,6 +1329,7 @@
       "Name": "Schlangengift",
       "Description": "",
       "ItemTypeEnum_ID": 18,
+      "AlwaysAvailable": false,
       "Poison": {
         "Modifier": 4,
         "Affects": "Character"
@@ -1238,9 +1337,10 @@
     },
     {
       "ID": 102,
-      "Name": "Spruchrolle Diamantrüstung",
+      "Name": "Grossartige Spruchrolle Diamantrüstung",
       "Description": "",
       "ItemTypeEnum_ID": 18,
+      "AlwaysAvailable": false,
       "WonderTalentEnum_ID": 9,
       "WonderLevel": {
         "Override": "Playerlevel",
@@ -1250,9 +1350,10 @@
     },
     {
       "ID": 103,
-      "Name": "Spruchrolle Feuerball",
+      "Name": "Grossartige Spruchrolle Feuerball",
       "Description": "",
       "ItemTypeEnum_ID": 18,
+      "AlwaysAvailable": false,
       "WizardryTalentEnum_ID": 10,
       "WizardryLevel": {
         "Override": "Playerlevel",
@@ -1265,6 +1366,7 @@
       "Name": "Amulett des Kriegers",
       "Description": "",
       "ItemTypeEnum_ID": 14,
+      "AlwaysAvailable": false,
       "Damage": {
         "Type": "Melee",
         "Dice": {
@@ -1280,6 +1382,7 @@
       "Name": "Amulett des Schurkens",
       "Description": "",
       "ItemTypeEnum_ID": 14,
+      "AlwaysAvailable": false,
       "Damage": {
         "Type": "Affectsd",
         "Dice": {
@@ -1295,12 +1398,12 @@
       "Name": "Amulett des Kardinals",
       "Description": "",
       "ItemTypeEnum_ID": 14,
+      "AlwaysAvailable": false,
       "WonderLevel": {
         "Modifier": 3,
         "Affects": "Character"
       },
       "Heal": {
-        //TODO: +1 Selbstheilung für Wunder
         "Modifier": 3,
         "Affects": "Character"
       }
@@ -1310,12 +1413,12 @@
       "Name": "Amulett des Erzmagiers",
       "Description": "",
       "ItemTypeEnum_ID": 14,
+      "AlwaysAvailable": false,
       "WizardryLevel": {
         "Modifier": 1,
         "Affects": "Character"
       },
       "Damage": {
-        //TODO: +1 Schaden pro Würfel
         "Modifier": 1,
         "Affects": "Character"
       }
@@ -1325,6 +1428,7 @@
       "Name": "Umhang des Kriegers",
       "Description": "",
       "ItemTypeEnum_ID": 15,
+      "AlwaysAvailable": false,
       "Attack": {
         "Modifier": 3,
         "Affects": "Character"
@@ -1339,10 +1443,10 @@
       "Name": "Umhang des teuflischen Schurken",
       "Description": "",
       "ItemTypeEnum_ID": 15,
+      "AlwaysAvailable": false,
       "SavingThrow": {
         "Modifier": 3,
         "Affects": "Character"
-
       },
       "Health": {
         "Modifier": 3,
@@ -1354,6 +1458,7 @@
       "Name": "Umhang des Kardinals",
       "Description": "",
       "ItemTypeEnum_ID": 15,
+      "AlwaysAvailable": false,
       "WonderLevel": {
         "Modifier": 3,
         "Affects": "Character"
@@ -1364,6 +1469,7 @@
       "Name": "Umhang des Erzmagiers",
       "Description": "",
       "ItemTypeEnum_ID": 15,
+      "AlwaysAvailable": false,
       "WizardryLevel": {
         "Modifier": 3,
         "Affects": "Character"
@@ -1374,6 +1480,7 @@
       "Name": "Stirnreif des Kriegers",
       "Description": "",
       "ItemTypeEnum_ID": 15,
+      "AlwaysAvailable": false,
       "Attack": {
         "Modifier": 2,
         "Affects": "Character"
@@ -1392,6 +1499,7 @@
       "Name": "Stirnreif des Kardinals",
       "Description": "",
       "ItemTypeEnum_ID": 15,
+      "AlwaysAvailable": false,
       "WonderLevel": {
         "Modifier": 2,
         "Affects": "Character"
@@ -1406,6 +1514,7 @@
       "Name": "Stirnreif des Erzmagiers",
       "Description": "",
       "ItemTypeEnum_ID": 15,
+      "AlwaysAvailable": false,
       "WizardryLevel": {
         "Modifier": 2,
         "Affects": "Character"
@@ -1420,6 +1529,7 @@
       "Name": "Erinnerungsversuch",
       "Description": "",
       "ItemTypeEnum_ID": 18,
+      "AlwaysAvailable": false,
       "Memory": {
         "Modifier": 2,
         "Affects": "Character"
@@ -1434,6 +1544,7 @@
       "Name": "Erfahrung",
       "Description": "",
       "ItemTypeEnum_ID": 18,
+      "AlwaysAvailable": false,
       "Exp": {
         "Modifier": 6,
         "Affects": "Character"
@@ -1443,6 +1554,7 @@
       "ID": 119,
       "Name": "Sammlung",
       "Description": "",
+      "AlwaysAvailable": false,
       "Mechanism": "DouleLoot"
     },
     {
@@ -1450,11 +1562,11 @@
       "Name": "Fetzen",
       "Description": "",
       "ItemTypeEnum_ID": 1,
+      "AlwaysAvailable": true,
       "ArmorClass": {
         "Modifier": 3,
         "Affects": "Character"
-      },
-      "AlwaysAvailable": true
+      }
     },
     {
       "ID": 121,
@@ -1468,6 +1580,7 @@
       "Name": "Knüppel",
       "Description": "",
       "ItemTypeEnum_ID": 3,
+      "AlwaysAvailable": true,
       "Damage": {
         "Dice": {
           "Count": 1,
@@ -1479,14 +1592,14 @@
       "Attack": {
         "Modifier": -1,
         "Affects": "Item"
-      },
-      "AlwaysAvailable": true
+      }
     },
     {
       "ID": 123,
       "Name": "Alter Bogen",
       "Description": "",
       "ItemTypeEnum_ID": 5,
+      "AlwaysAvailable": true,
       "Damage": {
         "Dice": {
           "Count": 1,
@@ -1498,19 +1611,18 @@
       "Attack": {
         "Modifier": -1,
         "Affects": "Item"
-      },
-      "AlwaysAvailable": true
+      }
     },
     {
       "ID": 124,
       "Name": "Zersplitterter Schild",
       "Description": "",
       "ItemTypeEnum_ID": 10,
+      "AlwaysAvailable": true,
       "ArmorClass": {
         "Modifier": 1,
         "Affects": "Character"
-      },
-      "AlwaysAvailable": true
+      }
     }
   ]
 }
