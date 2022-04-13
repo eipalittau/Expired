@@ -94,7 +94,7 @@
             if (lDouble.Any()) {
                 throw new Exceptions.DublicateDataException(nameof(JsonDataBase.ID), lDouble.First().ID);
             }
-
+            
             lDouble = JsonData.GroupBy(x => x.Name).Where(g => g.Skip(1).Any()).SelectMany(x => x);
             if (lDouble.Any()) {
                 throw new Exceptions.DublicateDataException(nameof(JsonDataBase.Name), lDouble.First().ID);

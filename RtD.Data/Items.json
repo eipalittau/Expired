@@ -216,7 +216,7 @@
     },
     {
       "ID": 18,
-      "Name": "Amulett des Kämpfers",
+      "Name": "Schartiges Amulett des Kämpfers",
       "Description": "",
       "ItemTypeEnum_ID": 14,
       "AlwaysAvailable": false,
@@ -227,7 +227,7 @@
     },
     {
       "ID": 19,
-      "Name": "Amulett des Magiers",
+      "Name": "Schartiges Amulett des Magiers",
       "Description": "",
       "ItemTypeEnum_ID": 14,
       "AlwaysAvailable": false,
@@ -238,7 +238,7 @@
     },
     {
       "ID": 20,
-      "Name": "Umhang des Kämpfers",
+      "Name": "Schartiges Umhang des Kämpfers",
       "Description": "",
       "ItemTypeEnum_ID": 15,
       "AlwaysAvailable": false,
@@ -249,7 +249,7 @@
     },
     {
       "ID": 21,
-      "Name": "Umhang des Schurken",
+      "Name": "Schartiges Umhang des Schurken",
       "Description": "",
       "ItemTypeEnum_ID": 15,
       "AlwaysAvailable": false,
@@ -541,7 +541,7 @@
     },
     {
       "ID": 44,
-      "Name": "Amulett des Kämpfers",
+      "Name": "Abgewetztes Amulett des Kämpfers",
       "Description": "",
       "ItemTypeEnum_ID": 14,
       "AlwaysAvailable": false,
@@ -556,7 +556,7 @@
     },
     {
       "ID": 45,
-      "Name": "Amulett des Mönchs",
+      "Name": "Abgewetztes Amulett des Mönchs",
       "Description": "",
       "ItemTypeEnum_ID": 14,
       "AlwaysAvailable": false,
@@ -571,7 +571,7 @@
     },
     {
       "ID": 46,
-      "Name": "Amulett des Zauberers",
+      "Name": "Abgewetztes Amulett des Zauberers",
       "Description": "",
       "ItemTypeEnum_ID": 14,
       "AlwaysAvailable": false,
@@ -588,7 +588,7 @@
     },
     {
       "ID": 47,
-      "Name": "Umhang des Kämpfers",
+      "Name": "Abgewetzter Umhang des Kämpfers",
       "Description": "",
       "ItemTypeEnum_ID": 15,
       "AlwaysAvailable": false,
@@ -603,7 +603,7 @@
     },
     {
       "ID": 48,
-      "Name": "Umhang des Schurken",
+      "Name": "Abgewetzter Umhang des Schurken",
       "Description": "",
       "ItemTypeEnum_ID": 15,
       "AlwaysAvailable": false,
@@ -618,7 +618,7 @@
     },
     {
       "ID": 49,
-      "Name": "Umhang des Klerikers",
+      "Name": "Abgewetzter Umhang des Klerikers",
       "Description": "",
       "ItemTypeEnum_ID": 15,
       "AlwaysAvailable": false,
@@ -629,7 +629,7 @@
     },
     {
       "ID": 50,
-      "Name": "Umhang des Magiers",
+      "Name": "Abgewetzter Umhang des Magiers",
       "Description": "",
       "ItemTypeEnum_ID": 15,
       "AlwaysAvailable": false,
