@@ -2,6 +2,7 @@
     public sealed class ItemQuality : Base<Data.Equipment.ItemQualityData> {
         #region Properties / Felder
         private static int mID = 0;
+private static ItemQuality mSingleton = new ItemQuality();
         #endregion
 
         #region Konstruktor
@@ -17,19 +18,25 @@
         #endregion
 
         #region Methoden
-        public void Add(int aID, string aName, string aDescription, bool aCanBeDestroyed, bool aIsDefault, Data.Equipment.EffectData aEffect) {
+public static ItemQuality Singleton {
+get {
+return mSingleton;
+}
+}
+
+        public void Add(int aID, string aName, string aDescription, bool aCanBeDestroyed, bool aIsDefault, Dictionary<string, int> aEffect) {
             Add(aID, aName, aDescription, (uint)base.Count() + 1, aCanBeDestroyed, aIsDefault, aEffect);
         }
 
-        public void Add(int aID, string aName, string aDescription, uint aSortOrder, bool aCanBeDestroyed, bool aIsDefault, Data.Equipment.EffectData aEffect) {
+        public void Add(int aID, string aName, string aDescription, uint aSortOrder, bool aCanBeDestroyed, bool aIsDefault, Dictionary<string, int> aEffect) {
             Add(aID, aName, aDescription, aSortOrder, base.GetOriginNameCaller(), aCanBeDestroyed, aIsDefault, aEffect);
         }
 
-        private void Add(string aName, string aDescription, bool aCanBeDestroyed, bool aIsDefault, Data.Equipment.EffectData aEffect) {
+        private void Add(string aName, string aDescription, bool aCanBeDestroyed, bool aIsDefault, Dictionary<string, int> aEffect) {
             Add(++mID, aName, aDescription, (uint)base.Count() + 1, base.GetOriginNameExecuting(), aCanBeDestroyed, aIsDefault, aEffect);
         }
 
-        private void Add(int aID, string aName, string aDescription, uint aSortOrder, string aOrigin, bool aCanBeDestroyed, bool aIsDefault, Data.Equipment.EffectData aEffect) {
+        private void Add(int aID, string aName, string aDescription, uint aSortOrder, string aOrigin, bool aCanBeDestroyed, bool aIsDefault, Dictionary<string, int> aEffect) {
             if (base.ItemExists(aID, aName)) {
                 // Patrik: Throw Dublicate Exception
             } else {
