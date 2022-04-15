@@ -5,11 +5,11 @@
         public ItemQualityData? Upgrade { get; set; }
         public bool CanBeDestroyed { get; set; }
         public bool IsDefault { get; set; }
-        public EffectData Effect { get; init; }
+        public Dictionary<string, int> Effect { get; init; }
         #endregion
 
         #region Konstruktor
-        internal ItemQualityData(int aID, string aName, string aDescription, uint aSortOrder, string aOrigin, ItemQualityData? aDowngrade, ItemQualityData? aUpgrade, bool aCanBeDestroyed, bool aIsDefault, EffectData aEffect)
+        internal ItemQualityData(int aID, string aName, string aDescription, uint aSortOrder, string aOrigin, ItemQualityData? aDowngrade, ItemQualityData? aUpgrade, bool aCanBeDestroyed, bool aIsDefault, Dictionary<string, int> aEffect)
             : base(aID, aName, aDescription, aSortOrder, aOrigin) {
             Downgrade = aDowngrade;
             Upgrade = aUpgrade;
@@ -18,5 +18,12 @@
             Effect = aEffect;
         }
         #endregion
+
+#region Methoden
+public EffectData Effect() {
+
+}
+#endregion
+
     }
 }
