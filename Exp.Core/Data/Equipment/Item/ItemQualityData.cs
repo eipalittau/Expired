@@ -24,6 +24,9 @@ Secondary = 1
             IsDefault = aIsDefault;
             Effect = aEffect;
         }
+internal ItemQualityData() : Base() {
+
+}
         #endregion
 
 #region Methoden
