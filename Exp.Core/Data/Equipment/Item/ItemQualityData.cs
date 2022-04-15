@@ -1,5 +1,12 @@
 ﻿namespace Exp.Data.Equipment {
     public sealed class ItemQualityData : DataBase {
+#region Enumerations
+public enum EffectEnum : byte {
+Primary = 0,
+Secondary = 1
+}
+#endregion
+
         #region Properties / Felder
         public ItemQualityData? Downgrade { get; set; }
         public ItemQualityData? Upgrade { get; set; }
