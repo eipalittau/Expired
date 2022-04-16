@@ -2,7 +2,7 @@
     public sealed class ItemQuality : Base<Data.Equipment.ItemQualityData> {
         #region Properties / Felder
         private static int mID = 0;
-private static ItemQuality mSingleton = new ItemQuality();
+        private static ItemQuality mSingleton = new ItemQuality();
         #endregion
 
         #region Konstruktor
@@ -18,11 +18,19 @@ private static ItemQuality mSingleton = new ItemQuality();
         #endregion
 
         #region Methoden
-public static ItemQuality Singleton {
-get {
-return mSingleton;
-}
-}
+        public static ItemQuality Singleton {
+            get {
+                return mSingleton;
+            }
+        }
+
+        public void Add(int aID, string aName, string aDescription, bool aCanBeDestroyed, bool aIsDefault, Dictionary<string, int> aEffect) {
+            Add(aID, aName, aDescription, (uint)base.Count() + 1, aCanBeDestroyed, aIsDefault, aEffect);
+        }
+
+        public void Add(int aID, string aName, string aDescription, uint aSortOrder, bool aCanBeDestroyed, bool aIsDefault, Dictionary<string, int> aEffect) {
+            Add(aID, aName, aDescription, aSortOrder, base.GetOriginNameCaller(), aCanBeDestroyed, aIsDefault, aEffect);
+        }
 
         public void Add(int aID, string aName, string aDescription, bool aCanBeDestroyed, bool aIsDefault, Dictionary<string, int> aEffect) {
             Add(aID, aName, aDescription, (uint)base.Count() + 1, aCanBeDestroyed, aIsDefault, aEffect);
