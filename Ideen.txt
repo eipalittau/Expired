@@ -1,2 +1,4 @@
 Youtube-Kanal zur Vorstellung
 Isometrische Ansicht, im Kampf auf 3D reinzoomen
+ItemQuality: Mehr als nur 5 Qualitätsstufen.
+Verzauberungen von Items.
