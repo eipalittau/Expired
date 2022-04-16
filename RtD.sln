@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RtD.CharacterSheetTest", "R
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RtD.JsonEditor", "RtD.JsonEditor\RtD.JsonEditor.csproj", "{E1570ACC-E197-4CE6-A0A2-82ACB4501508}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exp.Core", "Exp.Core\Exp.Core.csproj", "{7B2BD59B-032B-4A7A-A255-D34EC93935C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exp.Core", "Exp.Core\Exp.Core.csproj", "{7B2BD59B-032B-4A7A-A255-D34EC93935C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exp.DefaultMod", "Exp.DefaultMod\Exp.DefaultMod.csproj", "{179C281E-BEE8-4F7F-BCC6-2A1C18DE7AB2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{7B2BD59B-032B-4A7A-A255-D34EC93935C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B2BD59B-032B-4A7A-A255-D34EC93935C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B2BD59B-032B-4A7A-A255-D34EC93935C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{179C281E-BEE8-4F7F-BCC6-2A1C18DE7AB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{179C281E-BEE8-4F7F-BCC6-2A1C18DE7AB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{179C281E-BEE8-4F7F-BCC6-2A1C18DE7AB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{179C281E-BEE8-4F7F-BCC6-2A1C18DE7AB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

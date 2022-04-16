@@ -14,7 +14,7 @@ namespace Exp.Data {
       
         #region Methoden
         public static IList<EffectEnum> Enumerate(DirectionEnum aDirection = DirectionEnum.None) {
-            return base.Enumerate<EffectEnum>(aDirection)
+            return base.Enumerate<EffectEnum>(aDirection);
         }
         
         public static void Add(string aName) {

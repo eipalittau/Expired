@@ -12,7 +12,7 @@ namespace Exp.Data {
         public int ID { get; init; }
         public string Name { get; init; }
         public int SortOrder { get; set; }
-        protected string Origin { get; set;
+        protected string Origin { get; set; }
         #endregion
       
         #region Konstruktor
@@ -21,7 +21,7 @@ namespace Exp.Data {
         #endregion
       
         #region Methoden
-        protected static IList<T> Enumerate<T>(DirectionEnum aDirection) where T : EnumerationBase {
+        protected static IList<T> Enumerate<T>(DirectionEnum aDirection) where T : EnumBase {
             List<T> lList = new();
 
             foreach (var lItem in typeof(T).GetFields().Where(x => x.IsStatic).Where(x => x.IsPublic)) {
@@ -47,15 +47,15 @@ namespace Exp.Data {
             return lList.AsReadOnly();
         }
 
-        protected static int Count<T>() {
+        protected static int Count<T>() where T : EnumBase {
             return Enumerate<T>(DirectionEnum.None).Count;
         }
 
-        protected static T Convert<T>(int aID, T aDefault) where T : EnumerationBase {
+        protected static T Convert<T>(int aID, T aDefault) where T : EnumBase {
             return Enumerate<T>(DirectionEnum.None).Where(x => x.ID == aID).FirstOrDefault() ?? aDefault;
         }
 
-        protected static T Convert<T>(string aName, T aDefault) where T : EnumerationBase {
+        protected static T Convert<T>(string aName, T aDefault) where T : EnumBase {
             return Enumerate<T>(DirectionEnum.None).Where(x => x.Name == aName).FirstOrDefault() ?? aDefault;
         }
 

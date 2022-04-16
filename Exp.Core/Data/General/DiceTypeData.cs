@@ -6,8 +6,8 @@
         #endregion
 
         #region Konstruktor
-        internal DiceTypeData(int aID, string aName, string aDescription, uint aSortOrder, string aOrigin, int aFaces)
-            : base(aID, aName, aDescription, aSortOrder, aOrigin)
+        internal DiceTypeData(string aID, int aSortWeight, string aOrigin, int aFaces)
+            : base(aID, string.Empty, string.Empty, aSortWeight, aOrigin)
             => Faces = aFaces;
         #endregion
     }

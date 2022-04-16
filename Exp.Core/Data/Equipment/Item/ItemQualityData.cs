@@ -1,39 +1,20 @@
 ﻿namespace Exp.Data.Equipment {
     public sealed class ItemQualityData : DataBase {
-#region Enumerations
-public enum EffectEnum : byte {
-Primary = 0,
-Secondary = 1
-}
-#endregion
-
         #region Properties / Felder
-        public ItemQualityData? Downgrade { get; set; }
-        public ItemQualityData? Upgrade { get; set; }
+        public string? DowngradeID { get; set; }
+        public string? UpgradeID { get; set; }
         public bool CanBeDestroyed { get; set; }
         public bool IsDefault { get; set; }
-        public Dictionary<string, int> Effect { get; init; }
         #endregion
 
         #region Konstruktor
-        internal ItemQualityData(int aID, string aName, string aDescription, uint aSortOrder, string aOrigin, ItemQualityData? aDowngrade, ItemQualityData? aUpgrade, bool aCanBeDestroyed, bool aIsDefault, Dictionary<string, int> aEffect)
-            : base(aID, aName, aDescription, aSortOrder, aOrigin) {
-            Downgrade = aDowngrade;
-            Upgrade = aUpgrade;
-            CanBeDestroyed = aCanBeDestroyed;
-            IsDefault = aIsDefault;
-            Effect = aEffect;
-        }
-internal ItemQualityData() : Base() {
-
-}
+        internal ItemQualityData(string aID, string? aDowngradeID, string? aUpgradeID, int aSortWeight, string aOrigin, bool aCanBeDestroyed, bool aIsDefault)
+            : base(aID, string.Empty, string.Empty, aSortWeight, aOrigin)
+            => (DowngradeID, UpgradeID, CanBeDestroyed, IsDefault) = (aDowngradeID, aUpgradeID, aCanBeDestroyed, aIsDefault);
         #endregion
 
-#region Methoden
-public EffectData Effect() {
+        #region Methoden
 
-}
-#endregion
-
+        #endregion
     }
 }

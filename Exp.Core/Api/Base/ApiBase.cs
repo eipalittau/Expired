@@ -1,49 +1,39 @@
 ﻿using System.Reflection;
 
 namespace Exp.Api {
-    public abstract class Base<T> where T : Data.DataBase {
+    public abstract class ApiBase<T> where T : Data.DataBase {
         #region Properties / Felder
         private readonly List<T> mDataList = new();
         #endregion
 
         #region Konstruktor
-        protected Base() { }
+        protected ApiBase() { }
         #endregion
 
         #region Methoden
         protected void Add(T aItem) {
+            if (mDataList.Any(x => x.ID == aItem.ID))
+            {
+                // Patrik: Throw Dublicate Exception
+            }
+
             mDataList.Add(aItem);
         }
 
-        public void Remove(int aID) {
+        public void Remove(string aID) {
             Remove(Get(aID));
         }
 
-        public void Remove(string aName) {
-            Remove(Get(aName));
-        }
-
         public void RemoveDefault() {
-            mDataList.Where(x => x.Origin.Equals(GetOriginNameCaller(), StringComparison.InvariantCultureIgnoreCase)).ToList().ForEach(x => Remove(x));
+            mDataList.Where(x => x.Origin.Equals(GetOriginNameExecuting(), StringComparison.InvariantCultureIgnoreCase)).ToList().ForEach(x => Remove(x));
         }
 
         public IList<T> List() {
             return mDataList.AsReadOnly();
         }
 
-        public T Get(int aID) {
-            T? lItem = mDataList.Where(x => x.ID == aID).FirstOrDefault();
-
-            if (lItem == null) {
-                // Patrik: Throw Item Not Found Exception
-                throw new InvalidOperationException();
-            } else {
-                return lItem;
-            }
-        }
-
-        public T Get(string aName) {
-            T? lItem = mDataList.Where(x => x.Name.Equals(aName, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
+        public T Get(string aID) {
+            T? lItem = mDataList.Where(x => x.ID.Equals(aID, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
 
             if (lItem == null) {
                 // Patrik: Throw Item Not Found Exception
@@ -65,8 +55,8 @@ namespace Exp.Api {
             return Assembly.GetExecutingAssembly().GetName().Name ?? string.Empty;
         }
 
-        protected bool ItemExists(int aID, string aName) {
-            return mDataList.Any(x => x.ID == aID || x.Name.Equals(aName, StringComparison.InvariantCultureIgnoreCase));
+        protected bool ItemExists(string aID) {
+            return mDataList.Any(x => x.ID.Equals(aID, StringComparison.InvariantCultureIgnoreCase));
         }
 
         private void Remove(T? aItem) {

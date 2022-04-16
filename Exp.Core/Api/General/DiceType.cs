@@ -1,36 +1,37 @@
-﻿using System.Reflection;
+﻿namespace Exp.Api.General {
+    public sealed class DiceType : ApiBase<Data.General.DiceTypeData> {
+        #region Properties / Felder
+        private static readonly DiceType mSingleton = new();
+        #endregion
 
-namespace Exp.Api.General {
-    public sealed class DiceType : Base<Data.General.DiceTypeData> {
         #region Konstruktor
         internal DiceType() : base() {
-            string lOrigin = base.GetOriginNameExecuting();
-
-            Add(1, "1W4", "4-seitiger Würfel", 1, lOrigin, 4);
-            Add(2, "1W6", "6-seitiger Würfel", 2, lOrigin, 6);
-            Add(3, "1W8", "8-seitiger Würfel", 3, lOrigin, 8);
-            Add(4, "1W10", "10-seitiger Würfel", 4, lOrigin, 10);
-            Add(5, "1W12", "12-seitiger Würfel", 5, lOrigin, 12);
-            Add(6, "1W20", "20-seitiger Würfel", 6, lOrigin, 20);
-            Add(7, "1W100", "100-seitiger Würfel", 7, lOrigin, 100);
+            Add("W4", 100, 4, string.Empty);
+            Add("W6", 200, 6, string.Empty);
+            Add("W8", 300, 8, string.Empty);
+            Add("W10", 400, 10, string.Empty);
+            Add("W12", 500, 12, string.Empty);
+            Add("W20", 600, 20, string.Empty);
+            Add("W100", 700, 100, string.Empty);
         }
         #endregion
 
         #region Methoden
-        public void Add(int aID, string aName, string aDescription, int aFaces) {
-            Add(aID, aName, aDescription, (uint)base.Count() + 1, aFaces);
-        }
-        // Patrik: Testen: Wert aus GetCallingAssembly wenn Daten aus Konstruktor.
-        public void Add(int aID, string aName, string aDescription, uint aSortOrder, int aFaces) {
-            Add(aID, aName, aDescription, aSortOrder, base.GetOriginNameCaller(), aFaces);
+        public static DiceType Singleton
+        {
+            get
+            {
+                return mSingleton;
+            }
         }
 
-        private void Add(int aID, string aName, string aDescription, uint aSortOrder, string aOrigin, int aFaces) {
-            if (base.ItemExists(aID, aName)) {
-                // Patrik: Throw Dublicate Exception
-            } else {
-                base.Add(new Data.General.DiceTypeData(aID, aName, aDescription, aSortOrder, aOrigin, aFaces));
-            }
+        public void Add(string aID, int aFaces, int aSortWeight = 0) {
+            Add(aID, aSortWeight, aFaces, base.GetOriginNameCaller());
+        }
+        // Patrik: Testen: Wert aus GetCallingAssembly wenn Daten aus Konstruktor.
+
+        private void Add(string aID, int aSortWeight, int aFaces, string aOrigin) {
+            base.Add(new Data.General.DiceTypeData(aID, aSortWeight, aOrigin, aFaces));
         }
         #endregion
     }

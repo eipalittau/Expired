@@ -5,8 +5,8 @@
         #endregion
 
         #region Konstruktor
-        internal EnemyClassData(int aID, string aName, string aDescription, uint aSortOrder, string aOrigin, int aInitiative)
-            : base(aID, aName, aDescription, aSortOrder, aOrigin)
+        internal EnemyClassData(string aID, int aSortWeight, string aOrigin, int aInitiative)
+            : base(aID, string.Empty, string.Empty, aSortWeight, aOrigin)
             => Initiative = aInitiative;
         #endregion
     }
