@@ -11,15 +11,16 @@ namespace Exp.Data {
         #region Properties / Felder
         public int ID { get; init; }
         public string Name { get; init; }
+        public int SortOrder { get; set; }
         #endregion
       
         #region Konstruktor
-        protected EnumBase(int aID, string aName)
-            => (ID, Name) = (aID, aName);   
+        protected EnumBase(int aID, string aName, int aSortOrder)
+            => (ID, Name, SortOrder) = (aID, aName, aSortOrder);
         #endregion
       
         #region Methoden
-        protected static List<T> Enumerate<T>(DirectionEnum aDirection) where T : EnumerationBase {
+        protected static IList<T> Enumerate<T>(DirectionEnum aDirection) where T : EnumerationBase {
             List<T> lList = new();
 
             foreach (var lItem in typeof(T).GetFields().Where(x => x.IsStatic).Where(x => x.IsPublic)) {
@@ -28,16 +29,25 @@ namespace Exp.Data {
                     lList.Add(lValue);
                 }
             }
-
-            return aDirection switch {
-                DirectionEnum.ASC => lList.OrderBy(x => x.SortOrder).ToList(),
-                DirectionEnum.DESC => lList.OrderByDescending(x => x.SortOrder).ToList(),
-                _ => lList,
-            };
+            
+            switch (aDirection) {
+                case DirectionEnum.ASC:
+                    lList.OrderBy(x => x.SortOrder).ToList();
+                    break;
+                    
+                case DirectionEnum.DESC:
+                    lList.OrderByDescending(x => x.SortOrder).ToList();
+                    break;
+                    
+                default:
+                    break;
+            }
+            
+            return lList.AsReadOnly();
         }
 
         protected static int Count<T>() {
-            return typeof(T).GetFields().Length;
+            return Enumerate<T>(DirectionEnum.None).Count;
         }
 
         protected static T Convert<T>(int aID, T aDefault) where T : EnumerationBase {
