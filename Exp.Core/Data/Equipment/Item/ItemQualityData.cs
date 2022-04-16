@@ -8,8 +8,8 @@
         #endregion
 
         #region Konstruktor
-        internal ItemQualityData(string aID, string? aDowngradeID, string? aUpgradeID, int aSortWeight, string aOrigin, bool aCanBeDestroyed, bool aIsDefault)
-            : base(aID, string.Empty, string.Empty, aSortWeight, aOrigin)
+        internal ItemQualityData(string aID, string? aDowngradeID, string? aUpgradeID, int aSortWeight, bool aCanBeDestroyed, bool aIsDefault)
+            : base(aID, aSortWeight)
             => (DowngradeID, UpgradeID, CanBeDestroyed, IsDefault) = (aDowngradeID, aUpgradeID, aCanBeDestroyed, aIsDefault);
         #endregion
 
