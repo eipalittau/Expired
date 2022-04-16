@@ -12,8 +12,7 @@ namespace Exp.Api {
 
         #region Methoden
         protected void Add(T aItem) {
-            if (mDataList.Any(x => x.ID == aItem.ID))
-            {
+            if (mDataList.Any(x => x.ID == aItem.ID)) {
                 // Patrik: Throw Dublicate Exception
             }
 
