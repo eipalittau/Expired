@@ -1,18 +1,21 @@
 namespace Exp.Data {
-  public sealed class EffectEnum {
+  public sealed class EffectEnum : EnumBase {
     #region Properties / Folder
-    internal static EffectEnum None = new(0, nameof(None));
-    public static EffectEnum Primary = new(1, nameof(Primary));
-    public static EffectEnum Secondary = new(2, nameof(Secondary));
-    public static EffectEnum Tertiary = new(3, nameof(Tertiary));
-    
-    public int ID { get; init; }
-    public string Name { get; init; }
+    private static int mCurrentID = 0;
+    internal static EffectEnum None = new(nameof(None));
+    public static EffectEnum Primary = new(nameof(Primary));
+    public static EffectEnum Secondary = new(nameof(Secondary));
+    public static EffectEnum Tertiary = new(nameof(Tertiary));
     #endregion
     
     #region Konstruktor
-    private EffectEnum(int aID, string aName)
-      => (ID, Name) = (aID, aName);
+    private EffectEnum(string aName) : base(mCurrentID++, aName) { }
+    #endregion
+      
+    #region Methoden
+      public void Add(string aName) {
+        
+      }
     #endregion
   }
 }
