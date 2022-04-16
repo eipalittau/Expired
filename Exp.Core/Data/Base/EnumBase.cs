@@ -12,11 +12,12 @@ namespace Exp.Data {
         public int ID { get; init; }
         public string Name { get; init; }
         public int SortOrder { get; set; }
+        protected string Origin { get; set;
         #endregion
       
         #region Konstruktor
-        protected EnumBase(int aID, string aName, int aSortOrder)
-            => (ID, Name, SortOrder) = (aID, aName, aSortOrder);
+        protected EnumBase(int aID, string aName, int aSortOrder, string aOrigin)
+            => (ID, Name, SortOrder, Origin) = (aID, aName, aSortOrder, aOrigin);
         #endregion
       
         #region Methoden
