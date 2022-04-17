@@ -9,10 +9,21 @@
             Add("Rüstung", 100, "Körper");
             Add("Stiefel", 200, "Füsse");
             Add("Einhandwaffe", 300, "Haupthand", "Nebenhand");
-            Add("W10", 10, 400);
-            Add("W12", 12, 500);
-            Add("W20", 20, 600);
-            Add("W100", 100, 700);
+            Add("Zweihandwaffe", 400, "Haupthand", "Nebenhand");
+            Add("Bogen", 500, "Haupthand", "Nebenhand");
+            Add("Armbrust", 600, "Haupthand", "Nebenhand");
+            Add("Pfeile", 700, base.Get("Bogen"), "Haupthand", "Nebenhand");
+            Add("Bolzen", 800, base.Get("Armbrust"), "Haupthand", "Nebenhand");
+            Add("Dolch", 900, "Nebenhand");
+            Add("Schild", 1000, "Nebenhand");
+            Add("Heiliges Symbol", 1100, "Nebenhand");
+            Add("Zauberbuch", 1200, "Nebenhand");
+            Add("Ring", 1300, "Ringfinger links", "Ringfinger rechts");
+            Add("Amulett", 1400, "Hals");
+            Add("Umhang", 1500, "Schultern");
+            Add("Kopfbedeckung", 1600, "Kopf");
+            Add("Armschutz", 1700, "Handgelenk links", "Handgelenk rechts");
+            Add("Konsumierbar", 1800, "Tasche");
         }
         #endregion
 

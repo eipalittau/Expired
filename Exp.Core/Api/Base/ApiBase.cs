@@ -9,14 +9,6 @@
         #endregion
 
         #region Methoden
-        protected void Add(T aItem) {
-            if (mDataList.Any(x => x.ID.Equals(aItem.ID, StringComparison.InvariantCultureIgnoreCase))) {
-                // Patrik: Throw Dublicate Exception
-            }
-
-            mDataList.Add(aItem);
-        }
-
         public void Remove(string aID) {
             mDataList.Remove(Get(aID));
         }
@@ -42,6 +34,18 @@
 
         public int Count() {
             return mDataList.Count;
+        }
+
+        protected void Add(T aItem) {
+            if (mDataList.Any(x => x.ID.Equals(aItem.ID, StringComparison.InvariantCultureIgnoreCase))) {
+                // Patrik: Throw Dublicate Exception
+            }
+
+            mDataList.Add(aItem);
+        }
+
+        protected T[] Convert(params string[] aPrerequisites) {
+            return aPrerequisites.ToList().Select(x => Get(x)).ToArray();
         }
         #endregion
     }

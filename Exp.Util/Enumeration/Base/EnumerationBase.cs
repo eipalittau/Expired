@@ -1,5 +1,5 @@
 ﻿namespace Exp.Util {
-    public abstract class EnumerationBase {
+    public abstract class EnumerationBase  {
         #region Enumerations
         public enum DirectionEnum : byte {
             None = 0,
