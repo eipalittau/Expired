@@ -3,6 +3,8 @@
 namespace Exp.DefaultMod {
     public class Main {
         public void StartUp() {
+            AddEnemyClassData();
+
             AddAuraData();
             AddDefensiveData();
             AddOffensiveData();
@@ -18,10 +20,6 @@ namespace Exp.DefaultMod {
             Api.General.DiceType.Singleton.Add("W20", 20, 600);
             Api.General.DiceType.Singleton.Add("W100", 100, 700);
 
-            Api.Enemy.EnemyClass.Singleton.Add("Magier", 100);
-            Api.Enemy.EnemyClass.Singleton.Add("Kleriker", 200);
-            Api.Enemy.EnemyClass.Singleton.Add("Schurke", 300);
-
             Api.Equipment.ItemQuality.Singleton.Get("Normal").DowngradeID = "";
 
 
@@ -31,6 +29,15 @@ namespace Exp.DefaultMod {
             //Add("Gehärtet", "Normal", "Meisterhaft", 400, string.Empty, true, false);
             //Add("Meisterhaft", "Gehärtet", null, 500, string.Empty, false, false);
         }
+
+        #region Enemy
+        private static void AddEnemyClassData() {
+            Api.Enemy.EnemyClass.Singleton.Add(new Enemy.Mage());
+            Api.Enemy.EnemyClass.Singleton.Add(new Enemy.Cleric());
+            Api.Enemy.EnemyClass.Singleton.Add(new Enemy.Rogue());
+            Api.Enemy.EnemyClass.Singleton.Add(new Enemy.Fighter());
+        }
+        #endregion
 
         #region Feat
         private static void AddAuraData() {

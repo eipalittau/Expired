@@ -1,4 +1,4 @@
-﻿namespace Exp.DefaultMod {
+﻿namespace Exp.DefaultMod.Feat {
     internal abstract class FeatDataBase<T> : DataBase, Exp.Data.Feat.IFeatDataBase<T> {
         #region Properties / Felder
         /// <summary>Stufe der Fähigkeit.</summary>
