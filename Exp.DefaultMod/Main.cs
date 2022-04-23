@@ -1,8 +1,8 @@
-﻿using Exp.Data.General;
-
-namespace Exp.DefaultMod {
+﻿namespace Exp.DefaultMod {
     public class Main {
         public void StartUp() {
+            AddDiceTypeData();
+
             AddEnemyClassData();
 
             AddAuraData();
@@ -12,13 +12,6 @@ namespace Exp.DefaultMod {
             AddWonderData();
 
 
-            Api.General.DiceType.Singleton.Add("W4", 4, 100);
-            Api.General.DiceType.Singleton.Add("W6", 6, 200);
-            Api.General.DiceType.Singleton.Add("W8", 8, 300);
-            Api.General.DiceType.Singleton.Add("W10", 10, 400);
-            Api.General.DiceType.Singleton.Add("W12", 12, 500);
-            Api.General.DiceType.Singleton.Add("W20", 20, 600);
-            Api.General.DiceType.Singleton.Add("W100", 100, 700);
 
             Api.Equipment.ItemQuality.Singleton.Get("Normal").DowngradeID = "";
 
@@ -29,6 +22,18 @@ namespace Exp.DefaultMod {
             //Add("Gehärtet", "Normal", "Meisterhaft", 400, string.Empty, true, false);
             //Add("Meisterhaft", "Gehärtet", null, 500, string.Empty, false, false);
         }
+
+        #region General
+        private static void AddDiceTypeData() {
+            Api.General.DiceType.Singleton.Add(new General.D4());
+            Api.General.DiceType.Singleton.Add(new General.D6());
+            Api.General.DiceType.Singleton.Add(new General.D8());
+            Api.General.DiceType.Singleton.Add(new General.D10());
+            Api.General.DiceType.Singleton.Add(new General.D12());
+            Api.General.DiceType.Singleton.Add(new General.D20());
+            Api.General.DiceType.Singleton.Add(new General.D100());
+        }
+        #endregion
 
         #region Enemy
         private static void AddEnemyClassData() {
