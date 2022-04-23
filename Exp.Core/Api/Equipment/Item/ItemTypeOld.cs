@@ -1,11 +1,11 @@
 ﻿namespace Exp.Api.Equipment {
-    public sealed class ItemType : ApiBase<Data.Equipment.ItemTypeData> {
+    public sealed class ItemTypeOld : ApiBase<Data.Equipment.ItemTypeData> {
         #region Properties / Felder
-        private static readonly ItemType mSingleton = new();
+        private static readonly ItemTypeOld mSingleton = new();
         #endregion
 
         #region Konstruktor
-        internal ItemType() : base() {
+        internal ItemTypeOld() : base() {
             Add("Rüstung", 100, "Körper");
             Add("Stiefel", 200, "Füsse");
             Add("Einhandwaffe", 300, "Haupthand", "Nebenhand");
@@ -28,7 +28,7 @@
         #endregion
 
         #region Methoden
-        public static ItemType Singleton {
+        public static ItemTypeOld Singleton {
             get {
                 return mSingleton;
             }

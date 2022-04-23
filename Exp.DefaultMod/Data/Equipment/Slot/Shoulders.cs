@@ -1,7 +1,7 @@
 ﻿using Exp.Data.Equipment;
 
 namespace Exp.DefaultMod.Equipment {
-    internal sealed class Shoulders : SlotBase, ISlotData {
+    internal sealed class Shoulders : SlotDataBase, ISlotData {
         #region Konstruktor
         internal Shoulders()
             : base(nameof(Shoulders), 1000) {

@@ -1,7 +1,7 @@
 ﻿using Exp.Data.Equipment;
 
 namespace Exp.DefaultMod.Equipment {
-    internal sealed class RingFingerRight : SlotBase, ISlotData {
+    internal sealed class RingFingerRight : SlotDataBase, ISlotData {
         #region Konstruktor
         internal RingFingerRight()
             : base(nameof(RingFingerRight), 600) {

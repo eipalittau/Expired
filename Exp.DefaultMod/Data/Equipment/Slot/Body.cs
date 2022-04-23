@@ -1,12 +1,12 @@
 ﻿using Exp.Data.Equipment;
 
 namespace Exp.DefaultMod.Equipment {
-    internal sealed class Armor : SlotBase, ISlotData {
+    internal sealed class Body : SlotDataBase, ISlotData {
         #region Konstruktor
-        internal Armor()
-            : base(nameof(Armor), 100) {
-            Name.Set(Util.LanguageEnum.Deutsch, "Rüstung");
-            Name.Set(Util.LanguageEnum.English, "Armor");
+        internal Body()
+            : base(nameof(Body), 100) {
+            Name.Set(Util.LanguageEnum.Deutsch, "Körper");
+            Name.Set(Util.LanguageEnum.English, "Body");
             Description.Set(Util.LanguageEnum.Deutsch, "Schützt vor Angriffen");
             Description.Set(Util.LanguageEnum.English, "");
         }

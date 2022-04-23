@@ -1,17 +1,17 @@
 ﻿namespace Exp.Api.Equipment {
-    public sealed class ItemQuality : ApiBase<Data.Equipment.ItemQualityData> {
+    public sealed class ItemQualityOld : ApiBase<Data.Equipment.ItemQualityData> {
         #region Properties / Felder
-        private static readonly ItemQuality mSingleton = new();
+        private static readonly ItemQualityOld mSingleton = new();
         #endregion
 
         #region Konstruktor
-        internal ItemQuality() : base() {
+        internal ItemQualityOld() : base() {
             Add("Normal", null, null, true, true, 100);
         }
         #endregion
 
         #region Methoden
-        public static ItemQuality Singleton {
+        public static ItemQualityOld Singleton {
             get {
                 return mSingleton;
             }

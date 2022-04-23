@@ -1,7 +1,7 @@
 ﻿using Exp.Data.Equipment;
 
 namespace Exp.DefaultMod.Equipment {
-    internal sealed class Mainhand : SlotBase, ISlotData {
+    internal sealed class Mainhand : SlotDataBase, ISlotData {
         #region Konstruktor
         internal Mainhand()
             : base(nameof(Mainhand), 300) {

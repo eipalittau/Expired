@@ -1,7 +1,7 @@
 ﻿using Exp.Data.Equipment;
 
 namespace Exp.DefaultMod.Equipment {
-    internal sealed class Bag : SlotBase, ISlotData {
+    internal sealed class Bag : SlotDataBase, ISlotData {
         #region Konstruktor
         internal Bag()
             : base(nameof(Bag), 1200) {

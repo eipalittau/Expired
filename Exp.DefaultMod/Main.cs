@@ -13,7 +13,7 @@
 
             AddSlotData();
 
-            Api.Equipment.ItemQuality.Singleton.Get("Normal").DowngradeID = "";
+            Api.Equipment.ItemQualityOld.Singleton.Get("Normal").DowngradeID = "";
 
 
             //Add("Rostig", null, "Schartig", 100, string.Empty, true, false);

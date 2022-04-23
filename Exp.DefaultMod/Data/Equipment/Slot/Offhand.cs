@@ -1,7 +1,7 @@
 ﻿using Exp.Data.Equipment;
 
 namespace Exp.DefaultMod.Equipment {
-    internal sealed class Offhand : SlotBase, ISlotData {
+    internal sealed class Offhand : SlotDataBase, ISlotData {
         #region Konstruktor
         internal Offhand()
             : base(nameof(Offhand), 400) {
