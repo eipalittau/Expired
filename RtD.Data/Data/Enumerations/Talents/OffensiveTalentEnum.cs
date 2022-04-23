@@ -9,7 +9,7 @@
         public static OffensiveTalentsEnum SweepingBlow = new OffensiveTalentsEnum(5, "Rundumschlag", "", 1, ActionTypeEnum.Standard);
         public static OffensiveTalentsEnum Charge = new OffensiveTalentsEnum(6, "CHARGE!", "", 1, ActionTypeEnum.Full);
         public static OffensiveTalentsEnum Teamplayer = new OffensiveTalentsEnum(7, "Teamplayer", "", 1);
-        public static OffensiveTalentsEnum TwoWeapons = new OffensiveTalentsEnum(8, "Kampf mit zwei Waffen", "", 1);
+        public static OffensiveTalentsEnum TwoWeapons = new OffensiveTalentsEnum(8, "", "", 1);
         public static OffensiveTalentsEnum StrongCharge = new OffensiveTalentsEnum(9, "CHAAAARGE!!!", "", 2, ActionTypeEnum.Full);
         public static OffensiveTalentsEnum Teamwork = new OffensiveTalentsEnum(10, "Teamwork", "", 2, Teamplayer);
         public static OffensiveTalentsEnum QuickMouth = new OffensiveTalentsEnum(11, "Schnelles Mundwerk", "", 2, ActionTypeEnum.Move, EloquentInsulte);

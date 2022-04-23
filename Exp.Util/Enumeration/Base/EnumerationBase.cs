@@ -1,52 +1,39 @@
 ﻿namespace Exp.Util {
-    public abstract class EnumerationBase  {
-        #region Enumerations
-        public enum DirectionEnum : byte {
-            None = 0,
-            ASC = 1,
-            DESC = 2
-        }
-        #endregion
-
+    public abstract class EnumerationBase : EnumerationMethodBase {
         #region Properties / Felder
-        public int ID { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
+        public int ID { get; init; }
+        public LanguageBasedData Name { get; } = new LanguageBasedData();
+        public LanguageBasedData Description { get; } = new LanguageBasedData();
         #endregion
 
         #region Konstruktor
-        protected EnumerationBase(int aID, string aName, string aDescription)
-            => (ID, Name, Description) = (aID, aName, aDescription);
+        protected EnumerationBase(int aID)
+            => ID = aID;
         #endregion
 
         #region Methoden
-        protected static IList<T> Enumerate<T>(DirectionEnum aDirection) where T : EnumerationBase {
-            IEnumerable<T> lList = typeof(T).GetFields()
-                .Where(x => x.IsStatic && x.IsPublic)
-                .Select(x => x.GetValue(null)).Cast<T>()
-                .Where(x => x != null);
-
-            return aDirection switch {
-                DirectionEnum.ASC => lList.OrderBy(x => x.ID).ToList().AsReadOnly(),
-                DirectionEnum.DESC => lList.OrderByDescending(x => x.ID).ToList().AsReadOnly(),
-                _ => lList.ToList().AsReadOnly(),
+        protected static List<T> Enumerate<T>(Enumeration.SortDirectionEnum aSortDirection) where T : EnumerationBase {
+            return aSortDirection switch {
+                Enumeration.SortDirectionEnum.ASC => EnumerationMethodBase.Enumerate<T>().OrderBy(x => x.ID).ToList(),
+                Enumeration.SortDirectionEnum.DESC => EnumerationMethodBase.Enumerate<T>().OrderByDescending(x => x.ID).ToList(),
+                _ => EnumerationMethodBase.Enumerate<T>()
             };
         }
 
-        protected static int Count<T>() where T : EnumerationBase {
-            return Enumerate<T>(DirectionEnum.None).Count;
-        }
-
         protected static T Convert<T>(int aID, T aDefault) where T : EnumerationBase {
-            return Enumerate<T>(DirectionEnum.None).Where(x => x.ID == aID).FirstOrDefault() ?? aDefault;
+            return EnumerationMethodBase.Enumerate<T>().Where(x => x.ID == aID).FirstOrDefault() ?? aDefault;
         }
 
-        protected static T Convert<T>(string aName, T aDefault) where T : EnumerationBase {
-            return Enumerate<T>(DirectionEnum.None).Where(x => x.Name == aName).FirstOrDefault() ?? aDefault;
+        protected static T Convert<T>(string aName, LanguageEnum aLanguage, T aDefault) where T : EnumerationBase {
+            return EnumerationMethodBase.Enumerate<T>().Where(x => x.Name.Value(aLanguage).Equals(aName, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault() ?? aDefault;
         }
 
         public virtual new string ToString() {
-            return Name;
+            return ToString(LanguageEnum.Fallback);
+        }
+
+        public virtual string ToString(LanguageEnum aLanguage) {
+            return Name.Value(aLanguage);
         }
         #endregion
     }

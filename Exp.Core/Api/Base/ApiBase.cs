@@ -1,5 +1,5 @@
 ﻿namespace Exp.Api {
-    public abstract class ApiBase<T> where T : Data.DataBase {
+    public abstract class ApiBase<T> where T : Data.IDataBase {
         #region Properties / Felder
         private readonly List<T> mDataList = new();
         #endregion
@@ -36,16 +36,12 @@
             return mDataList.Count;
         }
 
-        protected void Add(T aItem) {
+        public void Add(T aItem) {
             if (mDataList.Any(x => x.ID.Equals(aItem.ID, StringComparison.InvariantCultureIgnoreCase))) {
                 // Patrik: Throw Dublicate Exception
             }
 
             mDataList.Add(aItem);
-        }
-
-        protected T[] Convert(params string[] aPrerequisites) {
-            return aPrerequisites.ToList().Select(x => Get(x)).ToArray();
         }
         #endregion
     }
