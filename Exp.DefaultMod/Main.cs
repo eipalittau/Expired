@@ -11,7 +11,7 @@
             AddWizardryData();
             AddWonderData();
 
-
+            AddSlotData();
 
             Api.Equipment.ItemQuality.Singleton.Get("Normal").DowngradeID = "";
 
@@ -150,6 +150,23 @@
             Api.Feat.Wonder.Singleton.Add(new Feat.Wonder.Tartaros());
             Api.Feat.Wonder.Singleton.Add(new Feat.Wonder.Nyx());
             Api.Feat.Wonder.Singleton.Add(new Feat.Wonder.Styx());
+        }
+        #endregion
+
+        #region Equipment
+        private static void AddSlotData() {
+            Api.Equipment.Slot.Singleton.Add(new Equipment.Armor());
+            Api.Equipment.Slot.Singleton.Add(new Equipment.Feet());
+            Api.Equipment.Slot.Singleton.Add(new Equipment.Mainhand());
+            Api.Equipment.Slot.Singleton.Add(new Equipment.Offhand());
+            Api.Equipment.Slot.Singleton.Add(new Equipment.RingFingerLeft());
+            Api.Equipment.Slot.Singleton.Add(new Equipment.RingFingerRight());
+            Api.Equipment.Slot.Singleton.Add(new Equipment.WristLeft());
+            Api.Equipment.Slot.Singleton.Add(new Equipment.WristRight());
+            Api.Equipment.Slot.Singleton.Add(new Equipment.Neck());
+            Api.Equipment.Slot.Singleton.Add(new Equipment.Shoulders());
+            Api.Equipment.Slot.Singleton.Add(new Equipment.Head());
+            Api.Equipment.Slot.Singleton.Add(new Equipment.Bag());
         }
         #endregion
     }
