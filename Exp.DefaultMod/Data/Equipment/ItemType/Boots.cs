@@ -1,6 +1,6 @@
 ﻿using Exp.Data.Equipment;
 
-namespace Exp.DefaultMod.Equipment {
+namespace Exp.DefaultMod.Equipment.ItemType {
     internal sealed class Boots : ItemTypeDataBase, IItemTypeData {
         #region Konstruktor
         internal Boots()

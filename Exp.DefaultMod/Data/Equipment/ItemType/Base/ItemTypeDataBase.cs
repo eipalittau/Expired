@@ -1,6 +1,6 @@
 ﻿using Exp.Data.Equipment;
 
-namespace Exp.DefaultMod.Equipment {
+namespace Exp.DefaultMod.Equipment.ItemType {
     internal abstract class ItemTypeDataBase : DataBase, IItemTypeDataBase {
         #region Properties / Felder
         public List<ISlotData> EquipmentSlotList { get; } = new();

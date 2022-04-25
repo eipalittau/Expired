@@ -2,7 +2,7 @@
     internal abstract class DataBase : Data.IDataBase {
         #region Properties / Felder
         /// <summary>Eindeutige Identifizierung des Items.</summary>
-        public string ID { get; set; }
+        public string ID { get; init; }
         /// <summary>Sprachabhäniger Name des Items.</summary>
         public Util.LanguageBasedData Name { get; } = new Util.LanguageBasedData();
         /// <summary>Sprachabhänige Beschreibung des Items.</summary>

@@ -9,19 +9,19 @@
         #endregion
 
         #region Methoden
-        public void Remove(string aID) {
+        private protected void Remove(string aID) {
             mDataList.Remove(Get(aID));
         }
 
-        public void Clear() {
+        private protected void Clear() {
             mDataList.Clear();
         }
 
-        public IList<T> List() {
+        private protected IList<T> List() {
             return mDataList.AsReadOnly();
         }
 
-        public T Get(string aID) {
+        private protected T Get(string aID) {
             T? lItem = mDataList.Where(x => x.ID.Equals(aID, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
 
             if (lItem == null) {
@@ -32,11 +32,11 @@
             }
         }
 
-        public int Count() {
+        private protected int Count() {
             return mDataList.Count;
         }
 
-        public void Add(T aItem) {
+        private protected void Add(T aItem) {
             if (mDataList.Any(x => x.ID.Equals(aItem.ID, StringComparison.InvariantCultureIgnoreCase))) {
                 // Patrik: Throw Dublicate Exception
             }

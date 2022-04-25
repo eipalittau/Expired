@@ -1,6 +1,6 @@
 ﻿using Exp.Data.Equipment;
 
-namespace Exp.DefaultMod.Equipment {
+namespace Exp.DefaultMod.Equipment.Slot {
     internal sealed class Mainhand : SlotDataBase, ISlotData {
         #region Konstruktor
         internal Mainhand()

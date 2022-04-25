@@ -7,5 +7,31 @@
         #region Konstruktor
         private Aura() : base() { }
         #endregion
+
+        #region Methoden
+        public new void Remove(string aID) {
+            base.Remove(aID);
+        }
+
+        public new void Clear() {
+            base.Clear();
+        }
+
+        public new IList<Data.Feat.IAuraData> List() {
+            return base.List();
+        }
+
+        public new Data.Feat.IAuraData Get(string aID) {
+            return base.Get(aID);
+        }
+
+        public new int Count() {
+            return base.Count();
+        }
+
+        public new void Add(Data.Feat.IAuraData aItem) {
+            base.Add(aItem);
+        }
+        #endregion
     }
 }

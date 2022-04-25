@@ -1,4 +1,4 @@
-﻿namespace Exp.DefaultMod.Equipment {
+﻿namespace Exp.DefaultMod.Equipment.Slot {
     internal abstract class SlotDataBase : DataBase, Data.Equipment.ISlotDataBase {
         #region Properties / Felder
         public bool Available { get; set; }
