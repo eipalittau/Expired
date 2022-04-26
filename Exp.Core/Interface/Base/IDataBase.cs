@@ -2,7 +2,7 @@
     public interface IDataBase {
         string ID { get; init; }
         Util.LanguageBasedData Name { get; }
-        Util.LanguageBasedData Description { get; }
+        Util.LanguageBasedData LoreDescription { get; }
         int SortWeight { get; set; }
     }
 }

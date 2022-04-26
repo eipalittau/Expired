@@ -1,5 +1,5 @@
 ﻿namespace Exp.Data.General {
-    internal abstract class ActionTypeBase : DataBase, IActionTypeDataBase {
+    public abstract class ActionTypeBase : DataBase, IActionTypeDataBase {
         #region Properties / Felder
         public double Weight { get; set; }
         #endregion

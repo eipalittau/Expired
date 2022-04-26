@@ -7,8 +7,8 @@ namespace Exp.DefaultMod.Equipment.ItemType {
             : base(nameof(Bow), 500, null, Api.Equipment.Slot.Singleton.Get("Mainhand"), Api.Equipment.Slot.Singleton.Get("Offhand")) {
             Name.Set(Util.LanguageEnum.Deutsch, "Bogen");
             Name.Set(Util.LanguageEnum.English, "Bow");
-            Description.Set(Util.LanguageEnum.Deutsch, "");
-            Description.Set(Util.LanguageEnum.English, "");
+            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
+            LoreDescription.Set(Util.LanguageEnum.English, "");
         }
         #endregion
     }

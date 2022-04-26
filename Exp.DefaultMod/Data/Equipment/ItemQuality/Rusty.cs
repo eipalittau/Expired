@@ -7,8 +7,8 @@ namespace Exp.DefaultMod.Equipment.ItemQuality {
             : base(nameof(Rusty), 100, true, false) {
             Name.Set(Util.LanguageEnum.Deutsch, "Rostig");
             Name.Set(Util.LanguageEnum.English, "Rusty");
-            Description.Set(Util.LanguageEnum.Deutsch, "");
-            Description.Set(Util.LanguageEnum.English, "");
+            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
+            LoreDescription.Set(Util.LanguageEnum.English, "");
         }
         #endregion
     }

@@ -7,8 +7,8 @@ namespace Exp.DefaultMod.General {
             : base(nameof(D8), 300, 8) {
             Name.Set(Util.LanguageEnum.Deutsch, "W8");
             Name.Set(Util.LanguageEnum.English, "D8");
-            Description.Set(Util.LanguageEnum.Deutsch, "");
-            Description.Set(Util.LanguageEnum.English, "");
+            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
+            LoreDescription.Set(Util.LanguageEnum.English, "");
         }
         #endregion
     }

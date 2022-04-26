@@ -1,15 +1,14 @@
 ﻿using Exp.Data.Feat;
-using Exp.Data.General;
 
 namespace Exp.DefaultMod.Feat.Wizardry {
     internal sealed class Chronos : FeatDataBase<IWizardryData>, IWizardryData {
         #region Konstruktor
         internal Chronos()
-            : base(nameof(Chronos), 1600, TierEnum.Three, ActionTypeEnum.Free) {
+            : base(nameof(Chronos), 1600, Api.General.Tier.Singleton.Get(nameof(Data.General.Tier.Three)), Api.General.ActionType.Singleton.Get(nameof(Data.General.ActionType.Free))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Chronos");
             Name.Set(Util.LanguageEnum.English, "Chronos");
-            Description.Set(Util.LanguageEnum.Deutsch, "");
-            Description.Set(Util.LanguageEnum.English, "");
+            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
+            LoreDescription.Set(Util.LanguageEnum.English, "");
         }
         #endregion
     }

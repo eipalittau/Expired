@@ -1,15 +1,14 @@
 ﻿using Exp.Data.Feat;
-using Exp.Data.General;
 
 namespace Exp.DefaultMod.Feat.Wonder {
     internal sealed class Brains : FeatDataBase<IWonderData>, IWonderData {
         #region Konstruktor
         internal Brains()
-            : base(nameof(Brains), 1300, TierEnum.Two, ActionTypeEnum.Full) {
+            : base(nameof(Brains), 1300, Api.General.Tier.Singleton.Get(nameof(Data.General.Tier.Two)), Api.General.ActionType.Singleton.Get(nameof(Data.General.ActionType.Full))) {
             Name.Set(Util.LanguageEnum.Deutsch, "BRAINZZZZ!");
             Name.Set(Util.LanguageEnum.English, "BRAINZZZZ!");
-            Description.Set(Util.LanguageEnum.Deutsch, "");
-            Description.Set(Util.LanguageEnum.English, "");
+            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
+            LoreDescription.Set(Util.LanguageEnum.English, "");
         }
         #endregion
     }

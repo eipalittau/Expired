@@ -7,8 +7,8 @@ namespace Exp.DefaultMod.Equipment.Slot {
             : base(nameof(Shoulders), 1000) {
             Name.Set(Util.LanguageEnum.Deutsch, "Schultern");
             Name.Set(Util.LanguageEnum.English, "Shoulders");
-            Description.Set(Util.LanguageEnum.Deutsch, "Für ein Cape wie es Superman trägt.");
-            Description.Set(Util.LanguageEnum.English, "");
+            LoreDescription.Set(Util.LanguageEnum.Deutsch, "Für ein Cape wie es Superman trägt.");
+            LoreDescription.Set(Util.LanguageEnum.English, "");
         }
         #endregion
     }

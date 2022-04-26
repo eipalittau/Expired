@@ -1,15 +1,14 @@
 ﻿using Exp.Data.Feat;
-using Exp.Data.General;
 
 namespace Exp.DefaultMod.Feat.Wizardry {
     internal sealed class MagicWave : FeatDataBase<IWizardryData>, IWizardryData {
         #region Konstruktor
         internal MagicWave()
-            : base(nameof(MagicWave), 100, TierEnum.One, ActionTypeEnum.Standard) {
+            : base(nameof(MagicWave), 100, Api.General.Tier.Singleton.Get(nameof(Data.General.Tier.One)), Api.General.ActionType.Singleton.Get(nameof(Data.General.ActionType.Standard))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Magische Welle");
             Name.Set(Util.LanguageEnum.English, "Magic wave");
-            Description.Set(Util.LanguageEnum.Deutsch, "");
-            Description.Set(Util.LanguageEnum.English, "");
+            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
+            LoreDescription.Set(Util.LanguageEnum.English, "");
         }
         #endregion
     }

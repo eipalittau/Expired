@@ -7,8 +7,8 @@ namespace Exp.DefaultMod.Equipment.Slot {
             : base(nameof(Body), 100) {
             Name.Set(Util.LanguageEnum.Deutsch, "Körper");
             Name.Set(Util.LanguageEnum.English, "Body");
-            Description.Set(Util.LanguageEnum.Deutsch, "Schützt vor Angriffen");
-            Description.Set(Util.LanguageEnum.English, "");
+            LoreDescription.Set(Util.LanguageEnum.Deutsch, "Schützt vor Angriffen");
+            LoreDescription.Set(Util.LanguageEnum.English, "");
         }
         #endregion
     }

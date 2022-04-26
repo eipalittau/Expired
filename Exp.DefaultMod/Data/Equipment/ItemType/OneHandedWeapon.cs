@@ -7,8 +7,8 @@ namespace Exp.DefaultMod.Equipment.ItemType {
             : base(nameof(OneHandedWeapon), 300, null, Api.Equipment.Slot.Singleton.Get("Mainhand"), Api.Equipment.Slot.Singleton.Get("Offhand")) {
             Name.Set(Util.LanguageEnum.Deutsch, "Einhandwaffe");
             Name.Set(Util.LanguageEnum.English, "One-handed weapon");
-            Description.Set(Util.LanguageEnum.Deutsch, "");
-            Description.Set(Util.LanguageEnum.English, "");
+            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
+            LoreDescription.Set(Util.LanguageEnum.English, "");
         }
         #endregion
     }

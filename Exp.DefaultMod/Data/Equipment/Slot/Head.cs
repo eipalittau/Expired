@@ -7,8 +7,8 @@ namespace Exp.DefaultMod.Equipment.Slot {
             : base(nameof(Head), 1100) {
             Name.Set(Util.LanguageEnum.Deutsch, "Kopf");
             Name.Set(Util.LanguageEnum.English, "Head");
-            Description.Set(Util.LanguageEnum.Deutsch, "Für Schmuck");
-            Description.Set(Util.LanguageEnum.English, "");
+            LoreDescription.Set(Util.LanguageEnum.Deutsch, "Für Schmuck");
+            LoreDescription.Set(Util.LanguageEnum.English, "");
         }
         #endregion
     }

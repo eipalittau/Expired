@@ -5,11 +5,11 @@ namespace Exp.DefaultMod.Feat.Wizardry {
     internal sealed class MagicPower2 : FeatDataBase<IWizardryData>, IWizardryData {
         #region Konstruktor
         internal MagicPower2()
-            : base(nameof(MagicPower2), 1500, TierEnum.Two, null, Api.Feat.Wizardry.Singleton.Get("MagicPower")) {
+            : base(nameof(MagicPower2), 1500, Api.General.Tier.Singleton.Get(nameof(Data.General.Tier.Two)), null, Api.Feat.Wizardry.Singleton.Get(nameof(MagicPower))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Zaubermacht++");
             Name.Set(Util.LanguageEnum.English, "Magic power++");
-            Description.Set(Util.LanguageEnum.Deutsch, "");
-            Description.Set(Util.LanguageEnum.English, "");
+            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
+            LoreDescription.Set(Util.LanguageEnum.English, "");
         }
         #endregion
     }

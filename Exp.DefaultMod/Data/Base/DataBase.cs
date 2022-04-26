@@ -6,7 +6,7 @@
         /// <summary>Sprachabhäniger Name des Items.</summary>
         public Util.LanguageBasedData Name { get; } = new Util.LanguageBasedData();
         /// <summary>Sprachabhänige Beschreibung des Items.</summary>
-        public Util.LanguageBasedData Description { get; } = new Util.LanguageBasedData();
+        public Util.LanguageBasedData LoreDescription { get; } = new Util.LanguageBasedData();
         /// <summary>Sortierreihenfolge.</summary>
         public int SortWeight { get; set; }
         #endregion

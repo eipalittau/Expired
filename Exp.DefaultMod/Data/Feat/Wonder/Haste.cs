@@ -1,15 +1,14 @@
 ﻿using Exp.Data.Feat;
-using Exp.Data.General;
 
 namespace Exp.DefaultMod.Feat.Wonder {
     internal sealed class Haste : FeatDataBase<IWonderData>, IWonderData {
         #region Konstruktor
         internal Haste()
-            : base(nameof(Haste), 500, TierEnum.One, ActionTypeEnum.Standard) {
+            : base(nameof(Haste), 500, Api.General.Tier.Singleton.Get(nameof(Data.General.Tier.One)), Api.General.ActionType.Singleton.Get(nameof(Data.General.ActionType.Standard))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Hast");
             Name.Set(Util.LanguageEnum.English, "Haste");
-            Description.Set(Util.LanguageEnum.Deutsch, "");
-            Description.Set(Util.LanguageEnum.English, "");
+            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
+            LoreDescription.Set(Util.LanguageEnum.English, "");
         }
         #endregion
     }

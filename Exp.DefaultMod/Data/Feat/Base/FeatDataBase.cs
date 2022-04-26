@@ -1,16 +1,18 @@
 ﻿namespace Exp.DefaultMod.Feat {
-    internal abstract class FeatDataBase<T> : DataBase, Exp.Data.Feat.IFeatDataBase<T> {
+    internal abstract class FeatDataBase<T> : DataBase, Data.Feat.IFeatDataBase<T> {
         #region Properties / Felder
         /// <summary>Stufe der Fähigkeit.</summary>
-        public Exp.Data.General.TierEnum Tier { get; set; }
+        public Data.General.ITierData Tier { get; set; }
         /// <summary>Ist diese Fähigkeit eine Aktion? (Standard, Bewegung, etc.)</summary>
-        public Exp.Data.General.ActionTypeEnum? ActionType { get; set; }
+        public Data.General.IActionTypeData? ActionType { get; set; }
         /// <summary>Liste der Voraussetzungen.</summary>
         public List<T> PrerequisiteList { get; init; }
+        public Util.LanguageBasedData EffektDescription { get; } = new Util.LanguageBasedData();
+
         #endregion
 
         #region Konstruktor
-        private protected FeatDataBase(string aID, int aSortWeight, Exp.Data.General.TierEnum aTier, Exp.Data.General.ActionTypeEnum? aActionType, params T[] aPrerequisites)
+        private protected FeatDataBase(string aID, int aSortWeight, Data.General.ITierData aTier, Data.General.IActionTypeData? aActionType, params T[] aPrerequisites)
             : base(aID, aSortWeight) {
             Tier = aTier;
             ActionType = aActionType;

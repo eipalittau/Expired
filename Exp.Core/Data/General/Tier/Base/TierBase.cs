@@ -1,5 +1,5 @@
 ﻿namespace Exp.Data.General.Tier {
-    internal abstract class TierBase : DataBase, ITierDataBase {
+    public abstract class TierBase : DataBase, ITierDataBase {
         #region Properties / Felder
         public int Tier { get; set; }
         #endregion

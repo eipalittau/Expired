@@ -7,8 +7,8 @@ namespace Exp.DefaultMod.Equipment.ItemQuality {
             : base(nameof(Hardened), 400, true, false) {
             Name.Set(Util.LanguageEnum.Deutsch, "Gehärtet");
             Name.Set(Util.LanguageEnum.English, "Hardened");
-            Description.Set(Util.LanguageEnum.Deutsch, "");
-            Description.Set(Util.LanguageEnum.English, "");
+            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
+            LoreDescription.Set(Util.LanguageEnum.English, "");
         }
         #endregion
     }

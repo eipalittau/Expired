@@ -1,15 +1,14 @@
 ﻿using Exp.Data.Feat;
-using Exp.Data.General;
 
 namespace Exp.DefaultMod.Feat.Aura {
     internal sealed class Fencer : FeatDataBase<IAuraData>, IAuraData {
         #region Konstruktor
         internal Fencer()
-            : base(nameof(Fencer), 100, TierEnum.One, null) {
+            : base(nameof(Fencer), 100, Api.General.Tier.Singleton.Get(nameof(Data.General.Tier.One)), null) {
             Name.Set(Util.LanguageEnum.Deutsch, "Aura des Fechters");
             Name.Set(Util.LanguageEnum.English, "Aura of the fencer");
-            Description.Set(Util.LanguageEnum.Deutsch, "");
-            Description.Set(Util.LanguageEnum.English, "");
+            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
+            LoreDescription.Set(Util.LanguageEnum.English, "");
         }
         #endregion
     }

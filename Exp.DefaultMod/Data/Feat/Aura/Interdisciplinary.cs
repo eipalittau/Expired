@@ -1,15 +1,14 @@
 ﻿using Exp.Data.Feat;
-using Exp.Data.General;
 
 namespace Exp.DefaultMod.Feat.Aura {
     internal sealed class Interdisciplinary : FeatDataBase<IAuraData>, IAuraData {
         #region Konstruktor
         internal Interdisciplinary()
-            : base(nameof(Interdisciplinary), 1700, TierEnum.Two, null) {
+            : base(nameof(Interdisciplinary), 1700, Api.General.Tier.Singleton.Get(nameof(Data.General.Tier.Two)), null) {
             Name.Set(Util.LanguageEnum.Deutsch, "Interdisziplinär");
             Name.Set(Util.LanguageEnum.English, "Interdisciplinary");
-            Description.Set(Util.LanguageEnum.Deutsch, "");
-            Description.Set(Util.LanguageEnum.English, "");
+            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
+            LoreDescription.Set(Util.LanguageEnum.English, "");
         }
         #endregion
     }

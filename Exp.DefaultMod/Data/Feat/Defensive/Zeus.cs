@@ -1,15 +1,14 @@
 ﻿using Exp.Data.Feat;
-using Exp.Data.General;
 
 namespace Exp.DefaultMod.Feat.Defensive {
     internal sealed class Zeus : FeatDataBase<IDefensiveData>, IDefensiveData {
         #region Konstruktor
         internal Zeus()
-            : base(nameof(Zeus), 1800, TierEnum.Three, null) {
+            : base(nameof(Zeus), 1800, Api.General.Tier.Singleton.Get(nameof(Data.General.Tier.Three)), null) {
             Name.Set(Util.LanguageEnum.Deutsch, "Zeus");
             Name.Set(Util.LanguageEnum.English, "Zeus");
-            Description.Set(Util.LanguageEnum.Deutsch, "");
-            Description.Set(Util.LanguageEnum.English, "");
+            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
+            LoreDescription.Set(Util.LanguageEnum.English, "");
         }
         #endregion
     }

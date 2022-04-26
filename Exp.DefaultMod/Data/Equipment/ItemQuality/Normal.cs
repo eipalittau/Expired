@@ -7,8 +7,8 @@ namespace Exp.DefaultMod.Equipment.ItemQuality {
             : base(nameof(Normal), 300, true, true) {
             Name.Set(Util.LanguageEnum.Deutsch, "Normal");
             Name.Set(Util.LanguageEnum.English, "Normal");
-            Description.Set(Util.LanguageEnum.Deutsch, "");
-            Description.Set(Util.LanguageEnum.English, "");
+            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
+            LoreDescription.Set(Util.LanguageEnum.English, "");
         }
         #endregion
     }

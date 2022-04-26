@@ -7,8 +7,8 @@ namespace Exp.DefaultMod.Equipment.Slot {
             : base(nameof(WristRight), 800, false) {
             Name.Set(Util.LanguageEnum.Deutsch, "Handgelenk rechts");
             Name.Set(Util.LanguageEnum.English, "Wrist right");
-            Description.Set(Util.LanguageEnum.Deutsch, "Für Schmuck");
-            Description.Set(Util.LanguageEnum.English, "");
+            LoreDescription.Set(Util.LanguageEnum.Deutsch, "Für Schmuck");
+            LoreDescription.Set(Util.LanguageEnum.English, "");
         }
         #endregion
     }

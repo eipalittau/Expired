@@ -7,8 +7,8 @@ namespace Exp.DefaultMod.Equipment.Slot {
             : base(nameof(Offhand), 400) {
             Name.Set(Util.LanguageEnum.Deutsch, "Nebenhand");
             Name.Set(Util.LanguageEnum.English, "Offhand");
-            Description.Set(Util.LanguageEnum.Deutsch, "Die schwache Hand. Alles klar?");
-            Description.Set(Util.LanguageEnum.English, "");
+            LoreDescription.Set(Util.LanguageEnum.Deutsch, "Die schwache Hand. Alles klar?");
+            LoreDescription.Set(Util.LanguageEnum.English, "");
         }
         #endregion
     }

@@ -1,15 +1,14 @@
 ﻿using Exp.Data.Feat;
-using Exp.Data.General;
 
 namespace Exp.DefaultMod.Feat.Offensive {
     internal sealed class EloquentInsulte : FeatDataBase<IOffensiveData>, IOffensiveData {
         #region Konstruktor
         internal EloquentInsulte()
-            : base(nameof(EloquentInsulte), 300, TierEnum.One, ActionTypeEnum.Standard) {
+            : base(nameof(EloquentInsulte), 300, Api.General.Tier.Singleton.Get(nameof(Data.General.Tier.One)), Api.General.ActionType.Singleton.Get(nameof(Data.General.ActionType.Standard))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Eloquent beleidigen");
             Name.Set(Util.LanguageEnum.English, "Eloquent insulte");
-            Description.Set(Util.LanguageEnum.Deutsch, "");
-            Description.Set(Util.LanguageEnum.English, "");
+            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
+            LoreDescription.Set(Util.LanguageEnum.English, "");
         }
         #endregion
     }

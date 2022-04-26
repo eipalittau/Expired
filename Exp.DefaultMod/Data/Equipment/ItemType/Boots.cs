@@ -7,8 +7,8 @@ namespace Exp.DefaultMod.Equipment.ItemType {
             : base(nameof(Boots), 200, null, Api.Equipment.Slot.Singleton.Get("Feet")) {
             Name.Set(Util.LanguageEnum.Deutsch, "Stiefel");
             Name.Set(Util.LanguageEnum.English, "Boots");
-            Description.Set(Util.LanguageEnum.Deutsch, "");
-            Description.Set(Util.LanguageEnum.English, "");
+            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
+            LoreDescription.Set(Util.LanguageEnum.English, "");
         }
         #endregion
     }

@@ -190,7 +190,7 @@
             Api.Equipment.ItemQuality.Singleton.Add(new Equipment.ItemQuality.Notched());
             Api.Equipment.ItemQuality.Singleton.Add(new Equipment.ItemQuality.Normal());
             Api.Equipment.ItemQuality.Singleton.Add(new Equipment.ItemQuality.Hardened());
-            Api.Equipment.ItemQuality.Singleton.Add(new Equipment.ItemQuality.Masterful());
+            Api.Equipment.ItemQuality.Singleton.Add(new Equipment.ItemQuality.Masterwork());
 
             lItem = Api.Equipment.ItemQuality.Singleton.Get(nameof(Equipment.ItemQuality.Rusty));
             lItem.Downgrade = null;
@@ -206,9 +206,9 @@
 
             lItem = Api.Equipment.ItemQuality.Singleton.Get(nameof(Equipment.ItemQuality.Hardened));
             lItem.Downgrade = Api.Equipment.ItemQuality.Singleton.Get(nameof(Equipment.ItemQuality.Normal));
-            lItem.Upgrade = Api.Equipment.ItemQuality.Singleton.Get(nameof(Equipment.ItemQuality.Masterful));
+            lItem.Upgrade = Api.Equipment.ItemQuality.Singleton.Get(nameof(Equipment.ItemQuality.Masterwork));
 
-            lItem = Api.Equipment.ItemQuality.Singleton.Get(nameof(Equipment.ItemQuality.Masterful));
+            lItem = Api.Equipment.ItemQuality.Singleton.Get(nameof(Equipment.ItemQuality.Masterwork));
             lItem.Downgrade = Api.Equipment.ItemQuality.Singleton.Get(nameof(Equipment.ItemQuality.Hardened));
             lItem.Upgrade = null;
         }

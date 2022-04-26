@@ -7,8 +7,8 @@ namespace Exp.DefaultMod.Equipment.ItemType {
             : base(nameof(Ring), 1300, null, Api.Equipment.Slot.Singleton.Get("RingFingerLeft"), Api.Equipment.Slot.Singleton.Get("RingFingerRight")) {
             Name.Set(Util.LanguageEnum.Deutsch, "Ring");
             Name.Set(Util.LanguageEnum.English, "Ring");
-            Description.Set(Util.LanguageEnum.Deutsch, "");
-            Description.Set(Util.LanguageEnum.English, "");
+            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
+            LoreDescription.Set(Util.LanguageEnum.English, "");
         }
         #endregion
     }

@@ -1,15 +1,14 @@
 ﻿using Exp.Data.Feat;
-using Exp.Data.General;
 
 namespace Exp.DefaultMod.Feat.Wizardry {
     internal sealed class Fright : FeatDataBase<IWizardryData>, IWizardryData {
         #region Konstruktor
         internal Fright()
-            : base(nameof(Fright), 500, TierEnum.One, ActionTypeEnum.Standard) {
+            : base(nameof(Fright), 500, Api.General.Tier.Singleton.Get(nameof(Data.General.Tier.One)), Api.General.ActionType.Singleton.Get(nameof(Data.General.ActionType.Standard))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Schreck");
             Name.Set(Util.LanguageEnum.English, "Fright");
-            Description.Set(Util.LanguageEnum.Deutsch, "");
-            Description.Set(Util.LanguageEnum.English, "");
+            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
+            LoreDescription.Set(Util.LanguageEnum.English, "");
         }
         #endregion
     }

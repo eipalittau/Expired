@@ -7,8 +7,8 @@ namespace Exp.DefaultMod.Enemy {
             : base(nameof(Cleric), 200, 200) {
             Name.Set(Util.LanguageEnum.Deutsch, "Kleriker");
             Name.Set(Util.LanguageEnum.English, "Cleric");
-            Description.Set(Util.LanguageEnum.Deutsch, "");
-            Description.Set(Util.LanguageEnum.English, "");
+            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
+            LoreDescription.Set(Util.LanguageEnum.English, "");
         }
         #endregion
     }

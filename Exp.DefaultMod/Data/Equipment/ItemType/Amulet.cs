@@ -7,8 +7,8 @@ namespace Exp.DefaultMod.Equipment.ItemType {
             : base(nameof(Amulet), 1400, null, Api.Equipment.Slot.Singleton.Get("Neck")) {
             Name.Set(Util.LanguageEnum.Deutsch, "Amulett");
             Name.Set(Util.LanguageEnum.English, "Amulet");
-            Description.Set(Util.LanguageEnum.Deutsch, "");
-            Description.Set(Util.LanguageEnum.English, "");
+            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
+            LoreDescription.Set(Util.LanguageEnum.English, "");
         }
         #endregion
     }

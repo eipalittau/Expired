@@ -7,8 +7,8 @@ namespace Exp.DefaultMod.Equipment.ItemType {
             : base(nameof(Grimoire), 1200, null, Api.Equipment.Slot.Singleton.Get("Offhand")) {
             Name.Set(Util.LanguageEnum.Deutsch, "Zauberbuch");
             Name.Set(Util.LanguageEnum.English, "Grimoire");
-            Description.Set(Util.LanguageEnum.Deutsch, "");
-            Description.Set(Util.LanguageEnum.English, "");
+            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
+            LoreDescription.Set(Util.LanguageEnum.English, "");
         }
         #endregion
     }

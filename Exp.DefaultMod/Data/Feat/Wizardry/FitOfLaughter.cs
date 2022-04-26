@@ -1,15 +1,14 @@
 ﻿using Exp.Data.Feat;
-using Exp.Data.General;
 
 namespace Exp.DefaultMod.Feat.Wizardry {
     internal sealed class FitOfLaughter : FeatDataBase<IWizardryData>, IWizardryData {
         #region Konstruktor
         internal FitOfLaughter()
-            : base(nameof(FitOfLaughter), 600, TierEnum.One, ActionTypeEnum.Standard) {
+            : base(nameof(FitOfLaughter), 600, Api.General.Tier.Singleton.Get(nameof(Data.General.Tier.One)), Api.General.ActionType.Singleton.Get(nameof(Data.General.ActionType.Standard))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Lachanfall");
             Name.Set(Util.LanguageEnum.English, "Fit of laughter");
-            Description.Set(Util.LanguageEnum.Deutsch, "");
-            Description.Set(Util.LanguageEnum.English, "");
+            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
+            LoreDescription.Set(Util.LanguageEnum.English, "");
         }
         #endregion
     }

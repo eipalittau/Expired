@@ -7,8 +7,8 @@ namespace Exp.DefaultMod.Equipment.ItemType {
             : base(nameof(Headgear), 1600, null, Api.Equipment.Slot.Singleton.Get("Head")) {
             Name.Set(Util.LanguageEnum.Deutsch, "Kopfbedeckung");
             Name.Set(Util.LanguageEnum.English, "Headgear");
-            Description.Set(Util.LanguageEnum.Deutsch, "");
-            Description.Set(Util.LanguageEnum.English, "");
+            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
+            LoreDescription.Set(Util.LanguageEnum.English, "");
         }
         #endregion
     }
