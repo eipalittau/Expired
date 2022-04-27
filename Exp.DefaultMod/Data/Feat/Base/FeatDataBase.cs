@@ -26,11 +26,11 @@ namespace Exp.DefaultMod.Feat {
         #endregion
             
         #region Methoden
-        private protected bool CheckDamageType(params Data.General.IDamageTypeData[] aDamageTypes) {
+        private protected bool CheckDamageType(Data.General.IDamageTypeData aNeededDamageType, params Data.General.IDamageTypeData[] aDamageTypes) {
             if (aDamageTypes.HasData()) {
                 throw new Exception.MissingParameterException(nameof(aDamageTypes));
             } else {
-                if (aDamageTypes.Contains(Api.General.DamageType.Singleton.Get(nameof(Data.General.DamageType.RangedCombat)))) {
+                if (aDamageTypes.Contains(Api.General.DamageType.Singleton.Get(aNeededDamageType.ID))) {
                     return true;
                 } else {
                     return false;
