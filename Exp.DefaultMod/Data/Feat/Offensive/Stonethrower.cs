@@ -7,14 +7,15 @@ namespace Exp.DefaultMod.Feat.Offensive {
             : base(nameof(Stonethrower), 200, Api.General.Tier.Singleton.Get(nameof(Data.General.Tier.One)), Api.General.ActionType.Singleton.Get(nameof(Data.General.ActionType.Standard))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Steinwerfer");
             Name.Set(Util.LanguageEnum.English, "Stone thrower");
-            LoreDescription.Set(Util.LanguageEnum.Deutsch, "{\rtf1Komm her und kämpfe wie ein richtiger Mann!}");
-            LoreDescription.Set(Util.LanguageEnum.English, "{\rtf1Come here and fight like a real man!}");
-            EffektDescription.Set(Util.LanguageEnum.Deutsch, "{\rtf1Fernkampf: +1 Angriff, +1 Schaden\lineFernkampfangriff: 1W4 Schaden}");
-            EffektDescription.Set(Util.LanguageEnum.English, "{\rtf1Fernkampf: +1 Angriff, +1 Schaden\lineFernkampfangriff: 1W4 Schaden}");        }
+            LoreDescription.Set(Util.LanguageEnum.Deutsch, @"{\rtf1Komm her und kämpfe wie ein richtiger Mann!}");
+            LoreDescription.Set(Util.LanguageEnum.English, @"{\rtf1Come here and fight like a real man!}");
+            EffektDescription.Set(Util.LanguageEnum.Deutsch, @"{\rtf1Fernkampf: +1 Angriff, +1 Schaden\lineFernkampfangriff: 1W4 Schaden}");
+            EffektDescription.Set(Util.LanguageEnum.English, @"{\rtf1Fernkampf: +1 Angriff, +1 Schaden\lineFernkampfangriff: 1W4 Schaden}");
+        }
         #endregion
         
         #region Methoden
-        public int OnAttack(params Exp.Interface.General.IDamageTypeData[] aDamageTypes) {
+        public int OnAttack(params Data.General.IDamageTypeData[] aDamageTypes) {
             if (base.CheckDamageType(aDamageTypes)) {
                 return 1;
             } else {
@@ -22,7 +23,7 @@ namespace Exp.DefaultMod.Feat.Offensive {
             }
         }
         
-        public int OnDamage(params Exp.Interface.General.IDamageTypeData[] aDamageTypes) {
+        public int OnDamage(params Data.General.IDamageTypeData[] aDamageTypes) {
             if (base.CheckDamageType(aDamageTypes)) {
                 return 1;
             } else {
@@ -30,9 +31,9 @@ namespace Exp.DefaultMod.Feat.Offensive {
             }
         }
         
-        public IDiceTypeData? OverrideDiceType(params Exp.Interface.General.IDamageTypeData[] aDamageTypes) {
+        public Data.General.IDiceTypeData? OverrideDiceType(params Data.General.IDamageTypeData[] aDamageTypes) {
             if (base.CheckDamageType(aDamageTypes)) {
-                return Exp.Api.General.DiceType.Singleton.Get(nameof(Exp.DefaultMod.General.D4));
+                return Api.General.DiceType.Singleton.Get(nameof(General.D4));
             } else {
                 return null;
             }

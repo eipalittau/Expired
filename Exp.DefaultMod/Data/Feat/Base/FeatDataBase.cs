@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Feat {
-    internal abstract class FeatDataBase<T> : DataBase, Data.Feat.IFeatDataBase<T> {
+﻿using Exp.Extension;
+
+namespace Exp.DefaultMod.Feat {
+    public abstract class FeatDataBase<T> : DataBase, Data.Feat.IFeatDataBase<T> {
         #region Properties / Felder
         /// <summary>Stufe der Fähigkeit.</summary>
         public Data.General.ITierData Tier { get; set; }
@@ -24,11 +26,11 @@
         #endregion
             
         #region Methoden
-        private protected bool CheckDamageType(params Exp.Interface.General.IDamageTypeData[] aDamageTypes) {
+        private protected bool CheckDamageType(params Data.General.IDamageTypeData[] aDamageTypes) {
             if (aDamageTypes.HasData()) {
-                //throw Exception Missing Parameter
+                throw new Exception.MissingParameterException(nameof(aDamageTypes));
             } else {
-                if (aDamageTypes.Contains(Exp.Data.General.DamageType.RangedCombat) {
+                if (aDamageTypes.Contains(Api.General.DamageType.Singleton.Get(nameof(Data.General.DamageType.RangedCombat)))) {
                     return true;
                 } else {
                     return false;

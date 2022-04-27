@@ -1,5 +1,5 @@
 ﻿namespace Exp.DefaultMod {
-    internal abstract class DataBase : Data.IDataBase {
+    public abstract class DataBase : Data.IDataBase {
         #region Properties / Felder
         /// <summary>Eindeutige Identifizierung des Items.</summary>
         public string ID { get; init; }
