@@ -26,11 +26,11 @@ namespace Exp.DefaultMod.Feat {
         #endregion
 
         #region Methoden
-        public abstract void OnNewDay();
+        public void OnNewDay() { }
 
-        public abstract void OnNewBattle();
+        public void OnNewBattle() { }
 
-        public abstract void OnNewRound();
+        public void OnNewRound() { }
 
         public int OnAttackPassiv(params Data.General.IDamageTypeData[] aDamageTypes) {
             return 0;
@@ -46,6 +46,10 @@ namespace Exp.DefaultMod.Feat {
 
         public int OnDamageActive() {
             return 0;
+        }
+
+        public Data.General.IDiceTypeData? OverrideDiceType(params Data.General.IDamageTypeData[] aDamageTypes) {
+            return null;
         }
 
         private protected bool CheckDamageType(Data.General.IDamageTypeData aNeededDamageType, params Data.General.IDamageTypeData[] aDamageTypes) {

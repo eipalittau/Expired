@@ -12,22 +12,8 @@ namespace Exp.DefaultMod.Feat.Offensive {
             LoreDescription.Set(Util.LanguageEnum.English, "");
         }
 
-        public void OnNewDay() { }
-
-        public void OnNewBattle() { }
-
-        public void OnNewRound() { }
-
-        public int OnAttack(params IDamageTypeData[] aDamageTypes) {
+        public new int OnAttackActive() {
             return 2;
-        }
-
-        public int OnDamage(params IDamageTypeData[] aDamageTypes) {
-            return 0;
-        }
-
-        public IDiceTypeData? OverrideDiceType(params IDamageTypeData[] aDamageTypes) {
-            return null;
         }
 
         public int GetExtraAttack(params IDamageTypeData[] aDamageTypes) {

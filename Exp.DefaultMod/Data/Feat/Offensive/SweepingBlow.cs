@@ -19,11 +19,7 @@ namespace Exp.DefaultMod.Feat.Offensive {
         #endregion
 
         #region Methoden
-        public override void OnNewDay() { }
-
-        public override void OnNewBattle() { }
-
-        public override void OnNewRound() {
+        public new void OnNewRound() {
             DidHit = false;
             UsesPerRound = 1;
         }
