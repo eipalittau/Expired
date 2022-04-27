@@ -15,11 +15,11 @@ namespace Exp.DefaultMod.Feat.Offensive {
         #endregion
         
         #region Methoden
-            public int OnAttack() {
+            public int OnAttack(params Exp.Api.General.DamageType[] aDamageType) {
                 return 1;
             }
         
-            public int OnDamage() {
+            public int OnDamage(params Exp.Api.General.DamageType[] aDamageType) {
                 return 1;
             }
         #endregion
