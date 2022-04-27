@@ -18,6 +18,12 @@ namespace Exp.DefaultMod.Feat.Offensive {
         }
         #endregion
 
+        #region Methoden
+        public void OnNewDay() {
+            DidHit = false;
+            UsesPerRound = 1;
+        }
+
         public void OnNewBattle() {
             DidHit = false;
             UsesPerRound = 1;
@@ -55,5 +61,6 @@ namespace Exp.DefaultMod.Feat.Offensive {
                 return 0;
             }
         }
+        #endregion
     }
 }
