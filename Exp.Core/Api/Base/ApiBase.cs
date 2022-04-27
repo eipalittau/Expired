@@ -21,17 +21,22 @@
             return mDataList.AsReadOnly();
         }
 
+        /// <summary>Sucht aufgrund der ID den entsprechenden Datensatz.</summary>
+        /// <param name="aID">ID des gesuchten Datensatzes.</param>
+        /// <returns>Das gefunden Item.</returns>
+        /// <exception cref="DublicateItemException ">Falls die ID des Items nicht existiert, wird diese Exception geworfen.</exception>
         private protected T Get(string aID) {
             T? lItem = mDataList.Where(x => x.ID.Equals(aID, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
 
             if (lItem == null) {
-                // Patrik: Throw Item Not Found Exception
-                throw new InvalidOperationException();
+                throw new Exp.Exception.DublicateItemException(aItem.ID);
             } else {
                 return lItem;
             }
         }
         
+        /// <summary>Liest die Anzahl der Einträge in der Aufzählung.</summary>
+        /// <returns>Die Anzahl der Items in der Aufzählung.</returns>
         private protected int Count() {
             return mDataList.Count;
         }
