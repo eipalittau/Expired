@@ -15,13 +15,17 @@ namespace Exp.DefaultMod.Feat.Offensive {
         #endregion
         
         #region Methoden
-            public int OnAttack(params Exp.Api.General.DamageType[] aDamageType) {
-                return 1;
-            }
+        public int OnAttack(params Exp.Interface.General.IDamageTypeData[] aDamageTypes) {
+            return 1;
+        }
         
-            public int OnDamage(params Exp.Api.General.DamageType[] aDamageType) {
-                return 1;
-            }
+        public int OnDamage(params Exp.Interface.General.IDamageTypeData[] aDamageTypes) {
+            return 1;
+        }
+        
+        public IDiceTypeData? OverrideDiceType(params Exp.Interface.General.IDamageTypeData[] aDamageTypes) {
+            return null;
+        }
         #endregion
     }
 }
