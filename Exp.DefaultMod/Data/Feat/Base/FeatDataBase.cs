@@ -24,8 +24,30 @@ namespace Exp.DefaultMod.Feat {
             }
         }
         #endregion
-            
+
         #region Methoden
+        public abstract void OnNewDay();
+
+        public abstract void OnNewBattle();
+
+        public abstract void OnNewRound();
+
+        public int OnAttackPassiv(params Data.General.IDamageTypeData[] aDamageTypes) {
+            return 0;
+        }
+
+        public int OnDamagePassiv(params Data.General.IDamageTypeData[] aDamageTypes) {
+            return 0;
+        }
+
+        public int OnAttackActive() {
+            return 0;
+        }
+
+        public int OnDamageActive() {
+            return 0;
+        }
+
         private protected bool CheckDamageType(Data.General.IDamageTypeData aNeededDamageType, params Data.General.IDamageTypeData[] aDamageTypes) {
             if (aDamageTypes.HasData()) {
                 throw new Exception.MissingParameterException(nameof(aDamageTypes));

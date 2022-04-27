@@ -10,7 +10,7 @@ namespace Exp.DefaultMod.Feat.Offensive {
 
         #region Konstruktor
         internal SweepingBlow()
-            : base(nameof(SweepingBlow), 500, Api.General.Tier.Singleton.Get(nameof(Data.General.Tier.One)), Api.General.ActionType.Singleton.Get(nameof(Data.General.ActionType.Standard))) {
+            : base(nameof(SweepingBlow), 500, Api.General.Tier.Singleton.Get(nameof(Data.General.Tier.One)), null) {
             Name.Set(Util.LanguageEnum.Deutsch, "Rundumschlag");
             Name.Set(Util.LanguageEnum.English, "Sweeping blow");
             LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
@@ -19,31 +19,21 @@ namespace Exp.DefaultMod.Feat.Offensive {
         #endregion
 
         #region Methoden
-        public void OnNewDay() { }
+        public override void OnNewDay() { }
 
-        public void OnNewBattle() { }
+        public override void OnNewBattle() { }
 
-        public void OnNewRound() {
+        public override void OnNewRound() {
             DidHit = false;
             UsesPerRound = 1;
         }
 
-        public int OnAttackPassiv(params IDamageTypeData[] aDamageTypes) {
+        public new int OnAttackPassiv(params IDamageTypeData[] aDamageTypes) {
             DidHit = false;
             return 0;
         }
 
-        public int OnDamagePassiv(params IDamageTypeData[] aDamageTypes) {
-            DidHit = true;
-            return 0;
-        }
-
-        public int OnAttackActive() {
-            DidHit = false;
-            return 0;
-        }
-
-        public int OnDamageActive() {
+        public new int OnDamagePassiv(params IDamageTypeData[] aDamageTypes) {
             DidHit = true;
             return 0;
         }
