@@ -7,24 +7,20 @@ namespace Exp.Exception {
         #endregion
         
         #region Konstruktor
-        protected ExceptionBase(string aMessageID, params string[] aArguments)
-            : base(Exp.Localisation.GeText(aMessageID, aArguments)) {
-            => (ID, Occurrence, Priority) = (aMessageID, DateTime.Now, PriorityEnum.Error);
-        }
+        protected ExceptionBase(params string[] aArguments)
+            : this(null, aArguments) { }
 
-        protected ExceptionBase(System.Exception aEx)
-            : base(Exp.Localisation.GeText(aEx)) {
-            => (ID, Occurrence, Priority) = (aMessageID, DateTime.Now, PriorityEnum.Error);
+        protected ExceptionBase(System.Exception aEx, params string[] aArguments)
+            : base(Exp.Localisation.GeText(aEx, GetMessageID(), aArguments)) {
+            => (ID, Occurrence, Priority) = (GetMessageID(), DateTime.Now, PriorityEnum.Error);
         }
-
-        protected ExceptionBase(System.Exception aEx, string aMessageID)
-            : base(Exp.Localisation.GeText(aEx, aMessageID)) {
-            => (ID, Occurrence, Priority) = (aMessageID, DateTime.Now, PriorityEnum.Error);
-        }
-
-        protected ExceptionBase(System.Exception aEx, string aMessageID, params string[] aArguments)
-            : base(Exp.Localisation.GeText(aEx, aMessageID, aArguments)) {
-            => (ID, Occurrence, Priority) = (aMessageID, DateTime.Now, PriorityEnum.Error);
+        #endregion
+        
+        #region Methoden
+        private static string GetMessageID() {
+            Type lType = typeof(ExeptionBase);
+            
+            return string.concat(lType.Namespace, ".", lType.Name);
         }
         #endregion
     }
