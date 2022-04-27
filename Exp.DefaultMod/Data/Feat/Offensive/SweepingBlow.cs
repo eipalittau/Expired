@@ -5,6 +5,7 @@ namespace Exp.DefaultMod.Feat.Offensive {
     internal sealed class SweepingBlow : FeatDataBase<IOffensiveData>, IOffensiveData {
         #region Properties / Felder
         private bool DidHit { get; set; }
+        private int UsesPerRound { get; set; }
         #endregion
 
         #region Konstruktor
@@ -16,6 +17,16 @@ namespace Exp.DefaultMod.Feat.Offensive {
             LoreDescription.Set(Util.LanguageEnum.English, "");
         }
         #endregion
+
+        public void OnNewBattle() {
+            DidHit = false;
+            UsesPerRound = 1;
+        }
+
+        public void OnNewRound() {
+            DidHit = false;
+            UsesPerRound = 1;
+        }
 
         public int OnAttack(params IDamageTypeData[] aDamageTypes) {
             DidHit = false;
@@ -32,8 +43,14 @@ namespace Exp.DefaultMod.Feat.Offensive {
         }
 
         public int GetExtraAttack(params IDamageTypeData[] aDamageTypes) {
-            if (base.CheckDamageType(Api.General.DamageType.Singleton.Get(nameof(Data.General.DamageType.RangedCombat)), aDamageTypes)) {
-                return DidHit ? 1 : 0;
+            if (UsesPerRound > 0) {
+                UsesPerRound--;
+
+                if (base.CheckDamageType(Api.General.DamageType.Singleton.Get(nameof(Data.General.DamageType.RangedCombat)), aDamageTypes)) {
+                    return DidHit ? 1 : 0;
+                } else {
+                    return 0;
+                }
             } else {
                 return 0;
             }

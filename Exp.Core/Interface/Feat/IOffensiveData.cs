@@ -1,7 +1,11 @@
 ﻿namespace Exp.Data.Feat {
     public interface IOffensiveData : IFeatDataBase<IOffensiveData> {
-        public int OnAttack(params General.IDamageTypeData[] aDamageTypes);
-        public int OnDamage(params General.IDamageTypeData[] aDamageTypes);
-        public General.IDiceTypeData? OverrideDiceType(params General.IDamageTypeData[] aDamageTypes);
+        int OnAttack(params General.IDamageTypeData[] aDamageTypes);
+        int OnDamage(params General.IDamageTypeData[] aDamageTypes);
+        void OnNewBattle();
+        void OnNewRound();
+
+        General.IDiceTypeData? OverrideDiceType(params General.IDamageTypeData[] aDamageTypes);
+        int GetExtraAttack(params General.IDamageTypeData[] aDamageTypes);
     }
 }
