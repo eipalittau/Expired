@@ -11,5 +11,43 @@ namespace Exp.DefaultMod.Feat.Offensive {
             LoreDescription.Set(Util.LanguageEnum.English, "");
         }
         #endregion
+        
+        #region Methoden
+        public int OnAttack(params Exp.Interface.General.IDamageTypeData[] aDamageTypes) {
+            if (CheckDamageType(aDamageTypes)) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+        
+        public int OnDamage(params Exp.Interface.General.IDamageTypeData[] aDamageTypes) {
+            if (CheckDamageType(aDamageTypes)) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+        
+        public IDiceTypeData? OverrideDiceType(params Exp.Interface.General.IDamageTypeData[] aDamageTypes) {
+            if (CheckDamageType(aDamageTypes)) {
+                return Exp.Api.General.DiceType.Singleton.Get(nameof(Exp.DefaultMod.General.D4));
+            } else {
+                return null;
+            }
+        }
+        
+        private bool CheckDamageType(params Exp.Interface.General.IDamageTypeData[] aDamageTypes) {
+            if (aDamageTypes == null && aDamageTypes == 0) {
+                //throw Exception Missing Parameter
+            } else {
+                if (aDamageTypes.Contains(Exp.Data.General.DamageType.RangedCombat) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }
+        #endregion
     }
 }
