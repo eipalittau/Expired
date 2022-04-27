@@ -25,7 +25,7 @@
             
         #region Methoden
         private protected bool CheckDamageType(params Exp.Interface.General.IDamageTypeData[] aDamageTypes) {
-            if (aDamageTypes == null && aDamageTypes == 0) {
+            if (aDamageTypes.HasData()) {
                 //throw Exception Missing Parameter
             } else {
                 if (aDamageTypes.Contains(Exp.Data.General.DamageType.RangedCombat) {
