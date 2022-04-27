@@ -9,7 +9,8 @@ namespace Exp.DefaultMod.Feat.Offensive {
             Name.Set(Util.LanguageEnum.English, "Stone thrower");
             LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
             LoreDescription.Set(Util.LanguageEnum.English, "");
-        }
+            EffektDescription.Set(Util.LanguageEnum.Deutsch, "{\rtf1Fernkampf: +1 Angriff, +1 Schaden\lineFernkampfangriff: 1W4 Schaden}");
+            EffektDescription.Set(Util.LanguageEnum.English, "{\rtf1Fernkampf: +1 Angriff, +1 Schaden\lineFernkampfangriff: 1W4 Schaden}");        }
         #endregion
         
         #region Methoden
