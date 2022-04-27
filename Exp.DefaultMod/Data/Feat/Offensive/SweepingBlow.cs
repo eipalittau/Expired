@@ -28,12 +28,22 @@ namespace Exp.DefaultMod.Feat.Offensive {
             UsesPerRound = 1;
         }
 
-        public int OnAttack(params IDamageTypeData[] aDamageTypes) {
+        public int OnAttackPassiv(params IDamageTypeData[] aDamageTypes) {
             DidHit = false;
             return 0;
         }
 
-        public int OnDamage(params IDamageTypeData[] aDamageTypes) {
+        public int OnDamagePassiv(params IDamageTypeData[] aDamageTypes) {
+            DidHit = true;
+            return 0;
+        }
+
+        public int OnAttackActive() {
+            DidHit = false;
+            return 0;
+        }
+
+        public int OnDamageActive() {
             DidHit = true;
             return 0;
         }
@@ -45,7 +55,7 @@ namespace Exp.DefaultMod.Feat.Offensive {
         public int GetExtraAttack(params IDamageTypeData[] aDamageTypes) {
             if (DidHit &&
                 UsesPerRound > 0 &&
-                base.CheckDamageType(Api.General.DamageType.Singleton.Get(nameof(Data.General.DamageType.RangedCombat)), aDamageTypes)) {
+                base.CheckDamageType(Api.General.DamageType.Singleton.Get(nameof(Data.General.DamageType.Melee)), aDamageTypes)) {
                 UsesPerRound--;
 
                 return 1;

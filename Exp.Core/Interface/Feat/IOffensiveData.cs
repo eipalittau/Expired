@@ -3,10 +3,12 @@
         void OnNewDay();
         void OnNewBattle();
         void OnNewRound();
-        int OnAttack(params General.IDamageTypeData[] aDamageTypes);
-        int OnDamage(params General.IDamageTypeData[] aDamageTypes);
+        int OnAttackPassiv(params General.IDamageTypeData[] aDamageTypes);
+        int OnDamagePassiv(params General.IDamageTypeData[] aDamageTypes);
+        int OnAttackActive();
+        int OnDamageActive();
 
         General.IDiceTypeData? OverrideDiceType(params General.IDamageTypeData[] aDamageTypes);
-        int GetExtraAttack(params General.IDamageTypeData[] aDamageTypes);
+        CharacterSheet GetExtraBoni(CharaterSheet aCharacterSheet);
     }
 }
