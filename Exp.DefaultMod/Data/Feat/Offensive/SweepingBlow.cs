@@ -19,15 +19,9 @@ namespace Exp.DefaultMod.Feat.Offensive {
         #endregion
 
         #region Methoden
-        public void OnNewDay() {
-            DidHit = false;
-            UsesPerRound = 1;
-        }
+        public void OnNewDay() { }
 
-        public void OnNewBattle() {
-            DidHit = false;
-            UsesPerRound = 1;
-        }
+        public void OnNewBattle() { }
 
         public void OnNewRound() {
             DidHit = false;
@@ -49,14 +43,12 @@ namespace Exp.DefaultMod.Feat.Offensive {
         }
 
         public int GetExtraAttack(params IDamageTypeData[] aDamageTypes) {
-            if (UsesPerRound > 0) {
+            if (DidHit &&
+                UsesPerRound > 0 &&
+                base.CheckDamageType(Api.General.DamageType.Singleton.Get(nameof(Data.General.DamageType.RangedCombat)), aDamageTypes)) {
                 UsesPerRound--;
 
-                if (base.CheckDamageType(Api.General.DamageType.Singleton.Get(nameof(Data.General.DamageType.RangedCombat)), aDamageTypes)) {
-                    return DidHit ? 1 : 0;
-                } else {
-                    return 0;
-                }
+                return 1;
             } else {
                 return 0;
             }

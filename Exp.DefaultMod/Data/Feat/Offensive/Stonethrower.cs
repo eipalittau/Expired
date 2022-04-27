@@ -31,6 +31,7 @@ namespace Exp.DefaultMod.Feat.Offensive {
             }
         }
         
+        //Patrik: CheckDamageType überarbeiten.
         public Data.General.IDiceTypeData? OverrideDiceType(params Data.General.IDamageTypeData[] aDamageTypes) {
             if (base.CheckDamageType(aDamageTypes)) {
                 return Api.General.DiceType.Singleton.Get(nameof(General.D4));
