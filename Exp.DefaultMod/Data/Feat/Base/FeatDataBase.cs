@@ -8,7 +8,6 @@
         /// <summary>Liste der Voraussetzungen.</summary>
         public List<T> PrerequisiteList { get; init; }
         public Util.LanguageBasedData EffektDescription { get; } = new Util.LanguageBasedData();
-
         #endregion
 
         #region Konstruktor
@@ -20,6 +19,20 @@
                 PrerequisiteList = new();
             } else {
                 PrerequisiteList = aPrerequisites.ToList();
+            }
+        }
+        #endregion
+            
+        #region Methoden
+        private protected bool CheckDamageType(params Exp.Interface.General.IDamageTypeData[] aDamageTypes) {
+            if (aDamageTypes == null && aDamageTypes == 0) {
+                //throw Exception Missing Parameter
+            } else {
+                if (aDamageTypes.Contains(Exp.Data.General.DamageType.RangedCombat) {
+                    return true;
+                } else {
+                    return false;
+                }
             }
         }
         #endregion
