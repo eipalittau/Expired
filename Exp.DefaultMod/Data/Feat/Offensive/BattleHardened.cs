@@ -1,7 +1,7 @@
 ﻿using Exp.Data.Feat;
 
 namespace Exp.DefaultMod.Feat.Offensive {
-    internal sealed class BattleHardened : FeatDataBase<IOffensiveData>, IOffensiveData {
+    public sealed class BattleHardened : FeatDataBase<IOffensiveData>, IOffensiveData {
         #region Konstruktor
         internal BattleHardened()
             : base(nameof(BattleHardened), 100, Api.General.Tier.Singleton.Get(nameof(Data.General.Tier.One)), null) {
@@ -12,6 +12,16 @@ namespace Exp.DefaultMod.Feat.Offensive {
             EffektDescription.Set(Util.LanguageEnum.Deutsch, "+1 Angriff, +1 Schaden");
             EffektDescription.Set(Util.LanguageEnum.English, "+1 Angriff, +1 Schaden");
         }
+        #endregion
+        
+        #region Methoden
+            public int OnAttack() {
+                return 1;
+            }
+        
+            public int OnDamage() {
+                return 1;
+            }
         #endregion
     }
 }
