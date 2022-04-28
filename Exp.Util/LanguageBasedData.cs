@@ -14,15 +14,11 @@ namespace Exp.Util {
         }
 
         public string Get(LanguageEnum aLanguage) {
-            return mValue[aLanguage.ID];
+            return string.Concat(@"{\rtf1", mValue[aLanguage.ID], @"}");
         }
 
         public string? Get(string aValue) {
             return mValue.Where(x => x.Equals(aValue, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
-        }
-
-        public string Get() {
-            return Get(LanguageEnum.Fallback);
         }
         #endregion
     }

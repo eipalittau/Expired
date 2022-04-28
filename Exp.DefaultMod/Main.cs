@@ -173,13 +173,13 @@
             Api.Equipment.ItemType.Singleton.Add(new Equipment.ItemType.Bolt());
             Api.Equipment.ItemType.Singleton.Add(new Equipment.ItemType.Dagger());
             Api.Equipment.ItemType.Singleton.Add(new Equipment.ItemType.Shield());
-            Api.Equipment.ItemType.Singleton.Add(new Equipment.ItemType.HolySymbol());
+            Api.Equipment.ItemType.Singleton.Add(new Equipment.ItemType.Focus());
             Api.Equipment.ItemType.Singleton.Add(new Equipment.ItemType.Grimoire());
             Api.Equipment.ItemType.Singleton.Add(new Equipment.ItemType.Ring());
             Api.Equipment.ItemType.Singleton.Add(new Equipment.ItemType.Amulet());
             Api.Equipment.ItemType.Singleton.Add(new Equipment.ItemType.Cape());
             Api.Equipment.ItemType.Singleton.Add(new Equipment.ItemType.Headgear());
-            Api.Equipment.ItemType.Singleton.Add(new Equipment.ItemType.Armguard());
+            Api.Equipment.ItemType.Singleton.Add(new Equipment.ItemType.Bracers());
             Api.Equipment.ItemType.Singleton.Add(new Equipment.ItemType.Consumable());
         }
 

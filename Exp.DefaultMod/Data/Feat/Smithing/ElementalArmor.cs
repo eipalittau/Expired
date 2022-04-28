@@ -1,19 +1,19 @@
 ﻿using Exp.Data.Feat;
 
 namespace Exp.DefaultMod.Feat.Smithing {
-    internal sealed class Hardening : SmithingDataBase, ISmithingData {
+    internal sealed class ElementalArmor : SmithingDataBase, ISmithingData {
         #region Konstruktor
-        internal Hardening()
-            : base(nameof(Hardening), 200,
-                   Api.General.Tier.Singleton.Get(nameof(Exp.Data.General.Tier.One)),
-                   null,
+        internal ElementalArmor()
+            : base(nameof(ElementalArmor), 1000,
+                   Api.General.Tier.Singleton.Get(nameof(Exp.Data.General.Tier.Two)),
+                   Api.Feat.Smithing.Singleton.Get(nameof(Hardening)),
                    Api.Equipment.ItemType.Singleton.Get(nameof(Equipment.ItemType.Armor)),
                    Api.Equipment.ItemType.Singleton.Get(nameof(Equipment.ItemType.Boots)),
                    Api.Equipment.ItemType.Singleton.Get(nameof(Equipment.ItemType.Shield)),
                    Api.Equipment.ItemType.Singleton.Get(nameof(Equipment.ItemType.Bracers)),
                    Api.Equipment.ItemType.Singleton.Get(nameof(Equipment.ItemType.Headgear))) {
-            Name.Set(Util.LanguageEnum.Deutsch, "Härten");
-            Name.Set(Util.LanguageEnum.English, "Hardening");
+            Name.Set(Util.LanguageEnum.Deutsch, "Elementarrüstung");
+            Name.Set(Util.LanguageEnum.English, "Elemental armor");
             LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
             LoreDescription.Set(Util.LanguageEnum.English, "");
             EffektDescription.Set(Util.LanguageEnum.Deutsch, "");

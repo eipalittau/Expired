@@ -7,10 +7,10 @@ namespace Exp.DefaultMod.Feat.Offensive {
             : base(nameof(BattleHardened), 100, Api.General.Tier.Singleton.Get(nameof(Data.General.Tier.One)), null) {
             Name.Set(Util.LanguageEnum.Deutsch, "Kampferprobt");
             Name.Set(Util.LanguageEnum.English, "Battle hardened");
-            LoreDescription.Set(Util.LanguageEnum.Deutsch, @"{\rtf1Immer Mitten in die Fresse rein...}");
-            LoreDescription.Set(Util.LanguageEnum.English, @"{\rtf1Always right in the face...}");
-            EffektDescription.Set(Util.LanguageEnum.Deutsch, @"{\rtf1+1 Angriff, +1 Schaden}");
-            EffektDescription.Set(Util.LanguageEnum.English, @"{\rtf1+1 Angriff, +1 Schaden}");
+            LoreDescription.Set(Util.LanguageEnum.Deutsch, "Immer Mitten in die Fresse rein...");
+            LoreDescription.Set(Util.LanguageEnum.English, "Always right in the face...");
+            EffektDescription.Set(Util.LanguageEnum.Deutsch, "+1 Angriff, +1 Schaden");
+            EffektDescription.Set(Util.LanguageEnum.English, "+1 Angriff, +1 Schaden");
         }
         #endregion
         

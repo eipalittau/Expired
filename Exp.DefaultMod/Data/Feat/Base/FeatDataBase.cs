@@ -17,10 +17,10 @@ namespace Exp.DefaultMod.Feat {
             : base(aID, aSortWeight) {
             Tier = aTier;
             ActionType = aActionType;
-            if (aPrerequisites == null || aPrerequisites.Length == 0) {
-                PrerequisiteList = new();
-            } else {
+            if (aPrerequisites.HasData()) {
                 PrerequisiteList = aPrerequisites.ToList();
+            } else {
+                PrerequisiteList = new();
             }
         }
         #endregion

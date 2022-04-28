@@ -34,10 +34,6 @@ namespace Exp.DefaultMod.Feat.Offensive {
             return 0;
         }
 
-        public IDiceTypeData? OverrideDiceType(params IDamageTypeData[] aDamageTypes) {
-            throw new NotImplementedException();
-        }
-
         public int GetExtraAttack(params IDamageTypeData[] aDamageTypes) {
             if (DidHit &&
                 UsesPerRound > 0 &&
