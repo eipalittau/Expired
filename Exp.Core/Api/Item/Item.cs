@@ -1,10 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Exp.Api.Item {
+    public sealed class Item : ApiBase<Data.Item.IItemData> {
+        #region Properties / Felder
+        public static Item Singleton { get; } = new();
+        #endregion
 
-namespace Exp.Core.Api.Item {
-    internal class Item {
+        #region Konstruktor
+        private Item() : base() { }
+        #endregion
+
+        #region Methoden
+        public new void Remove(string aID) {
+            base.Remove(aID);
+        }
+
+        public new void Clear() {
+            base.Clear();
+        }
+
+        public new IList<Data.Item.IItemData> List() {
+            return base.List();
+        }
+
+        public new Data.Item.IItemData Get(string aID) {
+            return base.Get(aID);
+        }
+
+        public new int Count() {
+            return base.Count();
+        }
+
+        public new void Add(Data.Item.IItemData aItem) {
+            base.Add(aItem);
+        }
+        #endregion
     }
 }
