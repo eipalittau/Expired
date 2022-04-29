@@ -17,11 +17,11 @@
             base.Clear();
         }
 
-        public new IList<Data.Equipment.IEffectData> List() {
+        public new IList<Data.Item.IEffectData> List() {
             return base.List();
         }
 
-        public new Data.Equipment.IEffectData Get(string aID) {
+        public new Data.Item.IEffectData Get(string aID) {
             return base.Get(aID);
         }
 
@@ -29,7 +29,7 @@
             return base.Count();
         }
 
-        public new void Add(Data.Equipment.IEffectData aItem) {
+        public new void Add(Data.Item.IEffectData aItem) {
             base.Add(aItem);
         }
         #endregion

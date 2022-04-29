@@ -17,11 +17,11 @@
             base.Clear();
         }
 
-        public new IList<Data.Equipment.IItemTypeData> List() {
+        public new IList<Data.Item.IItemTypeData> List() {
             return base.List();
         }
 
-        public new Data.Equipment.IItemTypeData Get(string aID) {
+        public new Data.Item.IItemTypeData Get(string aID) {
             return base.Get(aID);
         }
 
@@ -29,7 +29,7 @@
             return base.Count();
         }
 
-        public new void Add(Data.Equipment.IItemTypeData aItem) {
+        public new void Add(Data.Item.IItemTypeData aItem) {
             base.Add(aItem);
         }
         #endregion
