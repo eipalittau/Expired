@@ -1,5 +1,5 @@
 ﻿namespace Exp.DefaultMod.Player.Slot {
-    internal abstract class SlotDataBase : DataBase, Data.Player.ISlotDataBase {
+    internal abstract class SlotDataBase : DataBase, Exp.Data.Player.ISlotDataBase {
         #region Properties / Felder
         public bool Available { get; set; }
         #endregion

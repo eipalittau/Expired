@@ -1,6 +1,6 @@
 ﻿using Exp.Data.Item;
 
-namespace Exp.DefaultMod.Item.ItemQuality {
+namespace Exp.DefaultMod.Item {
     internal sealed class ArmorFighter1 : ItemDataBase, IItemData {
         #region Konstruktor
         internal ArmorFighter1()
