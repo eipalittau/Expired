@@ -1,7 +1,5 @@
-﻿using Exp.Data.Item;
-
-namespace Exp.DefaultMod.Item.ItemType {
-    internal sealed class Bracers : ItemTypeDataBase, IItemTypeData {
+﻿namespace Exp.DefaultMod.Item.ItemType {
+    internal sealed class Bracers : Exp.Data.Item.ItemTypeDataBase, Exp.Data.Item.IItemTypeData {
         #region Konstruktor
         internal Bracers()
             : base(nameof(Bracers), 1700, null, 

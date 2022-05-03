@@ -5,9 +5,9 @@ namespace Exp.DefaultMod.Feat.Smithing {
         #region Konstruktor
         internal CreateBoots()
             : base(nameof(CreateBoots), 500,
-                   Api.General.Tier.Singleton.Get(nameof(Data.General.Tier.One)),
+                   Api.General.Tier.Singleton.Get(nameof(General.Tier.One)),
                    null,
-                   Api.Equipment.ItemType.Singleton.Get(nameof(Equipment.ItemType.Boots))) {
+                   Api.Item.ItemType.Singleton.Get(nameof(Item.ItemType.Boots))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Schiefel schmieden");
             Name.Set(Util.LanguageEnum.English, "Create boots");
             LoreDescription.Set(Util.LanguageEnum.Deutsch, "");

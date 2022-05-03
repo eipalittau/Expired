@@ -1,14 +1,12 @@
 ﻿namespace Exp.Api {
-    internal class Main : IMain {
-        public void Initialize() {
-            General.ActionType.Singleton.Add(new Data.General.ActionType.Free());
-            General.ActionType.Singleton.Add(new Data.General.ActionType.Standard());
-            General.ActionType.Singleton.Add(new Data.General.ActionType.Move());
-            General.ActionType.Singleton.Add(new Data.General.ActionType.Full());
+    public sealed class Main : IMain {
+        #region Properties / Felder
+        public static Main Singleton { get; } = new();
+        #endregion
 
-            General.Tier.Singleton.Add(new Data.General.Tier.One());
-            General.Tier.Singleton.Add(new Data.General.Tier.Two());
-            General.Tier.Singleton.Add(new Data.General.Tier.Three());
+        public void Initialize() {
+            Exp.Util.Localisation.AddResourceFile("Labeling.Labeling");
+            Exp.Util.Localisation.Language = Exp.Util.LanguageEnum.Deutsch;
         }
     }
 }

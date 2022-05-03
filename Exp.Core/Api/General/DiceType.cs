@@ -25,12 +25,29 @@
             return base.Get(aID);
         }
 
+        public Data.General.IDiceTypeData Get(int aFaces) {
+            Data.General.IDiceTypeData? lItem = Singleton.List()
+                .Where(x => x.Faces == aFaces)
+                .FirstOrDefault();
+
+            if (lItem == null) {
+                throw new Exp.Exception.DiceNotFoundException(aFaces);
+            } else {
+                return lItem;
+            }
+
+        }
+
         public new int Count() {
             return base.Count();
         }
 
         public new void Add(Data.General.IDiceTypeData aItem) {
-            base.Add(aItem);
+            if (aItem.Faces <= 1) {
+                throw new Exp.Exception.BadArgumentException(nameof(aItem.Faces), aItem.Faces);
+            } else {
+                base.Add(aItem);
+            }
         }
         #endregion
     }

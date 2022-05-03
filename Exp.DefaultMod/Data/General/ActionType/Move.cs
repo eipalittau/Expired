@@ -1,5 +1,5 @@
 ﻿namespace Exp.DefaultMod.General.ActionType {
-    public sealed class Move : ActionTypeBase, Data.General.IActionTypeData {
+    public sealed class Move : Exp.Data.General.ActionTypeBase, Exp.Data.General.IActionTypeData {
         #region Konstruktor
         internal Move()
             : base(nameof(Move), 2, 1) {

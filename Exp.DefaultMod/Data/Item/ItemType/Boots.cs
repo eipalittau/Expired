@@ -1,7 +1,5 @@
-﻿using Exp.Data.Item;
-
-namespace Exp.DefaultMod.Item.ItemType {
-    internal sealed class Boots : ItemTypeDataBase, IItemTypeData {
+﻿namespace Exp.DefaultMod.Item.ItemType {
+    internal sealed class Boots : Exp.Data.Item.ItemTypeDataBase, Exp.Data.Item.IItemTypeData {
         #region Konstruktor
         internal Boots()
             : base(nameof(Boots), 200, null, 

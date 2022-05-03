@@ -1,5 +1,5 @@
 namespace Exp.DefaultMod.General.DamageType {
-    public sealed class RangedCombat : DamageTypeBase, Data.General.IDamageTypeData {
+    public sealed class RangedCombat : Exp.Data.General.DamageTypeBase, Exp.Data.General.IDamageTypeData {
         #region Konstruktor
         internal RangedCombat()
             : base(nameof(RangedCombat), 2) {

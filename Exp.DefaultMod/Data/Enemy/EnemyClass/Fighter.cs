@@ -1,7 +1,5 @@
-﻿using Exp.Data.Enemy;
-
-namespace Exp.DefaultMod.Enemy {
-    internal sealed class Fighter : EnemyClassBase, IEnemyClassData {
+﻿namespace Exp.DefaultMod.Enemy {
+    internal sealed class Fighter : Exp.Data.Enemy.EnemyClassBase, Exp.Data.Enemy.IEnemyClassData {
         #region Konstruktor
         internal Fighter()
             : base(nameof(Fighter), 400, 400) {

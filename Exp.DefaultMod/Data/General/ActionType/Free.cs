@@ -1,5 +1,5 @@
 ﻿namespace Exp.DefaultMod.General.ActionType {
-    public sealed class Free : ActionTypeBase, Data.General.IActionTypeData {
+    public sealed class Free : Exp.Data.General.ActionTypeBase, Exp.Data.General.IActionTypeData {
         #region Konstruktor
         internal Free()
             : base(nameof(Free), 1, 0) {

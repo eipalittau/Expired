@@ -1,44 +1,38 @@
 ﻿namespace Exp.Util {
-    public sealed class LanguageEnum : EnumerationMethodBase {
+    public sealed class LanguageEnum : EnumerationBase {
         #region Properties / Felder
         #region Static
-        internal static LanguageEnum None = new(-1, nameof(None), string.Empty);
-        public static LanguageEnum Fallback = new(0, nameof(Fallback), string.Empty);
-        public static LanguageEnum Deutsch = new(1, nameof(Deutsch), "de-DE");
-        public static LanguageEnum English = new(2, nameof(English), "en-EN");
+        internal static LanguageEnum None = new(0, nameof(None), string.Empty);
+        public static LanguageEnum Deutsch = new(1, nameof(Deutsch), "de");
+        public static LanguageEnum English = new(2, nameof(English), "en");
         #endregion
 
         #region Instance
-        public int ID { get; init; }
-        public string Language { get; init; }
         public string ISO { get; init; }
         #endregion
         #endregion
 
         #region Konstruktor
         private LanguageEnum(int aID, string aLanguage, string aISO)
-            => (ID, Language, ISO) = (aID, aLanguage, aISO);
+            :base(aID, aLanguage, string.Empty)
+            => ISO = aISO;
         #endregion
 
         #region Methoden
         public static List<LanguageEnum> Enumerate() {
-            return EnumerationMethodBase.Enumerate<LanguageEnum>().OrderBy(x => x.ID).ToList();
+            return EnumerationBase.Enumerate<LanguageEnum>(SortDirectionEnum.ASC);
         }
 
         public static int Count() {
-            return EnumerationMethodBase.Count<LanguageEnum>();
+            return EnumerationBase.Count<LanguageEnum>();
         }
 
         public static LanguageEnum Convert(int aID) {
-            return Enumerate().Where(x => x.ID == aID).FirstOrDefault() ?? None;
+            return EnumerationBase.Convert<LanguageEnum>(aID, None);
         }
 
-        public static LanguageEnum Convert(string aLanguage) {
-            return Enumerate().Where(x => x.Language == aLanguage).FirstOrDefault() ?? None;
-        }
-
-        public override string ToString() {
-            return Language;
+        public static LanguageEnum Convert(string aName) {
+            return EnumerationBase.Convert<LanguageEnum>(aName, None);
         }
         #endregion
     }

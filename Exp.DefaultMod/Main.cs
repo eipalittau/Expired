@@ -146,70 +146,72 @@
         }
         #endregion
 
-        #region Equipment
+        #region Player
         private static void AddSlotData() {
-            Api.Equipment.Slot.Singleton.Add(new Equipment.Slot.Body());
-            Api.Equipment.Slot.Singleton.Add(new Equipment.Slot.Feet());
-            Api.Equipment.Slot.Singleton.Add(new Equipment.Slot.Mainhand());
-            Api.Equipment.Slot.Singleton.Add(new Equipment.Slot.Offhand());
-            Api.Equipment.Slot.Singleton.Add(new Equipment.Slot.RingFingerLeft());
-            Api.Equipment.Slot.Singleton.Add(new Equipment.Slot.RingFingerRight());
-            Api.Equipment.Slot.Singleton.Add(new Equipment.Slot.WristLeft());
-            Api.Equipment.Slot.Singleton.Add(new Equipment.Slot.WristRight());
-            Api.Equipment.Slot.Singleton.Add(new Equipment.Slot.Neck());
-            Api.Equipment.Slot.Singleton.Add(new Equipment.Slot.Shoulders());
-            Api.Equipment.Slot.Singleton.Add(new Equipment.Slot.Head());
-            Api.Equipment.Slot.Singleton.Add(new Equipment.Slot.Bag());
+            Api.Player.Slot.Singleton.Add(new Player.Slot.Body());
+            Api.Player.Slot.Singleton.Add(new Player.Slot.Feet());
+            Api.Player.Slot.Singleton.Add(new Player.Slot.Mainhand());
+            Api.Player.Slot.Singleton.Add(new Player.Slot.Offhand());
+            Api.Player.Slot.Singleton.Add(new Player.Slot.RingFingerLeft());
+            Api.Player.Slot.Singleton.Add(new Player.Slot.RingFingerRight());
+            Api.Player.Slot.Singleton.Add(new Player.Slot.WristLeft());
+            Api.Player.Slot.Singleton.Add(new Player.Slot.WristRight());
+            Api.Player.Slot.Singleton.Add(new Player.Slot.Neck());
+            Api.Player.Slot.Singleton.Add(new Player.Slot.Shoulders());
+            Api.Player.Slot.Singleton.Add(new Player.Slot.Head());
+            Api.Player.Slot.Singleton.Add(new Player.Slot.Bag());
         }
+        #endregion
 
+        #region Item
         private static void AddItemTypeData() {
-            Api.Equipment.ItemType.Singleton.Add(new Equipment.ItemType.Armor());
-            Api.Equipment.ItemType.Singleton.Add(new Equipment.ItemType.Boots());
-            Api.Equipment.ItemType.Singleton.Add(new Equipment.ItemType.OneHandedWeapon());
-            Api.Equipment.ItemType.Singleton.Add(new Equipment.ItemType.TwoHandedWeapon());
-            Api.Equipment.ItemType.Singleton.Add(new Equipment.ItemType.Bow());
-            Api.Equipment.ItemType.Singleton.Add(new Equipment.ItemType.Crossbow());
-            Api.Equipment.ItemType.Singleton.Add(new Equipment.ItemType.Arrows());
-            Api.Equipment.ItemType.Singleton.Add(new Equipment.ItemType.Bolt());
-            Api.Equipment.ItemType.Singleton.Add(new Equipment.ItemType.Dagger());
-            Api.Equipment.ItemType.Singleton.Add(new Equipment.ItemType.Shield());
-            Api.Equipment.ItemType.Singleton.Add(new Equipment.ItemType.Focus());
-            Api.Equipment.ItemType.Singleton.Add(new Equipment.ItemType.Grimoire());
-            Api.Equipment.ItemType.Singleton.Add(new Equipment.ItemType.Ring());
-            Api.Equipment.ItemType.Singleton.Add(new Equipment.ItemType.Amulet());
-            Api.Equipment.ItemType.Singleton.Add(new Equipment.ItemType.Cape());
-            Api.Equipment.ItemType.Singleton.Add(new Equipment.ItemType.Headgear());
-            Api.Equipment.ItemType.Singleton.Add(new Equipment.ItemType.Bracers());
-            Api.Equipment.ItemType.Singleton.Add(new Equipment.ItemType.Consumable());
+            Api.Item.ItemType.Singleton.Add(new Item.ItemType.Armor());
+            Api.Item.ItemType.Singleton.Add(new Item.ItemType.Boots());
+            Api.Item.ItemType.Singleton.Add(new Item.ItemType.OneHandedWeapon());
+            Api.Item.ItemType.Singleton.Add(new Item.ItemType.TwoHandedWeapon());
+            Api.Item.ItemType.Singleton.Add(new Item.ItemType.Bow());
+            Api.Item.ItemType.Singleton.Add(new Item.ItemType.Crossbow());
+            Api.Item.ItemType.Singleton.Add(new Item.ItemType.Arrow());
+            Api.Item.ItemType.Singleton.Add(new Item.ItemType.Bolt());
+            Api.Item.ItemType.Singleton.Add(new Item.ItemType.Dagger());
+            Api.Item.ItemType.Singleton.Add(new Item.ItemType.Shield());
+            Api.Item.ItemType.Singleton.Add(new Item.ItemType.Focus());
+            Api.Item.ItemType.Singleton.Add(new Item.ItemType.Grimoire());
+            Api.Item.ItemType.Singleton.Add(new Item.ItemType.Ring());
+            Api.Item.ItemType.Singleton.Add(new Item.ItemType.Amulet());
+            Api.Item.ItemType.Singleton.Add(new Item.ItemType.Cape());
+            Api.Item.ItemType.Singleton.Add(new Item.ItemType.Headgear());
+            Api.Item.ItemType.Singleton.Add(new Item.ItemType.Bracers());
+            Api.Item.ItemType.Singleton.Add(new Item.ItemType.Consumable());
         }
 
         private static void AddItemQualityData() {
-            Data.Equipment.IItemQualityData lItem;
+            Exp.Data.Item.IItemQualityData lItem;
 
-            Api.Equipment.ItemQuality.Singleton.Add(new Equipment.ItemQuality.Rusty());
-            Api.Equipment.ItemQuality.Singleton.Add(new Equipment.ItemQuality.Notched());
-            Api.Equipment.ItemQuality.Singleton.Add(new Equipment.ItemQuality.Normal());
-            Api.Equipment.ItemQuality.Singleton.Add(new Equipment.ItemQuality.Hardened());
-            Api.Equipment.ItemQuality.Singleton.Add(new Equipment.ItemQuality.Masterwork());
+            Api.Item.ItemQuality.Singleton.Add(new Item.ItemQuality.Rusty());
+            Api.Item.ItemQuality.Singleton.Add(new Item.ItemQuality.Notched());
+            Api.Item.ItemQuality.Singleton.Add(new Item.ItemQuality.Normal());
+            Api.Item.ItemQuality.Singleton.Add(new Item.ItemQuality.Hardened());
+            Api.Item.ItemQuality.Singleton.Add(new Item.ItemQuality.Masterwork());
 
-            lItem = Api.Equipment.ItemQuality.Singleton.Get(nameof(Equipment.ItemQuality.Rusty));
+            lItem = Api.Item.ItemQuality.Singleton.Get(nameof(Item.ItemQuality.Rusty));
             lItem.Downgrade = null;
-            lItem.Upgrade = Api.Equipment.ItemQuality.Singleton.Get(nameof(Equipment.ItemQuality.Notched));
+            lItem.Upgrade = Api.Item.ItemQuality.Singleton.Get(nameof(Item.ItemQuality.Notched));
 
-            lItem = Api.Equipment.ItemQuality.Singleton.Get(nameof(Equipment.ItemQuality.Notched));
-            lItem.Downgrade = Api.Equipment.ItemQuality.Singleton.Get(nameof(Equipment.ItemQuality.Rusty));
-            lItem.Upgrade = Api.Equipment.ItemQuality.Singleton.Get(nameof(Equipment.ItemQuality.Normal));
+            lItem = Api.Item.ItemQuality.Singleton.Get(nameof(Item.ItemQuality.Notched));
+            lItem.Downgrade = Api.Item.ItemQuality.Singleton.Get(nameof(Item.ItemQuality.Rusty));
+            lItem.Upgrade = Api.Item.ItemQuality.Singleton.Get(nameof(Item.ItemQuality.Normal));
 
-            lItem = Api.Equipment.ItemQuality.Singleton.Get(nameof(Equipment.ItemQuality.Normal));
-            lItem.Downgrade = Api.Equipment.ItemQuality.Singleton.Get(nameof(Equipment.ItemQuality.Notched));
-            lItem.Upgrade = Api.Equipment.ItemQuality.Singleton.Get(nameof(Equipment.ItemQuality.Hardened));
+            lItem = Api.Item.ItemQuality.Singleton.Get(nameof(Item.ItemQuality.Normal));
+            lItem.Downgrade = Api.Item.ItemQuality.Singleton.Get(nameof(Item.ItemQuality.Notched));
+            lItem.Upgrade = Api.Item.ItemQuality.Singleton.Get(nameof(Item.ItemQuality.Hardened));
 
-            lItem = Api.Equipment.ItemQuality.Singleton.Get(nameof(Equipment.ItemQuality.Hardened));
-            lItem.Downgrade = Api.Equipment.ItemQuality.Singleton.Get(nameof(Equipment.ItemQuality.Normal));
-            lItem.Upgrade = Api.Equipment.ItemQuality.Singleton.Get(nameof(Equipment.ItemQuality.Masterwork));
+            lItem = Api.Item.ItemQuality.Singleton.Get(nameof(Item.ItemQuality.Hardened));
+            lItem.Downgrade = Api.Item.ItemQuality.Singleton.Get(nameof(Item.ItemQuality.Normal));
+            lItem.Upgrade = Api.Item.ItemQuality.Singleton.Get(nameof(Item.ItemQuality.Masterwork));
 
-            lItem = Api.Equipment.ItemQuality.Singleton.Get(nameof(Equipment.ItemQuality.Masterwork));
-            lItem.Downgrade = Api.Equipment.ItemQuality.Singleton.Get(nameof(Equipment.ItemQuality.Hardened));
+            lItem = Api.Item.ItemQuality.Singleton.Get(nameof(Item.ItemQuality.Masterwork));
+            lItem.Downgrade = Api.Item.ItemQuality.Singleton.Get(nameof(Item.ItemQuality.Hardened));
             lItem.Upgrade = null;
         }
         #endregion

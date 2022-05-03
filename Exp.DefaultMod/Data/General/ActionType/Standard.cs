@@ -1,5 +1,5 @@
 ﻿namespace Exp.DefaultMod.General.ActionType {
-    public sealed class Standard : ActionTypeBase, Data.General.IActionTypeData {
+    public sealed class Standard : Exp.Data.General.ActionTypeBase, Exp.Data.General.IActionTypeData {
         #region Konstruktor
         internal Standard()
             : base(nameof(Standard), 3, 1.5) {

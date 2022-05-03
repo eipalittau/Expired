@@ -10,4 +10,10 @@
     <ProjectReference Include="..\Exp.Util\Exp.Util.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Update="Labeling\Labeling.de.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>

@@ -1,10 +1,10 @@
 ﻿using Exp.Data.Feat;
 
 namespace Exp.DefaultMod.Feat.Offensive {
-    public sealed class BattleHardened : FeatDataBase<IOffensiveData>, IOffensiveData {
+    public sealed class BattleHardened : OffensiveDataBase, IOffensiveData {
         #region Konstruktor
         internal BattleHardened()
-            : base(nameof(BattleHardened), 100, Api.General.Tier.Singleton.Get(nameof(Data.General.Tier.One)), null) {
+            : base(nameof(BattleHardened), 100, Api.General.Tier.Singleton.Get(nameof(General.Tier.One)), null) {
             Name.Set(Util.LanguageEnum.Deutsch, "Kampferprobt");
             Name.Set(Util.LanguageEnum.English, "Battle hardened");
             LoreDescription.Set(Util.LanguageEnum.Deutsch, "Immer Mitten in die Fresse rein...");

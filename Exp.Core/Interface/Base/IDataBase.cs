@@ -1,4 +1,5 @@
 ﻿namespace Exp.Data {
+    [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
     public interface IDataBase {
         /// <summary>Eindeutige Identifikation des Datensatzes. Die ID kann zur bei der Erstellung gesetzt werden.</summary>
         /// <exception cref="DublicateItemException">Falls die ID bereits existiert, wird diese Exception geworfen.</exception>

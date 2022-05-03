@@ -2,7 +2,7 @@
 using Exp.Data.General;
 
 namespace Exp.DefaultMod.Feat.Offensive {
-    internal sealed class SweepingBlow : FeatDataBase<IOffensiveData>, IOffensiveData {
+    internal sealed class SweepingBlow : OffensiveDataBase, IOffensiveData {
         #region Properties / Felder
         private bool DidHit { get; set; }
         private int UsesPerRound { get; set; }
@@ -10,7 +10,7 @@ namespace Exp.DefaultMod.Feat.Offensive {
 
         #region Konstruktor
         internal SweepingBlow()
-            : base(nameof(SweepingBlow), 500, Api.General.Tier.Singleton.Get(nameof(Data.General.Tier.One)), null) {
+            : base(nameof(SweepingBlow), 500, Api.General.Tier.Singleton.Get(nameof(General.Tier.One)), null) {
             Name.Set(Util.LanguageEnum.Deutsch, "Rundumschlag");
             Name.Set(Util.LanguageEnum.English, "Sweeping blow");
             LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
@@ -37,7 +37,7 @@ namespace Exp.DefaultMod.Feat.Offensive {
         public int GetExtraAttack(params IDamageTypeData[] aDamageTypes) {
             if (DidHit &&
                 UsesPerRound > 0 &&
-                base.CheckDamageType(Api.General.DamageType.Singleton.Get(nameof(Data.General.DamageType.Melee)), aDamageTypes)) {
+                base.CheckDamageType(Api.General.DamageType.Singleton.Get(nameof(General.DamageType.Melee)), aDamageTypes)) {
                 UsesPerRound--;
 
                 return 1;

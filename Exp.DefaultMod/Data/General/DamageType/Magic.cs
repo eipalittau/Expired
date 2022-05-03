@@ -1,5 +1,5 @@
 namespace Exp.DefaultMod.General.DamageType {
-    public sealed class Magic : DamageTypeBase, Data.General.IDamageTypeData {
+    public sealed class Magic : Exp.Data.General.DamageTypeBase, Exp.Data.General.IDamageTypeData {
         #region Konstruktor
         internal Magic()
             : base(nameof(Magic), 3) {

@@ -1,10 +1,10 @@
 ﻿using Exp.Data.Feat;
 
 namespace Exp.DefaultMod.Feat.Offensive {
-    internal sealed class Stonethrower : FeatDataBase<IOffensiveData>, IOffensiveData {
+    internal sealed class Stonethrower : OffensiveDataBase, IOffensiveData {
         #region Konstruktor
         internal Stonethrower()
-            : base(nameof(Stonethrower), 200, Api.General.Tier.Singleton.Get(nameof(Data.General.Tier.One)), Api.General.ActionType.Singleton.Get(nameof(Data.General.ActionType.Standard))) {
+            : base(nameof(Stonethrower), 200, Api.General.Tier.Singleton.Get(nameof(General.Tier.One)), Api.General.ActionType.Singleton.Get(nameof(General.ActionType.Standard))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Steinwerfer");
             Name.Set(Util.LanguageEnum.English, "Stone thrower");
             LoreDescription.Set(Util.LanguageEnum.Deutsch, @"{\rtf1Komm her und kämpfe wie ein richtiger Mann!}");
@@ -15,7 +15,7 @@ namespace Exp.DefaultMod.Feat.Offensive {
         #endregion
         
         #region Methoden
-        public int OnAttack(params Data.General.IDamageTypeData[] aDamageTypes) {
+        public int OnAttack(params Exp.Data.General.IDamageTypeData[] aDamageTypes) {
             if (base.CheckDamageType(aDamageTypes)) {
                 return 1;
             } else {
@@ -23,7 +23,7 @@ namespace Exp.DefaultMod.Feat.Offensive {
             }
         }
         
-        public int OnDamage(params Data.General.IDamageTypeData[] aDamageTypes) {
+        public int OnDamage(params Exp.Data.General.IDamageTypeData[] aDamageTypes) {
             if (base.CheckDamageType(aDamageTypes)) {
                 return 1;
             } else {
@@ -31,7 +31,7 @@ namespace Exp.DefaultMod.Feat.Offensive {
             }
         }
         
-        public Data.General.IDiceTypeData? OverrideDiceType(params Data.General.IDamageTypeData[] aDamageTypes) {
+        public Exp.Data.General.IDiceTypeData? OverrideDiceType(params Exp.Data.General.IDamageTypeData[] aDamageTypes) {
             if (base.CheckDamageType(aDamageTypes)) {
                 return Api.General.DiceType.Singleton.Get(nameof(General.D4));
             } else {

@@ -1,5 +1,5 @@
 namespace Exp.DefaultMod.General.DamageType {
-    public sealed class Melee : DamageTypeBase, Data.General.IDamageTypeData {
+    public sealed class Melee : Exp.Data.General.DamageTypeBase, Exp.Data.General.IDamageTypeData {
         #region Konstruktor
         internal Melee()
             : base(nameof(Melee), 1) {

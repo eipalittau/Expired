@@ -1,7 +1,5 @@
-﻿using Exp.Data.Enemy;
-
-namespace Exp.DefaultMod.Enemy {
-    internal sealed class Mage : EnemyClassBase, IEnemyClassData {
+﻿namespace Exp.DefaultMod.Enemy {
+    internal sealed class Mage : Exp.Data.Enemy.EnemyClassBase, Exp.Data.Enemy.IEnemyClassData {
         #region Konstruktor
         internal Mage()
             : base(nameof(Mage), 100, 100) {

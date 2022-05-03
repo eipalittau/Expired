@@ -1,5 +1,5 @@
 ﻿namespace Exp.DefaultMod.General.ActionType {
-    public sealed class Full : ActionTypeBase, Data.General.IActionTypeData {
+    public sealed class Full : Exp.Data.General.ActionTypeBase, Exp.Data.General.IActionTypeData {
         #region Konstruktor
         internal Full()
             : base(nameof(Full), 4, 2.5) {

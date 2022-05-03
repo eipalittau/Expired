@@ -1,4 +1,5 @@
 ﻿namespace Exp.Data.Enemy {
-    public interface IEnemyClassData : IEnemyClassDataBase {
+    public interface IEnemyClassData : IDataBase {
+        int Initiative { get; set; }
     }
 }

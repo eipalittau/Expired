@@ -1,6 +1,6 @@
 ﻿using Exp.Data.Item;
 
-namespace Exp.DefaultMod.Item {
+namespace Exp.DefaultMod.Item.Item {
     internal sealed class ArmorRogue1 : ItemDataBase, IItemData {
         #region Konstruktor
         internal ArmorRogue1()

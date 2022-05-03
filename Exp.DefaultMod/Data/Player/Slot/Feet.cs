@@ -1,7 +1,5 @@
-﻿using Exp.Data.Player;
-
-namespace Exp.DefaultMod.Player.Slot {
-    internal sealed class Feet : SlotDataBase, ISlotData {
+﻿namespace Exp.DefaultMod.Player.Slot {
+    internal sealed class Feet : Exp.Data.Player.SlotDataBase, Exp.Data.Player.ISlotData {
         #region Konstruktor
         internal Feet()
             : base(nameof(Feet), 200, false) {
