@@ -11,8 +11,8 @@
         #endregion
             
         #region Methoden
-        protected void Add(IEnemyClassData aInstance) {
-            Api.Enemy.EnemyClass.Singleton.Add(aInstance);
+        protected void AddInstance() {
+            Api.Enemy.EnemyClass.Singleton.Add(this);
         }
         #endregion
     }
