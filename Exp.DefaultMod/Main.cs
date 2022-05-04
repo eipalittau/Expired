@@ -15,7 +15,7 @@
             AddItemTypeData();
             AddItemQualityData();
         }
-
+        
         #region General
         private static void AddDiceTypeData() {
             Api.General.DiceType.Singleton.Add(new General.D4());
@@ -32,7 +32,7 @@
         private static void AddEnemyClassData() {
             Enemy.Cleric.Add();
             Api.Enemy.EnemyClass.Singleton.Add(new Enemy.Mage());
-            Api.Enemy.EnemyClass.Singleton.Add(new Enemy.Cleric());
+            //Api.Enemy.EnemyClass.Singleton.Add(new Enemy.Cleric());
             Api.Enemy.EnemyClass.Singleton.Add(new Enemy.Rogue());
             Api.Enemy.EnemyClass.Singleton.Add(new Enemy.Fighter());
         }
