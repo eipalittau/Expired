@@ -30,6 +30,7 @@
 
         #region Enemy
         private static void AddEnemyClassData() {
+            Enemy.Cleric.Add();
             Api.Enemy.EnemyClass.Singleton.Add(new Enemy.Mage());
             Api.Enemy.EnemyClass.Singleton.Add(new Enemy.Cleric());
             Api.Enemy.EnemyClass.Singleton.Add(new Enemy.Rogue());
