@@ -9,5 +9,11 @@
             : base(aID, aSortWeight)
             => Initiative = aInitiative;
         #endregion
+            
+        #region Methoden
+        protected void Add(IEnemyClassData aInstance) {
+            Api.Enemy.EnemyClass.Singleton.Add(aInstance);
+        }
+        #endregion
     }
 }
