@@ -1,5 +1,5 @@
 ﻿namespace Exp.DefaultMod.Skill.Type {
-    public sealed class Trap : Exp.Data.Skill.SkillTypeBase, Exp.Data.Skill.ISkillTypeData {
+    public sealed class Trap : Exp.Data.Skill.SkillTypeDataBase, Exp.Data.Skill.ISkillTypeData {
         #region Konstruktor
         private Trap()
             : base(nameof(Trap), 200, Api.Skill.SkillGroup.Singleton.Get(nameof(Skill.Group.Dungeon))) {

@@ -1,5 +1,5 @@
 ﻿namespace Exp.DefaultMod.Skill.Type {
-    public sealed class Detection : Exp.Data.Skill.SkillTypeBase, Exp.Data.Skill.ISkillTypeData {
+    public sealed class Detection : Exp.Data.Skill.SkillTypeDataBase, Exp.Data.Skill.ISkillTypeData {
         #region Konstruktor
         private Detection()
             : base(nameof(Detection), 100, Api.Skill.SkillGroup.Singleton.Get(nameof(Skill.Group.Dungeon))) {

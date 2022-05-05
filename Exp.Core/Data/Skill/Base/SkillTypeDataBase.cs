@@ -1,11 +1,11 @@
 ﻿namespace Exp.Data.Skill {
-    public abstract class SkillTypeBase : DataBase {
+    public abstract class SkillTypeDataBase : DataBase {
         #region Properties / Felder
         public ISkillGroupData Group { get; set; }
         #endregion
 
         #region Konstruktor
-        protected SkillTypeBase(string aID, int aSortWeight, ISkillGroupData aGroup)
+        protected SkillTypeDataBase(string aID, int aSortWeight, ISkillGroupData aGroup)
             : base(aID, aSortWeight)
             => Group = aGroup;
         #endregion

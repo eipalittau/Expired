@@ -4,8 +4,10 @@
         public Util.LanguageEnum Language { get; private set; }
         public Data.Player.IPlayerClassData PlayerClass { get; init; }
         public Sheet.FeatData Feat { get; init; }
-        public List<Sheet.SkillData> SkillList { get; } = new List<Sheet.SkillData>();
-        public List<Sheet.EquipmentData> EquipmentList { get; } = new List<Sheet.EquipmentData>();
+        public IList<Sheet.SkillData> SkillList { get; } = new List<Sheet.SkillData>();
+        public IList<Sheet.EquipmentData> EquipmentList { get; } = new List<Sheet.EquipmentData>();
+        public IList<Misc.Recollection> RecollectionList { get; } = new List<Misc.Recollection>();
+        public Sheet.HealthData Health { get; init; }
         #endregion
 
         #region Konstruktor
@@ -15,6 +17,8 @@
             Feat = new Sheet.FeatData();
             Skill.SkillGroup.Singleton.Enumerate().ToList().ForEach(x => SkillList.Add(new Sheet.SkillData(x)));
             Slot.Singleton.Enumerate().Where(x => x.Available).ToList().ForEach(x => EquipmentList.Add(new Sheet.EquipmentData(x)));
+            Health = new Sheet.HealthData(aPlayerClass.CanOverheal);
+            
         }
         #endregion
 
