@@ -1,7 +1,7 @@
 ﻿namespace Exp.DefaultMod.Item.ItemType {
-    internal sealed class Ring : Exp.Data.Item.ItemTypeDataBase, Exp.Data.Item.IItemTypeData {
+    public sealed class Ring : Exp.Data.Item.ItemTypeDataBase, Exp.Data.Item.IItemTypeData {
         #region Konstruktor
-        internal Ring()
+        private Ring()
             : base(nameof(Ring), 1300, null, 
                   Api.Player.Slot.Singleton.Get(nameof(Player.Slot.RingFingerLeft)), 
                   Api.Player.Slot.Singleton.Get(nameof(Player.Slot.RingFingerRight))) {
@@ -9,6 +9,12 @@
             Name.Set(Util.LanguageEnum.English, "Ring");
             LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
             LoreDescription.Set(Util.LanguageEnum.English, "");
+        }
+        #endregion
+
+        #region Methoden
+        public static void Add() {
+            AddInstance(new Ring());
         }
         #endregion
     }

@@ -1,9 +1,7 @@
-﻿using Exp.Data.Feat;
-
-namespace Exp.DefaultMod.Feat.Offensive {
-    internal sealed class Stonethrower : OffensiveDataBase, IOffensiveData {
+﻿namespace Exp.DefaultMod.Feat.Offensive {
+    public sealed class Stonethrower : Exp.Data.Feat.OffensiveDataBase, Exp.Data.Feat.IOffensiveData {
         #region Konstruktor
-        internal Stonethrower()
+        private Stonethrower()
             : base(nameof(Stonethrower), 200, Api.General.Tier.Singleton.Get(nameof(General.Tier.One)), Api.General.ActionType.Singleton.Get(nameof(General.ActionType.Standard))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Steinwerfer");
             Name.Set(Util.LanguageEnum.English, "Stone thrower");
@@ -15,25 +13,21 @@ namespace Exp.DefaultMod.Feat.Offensive {
         #endregion
         
         #region Methoden
-        public int OnAttack(params Exp.Data.General.IDamageTypeData[] aDamageTypes) {
-            if (base.CheckDamageType(aDamageTypes)) {
-                return 1;
-            } else {
-                return 0;
-            }
+        public static void Add() {
+            AddInstance(new Stonethrower());
         }
-        
-        public int OnDamage(params Exp.Data.General.IDamageTypeData[] aDamageTypes) {
-            if (base.CheckDamageType(aDamageTypes)) {
-                return 1;
-            } else {
-                return 0;
-            }
+
+        public new int OnAttackActive() {
+            return 1;
         }
-        
-        public Exp.Data.General.IDiceTypeData? OverrideDiceType(params Exp.Data.General.IDamageTypeData[] aDamageTypes) {
-            if (base.CheckDamageType(aDamageTypes)) {
-                return Api.General.DiceType.Singleton.Get(nameof(General.D4));
+
+        public new int OnDamageActive() {
+            return 1;
+        }
+
+        public new Exp.Data.General.IDiceTypeData? OverrideDiceType(params Exp.Data.General.IDamageTypeData[] aDamageTypes) {
+            if (base.CheckDamageType(Api.General.DamageType.Singleton.Get(nameof(General.DamageType.RangedCombat)), aDamageTypes)) {
+                return Api.General.DiceType.Singleton.Get(nameof(General.DiceType.D4));
             } else {
                 return null;
             }

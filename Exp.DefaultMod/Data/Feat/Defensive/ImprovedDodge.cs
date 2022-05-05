@@ -1,14 +1,18 @@
-﻿using Exp.Data.Feat;
-
-namespace Exp.DefaultMod.Feat.Defensive {
-    internal sealed class ImprovedDodge : DefensiveDataBase, IDefensiveData {
+﻿namespace Exp.DefaultMod.Feat.Defensive {
+    public sealed class ImprovedDodge : Exp.Data.Feat.DefensiveDataBase, Exp.Data.Feat.IDefensiveData {
         #region Konstruktor
-        internal ImprovedDodge()
+        private ImprovedDodge()
             : base(nameof(ImprovedDodge), 1300, Api.General.Tier.Singleton.Get(nameof(General.Tier.Two)), null, Api.Feat.Defensive.Singleton.Get(nameof(Dodge))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Verbessertes Ausweichen");
             Name.Set(Util.LanguageEnum.English, "Improved dodge");
             LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
             LoreDescription.Set(Util.LanguageEnum.English, "");
+        }
+        #endregion
+
+        #region Methoden
+        public static void Add() {
+            AddInstance(new ImprovedDodge());
         }
         #endregion
     }

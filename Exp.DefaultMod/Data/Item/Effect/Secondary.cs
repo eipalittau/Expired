@@ -1,14 +1,18 @@
-﻿using Exp.Data.Item;
-
-namespace Exp.DefaultMod.Item.Effect {
-    internal sealed class Secondary : EffectDataBase, IEffectData {
+﻿namespace Exp.DefaultMod.Item.Effect {
+    public sealed class Secondary : Exp.Data.Item.EffectDataBase, Exp.Data.Item.IEffectData {
         #region Konstruktor
-        internal Secondary()
-            : base(nameof(Secondary), 100) {
+        private Secondary()
+            : base(nameof(Secondary), 200) {
             Name.Set(Util.LanguageEnum.Deutsch, "Sekundär");
             Name.Set(Util.LanguageEnum.English, "Secondary");
             LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
             LoreDescription.Set(Util.LanguageEnum.English, "");
+        }
+        #endregion
+
+        #region Methoden
+        public static void Add() {
+            AddInstance(new Secondary());
         }
         #endregion
     }

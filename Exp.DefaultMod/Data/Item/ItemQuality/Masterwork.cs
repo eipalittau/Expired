@@ -1,9 +1,7 @@
-﻿using Exp.Data.Item;
-
-namespace Exp.DefaultMod.Item.ItemQuality {
-    internal sealed class Masterwork : ItemQualityDataBase, IItemQualityData {
+﻿namespace Exp.DefaultMod.Item.ItemQuality {
+    public sealed class Masterwork : Exp.Data.Item.ItemQualityDataBase, Exp.Data.Item.IItemQualityData {
         #region Konstruktor
-        internal Masterwork()
+        private Masterwork()
             : base(nameof(Masterwork), 500, false, false, GetEffects()) {
             Name.Set(Util.LanguageEnum.Deutsch, "Meisterarbeit");
             Name.Set(Util.LanguageEnum.English, "Masterwork");
@@ -13,8 +11,12 @@ namespace Exp.DefaultMod.Item.ItemQuality {
         #endregion
 
         #region Methoden
+        public static void Add() {
+            AddInstance(new Masterwork());
+        }
+
         private static Exp.Data.Item.IEffectData[] GetEffects() {
-            List<IEffectData> lEffectList = Exp.Api.Item.Effect.Singleton.List().Where(x => x != null).ToList();
+            List<Exp.Data.Item.IEffectData> lEffectList = Exp.Api.Item.Effect.Singleton.List().Where(x => x != null).ToList();
 
             lEffectList.Where(x => x.ID.Equals(nameof(Effect.Primary))).First().Value = 1;
             lEffectList.Where(x => x.ID.Equals(nameof(Effect.Secondary))).First().Value = 1;

@@ -1,9 +1,7 @@
-﻿using Exp.Data.Item;
-
-namespace Exp.DefaultMod.Item.ItemQuality {
-    internal sealed class Hardened : ItemQualityDataBase, IItemQualityData {
+﻿namespace Exp.DefaultMod.Item.ItemQuality {
+    public sealed class Hardened : Exp.Data.Item.ItemQualityDataBase, Exp.Data.Item.IItemQualityData {
         #region Konstruktor
-        internal Hardened()
+        private Hardened()
             : base(nameof(Hardened), 400, true, false, GetEffects()) {
             Name.Set(Util.LanguageEnum.Deutsch, "Gehärtet");
             Name.Set(Util.LanguageEnum.English, "Hardened");
@@ -13,8 +11,12 @@ namespace Exp.DefaultMod.Item.ItemQuality {
         #endregion
 
         #region Methoden
+        public static void Add() {
+            AddInstance(new Hardened());
+        }
+
         private static Exp.Data.Item.IEffectData[] GetEffects() {
-            List<IEffectData> lEffectList = Exp.Api.Item.Effect.Singleton.List().Where(x => x != null).ToList();
+            List<Exp.Data.Item.IEffectData> lEffectList = Exp.Api.Item.Effect.Singleton.List().Where(x => x != null).ToList();
 
             lEffectList.Where(x => x.ID.Equals(nameof(Effect.Primary))).First().Value = 1;
             lEffectList.Where(x => x.ID.Equals(nameof(Effect.Secondary))).First().Value = 0;

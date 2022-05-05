@@ -1,9 +1,7 @@
-﻿using Exp.Data.Item;
-
-namespace Exp.DefaultMod.Item.ItemQuality {
-    internal sealed class Rusty : ItemQualityDataBase, IItemQualityData {
+﻿namespace Exp.DefaultMod.Item.ItemQuality {
+    public sealed class Rusty : Exp.Data.Item.ItemQualityDataBase, Exp.Data.Item.IItemQualityData {
         #region Konstruktor
-        internal Rusty()
+        private Rusty()
             : base(nameof(Rusty), 100, true, false, GetEffects()) {
             Name.Set(Util.LanguageEnum.Deutsch, "Rostig");
             Name.Set(Util.LanguageEnum.English, "Rusty");
@@ -13,8 +11,12 @@ namespace Exp.DefaultMod.Item.ItemQuality {
         #endregion
 
         #region Methoden
+        public static void Add() {
+            AddInstance(new Rusty());
+        }
+
         private static Exp.Data.Item.IEffectData[] GetEffects() {
-            List<IEffectData> lEffectList = Exp.Api.Item.Effect.Singleton.List().Where(x => x != null).ToList();
+            List<Exp.Data.Item.IEffectData> lEffectList = Exp.Api.Item.Effect.Singleton.List().Where(x => x != null).ToList();
 
             lEffectList.Where(x => x.ID.Equals(nameof(Effect.Primary))).First().Value = -1;
             lEffectList.Where(x => x.ID.Equals(nameof(Effect.Secondary))).First().Value = -1;

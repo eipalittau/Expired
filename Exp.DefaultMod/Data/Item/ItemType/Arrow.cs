@@ -1,7 +1,7 @@
 ﻿namespace Exp.DefaultMod.Item.ItemType {
-    internal sealed class Arrow : Exp.Data.Item.ItemTypeDataBase, Exp.Data.Item.IItemTypeData {
+    public sealed class Arrow : Exp.Data.Item.ItemTypeDataBase, Exp.Data.Item.IItemTypeData {
         #region Konstruktor
-        internal Arrow()
+        private Arrow()
             : base(nameof(Arrow), 700, 
                   Api.Item.ItemType.Singleton.Get(nameof(Bow)),
                   Api.Player.Slot.Singleton.Get(nameof(Player.Slot.Mainhand)),
@@ -10,6 +10,12 @@
             Name.Set(Util.LanguageEnum.English, "Arrows");
             LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
             LoreDescription.Set(Util.LanguageEnum.English, "");
+        }
+        #endregion
+
+        #region Methoden
+        public static void Add() {
+            AddInstance(new Arrow());
         }
         #endregion
     }

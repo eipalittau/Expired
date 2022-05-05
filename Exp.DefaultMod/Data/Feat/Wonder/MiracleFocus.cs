@@ -1,14 +1,18 @@
-﻿using Exp.Data.Feat;
-
-namespace Exp.DefaultMod.Feat.Wonder {
-    internal sealed class MiracleFocus : FeatDataBase<IWonderData>, IWonderData {
+﻿namespace Exp.DefaultMod.Feat.Wonder {
+    public sealed class MiracleFocus : Exp.Data.Feat.WonderDataBase, Exp.Data.Feat.IWonderData {
         #region Konstruktor
-        internal MiracleFocus()
-            : base(nameof(MiracleFocus), 700, Api.General.Tier.Singleton.Get(nameof(Data.General.Tier.One)), null) {
+        private MiracleFocus()
+            : base(nameof(MiracleFocus), 700, Api.General.Tier.Singleton.Get(nameof(General.Tier.One))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Wunderfokus");
             Name.Set(Util.LanguageEnum.English, "Miracle focus");
             LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
             LoreDescription.Set(Util.LanguageEnum.English, "");
+        }
+        #endregion
+
+        #region Methoden
+        public static void Add() {
+            AddInstance(new MiracleFocus());
         }
         #endregion
     }

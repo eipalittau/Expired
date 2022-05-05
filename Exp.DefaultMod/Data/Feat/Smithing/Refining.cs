@@ -1,20 +1,23 @@
-﻿using Exp.Data.Feat;
-
-namespace Exp.DefaultMod.Feat.Smithing {
-    internal sealed class Refining : SmithingDataBase, ISmithingData {
+﻿namespace Exp.DefaultMod.Feat.Smithing {
+    public sealed class Refining : Exp.Data.Feat.SmithingDataBase, Exp.Data.Feat.ISmithingData {
         #region Konstruktor
-        internal Refining()
+        private Refining()
             : base(nameof(Refining), 300,
-                   Api.General.Tier.Singleton.Get(nameof(Data.General.Tier.One)),
-                   null,
-                   Api.Equipment.ItemType.Singleton.Get(nameof(Equipment.ItemType.Ring)),
-                   Api.Equipment.ItemType.Singleton.Get(nameof(Equipment.ItemType.Amulet))) {
+                   Api.General.Tier.Singleton.Get(nameof(General.Tier.One)),
+                   Api.Item.ItemType.Singleton.Get(nameof(Item.ItemType.Ring)),
+                   Api.Item.ItemType.Singleton.Get(nameof(Item.ItemType.Amulet))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Veredeln");
             Name.Set(Util.LanguageEnum.English, "Refining");
             LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
             LoreDescription.Set(Util.LanguageEnum.English, "");
             EffektDescription.Set(Util.LanguageEnum.Deutsch, "");
             EffektDescription.Set(Util.LanguageEnum.English, "");
+        }
+        #endregion
+
+        #region Methoden
+        public static void Add() {
+            AddInstance(new Refining());
         }
         #endregion
     }

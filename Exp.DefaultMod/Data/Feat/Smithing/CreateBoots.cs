@@ -1,12 +1,9 @@
-﻿using Exp.Data.Feat;
-
-namespace Exp.DefaultMod.Feat.Smithing {
-    internal sealed class CreateBoots : SmithingDataBase, ISmithingData {
+﻿namespace Exp.DefaultMod.Feat.Smithing {
+    public sealed class CreateBoots : Exp.Data.Feat.SmithingDataBase, Exp.Data.Feat.ISmithingData {
         #region Konstruktor
-        internal CreateBoots()
+        private CreateBoots()
             : base(nameof(CreateBoots), 500,
                    Api.General.Tier.Singleton.Get(nameof(General.Tier.One)),
-                   null,
                    Api.Item.ItemType.Singleton.Get(nameof(Item.ItemType.Boots))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Schiefel schmieden");
             Name.Set(Util.LanguageEnum.English, "Create boots");
@@ -14,6 +11,12 @@ namespace Exp.DefaultMod.Feat.Smithing {
             LoreDescription.Set(Util.LanguageEnum.English, "");
             EffektDescription.Set(Util.LanguageEnum.Deutsch, "");
             EffektDescription.Set(Util.LanguageEnum.English, "");
+        }
+        #endregion
+
+        #region Methoden
+        public static void Add() {
+            AddInstance(new CreateBoots());
         }
         #endregion
     }

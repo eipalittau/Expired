@@ -1,4 +1,4 @@
-﻿namespace Exp.DefaultMod.Enemy {
+﻿namespace Exp.DefaultMod.Enemy.EnemyClass {
     public sealed class Cleric : Exp.Data.Enemy.EnemyClassBase, Exp.Data.Enemy.IEnemyClassData {
         #region Konstruktor
         private Cleric()
@@ -12,7 +12,7 @@
             
         #region Methoden
         public static void Add() {
-            new Cleric().AddInstance();
+            AddInstance(new Cleric());
         }
         #endregion
     }

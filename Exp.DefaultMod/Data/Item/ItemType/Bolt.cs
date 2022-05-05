@@ -1,7 +1,7 @@
 ﻿namespace Exp.DefaultMod.Item.ItemType {
-    internal sealed class Bolt : Exp.Data.Item.ItemTypeDataBase, Exp.Data.Item.IItemTypeData {
+    public sealed class Bolt : Exp.Data.Item.ItemTypeDataBase, Exp.Data.Item.IItemTypeData {
         #region Konstruktor
-        internal Bolt()
+        private Bolt()
             : base(nameof(Bolt), 800, 
                   Api.Item.ItemType.Singleton.Get(nameof(Crossbow)), 
                   Api.Player.Slot.Singleton.Get(nameof(Player.Slot.Mainhand)), 
@@ -10,6 +10,12 @@
             Name.Set(Util.LanguageEnum.English, "Bolt");
             LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
             LoreDescription.Set(Util.LanguageEnum.English, "");
+        }
+        #endregion
+
+        #region Methoden
+        public static void Add() {
+            AddInstance(new Bolt());
         }
         #endregion
     }
