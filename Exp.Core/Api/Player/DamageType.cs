@@ -17,8 +17,8 @@
             base.Clear();
         }
 
-        public new IList<Data.General.IDamageTypeData> List() {
-            return base.List();
+        public new IList<Data.General.IDamageTypeData> Enumerate() {
+            return base.Enumerate();
         }
 
         public new Data.General.IDamageTypeData Get(string aID) {

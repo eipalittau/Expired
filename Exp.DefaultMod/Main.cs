@@ -18,15 +18,19 @@
             AddWonderData();
             AddSmithingData();
 
-            //Player
-            AddPlayerClassData();
-            AddSlotData();
+            //Skill
+            AddSkillGroupData();
+            AddSkillTypeData();
 
             //Item
             AddEffectData();
             AddItemData();
             AddItemQualityData();
             AddItemTypeData();
+
+            //Player
+            AddPlayerClassData();
+            AddSlotData();
         }
 
         #region General
@@ -196,31 +200,16 @@
         }
         #endregion
 
-        #region Player
-        private static void AddPlayerClassData() {
-            Player.PlayerClass.Skeleton.Add();
-            Player.PlayerClass.Zombie.Add();
-            Player.PlayerClass.Mummy.Add();
-            Player.PlayerClass.Vampire.Add();
-            Player.PlayerClass.Banshee.Add();
-            Player.PlayerClass.Lich.Add();
+        #region Skill
+        private static void AddSkillGroupData() {
+            Skill.Group.Dungeon.Add();
+            Skill.Group.Fight.Add();
         }
 
-        private static void AddSlotData() {
-            Player.Slot.Body.Add();
-            Player.Slot.Feet.Add();
-            Player.Slot.Mainhand.Add();
-            Player.Slot.Offhand.Add();
-            Player.Slot.RingFingerLeft.Add();
-            Player.Slot.RingFingerRight.Add();
-            Player.Slot.WristLeft.Add();
-            Player.Slot.WristRight.Add();
-            Player.Slot.Neck.Add();
-            Player.Slot.Shoulders.Add();
-            Player.Slot.Head.Add();
-            Player.Slot.Bag.Add();
+        private static void AddSkillTypeData() {
+            Skill.Type.Detection.Add();
+            Skill.Type.Trap.Add();
         }
-
         #endregion
 
         #region Item
@@ -270,6 +259,33 @@
             Item.ItemType.Bracers.Add();
             Item.ItemType.Consumable.Add();
         }
+        #endregion
+
+        #region Player
+        private static void AddPlayerClassData() {
+            Player.PlayerClass.Skeleton.Add();
+            Player.PlayerClass.Zombie.Add();
+            Player.PlayerClass.Mummy.Add();
+            Player.PlayerClass.Vampire.Add();
+            Player.PlayerClass.Banshee.Add();
+            Player.PlayerClass.Lich.Add();
+        }
+
+        private static void AddSlotData() {
+            Player.Slot.Body.Add();
+            Player.Slot.Feet.Add();
+            Player.Slot.Mainhand.Add();
+            Player.Slot.Offhand.Add();
+            Player.Slot.RingFingerLeft.Add();
+            Player.Slot.RingFingerRight.Add();
+            Player.Slot.WristLeft.Add();
+            Player.Slot.WristRight.Add();
+            Player.Slot.Neck.Add();
+            Player.Slot.Shoulders.Add();
+            Player.Slot.Head.Add();
+            Player.Slot.Bag.Add();
+        }
+
         #endregion
     }
 }

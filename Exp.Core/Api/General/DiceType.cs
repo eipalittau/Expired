@@ -17,8 +17,8 @@
             base.Clear();
         }
 
-        public new IList<Data.General.IDiceTypeData> List() {
-            return base.List();
+        public new IList<Data.General.IDiceTypeData> Enumerate() {
+            return base.Enumerate();
         }
 
         public new Data.General.IDiceTypeData Get(string aID) {
@@ -26,7 +26,7 @@
         }
 
         public Data.General.IDiceTypeData Get(int aFaces) {
-            Data.General.IDiceTypeData? lItem = Singleton.List()
+            Data.General.IDiceTypeData? lItem = Singleton.Enumerate()
                 .Where(x => x.Faces == aFaces)
                 .FirstOrDefault();
 

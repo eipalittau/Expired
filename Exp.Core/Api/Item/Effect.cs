@@ -17,8 +17,8 @@
             base.Clear();
         }
 
-        public new IList<Data.Item.IEffectData> List() {
-            return base.List();
+        public new IList<Data.Item.IEffectData> Enumerate() {
+            return base.Enumerate();
         }
 
         public new Data.Item.IEffectData Get(string aID) {

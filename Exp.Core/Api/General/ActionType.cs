@@ -22,8 +22,8 @@
             base.Clear();
         }
 
-        public new IList<Data.General.IActionTypeData> List() {
-            return base.List();
+        public new IList<Data.General.IActionTypeData> Enumerate() {
+            return base.Enumerate();
         }
 
         public new Data.General.IActionTypeData Get(string aID) {

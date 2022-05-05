@@ -17,8 +17,8 @@
             base.Clear();
         }
 
-        public new IList<Data.Player.ISlotData> List() {
-            return base.List();
+        public new IList<Data.Player.ISlotData> Enumerate() {
+            return base.Enumerate();
         }
 
         public new Data.Player.ISlotData Get(string aID) {

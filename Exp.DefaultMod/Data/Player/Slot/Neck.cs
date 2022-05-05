@@ -1,5 +1,5 @@
 ﻿namespace Exp.DefaultMod.Player.Slot {
-    public sealed class Neck : Exp.Data.Player.SlotDataBase, Exp.Data.Player.ISlotData { {
+    public sealed class Neck : Exp.Data.Player.SlotDataBase, Exp.Data.Player.ISlotData { 
         #region Konstruktor
         private Neck()
             : base(nameof(Neck), 900, true) {

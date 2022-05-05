@@ -17,8 +17,8 @@
             base.Clear();
         }
 
-        public new IList<Data.Feat.IOffensiveData> List() {
-            return base.List();
+        public new IList<Data.Feat.IOffensiveData> Enumerate() {
+            return base.Enumerate();
         }
 
         public new Data.Feat.IOffensiveData Get(string aID) {

@@ -17,8 +17,8 @@
             base.Clear();
         }
 
-        public new IList<Data.Player.IPlayerClassData> List() {
-            return base.List();
+        public new IList<Data.Player.IPlayerClassData> Enumerate() {
+            return base.Enumerate();
         }
 
         public new Data.Player.IPlayerClassData Get(string aID) {

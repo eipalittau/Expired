@@ -1,11 +1,11 @@
-﻿namespace Exp.Api.Feat {
-    public sealed class Defensive : ApiBase<Data.Feat.IDefensiveData> {
+﻿namespace Exp.Api.Skill {
+    public sealed class SkillGroup : ApiBase<Data.Skill.ISkillGroupData> {
         #region Properties / Felder
-        public static Defensive Singleton { get; } = new();
+        public static SkillGroup Singleton { get; } = new();
         #endregion
 
         #region Konstruktor
-        internal Defensive() : base() { }
+        private SkillGroup() : base() { }
         #endregion
 
         #region Methoden
@@ -17,11 +17,11 @@
             base.Clear();
         }
 
-        public new IList<Data.Feat.IDefensiveData> Enumerate() {
+        public new IList<Data.Skill.ISkillGroupData> Enumerate() {
             return base.Enumerate();
         }
 
-        public new Data.Feat.IDefensiveData Get(string aID) {
+        public new Data.Skill.ISkillGroupData Get(string aID) {
             return base.Get(aID);
         }
 
@@ -29,7 +29,7 @@
             return base.Count();
         }
 
-        public new void Add(Data.Feat.IDefensiveData aItem) {
+        public new void Add(Data.Skill.ISkillGroupData aItem) {
             base.Add(aItem);
         }
         #endregion

@@ -17,8 +17,8 @@
             base.Clear();
         }
 
-        public new IList<Data.Item.IItemQualityData> List() {
-            return base.List();
+        public new IList<Data.Item.IItemQualityData> Enumerate() {
+            return base.Enumerate();
         }
 
         public new Data.Item.IItemQualityData Get(string aID) {
