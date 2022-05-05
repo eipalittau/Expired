@@ -1,30 +1,11 @@
 ﻿namespace Exp.Api.Player {
     public sealed class CharacterSheet : Data.Player.ICharacterSheetData {
         #region Properties / Felder
-        #region General
-        public Util.LanguageEnum Language { get; set; }
-        #endregion
-
-        #region PlayerClass
-        public string CharacterName { 
-            get {
-                return PlayerClass.CharacterName;
-            }
-        }
-        public string CharacterDescription {
-            get {
-                return PlayerClass.LoreDescription.Get(Language);
-            }
-        }
-        public string CharacterClass {
-            get {
-                return PlayerClass.Name.Get(Language);
-            }
-        }
-        private Data.Player.IPlayerClassData PlayerClass { get; init; }
-        #endregion
-
+        public Util.LanguageEnum Language { get; private set; }
+        public Data.Player.IPlayerClassData PlayerClass { get; init; }
         public Sheet.FeatData Feat { get; init; }
+        public List<Sheet.SkillData> SkillList { get; } = new List<Sheet.SkillData>();
+        public List<Sheet.EquipmentData> EquipmentList { get; } = new List<Sheet.EquipmentData>();
         #endregion
 
         #region Konstruktor
@@ -32,6 +13,8 @@
             PlayerClass = aPlayerClass;
             Language = aLanguage;
             Feat = new Sheet.FeatData();
+            Skill.SkillGroup.Singleton.Enumerate().ToList().ForEach(x => SkillList.Add(new Sheet.SkillData(x)));
+            Slot.Singleton.Enumerate().Where(x => x.Available).ToList().ForEach(x => EquipmentList.Add(new Sheet.EquipmentData(x)));
         }
         #endregion
 
@@ -46,6 +29,10 @@
             CharacterSheet lNew = new(aPlayerClass, aLanguage);
 
             return lNew;
+        }
+
+        public void SetLanguage(Util.LanguageEnum aLanguage) {
+            Language = aLanguage;
         }
         #endregion
     }

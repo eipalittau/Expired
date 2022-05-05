@@ -17,7 +17,10 @@
 
         public new void LevelUp(Data.Feat.IOffensiveData aTalent) {
             base.LevelUp(aTalent);
+            IncreaseBonus();
+        }
 
+        public void IncreaseBonus() {
             AttackBonus++;
             DamageBonus++;
         }

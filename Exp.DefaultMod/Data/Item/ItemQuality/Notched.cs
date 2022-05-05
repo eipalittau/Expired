@@ -16,7 +16,7 @@
         }
 
         private static Exp.Data.Item.IEffectData[] GetEffects() {
-            List<Exp.Data.Item.IEffectData> lEffectList = Exp.Api.Item.Effect.Singleton.List().Where(x => x != null).ToList();
+            List<Exp.Data.Item.IEffectData> lEffectList = Api.Item.Effect.Singleton.Enumerate().Where(x => x != null).ToList();
 
             lEffectList.Where(x => x.ID.Equals(nameof(Effect.Primary))).First().Value = -1;
             lEffectList.Where(x => x.ID.Equals(nameof(Effect.Secondary))).First().Value = 0;

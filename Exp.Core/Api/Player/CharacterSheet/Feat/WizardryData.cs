@@ -16,7 +16,10 @@
 
         public new void LevelUp(Data.Feat.IWizardryData aTalent) {
             base.LevelUp(aTalent);
+            IncreaseBonus();
+        }
 
+        public void IncreaseBonus() {
             ManaBonus++;
         }
 

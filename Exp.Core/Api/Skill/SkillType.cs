@@ -21,6 +21,12 @@
             return base.Enumerate();
         }
 
+        public IList<Data.Skill.ISkillTypeData> Enumerate(Data.Skill.ISkillGroupData aGroup) {
+            return base.Enumerate()
+                .Where(x => x.Group.Name.Get().Equals(aGroup.Name.Get(), StringComparison.InvariantCultureIgnoreCase))
+                .ToList();
+        }
+
         public new Data.Skill.ISkillTypeData Get(string aID) {
             return base.Get(aID);
         }

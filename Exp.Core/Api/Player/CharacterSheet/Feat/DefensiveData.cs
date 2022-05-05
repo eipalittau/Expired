@@ -16,7 +16,10 @@
 
         public new void LevelUp(Data.Feat.IDefensiveData aTalent) {
             base.LevelUp(aTalent);
+            IncreaseBonus();
+        }
 
+        public void IncreaseBonus() {
             ArmorClassBonus++;
         }
 

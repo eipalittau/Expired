@@ -3,8 +3,8 @@
     public abstract class FeatDataBase<T> where T : Data.IDataBase {
         #region Properties / Felder
         public int Level { get; private set; } = 0;
-        public int MaxLevel { get; protected set; } = 10;
-        private List<T> TalentList { get; } = new List<T>();
+        public int MaxLevel { get; private protected set; } = 10;
+        private List<T> FeatList { get; } = new List<T>();
         #endregion
 
         #region Konstruktor
@@ -13,18 +13,18 @@
 
         #region Methoden
         public int Count() {
-            return TalentList.Count;
+            return FeatList.Count;
         }
 
         private protected IList<T> Enumerate() {
-            return TalentList.AsReadOnly();
+            return FeatList.AsReadOnly();
         }
 
         private protected void AddTalent(T aTalent) {
-            if (TalentList.Contains(aTalent)) {
+            if (FeatList.Contains(aTalent)) {
                 throw new Exception.DublicateItemException(aTalent.ID);
             } else {
-                TalentList.Add(aTalent);
+                FeatList.Add(aTalent);
             }
         }
 

@@ -16,7 +16,10 @@
 
         public new void LevelUp(Data.Feat.IAuraData aTalent) {
             base.LevelUp(aTalent);
+            IncreaseBonus();
+        }
 
+        public void IncreaseBonus() {
             HealthBonus++;
         }
 
