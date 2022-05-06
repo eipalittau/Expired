@@ -5,8 +5,8 @@
             : base(nameof(Standard), 3, 1.5) {
             Name.Set(Util.LanguageEnum.Deutsch, "Standard Aktion");
             Name.Set(Util.LanguageEnum.English, "Standard action");
-            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
-            LoreDescription.Set(Util.LanguageEnum.English, "");
+            LoreDescription.Set(Util.LanguageEnum.Deutsch, "Offensive Aktion.");
+            LoreDescription.Set(Util.LanguageEnum.English, "Offensive action.");
         }
         #endregion
     }
