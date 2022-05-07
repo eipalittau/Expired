@@ -1,15 +1,19 @@
-﻿using Exp.Data.Item;
-
-namespace Exp.DefaultMod.Item.ItemType {
-    internal sealed class Headgear : ItemTypeDataBase, IItemTypeData {
+﻿namespace Exp.DefaultMod.Item.ItemType {
+    public sealed class Headgear : Exp.Data.Item.ItemTypeDataBase, Exp.Data.Item.IItemTypeData {
         #region Konstruktor
-        internal Headgear()
+        private Headgear()
             : base(nameof(Headgear), 1600, null, 
                   Api.Player.Slot.Singleton.Get(nameof(Player.Slot.Head))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Kopfbedeckung");
             Name.Set(Util.LanguageEnum.English, "Headgear");
             LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
             LoreDescription.Set(Util.LanguageEnum.English, "");
+        }
+        #endregion
+
+        #region Methoden
+        public static void Add() {
+            AddInstance(new Headgear());
         }
         #endregion
     }

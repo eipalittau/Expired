@@ -17,8 +17,8 @@
             base.Clear();
         }
         
-        public new IList<Data.Enemy.IEnemyClassData> List() {
-            return base.List();
+        public new IList<Data.Enemy.IEnemyClassData> Enumerate() {
+            return base.Enumerate();
         }
 
         public new Data.Enemy.IEnemyClassData Get(string aID) {

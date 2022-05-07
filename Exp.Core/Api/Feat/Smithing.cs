@@ -17,8 +17,8 @@
             base.Clear();
         }
 
-        public new IList<Data.Feat.ISmithingData> List() {
-            return base.List();
+        public new IList<Data.Feat.ISmithingData> Enumerate() {
+            return base.Enumerate();
         }
 
         public new Data.Feat.ISmithingData Get(string aID) {

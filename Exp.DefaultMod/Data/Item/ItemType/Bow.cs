@@ -1,9 +1,7 @@
-﻿using Exp.Data.Item;
-
-namespace Exp.DefaultMod.Item.ItemType {
-    internal sealed class Bow : ItemTypeDataBase, IItemTypeData {
+﻿namespace Exp.DefaultMod.Item.ItemType {
+    public sealed class Bow : Exp.Data.Item.ItemTypeDataBase, Exp.Data.Item.IItemTypeData {
         #region Konstruktor
-        internal Bow()
+        private Bow()
             : base(nameof(Bow), 500, null, 
                   Api.Player.Slot.Singleton.Get(nameof(Player.Slot.Mainhand)), 
                   Api.Player.Slot.Singleton.Get(nameof(Player.Slot.Offhand))) {
@@ -11,6 +9,12 @@ namespace Exp.DefaultMod.Item.ItemType {
             Name.Set(Util.LanguageEnum.English, "Bow");
             LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
             LoreDescription.Set(Util.LanguageEnum.English, "");
+        }
+        #endregion
+
+        #region Methoden
+        public static void Add() {
+            AddInstance(new Bow());
         }
         #endregion
     }

@@ -17,8 +17,8 @@
             base.Clear();
         }
 
-        public new IList<Data.Feat.IAuraData> List() {
-            return base.List();
+        public new IList<Data.Feat.IAuraData> Enumerate() {
+            return base.Enumerate();
         }
 
         public new Data.Feat.IAuraData Get(string aID) {

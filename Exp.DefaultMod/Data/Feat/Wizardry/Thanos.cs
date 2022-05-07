@@ -1,14 +1,18 @@
-﻿using Exp.Data.Feat;
-
-namespace Exp.DefaultMod.Feat.Wizardry {
-    internal sealed class Thanos : FeatDataBase<IWizardryData>, IWizardryData {
+﻿namespace Exp.DefaultMod.Feat.Wizardry {
+    public sealed class Thanos : Exp.Data.Feat.WizardryDataBase, Exp.Data.Feat.IWizardryData {
         #region Konstruktor
-        internal Thanos()
-            : base(nameof(Thanos), 1800, Api.General.Tier.Singleton.Get(nameof(Data.General.Tier.Three)), Api.General.ActionType.Singleton.Get(nameof(Data.General.ActionType.Standard))) {
+        private Thanos()
+            : base(nameof(Thanos), 1800, Api.General.Tier.Singleton.Get(nameof(General.Tier.Three)), Api.General.ActionType.Singleton.Get(nameof(General.ActionType.Standard))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Thanos");
             Name.Set(Util.LanguageEnum.English, "Thanos");
             LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
             LoreDescription.Set(Util.LanguageEnum.English, "");
+        }
+        #endregion
+
+        #region Methoden
+        public static void Add() {
+            AddInstance(new Thanos());
         }
         #endregion
     }

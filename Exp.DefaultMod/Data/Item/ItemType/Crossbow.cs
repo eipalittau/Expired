@@ -1,9 +1,7 @@
-﻿using Exp.Data.Item;
-
-namespace Exp.DefaultMod.Item.ItemType {
-    internal sealed class Crossbow : ItemTypeDataBase, IItemTypeData {
+﻿namespace Exp.DefaultMod.Item.ItemType {
+    public sealed class Crossbow : Exp.Data.Item.ItemTypeDataBase, Exp.Data.Item.IItemTypeData {
         #region Konstruktor
-        internal Crossbow()
+        private Crossbow()
             : base(nameof(Crossbow), 600, null, 
                   Api.Player.Slot.Singleton.Get(nameof(Player.Slot.Mainhand)), 
                   Api.Player.Slot.Singleton.Get(nameof(Player.Slot.Offhand))) {
@@ -11,6 +9,12 @@ namespace Exp.DefaultMod.Item.ItemType {
             Name.Set(Util.LanguageEnum.English, "Crossbow");
             LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
             LoreDescription.Set(Util.LanguageEnum.English, "");
+        }
+        #endregion
+
+        #region Methoden
+        public static void Add() {
+            AddInstance(new Crossbow());
         }
         #endregion
     }

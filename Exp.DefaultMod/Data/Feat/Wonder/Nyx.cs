@@ -1,14 +1,18 @@
-﻿using Exp.Data.Feat;
-
-namespace Exp.DefaultMod.Feat.Wonder {
-    internal sealed class Nyx : FeatDataBase<IWonderData>, IWonderData {
+﻿namespace Exp.DefaultMod.Feat.Wonder {
+    public sealed class Nyx : Exp.Data.Feat.WonderDataBase, Exp.Data.Feat.IWonderData {
         #region Konstruktor
-        internal Nyx()
-            : base(nameof(Nyx), 1700, Api.General.Tier.Singleton.Get(nameof(Data.General.Tier.Three)), null) {
+        private Nyx()
+            : base(nameof(Nyx), 1700, Api.General.Tier.Singleton.Get(nameof(General.Tier.Three))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Nyx");
             Name.Set(Util.LanguageEnum.English, "Nyx");
             LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
             LoreDescription.Set(Util.LanguageEnum.English, "");
+        }
+        #endregion
+
+        #region Methoden
+        public static void Add() {
+            AddInstance(new Nyx());
         }
         #endregion
     }

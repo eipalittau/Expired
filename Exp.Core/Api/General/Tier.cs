@@ -17,8 +17,8 @@
             base.Clear();
         }
 
-        public new IList<Data.General.ITierData> List() {
-            return base.List();
+        public new IList<Data.General.ITierData> Enumerate() {
+            return base.Enumerate();
         }
 
         public new Data.General.ITierData Get(string aID) {

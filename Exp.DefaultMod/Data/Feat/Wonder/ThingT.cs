@@ -1,14 +1,18 @@
-﻿using Exp.Data.Feat;
-
-namespace Exp.DefaultMod.Feat.Wonder {
-    internal sealed class ThingT : FeatDataBase<IWonderData>, IWonderData {
+﻿namespace Exp.DefaultMod.Feat.Wonder {
+    public sealed class ThingT : Exp.Data.Feat.WonderDataBase, Exp.Data.Feat.IWonderData {
         #region Konstruktor
-        internal ThingT()
-            : base(nameof(ThingT), 400, Api.General.Tier.Singleton.Get(nameof(Data.General.Tier.One)), Api.General.ActionType.Singleton.Get(nameof(Data.General.ActionType.Standard))) {
+        private ThingT()
+            : base(nameof(ThingT), 400, Api.General.Tier.Singleton.Get(nameof(General.Tier.One)), Api.General.ActionType.Singleton.Get(nameof(General.ActionType.Standard))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Eiskaltes Händchen");
             Name.Set(Util.LanguageEnum.English, "ThingT"); //Englische Übersetzung aus "Addams Family"
             LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
             LoreDescription.Set(Util.LanguageEnum.English, "");
+        }
+        #endregion
+
+        #region Methoden
+        public static void Add() {
+            AddInstance(new ThingT());
         }
         #endregion
     }

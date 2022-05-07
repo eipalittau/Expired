@@ -17,8 +17,8 @@
             base.Clear();
         }
 
-        public new IList<Data.Item.IItemTypeData> List() {
-            return base.List();
+        public new IList<Data.Item.IItemTypeData> Enumerate() {
+            return base.Enumerate();
         }
 
         public new Data.Item.IItemTypeData Get(string aID) {

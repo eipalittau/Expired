@@ -20,6 +20,10 @@ namespace Exp.Util {
         public string? Get(string aValue) {
             return mValue.Where(x => x.Equals(aValue, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
         }
+
+        public string Get() {
+            return Get(LanguageEnum.Deutsch);
+        }
         #endregion
     }
 }

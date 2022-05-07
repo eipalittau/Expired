@@ -17,7 +17,7 @@
             mDataList.Clear();
         }
 
-        private protected IList<T> List() {
+        private protected IList<T> Enumerate() {
             return mDataList.AsReadOnly();
         }
 
@@ -26,15 +26,17 @@
         /// <returns>Das gefunden Item.</returns>
         /// <exception cref="DublicateItemException ">Falls die ID des Items nicht existiert, wird diese Exception geworfen.</exception>
         private protected T Get(string aID) {
-            T? lItem = mDataList.Where(x => x.ID.Equals(aID, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
+            T? lItem = mDataList
+                .Where(x => x.ID.Equals(aID, StringComparison.InvariantCultureIgnoreCase))
+                .FirstOrDefault();
 
             if (lItem == null) {
-                throw new Exp.Exception.DublicateItemException(aItem.ID);
+                throw new Exp.Exception.ItemNotFoundException(aID);
             } else {
                 return lItem;
             }
         }
-        
+
         /// <summary>Liest die Anzahl der Einträge in der Aufzählung.</summary>
         /// <returns>Die Anzahl der Items in der Aufzählung.</returns>
         private protected int Count() {
@@ -46,7 +48,7 @@
         /// <exception cref="DublicateItemException">Falls die ID des Items bereits existiert, wird diese Exception geworfen.</exception>
         private protected void Add(T aItem) {
             if (mDataList.Any(x => x.ID.Equals(aItem.ID, StringComparison.InvariantCultureIgnoreCase))) {
-                throw new Exp.Exception.DublicateItemException(aItem.ID);
+                throw new Exception.DublicateItemException(aItem.ID);
             }
 
             mDataList.Add(aItem);

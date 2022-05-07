@@ -17,8 +17,8 @@
             base.Clear();
         }
 
-        public new IList<Data.Feat.IWonderData> List() {
-            return base.List();
+        public new IList<Data.Feat.IWonderData> Enumerate() {
+            return base.Enumerate();
         }
 
         public new Data.Feat.IWonderData Get(string aID) {

@@ -1,14 +1,18 @@
-﻿using Exp.Data.Feat;
-
-namespace Exp.DefaultMod.Feat.Wizardry {
-    internal sealed class Reflection : FeatDataBase<IWizardryData>, IWizardryData {
+﻿namespace Exp.DefaultMod.Feat.Wizardry {
+    public sealed class Reflection : Exp.Data.Feat.WizardryDataBase, Exp.Data.Feat.IWizardryData {
         #region Konstruktor
-        internal Reflection()
-            : base(nameof(Reflection), 300, Api.General.Tier.Singleton.Get(nameof(Data.General.Tier.One)), Api.General.ActionType.Singleton.Get(nameof(Data.General.ActionType.Standard))) {
+        private Reflection()
+            : base(nameof(Reflection), 300, Api.General.Tier.Singleton.Get(nameof(General.Tier.One)), Api.General.ActionType.Singleton.Get(nameof(General.ActionType.Standard))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Spiegelbild");
             Name.Set(Util.LanguageEnum.English, "Reflection");
             LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
             LoreDescription.Set(Util.LanguageEnum.English, "");
+        }
+        #endregion
+
+        #region Methoden
+        public static void Add() {
+            AddInstance(new Reflection());
         }
         #endregion
     }
