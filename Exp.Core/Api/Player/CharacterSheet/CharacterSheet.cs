@@ -5,7 +5,7 @@
         public Sheet.FeatData Feat { get; init; }
         public IList<Sheet.SkillData> SkillList { get; } = new List<Sheet.SkillData>();
         public IList<Sheet.EquipmentData> EquipmentList { get; } = new List<Sheet.EquipmentData>();
-        public IList<Misc.Recollection> RecollectionList { get; } = new List<Misc.Recollection>();
+        public IList<Data.Misc.IRecollectionData> RecollectionList { get; } = new List<Data.Misc.IRecollectionData>();
         public Sheet.HealthData Health { get; init; }
         #endregion
 
