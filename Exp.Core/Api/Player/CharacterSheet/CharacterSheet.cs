@@ -34,6 +34,7 @@
             return lNew;
         }
 
+        #region LevelUp
         public void LevelUp() {
             Level++;
 
@@ -77,6 +78,7 @@
                 return 0;
             }
         }
+        #endregion
         #endregion
     }
 }
