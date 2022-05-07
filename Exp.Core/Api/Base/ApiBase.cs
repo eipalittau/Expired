@@ -9,6 +9,10 @@
         #endregion
 
         #region Methoden
+        private protected bool Contains(string aID) {
+            return mDataList.Where(x => x.ID.Equals(aID, StringComparison.InvariantCultureIgnoreCase)).Any();
+        }
+
         private protected void Remove(string aID) {
             mDataList.Remove(Get(aID));
         }
@@ -26,12 +30,10 @@
         /// <returns>Das gefunden Item.</returns>
         /// <exception cref="DublicateItemException ">Falls die ID des Items nicht existiert, wird diese Exception geworfen.</exception>
         private protected T Get(string aID) {
-            T? lItem = mDataList
-                .Where(x => x.ID.Equals(aID, StringComparison.InvariantCultureIgnoreCase))
-                .FirstOrDefault();
+            T? lItem = mDataList.Where(x => x.ID.Equals(aID, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
 
             if (lItem == null) {
-                throw new Exp.Exception.ItemNotFoundException(aID);
+                throw new Exception.ItemNotFoundException(aID);
             } else {
                 return lItem;
             }
@@ -52,6 +54,10 @@
             }
 
             mDataList.Add(aItem);
+        }
+
+        private IEnumerable<T>? GetItem(string aID) {
+            return mDataList.Where(x => x.ID.Equals(aID, StringComparison.InvariantCultureIgnoreCase));
         }
         #endregion
     }

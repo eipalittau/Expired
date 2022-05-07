@@ -2,12 +2,22 @@
     public abstract class PlayerClassDataBase : DataBase {
         #region Properties / Felder
         public string CharacterName { get; init; }
+        private List<Misc.IAptitudeData> _AptitudeList = new();
+        public IList<Misc.IAptitudeData> AptitudeList {
+            get { 
+                return _AptitudeList.AsReadOnly(); 
+            }
+        }
         #endregion
 
         #region Konstruktor
-        protected PlayerClassDataBase(string aID, int aSortWeight, string aCharacterName)
-            : base(aID, aSortWeight)
-            => (CharacterName) = (aCharacterName);
+        protected PlayerClassDataBase(string aID, int aSortWeight, string aCharacterName, params Misc.IAptitudeData[] aAptitudes)
+            : base(aID, aSortWeight) {
+            CharacterName = aCharacterName;
+            if (aAptitudes != null && aAptitudes.Length > 0) {
+                _AptitudeList = aAptitudes.ToList();
+            }
+        }
         #endregion
 
         #region Methoden

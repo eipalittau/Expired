@@ -20,11 +20,11 @@
         #endregion
 
         #region Methoden
-        private protected static List<T> Enumerate<T>() where T : EnumerationBase {
+        protected static List<T> Enumerate<T>() where T : EnumerationBase {
             return Enumerate<T>(SortDirectionEnum.ASC);
         }
 
-        private protected static List<T> Enumerate<T>(SortDirectionEnum aSortDirection) where T : EnumerationBase {
+        protected static List<T> Enumerate<T>(SortDirectionEnum aSortDirection) where T : EnumerationBase {
             List<T>? lList = typeof(T).GetFields()
                 .Where(x => x.IsStatic).Where(x => x.IsPublic)
                 .Select(x => (T?)x.GetValue(null)).OfType<T>().ToList();
@@ -36,15 +36,15 @@
             };
         }
 
-        private protected static int Count<T>() where T : EnumerationBase {
+        protected static int Count<T>() where T : EnumerationBase {
             return Enumerate<T>().Count;
         }
 
-        private protected static T Convert<T>(int aID, T aDefault) where T : EnumerationBase {
+        protected static T Convert<T>(int aID, T aDefault) where T : EnumerationBase {
             return Enumerate<T>().Where(x => x.ID == aID).FirstOrDefault() ?? aDefault;
         }
 
-        private protected static T Convert<T>(string aName, T aDefault) where T : EnumerationBase {
+        protected static T Convert<T>(string aName, T aDefault) where T : EnumerationBase {
             return Enumerate<T>().Where(x => x.Name.Equals(aName, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault() ?? aDefault;
         }
 
