@@ -14,7 +14,7 @@
         }
 
         public void OnRestore(int aPoints) {
-            base.OnIncrease(aPoints, false);
+            base.OnIncrease(aPoints);
         }
         #endregion
     }

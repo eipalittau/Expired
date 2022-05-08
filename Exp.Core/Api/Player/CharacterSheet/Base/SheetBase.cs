@@ -24,11 +24,15 @@
             }
         }
 
-        private protected void OnIncrease(int aPoints, bool aForce) {
+        private protected void OnIncrease(int aPoints) {
+            OnIncrease(aPoints, false);
+        }
+
+        private protected void OnIncrease(int aPoints, bool aForceOverMax) {
             if (!Main.IsDead) {
                 Current += aPoints;
 
-                if (Current > Max + Temp && !aForce) {
+                if (Current > Max + Temp && !aForceOverMax) {
                     Current = Max + Temp;
                 }
             }
