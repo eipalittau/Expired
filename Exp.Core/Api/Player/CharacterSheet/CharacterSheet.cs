@@ -1,9 +1,11 @@
 ﻿namespace Exp.Api.Player {
     public sealed class CharacterSheet : Data.Player.ICharacterSheetData {
         #region Properties / Felder
+        public bool IsDead { get; internal set; } = true;
         public int Level { get; private set; } = 1;
         public Data.Player.IPlayerClassData PlayerClass { get; init; }
-        public Sheet.HealthData Health { get; } = new Sheet.HealthData();
+        public Sheet.HealthData Health { get; init; }
+        public Sheet.ConjureData Conjure { get; init; }
         public Sheet.FeatData Feat { get; } = new Sheet.FeatData();
         public IList<Sheet.SkillData> SkillList { get; } = new List<Sheet.SkillData>();
         public IList<Sheet.EquipmentData> EquipmentList { get; } = new List<Sheet.EquipmentData>();
@@ -13,6 +15,9 @@
         #region Konstruktor
         private CharacterSheet(Data.Player.IPlayerClassData aPlayerClass) { 
             PlayerClass = aPlayerClass;
+            Health = new Sheet.HealthData(this);
+            Conjure = new Sheet.ConjureData(this);
+            
             LevelUp();
 
             //Skill.SkillGroup.Singleton.Enumerate().ToList().ForEach(x => SkillList.Add(new Sheet.SkillData(x)));
@@ -34,34 +39,48 @@
             return lNew;
         }
 
+        public void OnNewDay() {
+            IsDead = false;
+
+            Health.OnNewDay();
+            Conjure.OnNewDay();
+        }
+
         #region LevelUp
         public void LevelUp() {
             Level++;
 
-            LevelUpHealth();
+            Health.Max = LevelUpMax(General.CharacterChangerEnum.Health);
+            Health.OnNewDay();
+
+            Conjure.Mana.Max = LevelUpMax(General.CharacterChangerEnum.Mana);
+            Conjure.Mana.OnNewDay();
+
             LevelUpFeat();
         }
 
-        private void LevelUpHealth() {
-            if (Player.LevelUp.Singleton.Contains(General.CharacterChangerEnum.Health)) {
-                Data.Player.ILevelUpData lLevelUpData = Player.LevelUp.Singleton.Get(General.CharacterChangerEnum.Health);
+        private int LevelUpMax(General.CharacterChangerEnum aChanger) {
+            int lResult = 0;
 
-                Health.Max = lLevelUpData.Base.Value * Level;
+            if (Player.LevelUp.Singleton.Contains(aChanger)) {
+                Data.Player.ILevelUpData lLevelUpData = Player.LevelUp.Singleton.Get(aChanger);
+
+                lResult = lLevelUpData.Base.Value * Level;
             }
 
-            Data.Misc.IAptitudeData? lAptitudeHealth = PlayerClass.AptitudeList.Where(x => General.CharacterChangerEnum.Health.Equals(x.Changer)).FirstOrDefault();
+            Data.Misc.IAptitudeData? lAptitudeHealth = PlayerClass.AptitudeList.Where(x => aChanger.Equals(x.Changer)).FirstOrDefault();
 
             if (lAptitudeHealth != null) {
                 if (lAptitudeHealth.Base.HasData) {
-                    Health.Max = lAptitudeHealth.Base.Value * Level;
+                    lResult = lAptitudeHealth.Base.Value * Level;
                 }
 
-                Health.Max += IncreaseModifierData(lAptitudeHealth.Modifier);
-                Health.Max *= IncreaseModifierData(lAptitudeHealth.Multiplicator);
-                Health.Max /= IncreaseModifierData(lAptitudeHealth.Divisor);
+                lResult += IncreaseModifierData(lAptitudeHealth.Modifier);
+                lResult *= IncreaseModifierData(lAptitudeHealth.Multiplicator);
+                lResult /= IncreaseModifierData(lAptitudeHealth.Divisor);
             }
-            
-            Health.OnNewDay();
+
+            return lResult;
         }
 
         private void LevelUpFeat() {

@@ -29,3 +29,4 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Usage", "CA2211:Nicht konstante Felder dürfen nicht sichtbar sein", Justification = "<Ausstehend>", Scope = "member", Target = "~F:Exp.Api.General.CharacterChangerEnum.Armor")]
 [assembly: SuppressMessage("Usage", "CA2211:Nicht konstante Felder dürfen nicht sichtbar sein", Justification = "<Ausstehend>", Scope = "member", Target = "~F:Exp.Api.General.CharacterChangerEnum.FeatPoints")]
 [assembly: SuppressMessage("Usage", "CA2211:Nicht konstante Felder dürfen nicht sichtbar sein", Justification = "<Ausstehend>", Scope = "member", Target = "~F:Exp.Api.General.CharacterChangerEnum.SkillPoints")]
+[assembly: SuppressMessage("Usage", "CA2211:Nicht konstante Felder dürfen nicht sichtbar sein", Justification = "<Ausstehend>", Scope = "member", Target = "~F:Exp.Api.General.CharacterChangerEnum.Mana")]
