@@ -1,7 +1,7 @@
 ﻿namespace Exp.Api.Player.Sheet {
     public sealed class FightData {
         #region Properties / Felder
-        public int ArmorClass { get; set; }
+        public ArmorClassData ArmorClass { get; init; }
         public int Resistence { get; set; }
         public int Attack { get; internal set; }
         public bool Damage { get; private set; }
@@ -9,7 +9,8 @@
         #endregion
 
         #region Konstruktor
-        internal FightData(CharacterSheet aMain) { }
+        internal FightData(CharacterSheet aMain) 
+            => ArmorClass = new ArmorClassData(aMain);
         #endregion
 
         #region Methoden
