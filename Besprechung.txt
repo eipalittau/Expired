@@ -1,0 +1,4 @@
+Definition der PlayerClass:
+- Banshee
+- Cerberus
+- RyldsShowerWater
