@@ -7,6 +7,11 @@
         public static CharacterChangerEnum Mana = new(nameof(Mana), "Verändert die Anzahl der Manapunkte");
         public static CharacterChangerEnum FeatPoints = new(nameof(FeatPoints), "Verändert die Anzahl der Attributspunkte");
         public static CharacterChangerEnum SkillPoints = new(nameof(SkillPoints), "Verändert die Anzahl der Fertigkeitspunkte");
+        public static CharacterChangerEnum Resistence = new(nameof(Resistence), "Verändert die Resistenz");
+        public static CharacterChangerEnum Attack = new(nameof(Attack), "Verändert den Angriffs-Bonus/-Malus");
+        public static CharacterChangerEnum Damage = new(nameof(Damage), "Verändert den Schadens-Bonus/-Malus");
+        public static CharacterChangerEnum Sneaky = new(nameof(Sneaky), "Verändert den Angriffs-Bonus/-Malus beim Schleichen");
+        public static CharacterChangerEnum Movement = new(nameof(Movement), "Verändert die Bewegungsrate");
 
         private static int mCounter = 0;
         #endregion

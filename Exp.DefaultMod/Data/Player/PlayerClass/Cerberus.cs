@@ -14,10 +14,6 @@
         public static void Add() {
             AddInstance(new Cerberus());
         }
-
-        public Exp.Data.IDataBase Aptitude() {
-
-        }
         #endregion
     }
 }

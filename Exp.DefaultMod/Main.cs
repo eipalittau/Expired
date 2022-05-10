@@ -1,16 +1,16 @@
 ﻿namespace Exp.DefaultMod {
     public class Main : IMain {
         public void Initialize() {
-            //General
+            // General
             AddActionTypeData();
             AddDamageTypeData();
             AddDiceTypeData();
             AddTierData();
 
-            //Enemy
+            // Enemy
             AddEnemyClassData();
 
-            //Feat
+            // Feat
             AddAuraData();
             AddDefensiveData();
             AddOffensiveData();
@@ -18,17 +18,20 @@
             AddWonderData();
             AddSmithingData();
 
-            //Skill
+            // Skill
             AddSkillGroupData();
             AddSkillTypeData();
 
-            //Item
+            // Item
             AddEffectData();
             AddItemData();
             AddItemQualityData();
             AddItemTypeData();
 
-            //Player
+            // Level Up
+            AddLevelUp();
+
+            // Player
             AddPlayerClassData();
             AddSlotData();
         }
@@ -262,6 +265,13 @@
         #endregion
 
         #region Player
+        private static void AddLevelUp() {
+            Player.LevelUp.FeatData.Add();
+            Player.LevelUp.HealthData.Add();
+            Player.LevelUp.MovementData.Add();
+            Player.LevelUp.SkillData.Add();
+        }
+
         private static void AddPlayerClassData() {
             Player.PlayerClass.Skeleton.Add();
             Player.PlayerClass.Zombie.Add();
@@ -269,6 +279,8 @@
             Player.PlayerClass.Vampire.Add();
             Player.PlayerClass.Banshee.Add();
             Player.PlayerClass.Lich.Add();
+            Player.PlayerClass.RyldsShowerWater.Add();
+            Player.PlayerClass.Cerberus.Add();
         }
 
         private static void AddSlotData() {
@@ -285,7 +297,6 @@
             Player.Slot.Head.Add();
             Player.Slot.Bag.Add();
         }
-
         #endregion
     }
 }

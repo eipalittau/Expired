@@ -1,8 +1,5 @@
 ﻿namespace Exp.Data.Feat {
-    public interface IWizardryData : IDataBase {
-        General.ITierData Tier { get; set; }
-        General.IActionTypeData? ActionType { get; set; }
+    public interface IWizardryData : IFeatDataBase {
         List<IWizardryData> PrerequisiteList { get; }
-        Util.LanguageBasedData EffektDescription { get; }
     }
 }

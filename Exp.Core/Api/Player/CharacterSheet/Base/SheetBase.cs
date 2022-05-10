@@ -14,12 +14,17 @@
 
         #region Methoden
         private protected void OnDecrease(int aPoints) {
+            OnDecrease(aPoints, false);
+        }
+        private protected void OnDecrease(int aPoints, bool aCanDie) {
             if (!Main.IsDead) {
                 if (Current > aPoints) {
                     Current -= aPoints;
                 } else {
                     Current = 0;
-                    Main.IsDead = true;
+                    if (aCanDie) {
+                        Main.IsDead = true;
+                    }
                 }
             }
         }

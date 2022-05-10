@@ -27,11 +27,6 @@
                 FeatList.Add(aTalent);
             }
         }
-
-        private protected void LevelUp(T aTalent) {
-            AddTalent(aTalent);
-            Level++;
-        }
         #endregion
     }
 }

@@ -11,7 +11,7 @@
 
         #region Methoden
         public void OnDamage(int aPoints) {
-            base.OnDecrease(aPoints);
+            base.OnDecrease(aPoints, true);
         }
 
         public void OnHeal(int aPoints) {
