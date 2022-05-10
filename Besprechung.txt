@@ -3,11 +3,8 @@ Definition der PlayerClass:
 - Cerberus
 - RyldsShowerWater
 
-Definition Level-Up
-
-Definition Kampf
-
 Definition CharacterSheet
 - Leben
 - Kampf
 - Level-Up
+- Erfahrungspunkte
