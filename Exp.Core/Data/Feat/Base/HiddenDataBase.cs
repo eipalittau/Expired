@@ -6,8 +6,8 @@
         #endregion
 
         #region Konstruktor
-        protected HiddenDataBase(string aID, int aSortWeight, General.IActionTypeData? aActionType, params IDefensiveData[] aPrerequisites)
-            : base(aID, aSortWeight, aTier, aPrerequisites)
+        protected HiddenDataBase(string aID, int aSortWeight, General.ITierData aTier, General.IActionTypeData? aActionType)
+            : base(aID, aSortWeight, aTier)
             => ActionType = aActionType;
         #endregion
 
