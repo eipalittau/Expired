@@ -1,9 +1,6 @@
 ﻿namespace Exp.Data.Feat {
-    public interface IOffensiveData : IDataBase {
-        General.ITierData Tier { get; set; }
-        General.IActionTypeData? ActionType { get; set; }
+    public interface IOffensiveData : IFeatDataBase {
         List<IOffensiveData> PrerequisiteList { get; }
-        Util.LanguageBasedData EffektDescription { get; }
 
         void OnNewDay();
         void OnNewBattle();

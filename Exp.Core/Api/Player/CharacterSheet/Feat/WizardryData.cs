@@ -14,8 +14,8 @@
             base.AddTalent(aTalent);
         }
 
-        public new void LevelUp(Data.Feat.IWizardryData aTalent) {
-            base.LevelUp(aTalent);
+        public void LevelUp(Data.Feat.IWizardryData aTalent) {
+            base.AddTalent(aTalent);
             IncreaseBonus();
         }
 

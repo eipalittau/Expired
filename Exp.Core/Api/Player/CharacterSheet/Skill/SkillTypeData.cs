@@ -11,6 +11,14 @@
         internal SkillTypeData(Data.Skill.ISkillTypeData aSkillType) {
             SkillType = aSkillType;
         }
+
+        internal void LevelUp() {
+            if (Level == MaxLevel) {
+                throw new Exception.MaximumExceededException(SkillType.ID, MaxLevel);
+            }
+
+            Level++;
+        }
         #endregion
     }
 }

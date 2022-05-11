@@ -2,7 +2,7 @@
     public sealed class Mummy : Exp.Data.Player.PlayerClassDataBase, Exp.Data.Player.IPlayerClassData {
         #region Konstruktor
         private Mummy()
-            : base(nameof(Mummy), 300, "Justin") {
+            : base(nameof(Mummy), 300, "Justin", new Aptitude.Skill()) {
             Name.Set(Util.LanguageEnum.Deutsch, "Mumie");
             Name.Set(Util.LanguageEnum.English, "Mummy");
             LoreDescription.Set(Util.LanguageEnum.Deutsch, "");

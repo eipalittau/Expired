@@ -129,6 +129,9 @@
   <data name="Exp.Exception.ItemNotFoundException" xml:space="preserve">
     <value>Das Item mit der ID '{0}' kann in der Aufzählung nicht gefunden werden.</value>
   </data>
+  <data name="Exp.Exception.MaximumExceededException" xml:space="preserve">
+    <value>Das Maximum von {1} wurde bei '{0}' überschritten.</value>
+  </data>
   <data name="Exp.Exception.MissingParameterException" xml:space="preserve">
     <value>Für den Parameter '{0}' wurden keine Daten angegeben.</value>
   </data>

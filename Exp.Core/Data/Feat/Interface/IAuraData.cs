@@ -1,8 +1,5 @@
 ﻿namespace Exp.Data.Feat {
-    public interface IAuraData : IDataBase {
-        General.ITierData Tier { get; set; }
-        General.IActionTypeData? ActionType { get; set; }
+    public interface IAuraData : IFeatDataBase {
         List<IAuraData> PrerequisiteList { get; }
-        Util.LanguageBasedData EffektDescription { get; }
     }
 }
