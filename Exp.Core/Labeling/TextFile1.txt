@@ -1,0 +1,1 @@
+﻿// Mirko: Labeling.en.resx erstellen und englifisizionisieren.
