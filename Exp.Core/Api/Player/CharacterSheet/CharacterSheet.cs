@@ -58,6 +58,7 @@
         #region Methoden
         #region Create
         public static CharacterSheet Create(int aExperience4LevelUp) {
+            // Patrik: Anzahl Playerclasses <> Würfel
             Data.General.IDiceTypeData lDice = General.DiceType.Singleton.Get(Player.PlayerClass.Singleton.Count());
             
             return Create(Player.PlayerClass.Singleton.Enumerate().ElementAt(lDice.Roll()), aExperience4LevelUp);
