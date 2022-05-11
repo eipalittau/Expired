@@ -10,6 +10,9 @@ namespace Exp.Util {
 
         #region Methoden
         public void Set(LanguageEnum aLanguage, string aValue) {
+            if (string.IsNullOrWhiteSpace(aValue)) {
+                //Patrik: Exception werfen.
+            }
             mValue[aLanguage.ID] = aValue;
         }
 
