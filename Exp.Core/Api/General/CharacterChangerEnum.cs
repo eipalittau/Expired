@@ -6,6 +6,7 @@
         public static CharacterChangerEnum Health = new(nameof(Health), "Verändert die maximale anzahl Lebenspunkte");
         public static CharacterChangerEnum Mana = new(nameof(Mana), "Verändert die Anzahl der Manapunkte");
         public static CharacterChangerEnum FeatPoints = new(nameof(FeatPoints), "Verändert die Anzahl der Attributspunkte");
+        public static CharacterChangerEnum Feat = new(nameof(Feat), "Verändert spezielle Fähigkeiten");
         public static CharacterChangerEnum SkillPoints = new(nameof(SkillPoints), "Verändert die Anzahl der Fertigkeitspunkte");
         public static CharacterChangerEnum Resistence = new(nameof(Resistence), "Verändert die Resistenz");
         public static CharacterChangerEnum Attack = new(nameof(Attack), "Verändert den Angriffs-Bonus/-Malus");
