@@ -23,7 +23,6 @@
         public Sheet.MovementData Movement { get; init; }
         public Sheet.FeatData Feat { get; init; }
         public IList<Sheet.SkillData> SkillList { get; } = new List<Sheet.SkillData>();
-
         public IList<Sheet.EquipmentData> EquipmentList { get; } = new List<Sheet.EquipmentData>();
         public IList<Data.Misc.IRecollectionData> RecollectionList { get; } = new List<Data.Misc.IRecollectionData>();
 
@@ -50,8 +49,9 @@
             Feat = new Sheet.FeatData();
             Skill.SkillGroup.Singleton.Enumerate().ToList()
                 .ForEach(x => SkillList.Add(new Sheet.SkillData(x)));
-            //Slot.Singleton.Enumerate().Where(x => x.Available).ToList().ForEach(x => EquipmentList.Add(new Sheet.EquipmentData(x)));
-
+            Slot.Singleton.Enumerate()
+                .Where(x => x.Available).ToList()
+                .ForEach(x => EquipmentList.Add(new Sheet.EquipmentData(x)));
         }
         #endregion
 
