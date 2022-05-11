@@ -1,6 +1,7 @@
 ﻿namespace Exp.Api.Player.Sheet {
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
     public sealed class SkillData {
+        //Patrik: SkillGroup raus...
         #region Properties / Felder
         public Data.Skill.ISkillGroupData SkillGroup { get; init; }
         public IList<SkillTypeData> SkillTypeList { get; } = new List<SkillTypeData>();
