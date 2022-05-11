@@ -7,7 +7,7 @@ namespace Exp.Util {
         #region Konstruktor
         public LanguageBasedData() { }
         #endregion
-
+        //Patrik: Statische Klasse für Exception aufrufen, welche wahlweise Throw ausführt oder diese sammelt.
         #region Methoden
         public void Set(LanguageEnum aLanguage, string aValue) {
             if (string.IsNullOrWhiteSpace(aValue)) {
