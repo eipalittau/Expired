@@ -22,7 +22,7 @@
         public Sheet.ConjureData Conjure { get; init; }
         public Sheet.MovementData Movement { get; init; }
         public Sheet.FeatData Feat { get; init; }
-        public IList<Sheet.SkillData> SkillList { get; } = new List<Sheet.SkillData>();
+        public IList<Sheet.SkillTypeData> SkillList { get; } = new List<Sheet.SkillTypeData>();
         public IList<Sheet.EquipmentData> EquipmentList { get; } = new List<Sheet.EquipmentData>();
         public IList<Data.Misc.IRecollectionData> RecollectionList { get; } = new List<Data.Misc.IRecollectionData>();
 
