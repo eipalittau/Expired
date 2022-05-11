@@ -16,15 +16,14 @@
         private protected void OnDecrease(int aPoints) {
             OnDecrease(aPoints, false);
         }
+
         private protected void OnDecrease(int aPoints, bool aCanDie) {
-            if (!Main.IsDead) {
-                if (Current > aPoints) {
-                    Current -= aPoints;
-                } else {
-                    Current = 0;
-                    if (aCanDie) {
-                        Main.IsDead = true;
-                    }
+            if (Current > aPoints) {
+                Current -= aPoints;
+            } else {
+                Current = 0;
+                if (aCanDie) {
+                    Main.IsDead = true;
                 }
             }
         }
