@@ -6,14 +6,14 @@
         #endregion
 
         #region Konstruktor
-        protected HiddenDataBase(string aID, int aSortWeight, General.ITierData aTier, General.IActionTypeData? aActionType, params IDefensiveData[] aPrerequisites)
+        protected HiddenDataBase(string aID, int aSortWeight, General.IActionTypeData? aActionType, params IDefensiveData[] aPrerequisites)
             : base(aID, aSortWeight, aTier, aPrerequisites)
             => ActionType = aActionType;
         #endregion
 
         #region Methoden
-        protected static void AddInstance(IDefensiveData aInstance) {
-            Api.Feat.Defensive.Singleton.Add(aInstance);
+        protected static void AddInstance(IHiddenData aInstance) {
+            Api.Feat.Hidden.Singleton.Add(aInstance);
         }
         #endregion
     }
