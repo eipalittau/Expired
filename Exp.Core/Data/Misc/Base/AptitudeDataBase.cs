@@ -1,22 +1,33 @@
-﻿namespace Exp.Data.Misc {
+﻿using Exp.Api.General;
+using Exp.Api.Helper;
+using Exp.Data.General;
+using Exp.Data.Helper;
+
+namespace Exp.Data.Misc {
     public abstract class AptitudeDataBase : DataBase {
         #region Properties / Felder
-        public ModifierData Base { get; init; } = new(0, 0);
-        public ModifierData Modifier { get; init; } = new(0, 0);
-        public ModifierData Multiplicator { get; init; } = new(1, 1);
-        public ModifierData Divisor { get; init; } = new(1, 1);
-        public Api.General.CharacterChangerEnum Changer { get; init; }
+        protected List<ITargetEffect> EffectList { get; } = new();
+        public ModifierData Base { get; init; } = new(0, 0, 0);
+        public ModifierData Modifier { get; init; } = new(0, 0, 0);
+        public ModifierData Multiplicator { get; init; } = new(1, 0, 1);
+        public ModifierData Divisor { get; init; } = new(1, 0, 1);
+        public TargetEffectEnum Effect { get; init; }
+        public IActionTypeData? ActionType { get; init; }
         #endregion
 
         #region Konstruktor
-        protected AptitudeDataBase(string aID, Api.General.CharacterChangerEnum aChanger)
-            : base(aID, 0) 
-            => Changer = aChanger;
+        protected AptitudeDataBase(string aID, TargetEffectEnum aEffect, IActionTypeData aActionType)
+            : this(aID, aEffect)
+            => ActionType = aActionType;
+
+        protected AptitudeDataBase(string aID, TargetEffectEnum aEffect)
+            : base(aID, 0)
+            => Effect = aEffect;
         #endregion
 
         #region Methoden
-        protected static void AddInstance(IAptitudeData aInstance) {
-            Api.Misc.Aptitude.Singleton.Add(aInstance);
+        public IList<ITargetEffect> Execute() {
+            return EffectList.AsReadOnly();
         }
         #endregion
     }

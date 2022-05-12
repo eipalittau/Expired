@@ -1,4 +1,7 @@
-﻿namespace Exp.Api.General {
+﻿using Exp.Data.General;
+using Exp.Util;
+
+namespace Exp.Api.General {
     public sealed class DiceType : ApiBase<Data.General.IDiceTypeData> {
         #region Properties / Felder
         public static DiceType Singleton { get; } = new();
@@ -17,16 +20,16 @@
             base.Clear();
         }
 
-        public new IList<Data.General.IDiceTypeData> Enumerate() {
+        public new IList<IDiceTypeData> Enumerate() {
             return base.Enumerate();
         }
 
-        public new Data.General.IDiceTypeData Get(string aID) {
+        public new IDiceTypeData Get(string aID) {
             return base.Get(aID);
         }
 
-        public Data.General.IDiceTypeData Get(int aFaces) {
-            Data.General.IDiceTypeData? lItem = Singleton.Enumerate()
+        public IDiceTypeData Get(int aFaces) {
+            IDiceTypeData? lItem = Singleton.Enumerate()
                 .Where(x => x.Faces == aFaces)
                 .FirstOrDefault();
 
@@ -42,9 +45,9 @@
             return base.Count();
         }
 
-        public new void Add(Data.General.IDiceTypeData aItem) {
+        public new void Add(IDiceTypeData aItem) {
             if (aItem.Faces <= 1) {
-                throw new Exception.BadArgumentException(nameof(aItem.Faces), aItem.Faces);
+                ExceptionHandler.Add(new Exception.BadArgumentException(nameof(aItem.Faces), aItem.Faces));
             } else {
                 base.Add(aItem);
             }

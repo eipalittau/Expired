@@ -16,6 +16,8 @@
             AddOffensiveData();
             AddWizardryData();
             AddWonderData();
+
+            //Profession
             AddSmithingData();
 
             // Skill
@@ -183,23 +185,25 @@
             Feat.Wonder.Nyx.Add();
             Feat.Wonder.Styx.Add();
         }
+        #endregion
 
+        #region Profession
         private static void AddSmithingData() {
-            Feat.Smithing.Sharpen.Add();
-            Feat.Smithing.Hardening.Add();
-            Feat.Smithing.Refining.Add();
-            Feat.Smithing.RaisePower.Add();
-            Feat.Smithing.CreateBoots.Add();
-            Feat.Smithing.Upgrading.Add();
-            Feat.Smithing.InefficientSmithing.Add();
-            Feat.Smithing.EfficientSmithing.Add();
-            Feat.Smithing.ElementalDamage.Add();
-            Feat.Smithing.ElementalArmor.Add();
-            Feat.Smithing.Enlarge.Add();
-            Feat.Smithing.InefficientSmithing2.Add();
-            Feat.Smithing.EfficientSmithing2.Add();
-            Feat.Smithing.Mastersmith.Add();
-            Feat.Smithing.WitchSmithy.Add();
+            Profession.Smithing.Sharpen.Add();
+            Profession.Smithing.Hardening.Add();
+            Profession.Smithing.Refining.Add();
+            Profession.Smithing.RaisePower.Add();
+            Profession.Smithing.CreateBoots.Add();
+            Profession.Smithing.Upgrading.Add();
+            Profession.Smithing.InefficientSmithing.Add();
+            Profession.Smithing.EfficientSmithing.Add();
+            Profession.Smithing.ElementalDamage.Add();
+            Profession.Smithing.ElementalArmor.Add();
+            Profession.Smithing.Enlarge.Add();
+            Profession.Smithing.InefficientSmithing2.Add();
+            Profession.Smithing.EfficientSmithing2.Add();
+            Profession.Smithing.Mastersmith.Add();
+            Profession.Smithing.WitchSmithy.Add();
         }
         #endregion
 
@@ -266,10 +270,10 @@
 
         #region Player
         private static void AddLevelUp() {
-            Player.LevelUp.FeatData.Add();
-            Player.LevelUp.HealthData.Add();
-            Player.LevelUp.MovementData.Add();
-            Player.LevelUp.SkillData.Add();
+            Player.LevelUp.Feat.Add();
+            Player.LevelUp.Health.Add();
+            Player.LevelUp.Movement.Add();
+            Player.LevelUp.Skill.Add();
         }
 
         private static void AddPlayerClassData() {
@@ -280,7 +284,6 @@
             Player.PlayerClass.Banshee.Add();
             Player.PlayerClass.Lich.Add();
             Player.PlayerClass.RyldsShowerWater.Add();
-            Player.PlayerClass.Cerberus.Add();
         }
 
         private static void AddSlotData() {

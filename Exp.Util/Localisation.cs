@@ -8,19 +8,19 @@ namespace Exp.Util {
         #region Properties / Felder
         public static LanguageEnum Language { get; set; } = LanguageEnum.None;
         private static List<ResourceData> ResourceList { get; } = new();
+        private static bool AddLocalResource { get; set; } = true;
         #endregion
 
         #region Methoden
+        #region Add
         public static void AddResourceFile(string aResourceName) {
-            Assembly lAssembly = Assembly.GetCallingAssembly();
-            ResourceData? lItem = GetItem(lAssembly);
-
-            if (lItem == null) {
-                ResourceList.Add(new ResourceData(lAssembly, aResourceName, Language));
-            } else {
-                lItem.LoadedLanguage = Language;
+            if (AddLocalResource) {
+                AddResourceFile("Labeling.Labeling", Assembly.GetExecutingAssembly());
+                AddLocalResource = false;
             }
+            AddResourceFile(aResourceName, Assembly.GetCallingAssembly());
         }
+        #endregion
 
         public static string GetText(string aName) {
             return GetText(aName, Assembly.GetCallingAssembly());
@@ -30,8 +30,7 @@ namespace Exp.Util {
             ResourceData? lItem = GetItem(aAssembly);
 
             if (lItem == null) {
-                ExceptionHandler.Add(new Exception.ResourceNotFoundException(aName, aAssembly));
-                return string.Empty;
+                throw new Exception.ResourceNotFoundException(aName, aAssembly);
             } else {
                 return lItem.GetText(Language, aName);
             }
@@ -42,6 +41,17 @@ namespace Exp.Util {
                 .Where(x => x.Caller.TryGetName().Equals(aAssembly.TryGetName(), StringComparison.CurrentCultureIgnoreCase))
                 .FirstOrDefault();
         }
+
+        private static void AddResourceFile(string aResourceName, Assembly aAssembly) {
+            ResourceData? lItem = GetItem(aAssembly);
+
+            if (lItem == null) {
+                ResourceList.Add(new ResourceData(aAssembly, aResourceName, Language));
+            } else {
+                lItem.LoadedLanguage = Language;
+            }
+        }
+
         #endregion
 
         private class ResourceData {
@@ -67,14 +77,7 @@ namespace Exp.Util {
 
             #region Konstruktor
             internal ResourceData(Assembly aCaller, string aResourceName, LanguageEnum aLanguage) {
-                string lBaseName = aResourceName;
-                AssemblyName? lAssemblyName = aCaller.GetName();
-
-                if (lAssemblyName != null && !string.IsNullOrWhiteSpace(lAssemblyName.Name)) {
-                    lBaseName = string.Concat(lAssemblyName.Name, ".", aResourceName);
-                }
-                
-                ResMan = new ResourceManager(lBaseName, aCaller);
+                ResMan = new ResourceManager(aCaller.TryGetName(aSuffix: $".{aResourceName}"), aCaller);
                 Caller = aCaller;
                 LoadedLanguage = aLanguage;
             }

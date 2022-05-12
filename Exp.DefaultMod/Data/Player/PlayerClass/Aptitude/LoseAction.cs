@@ -1,14 +1,15 @@
 ﻿namespace Exp.DefaultMod.Player.PlayerClass.Aptitude {
-    public sealed class LoseAction : Exp.Data.Misc.AptitudeDataBase, Exp.Data.Misc.IAptitudeData {
+    public sealed class LoseAction : Data.Misc.AptitudeDataBase, Data.Misc.IAptitudeData {
         #region Konstruktor
         public LoseAction()
-            : base(nameof(LoseAction), Api.General.CharacterChangerEnum.Feat) {
-            Name.Set(Util.LanguageEnum.Deutsch, "xx");
-            Name.Set(Util.LanguageEnum.English, "yy");
-            LoreDescription.Set(Util.LanguageEnum.Deutsch, "xxx");
-            LoreDescription.Set(Util.LanguageEnum.English, "yyy");
-            Modifier.Intervall = 1;
-            Modifier.Value = 2;
+            : base(nameof(LoseAction), Api.General.TargetEffectEnum.LoseAction, Api.General.ActionType.Singleton.Get(nameof(General.ActionType.Free))) {
+            base.Name.Set(Util.LanguageEnum.Deutsch, "Schrei der Banshee");
+            base.Name.Set(Util.LanguageEnum.English, "Scream of the Banshee");
+            base.LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
+            base.LoreDescription.Set(Util.LanguageEnum.English, "");
+            base.Modifier = new Api.Helper.ModifierData(2, 1, 1);
+
+            base.EffectList.Add(new Api.Helper.TargetEffect(base.ID, base.Effect, false, false, null, base.Modifier));
         }
         #endregion
     }

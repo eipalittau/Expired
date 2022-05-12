@@ -1,6 +1,6 @@
 ﻿namespace Exp.Data.Player {
     public interface ILevelUpData : IDataBase {
-        Api.General.CharacterChangerEnum Changer { get; init; }
-        Misc.ModifierData Base { get; init; }
+        Api.General.TargetEffectEnum Changer { get; init; }
+        Api.Helper.ModifierData Base { get; init; }
     }
 }

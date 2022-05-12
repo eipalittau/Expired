@@ -2,13 +2,13 @@
 
 namespace Exp.Util.Extension {
     public static class AssemblyExtension {
-        public static string TryGetName(this Assembly aData) {
+        public static string TryGetName(this Assembly aData, string aPrefix = "", string aSuffix = "") {
             AssemblyName? lAssemblyName = aData.GetName();
 
-            if (lAssemblyName == null || lAssemblyName.Name == null) {
+            if (lAssemblyName == null || string.IsNullOrEmpty(lAssemblyName.Name)) {
                 return string.Empty;
             } else {
-                return lAssemblyName.Name;
+                return string.Concat(aPrefix, lAssemblyName.Name, aSuffix);
             }
         }
     }

@@ -1,14 +1,15 @@
 ﻿namespace Exp.DefaultMod.Player.PlayerClass.Aptitude {
-    public sealed class ArmorClass : Exp.Data.Misc.AptitudeDataBase, Exp.Data.Misc.IAptitudeData {
+    public sealed class ArmorClass : Data.Misc.AptitudeDataBase, Data.Misc.IAptitudeData {
         #region Konstruktor
         public ArmorClass()
-            : base(nameof(ArmorClass), Api.General.CharacterChangerEnum.Armor) {
-            Name.Set(Util.LanguageEnum.Deutsch, "Rüstung");
-            Name.Set(Util.LanguageEnum.English, "Armor");
-            LoreDescription.Set(Util.LanguageEnum.Deutsch, "Ändert die Anzahl der Rüstungspunkte um +2");
-            LoreDescription.Set(Util.LanguageEnum.English, "");
-            Modifier.Intervall = 0;
-            Modifier.Value = 2;
+            : base(nameof(ArmorClass), Api.General.TargetEffectEnum.Armor) {
+            base.Name.Set(Util.LanguageEnum.Deutsch, "Rüstung");
+            base.Name.Set(Util.LanguageEnum.English, "Armor");
+            base.LoreDescription.Set(Util.LanguageEnum.Deutsch, "Ändert die Anzahl der Rüstungspunkte um +2");
+            base.LoreDescription.Set(Util.LanguageEnum.English, "");
+            base.Modifier = new Api.Helper.ModifierData(0, 0, 2);
+            
+            base.EffectList.Add(new Api.Helper.TargetEffect(base.ID, base.Effect, false, false, null, base.Modifier));
         }
         #endregion
     }

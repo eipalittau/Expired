@@ -1,4 +1,6 @@
-﻿namespace Exp.Api.Player.Sheet {
+﻿using Exp.Util;
+
+namespace Exp.Api.Player.Sheet {
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
     public sealed class SkillData {
         #region Properties / Felder
@@ -14,10 +16,10 @@
 
         internal void LevelUp() {
             if (Level == MaxLevel) {
-                throw new Exception.MaximumExceededException(SkillType.ID, MaxLevel);
+                ExceptionHandler.Add(new Exception.MaximumExceededException(SkillType.ID, MaxLevel));
+            } else {
+                Level++;
             }
-
-            Level++;
         }
         #endregion
     }

@@ -1,4 +1,7 @@
-﻿namespace Exp.Api.Player {
+﻿using Exp.Api.General;
+using Exp.Api.Helper;
+
+namespace Exp.Api.Player {
     public sealed class CharacterSheet : Data.Player.ICharacterSheetData {
         #region Properties / Felder
         public bool IsDead { get; internal set; } = true;
@@ -73,36 +76,35 @@
             if (Experience.Current < Experience.Max) {
                 return false;
             } else {
-                int lAttackMax = LevelUpMax(General.CharacterChangerEnum.Attack);
-                int lDamagekMax = LevelUpMax(General.CharacterChangerEnum.Damage);
+                int lAttackMax = LevelUpMax(TargetEffectEnum.Attack);
+                int lDamagekMax = LevelUpMax(TargetEffectEnum.Damage);
 
-                Experience.LevelUp();
+                Experience.LevelUp(); // Erfahrungspunkte zurücksetzen
                 Level++;
 
-                Health.Max = LevelUpMax(General.CharacterChangerEnum.Health);
-                ArmorClass.Max = LevelUpMax(General.CharacterChangerEnum.Armor);
-                Resistence.Max = LevelUpMax(General.CharacterChangerEnum.Resistence);
+                Health.Max = LevelUpMax(TargetEffectEnum.Health);
+                ArmorClass.Max = LevelUpMax(TargetEffectEnum.Armor);
+                Resistence.Max = LevelUpMax(TargetEffectEnum.Resistence);
                 Attack.ToList().ForEach(x => x.Max = lAttackMax);
                 Damage.ToList().ForEach(x => x.Max = lDamagekMax);
-                Sneaky.Max = LevelUpMax(General.CharacterChangerEnum.Sneaky);
-                Conjure.Mana.Max = LevelUpMax(General.CharacterChangerEnum.Mana);
-                Movement.Max = LevelUpMax(General.CharacterChangerEnum.Movement);
-                if (Player.LevelUp.Singleton.Contains(General.CharacterChangerEnum.FeatPoints) && aFeatTalents != null) {
-                    int lFeatPoints = Player.LevelUp.Singleton.Get(General.CharacterChangerEnum.FeatPoints).Base.Value;
+                Sneaky.Max = LevelUpMax(TargetEffectEnum.Sneaky);
+                Conjure.Mana.Max = LevelUpMax(TargetEffectEnum.Mana);
+                Movement.Max = LevelUpMax(TargetEffectEnum.Movement);
+                if (Player.LevelUp.Singleton.Contains(TargetEffectEnum.FeatPoints) && aFeatTalents != null) {
+                    int lFeatPoints = Player.LevelUp.Singleton.Get(TargetEffectEnum.FeatPoints).Base.Value;
 
                     for (int lI = 0; lI < Math.Min(aFeatTalents.Length, lFeatPoints); lI++) {
                         Feat.LevelUp(aFeatTalents[lI]);
                     }
                 }
-                if (Player.LevelUp.Singleton.Contains(General.CharacterChangerEnum.SkillPoints) && aSkills != null) {
-                    int lSkillPoints = Player.LevelUp.Singleton.Get(General.CharacterChangerEnum.SkillPoints).Base.Value;
+                if (Player.LevelUp.Singleton.Contains(TargetEffectEnum.SkillPoints) && aSkills != null) {
+                    int lSkillPoints = Player.LevelUp.Singleton.Get(TargetEffectEnum.SkillPoints).Base.Value;
 
                     for (int lI = 0; lI < Math.Min(aSkills.Length, lSkillPoints); lI++) {
-                        IEnumerable<Sheet.SkillTypeData> lSkill = SkillList
-                            .SelectMany(x => x.SkillTypeList)
+                        IEnumerable<Sheet.SkillData> lSkill = SkillList
                             .Where(x => x.SkillType.Equals(aSkills[lI]));
 
-                        if (lSkill.Any() && lSkill.Count() == 1) {
+                        if (lSkill.Any()) {
                             lSkill.First().LevelUp();
                         }
                     }
@@ -114,18 +116,16 @@
             }
         }
 
-        private int LevelUpMax(General.CharacterChangerEnum aChanger) {
+        private int LevelUpMax(TargetEffectEnum aEffect) {
             int lResult = 0;
 
             // Änderung durch Level-Up
-            if (Player.LevelUp.Singleton.Contains(aChanger)) {
-                Data.Player.ILevelUpData lLevelUpData = Player.LevelUp.Singleton.Get(aChanger);
-
-                lResult = lLevelUpData.Base.Value * Level;
+            if (Player.LevelUp.Singleton.Contains(aEffect)) {
+                lResult = Player.LevelUp.Singleton.Get(aEffect).Base.Value * Level;
             }
 
             // Änderung durch Charakterklasse
-            Data.Misc.IAptitudeData? lAptitude = PlayerClass.AptitudeList.Where(x => aChanger.Equals(x.Changer)).FirstOrDefault();
+            Data.Misc.IAptitudeData? lAptitude = PlayerClass.AptitudeList.Where(x => aEffect.Equals(x.Effect)).FirstOrDefault();
 
             if (lAptitude != null) {
                 if (lAptitude.Base.HasData) {
@@ -140,9 +140,9 @@
             return lResult;
         }
 
-        private int IncreaseModifierData(Data.Misc.ModifierData aModifier, int aDefault) {
+        private int IncreaseModifierData(ModifierData aModifier, int aDefault) {
             if (aModifier.HasData) {
-                return aModifier.Value * ((int)Math.Floor((double)Level / aModifier.Intervall) + 1);
+                return aModifier.GetValueByLevel(Level);
             } else {
                 return aDefault;
             }

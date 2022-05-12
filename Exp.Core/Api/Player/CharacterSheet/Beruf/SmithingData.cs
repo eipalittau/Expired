@@ -1,6 +1,8 @@
-﻿namespace Exp.Api.Player.Sheet {
+﻿using Exp.Data.Profession;
+
+namespace Exp.Api.Player.Sheet {
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-    public sealed class SmithingData : FeatDataBase<Data.Feat.ISmithingData> {
+    public sealed class SmithingData : FeatDataBase<ISmithingData> {
         #region Konstruktor
         internal SmithingData()
             : base()
@@ -8,15 +10,11 @@
         #endregion
 
         #region Methoden
-        public new void AddTalent(Data.Feat.ISmithingData aTalent) {
+        public new void AddTalent(ISmithingData aTalent) {
             base.AddTalent(aTalent);
         }
 
-        public new void LevelUp(Data.Feat.ISmithingData aTalent) {
-            base.LevelUp(aTalent);
-        }
-
-        public new IList<Data.Feat.ISmithingData> Enumerate() {
+        public new IList<ISmithingData> Enumerate() {
             return base.Enumerate();
         }
         #endregion

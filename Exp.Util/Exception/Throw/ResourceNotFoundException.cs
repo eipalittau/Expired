@@ -6,4 +6,5 @@ namespace Exp.Exception {
     public sealed class ResourceNotFoundException : ExceptionBase {
         public ResourceNotFoundException(string aResourceName, Assembly aAssembly)
             : base(aResourceName, aAssembly.TryGetName()) { }
+    }
 }

@@ -120,4 +120,7 @@
   <data name="Exp.Exception.DiceNotFoundException" xml:space="preserve">
     <value>Ein {0}-seitiger Würfel ist nicht vorhanden.</value>
   </data>
+  <data name="Exp.Exception.MissingInitializationException" xml:space="preserve">
+    <value>Die Main-Klasse wurde noch nicht initialisiert. Bitte führe die Methode Exp.Api.Main.Initizalize(int, bool) aus.</value>
+  </data>
 </root>

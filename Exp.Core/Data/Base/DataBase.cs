@@ -13,8 +13,14 @@
         #endregion
 
         #region Konstruktor
-        protected DataBase(string aID, int aSortWeight)
-            => (ID, SortWeight) = (aID, aSortWeight);
+        protected DataBase(string aID, int aSortWeight) {
+            if (string.IsNullOrWhiteSpace(aID)) {
+                throw new Exception.MissingParameterException(nameof(aID));
+            } 
+            
+            ID = aID;
+            SortWeight = aSortWeight;
+        }
         #endregion
     }
 }

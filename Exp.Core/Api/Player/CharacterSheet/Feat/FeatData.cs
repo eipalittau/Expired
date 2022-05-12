@@ -31,6 +31,6 @@
                 Wonder.LevelUp((Data.Feat.IWonderData)aTalent);
             }
         }
-        #endregion
-    }
+    #endregion
+}
 }

@@ -1,12 +1,12 @@
 ﻿namespace Exp.Data.Player {
     public abstract class LevelUpDataBase : DataBase {
         #region Properties / Felder
-        public Api.General.CharacterChangerEnum Changer { get; init; }
-        public Misc.ModifierData Base { get; init; }
+        public Api.General.TargetEffectEnum Changer { get; init; }
+        public Api.Helper.ModifierData Base { get; init; }
         #endregion
 
         #region Konstruktor
-        protected LevelUpDataBase(Api.General.CharacterChangerEnum aChanger, Misc.ModifierData aBase)
+        protected LevelUpDataBase(Api.General.TargetEffectEnum aChanger, Api.Helper.ModifierData aBase)
             : base(aChanger.Name, 0)
             => (Changer, Base) = (aChanger, aBase);
         #endregion

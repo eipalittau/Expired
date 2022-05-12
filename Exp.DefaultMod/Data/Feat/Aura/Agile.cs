@@ -1,5 +1,5 @@
 ﻿namespace Exp.DefaultMod.Feat.Aura {
-    public sealed class Agile : Exp.Data.Feat.AuraDataBase, Exp.Data.Feat.IAuraData {
+    public sealed class Agile : Data.Feat.AuraDataBase, Data.Feat.IAuraData {
         #region Konstruktor
         private Agile()
             : base(nameof(Agile), 1100, Api.General.Tier.Singleton.Get(nameof(General.Tier.One)), null) {

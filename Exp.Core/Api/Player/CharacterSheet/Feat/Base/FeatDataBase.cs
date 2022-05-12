@@ -1,4 +1,6 @@
-﻿namespace Exp.Api.Player.Sheet {
+﻿using Exp.Util;
+
+namespace Exp.Api.Player.Sheet {
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
     public abstract class FeatDataBase<T> where T : Data.IDataBase {
         #region Properties / Felder
@@ -22,7 +24,7 @@
 
         private protected void AddTalent(T aTalent) {
             if (FeatList.Contains(aTalent)) {
-                throw new Exception.DublicateItemException(aTalent.ID);
+                ExceptionHandler.Add(new Exception.DublicateItemException(aTalent.ID));
             } else {
                 FeatList.Add(aTalent);
             }

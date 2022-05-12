@@ -1,4 +1,6 @@
-﻿using Exp.Extension;
+﻿using Exp.Data.General;
+using Exp.Extension;
+using Exp.Util;
 
 namespace Exp.Data.Feat {
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
@@ -8,11 +10,11 @@ namespace Exp.Data.Feat {
         public General.ITierData Tier { get; set; }
         /// <summary>Liste der Voraussetzungen.</summary>
         public List<T> PrerequisiteList { get; init; }
-        public Util.LanguageBasedData EffektDescription { get; } = new Util.LanguageBasedData();
+        public LanguageBasedData EffektDescription { get; } = new();
         #endregion
 
         #region Konstruktor
-        private protected FeatDataBase(string aID, int aSortWeight, General.ITierData aTier, params T[] aPrerequisites)
+        private protected FeatDataBase(string aID, int aSortWeight, ITierData aTier, params T[] aPrerequisites)
             : base(aID, aSortWeight) {
             Tier = aTier;
             if (aPrerequisites == null || aPrerequisites.Length == 0) {
@@ -22,22 +24,20 @@ namespace Exp.Data.Feat {
             }
         }
 
-        private protected FeatDataBase(string aID, int aSortWeight, General.ITierData aTier)
+        private protected FeatDataBase(string aID, int aSortWeight, ITierData aTier)
             : base(aID, aSortWeight)
             => (Tier, PrerequisiteList) = (aTier, new());
         #endregion
 
         #region Methoden
-        protected bool CheckDamageType(General.IDamageTypeData aNeededDamageType, params General.IDamageTypeData[] aDamageTypes) {
+        protected bool CheckDamageType(IDamageTypeData aNeededDamageType, params IDamageTypeData[] aDamageTypes) {
             if (aDamageTypes.HasData()) {
-                throw new Exception.MissingParameterException(nameof(aDamageTypes));
+                return aDamageTypes.Contains(Api.General.DamageType.Singleton.Get(aNeededDamageType.ID));
             } else {
-                if (aDamageTypes.Contains(Api.General.DamageType.Singleton.Get(aNeededDamageType.ID))) {
-                    return true;
-                } else {
-                    return false;
-                }
+                ExceptionHandler.Add(new Exception.MissingParameterException(nameof(aDamageTypes)));
             }
+            
+            return false;
         }
         #endregion
     }

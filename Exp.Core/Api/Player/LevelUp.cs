@@ -9,7 +9,7 @@
         #endregion
 
         #region Methoden
-        public bool Contains(General.CharacterChangerEnum aChanger) {
+        public bool Contains(General.TargetEffectEnum aChanger) {
             return base.Contains(aChanger.Name);
         }
 
@@ -25,7 +25,7 @@
             return base.Enumerate();
         }
 
-        public Data.Player.ILevelUpData Get(General.CharacterChangerEnum aChanger) {
+        public Data.Player.ILevelUpData Get(General.TargetEffectEnum aChanger) {
             return base.Get(aChanger.Name);
         }
 

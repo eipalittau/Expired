@@ -1,4 +1,6 @@
-﻿namespace Exp.Api {
+﻿using Exp.Util;
+
+namespace Exp.Api {
     public abstract class ApiBase<T> where T : Data.IDataBase {
         #region Properties / Felder
         private readonly List<T> mDataList = new();
@@ -10,7 +12,7 @@
 
         #region Methoden
         private protected bool Contains(string aID) {
-            return mDataList.Where(x => x.ID.Equals(aID, StringComparison.InvariantCultureIgnoreCase)).Any();
+            return GetItem(aID).Any();
         }
 
         private protected void Remove(string aID) {
@@ -30,7 +32,7 @@
         /// <returns>Das gefunden Item.</returns>
         /// <exception cref="DublicateItemException ">Falls die ID des Items nicht existiert, wird diese Exception geworfen.</exception>
         private protected T Get(string aID) {
-            T? lItem = mDataList.Where(x => x.ID.Equals(aID, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
+            T? lItem = GetItem(aID).FirstOrDefault();
 
             if (lItem == null) {
                 throw new Exception.ItemNotFoundException(aID);
@@ -49,14 +51,14 @@
         /// <param name="aItem">Der neue Datensatz, welcher der Sammlung hinzugefügt werden soll.</param>
         /// <exception cref="DublicateItemException">Falls die ID des Items bereits existiert, wird diese Exception geworfen.</exception>
         private protected void Add(T aItem) {
-            if (mDataList.Any(x => x.ID.Equals(aItem.ID, StringComparison.InvariantCultureIgnoreCase))) {
-                throw new Exception.DublicateItemException(aItem.ID);
+            if (Contains(aItem.ID)) {
+                ExceptionHandler.Add(new Exception.DublicateItemException(aItem.ID));
+            } else {
+                mDataList.Add(aItem);
             }
-
-            mDataList.Add(aItem);
         }
 
-        private IEnumerable<T>? GetItem(string aID) {
+        private IEnumerable<T> GetItem(string aID) {
             return mDataList.Where(x => x.ID.Equals(aID, StringComparison.InvariantCultureIgnoreCase));
         }
         #endregion
