@@ -1,16 +1,23 @@
 ﻿namespace Exp.Api.Player.Sheet {
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
     public sealed class SkillData {
-        //Patrik: SkillGroup raus...
         #region Properties / Felder
-        public Data.Skill.ISkillGroupData SkillGroup { get; init; }
-        public IList<SkillTypeData> SkillTypeList { get; } = new List<SkillTypeData>();
+        public int Level { get; set; } = 0;
+        public int MaxLevel { get; set; } = int.MaxValue;
+        public Data.Skill.ISkillTypeData SkillType { get; init; }
         #endregion
 
         #region Konstruktor
-        internal SkillData(Data.Skill.ISkillGroupData aGroup) {
-            SkillGroup = aGroup;
-            Skill.SkillType.Singleton.Enumerate(aGroup).ToList().ForEach(x => SkillTypeList.Add(new SkillTypeData(x)));
+        internal SkillData(Data.Skill.ISkillTypeData aSkillType) {
+            SkillType = aSkillType;
+        }
+
+        internal void LevelUp() {
+            if (Level == MaxLevel) {
+                throw new Exception.MaximumExceededException(SkillType.ID, MaxLevel);
+            }
+
+            Level++;
         }
         #endregion
     }

@@ -22,7 +22,7 @@
         public Sheet.ConjureData Conjure { get; init; }
         public Sheet.MovementData Movement { get; init; }
         public Sheet.FeatData Feat { get; init; }
-        public IList<Sheet.SkillTypeData> SkillList { get; } = new List<Sheet.SkillTypeData>();
+        public IList<Sheet.SkillData> SkillList { get; } = new List<Sheet.SkillData>();
         public IList<Sheet.EquipmentData> EquipmentList { get; } = new List<Sheet.EquipmentData>();
         public IList<Data.Misc.IRecollectionData> RecollectionList { get; } = new List<Data.Misc.IRecollectionData>();
 
@@ -47,7 +47,7 @@
             Conjure = new Sheet.ConjureData(this);
             Movement = new Sheet.MovementData(this);
             Feat = new Sheet.FeatData();
-            Skill.SkillGroup.Singleton.Enumerate().ToList()
+            Skill.SkillType.Singleton.Enumerate().ToList()
                 .ForEach(x => SkillList.Add(new Sheet.SkillData(x)));
             Slot.Singleton.Enumerate()
                 .Where(x => x.Available).ToList()
@@ -58,10 +58,9 @@
         #region Methoden
         #region Create
         public static CharacterSheet Create(int aExperience4LevelUp) {
-            // Patrik: Anzahl Playerclasses <> Würfel
-            Data.General.IDiceTypeData lDice = General.DiceType.Singleton.Get(Player.PlayerClass.Singleton.Count());
+            int lRandomResult = new Random().Next(1, Player.PlayerClass.Singleton.Count());
             
-            return Create(Player.PlayerClass.Singleton.Enumerate().ElementAt(lDice.Roll()), aExperience4LevelUp);
+            return Create(Player.PlayerClass.Singleton.Enumerate().ElementAt(lRandomResult), aExperience4LevelUp);
         }
 
         public static CharacterSheet Create(Data.Player.IPlayerClassData aPlayerClass, int aExperience4LevelUp) {
