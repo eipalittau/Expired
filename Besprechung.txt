@@ -1,5 +1,2 @@
 Definition der PlayerClass:
 - RyldsShowerWater
-
-Diskusion:
-- Aptitudes als Hidden Feats umsetzen?
