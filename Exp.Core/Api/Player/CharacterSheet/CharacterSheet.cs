@@ -21,6 +21,7 @@ namespace Exp.Api.Player {
                 return _Damage.AsReadOnly();
             }
         }
+        public Sheet.SmithingData Smithing { get; init; }
         public Sheet.SneakyData Sneaky { get; init; }
         public Sheet.ConjureData Conjure { get; init; }
         public Sheet.MovementData Movement { get; init; }
@@ -42,10 +43,11 @@ namespace Exp.Api.Player {
             Health = new Sheet.HealthData(this);
             ArmorClass = new Sheet.ArmorClassData(this);
             Resistence = new Sheet.ResistenceData(this);
-            General.DamageType.Singleton.Enumerate().ToList().ForEach(x => { 
+            DamageType.Singleton.Enumerate().ToList().ForEach(x => { 
                 _Attack.Add(new Sheet.AttackData(this, x)); 
                 _Damage.Add(new Sheet.DamageData(this, x)); 
             });
+            Smithing = new Sheet.SmithingData();
             Sneaky = new Sheet.SneakyData(this);
             Conjure = new Sheet.ConjureData(this);
             Movement = new Sheet.MovementData(this);
