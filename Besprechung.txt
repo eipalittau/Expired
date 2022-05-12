@@ -1,11 +1,5 @@
-11.05.02022
 Definition der PlayerClass:
-- Banshee
-- Cerberus
 - RyldsShowerWater
 
-Definition CharacterSheet
-- Leben
-- Kampf
-- Level-Up
-- Erfahrungspunkte
+Diskusion:
+- Aptitudes als Hidden Feats umsetzen?
