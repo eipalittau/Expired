@@ -1,6 +1,6 @@
 ﻿namespace Exp.Exception {
         /// <summary>Das Argument '{0}' mit dem Wert '{1}' ist verboten.</summary>
-    public sealed class BadArgumentException : Exp.Util.ExceptionBase {
+    public sealed class BadArgumentException : ExceptionBase {
         public BadArgumentException(string aArgumentname, string aValue)
             : base(aArgumentname, aValue) { }
 

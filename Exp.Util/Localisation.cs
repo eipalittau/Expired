@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using Exp.Util.Extension;
+using System.Globalization;
 using System.Reflection;
 using System.Resources;
 
@@ -29,7 +30,8 @@ namespace Exp.Util {
             ResourceData? lItem = GetItem(aAssembly);
 
             if (lItem == null) {
-                throw new System.Exception("Resource not found!");
+                ExceptionHandler.Add(new Exception.ResourceNotFoundException(aName, aAssembly));
+                return string.Empty;
             } else {
                 return lItem.GetText(Language, aName);
             }
@@ -37,18 +39,8 @@ namespace Exp.Util {
 
         private static ResourceData? GetItem(Assembly aAssembly) {
             return ResourceList
-                .Where(x => GetKey(x.Caller).Equals(GetKey(aAssembly), System.StringComparison.CurrentCultureIgnoreCase))
+                .Where(x => x.Caller.TryGetName().Equals(aAssembly.TryGetName(), StringComparison.CurrentCultureIgnoreCase))
                 .FirstOrDefault();
-        }
-
-        private static string GetKey(Assembly aAssembly) {
-            AssemblyName? lAssemblyName = aAssembly.GetName();
-            
-            if (lAssemblyName == null || lAssemblyName.Name == null) {
-                return string.Empty;
-            } else {
-                return lAssemblyName.Name;
-            }
         }
         #endregion
 

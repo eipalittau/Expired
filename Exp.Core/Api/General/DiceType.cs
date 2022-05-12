@@ -31,7 +31,7 @@
                 .FirstOrDefault();
 
             if (lItem == null) {
-                throw new Exp.Exception.DiceNotFoundException(aFaces);
+                throw new Exception.DiceNotFoundException(aFaces);
             } else {
                 return lItem;
             }
@@ -44,7 +44,7 @@
 
         public new void Add(Data.General.IDiceTypeData aItem) {
             if (aItem.Faces <= 1) {
-                throw new Exp.Exception.BadArgumentException(nameof(aItem.Faces), aItem.Faces);
+                throw new Exception.BadArgumentException(nameof(aItem.Faces), aItem.Faces);
             } else {
                 base.Add(aItem);
             }

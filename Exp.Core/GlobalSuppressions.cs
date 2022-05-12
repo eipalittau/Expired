@@ -36,3 +36,4 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Usage", "CA2211:Nicht konstante Felder dürfen nicht sichtbar sein", Justification = "<Ausstehend>", Scope = "member", Target = "~F:Exp.Api.General.CharacterChangerEnum.Sneaky")]
 [assembly: SuppressMessage("Usage", "CA2211:Nicht konstante Felder dürfen nicht sichtbar sein", Justification = "<Ausstehend>", Scope = "member", Target = "~F:Exp.Api.General.CharacterChangerEnum.Movement")]
 [assembly: SuppressMessage("Usage", "CA2211:Nicht konstante Felder dürfen nicht sichtbar sein", Justification = "<Ausstehend>", Scope = "member", Target = "~F:Exp.Api.General.CharacterChangerEnum.Feat")]
+[assembly: SuppressMessage("Performance", "CA1822:Member als statisch markieren", Justification = "<Ausstehend>", Scope = "member", Target = "~M:Exp.Api.General.DiceType.Get(System.Int32)~Exp.Data.General.IDiceTypeData")]

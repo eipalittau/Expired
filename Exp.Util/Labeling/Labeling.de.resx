@@ -117,7 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Exp.Exception.DiceNotFoundException" xml:space="preserve">
-    <value>Ein {0}-seitiger Würfel ist nicht vorhanden.</value>
+  <data name="Exp.Exception.BadArgumentException" xml:space="preserve">
+    <value>Das Argument '{0}' mit dem Wert '{1}' ist verboten.</value>
+  </data>
+  <data name="Exp.Exception.DublicateItemException" xml:space="preserve">
+    <value>Das Item mit der ID '{0}' existiert bereits.</value>
+  </data>
+  <data name="Exp.Exception.ItemNotFoundException" xml:space="preserve">
+    <value>Das Item mit der ID '{0}' kann in der Aufzählung nicht gefunden werden.</value>
+  </data>
+  <data name="Exp.Exception.MaximumExceededException" xml:space="preserve">
+    <value>Das Maximum von {1} wurde bei '{0}' überschritten.</value>
+  </data>
+  <data name="Exp.Exception.MissingParameterException" xml:space="preserve">
+    <value>Für den Parameter '{0}' wurden keine Daten angegeben.</value>
+  </data>
+  <data name="Exp.Exception.ResourceNotFoundException" xml:space="preserve">
+    <value>Die Ressource '{0}' konnte in der Assembly '{1}' nicht gefunden werden.</value>
   </data>
 </root>

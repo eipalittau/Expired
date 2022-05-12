@@ -1,23 +1,29 @@
-﻿namespace Exp.Api {
+﻿using Exp.Api.Player;
+using Exp.Data.Player;
+using Exp.Exception;
+using Exp.Util;
+
+namespace Exp.Api {
     public sealed class Main {
         #region Properties / Felder
         public static Main Singleton { get; } = new();
         public int Experience { get; private set; }
         #endregion
 
-        public void Initialize(int aExperience4LevelUp) {
+        public void Initialize(int aExperience4LevelUp, bool aThrowException) {
             Experience = aExperience4LevelUp;
 
-            Exp.Util.Localisation.AddResourceFile("Labeling.Labeling");
-            Exp.Util.Localisation.Language = Exp.Util.LanguageEnum.Deutsch;
+            Localisation.AddResourceFile("Labeling.Labeling");
+            Localisation.Language = LanguageEnum.Deutsch;
+            ExceptionHandler.ThrowException = aThrowException;
         }
 
-        public Player.CharacterSheet Create() {
-            return Player.CharacterSheet.Create(Experience);
+        public CharacterSheet Create() {
+            return CharacterSheet.Create(Experience);
         }
 
-        public Player.CharacterSheet Create(Data.Player.IPlayerClassData aPlayerClass) {
-            return Player.CharacterSheet.Create(aPlayerClass, Experience);
+        public CharacterSheet Create(IPlayerClassData aPlayerClass) {
+            return CharacterSheet.Create(aPlayerClass, Experience);
         }
     }
 }

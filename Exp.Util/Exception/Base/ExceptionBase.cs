@@ -1,7 +1,7 @@
-﻿using Exp.Util.Extension;
-using System.Reflection;
+﻿using Exp.Util;
+using Exp.Util.Extension;
 
-namespace Exp.Util {
+namespace Exp.Exception {
     public abstract class ExceptionBase : System.Exception {
         #region Properties / Felder
         public string ID { get; init; }
