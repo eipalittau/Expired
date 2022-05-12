@@ -1,2 +1,5 @@
 Definition der PlayerClass:
 - RyldsShowerWater
+
+CharacterSheet:
+- Smithing
