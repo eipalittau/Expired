@@ -1,11 +1,11 @@
 ﻿namespace Exp.Util {
     public sealed class PriorityEnum : EnumerationBase {
         #region Properties / Felder
-        internal static PriorityEnum None = new(-1, nameof(None));
-        public static PriorityEnum Debug = new(0, nameof(Debug));
-        public static PriorityEnum Information = new(1, nameof(Information));
-        public static PriorityEnum Warning = new(2, nameof(Warning));
-        public static PriorityEnum Error = new(2, nameof(Error));
+        public static PriorityEnum None = new(0, nameof(None));
+        public static PriorityEnum Debug = new(1, nameof(Debug));
+        public static PriorityEnum Information = new(2, nameof(Information));
+        public static PriorityEnum Warning = new(3, nameof(Warning));
+        public static PriorityEnum Error = new(4, nameof(Error));
         #endregion
 
         #region Konstruktor
@@ -28,6 +28,10 @@
 
         public static PriorityEnum Convert(string aLanguage) {
             return EnumerationBase.Convert<PriorityEnum>(aLanguage, None);
+        }
+
+        public override string ToString() {
+            return Name.PadRight(Enumerate().Max(x => x.Name.Length));
         }
         #endregion
     }

@@ -5,7 +5,7 @@ using Exp.Util;
 namespace Exp.Api {
     public sealed class Main {
         #region Properties / Felder
-        public static Main Singleton { get; } = new();
+        private static Main Singleton { get; } = new();
         public int Experience { get; private set; }
         private bool IsInitialized { get; set; }
         #endregion
@@ -14,14 +14,19 @@ namespace Exp.Api {
         private Main() { }
         #endregion
 
+        #region Methoden
         public void Initialize(int aExperience4LevelUp, bool aThrowException, LanguageEnum aLanguage) {
-            Experience = aExperience4LevelUp;
+            try {
+                Experience = aExperience4LevelUp;
 
-            Localisation.AddResourceFile("Labeling.Labeling");
-            SetLanguage(aLanguage);
-            ExceptionHandler.ThrowException = aThrowException;
+                Localisation.AddResourceFile("Labeling.Labeling");
+                SetLanguage(aLanguage);
+                ExceptionHandler.ThrowException = aThrowException;
 
-            IsInitialized = true;
+                IsInitialized = true;
+            } catch (System.Exception aEx) {
+
+            }
         }
 
         public CharacterSheet CreateCharacter() {
@@ -43,5 +48,6 @@ namespace Exp.Api {
         public void SetLanguage(LanguageEnum aLanguage) {
             Localisation.Language = aLanguage;
         }
+        #endregion
     }
 }
