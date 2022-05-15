@@ -81,7 +81,7 @@ namespace Exp.Util.Extension {
         public static string ExtractNumber(this string aData) {
             return new string(aData.ToCharArray().Where(x => char.IsNumber(x)).ToArray());
         }
-        
+
         public static T ToEnum<T>(this string aData) {
             return (T)Enum.Parse(typeof(T), aData);
         }

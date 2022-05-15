@@ -5,48 +5,36 @@ using Exp.Util;
 namespace Exp.Api {
     public sealed class Main {
         #region Properties / Felder
-        private static Main Singleton { get; } = new();
         public int Experience { get; private set; }
-        private bool IsInitialized { get; set; }
         #endregion
 
         #region Konstruktor
-        private Main() { }
-        #endregion
-
-        #region Methoden
-        public void Initialize(int aExperience4LevelUp, bool aThrowException, LanguageEnum aLanguage) {
+        public Main(bool aThrowException, LanguageEnum aLanguage) {
             try {
-                Experience = aExperience4LevelUp;
-
                 Localisation.AddResourceFile("Labeling.Labeling");
                 SetLanguage(aLanguage);
                 ExceptionHandler.ThrowException = aThrowException;
-
-                IsInitialized = true;
             } catch (System.Exception aEx) {
 
             }
         }
+        #endregion
 
+        #region Methoden
         public CharacterSheet CreateCharacter() {
-            if (IsInitialized) {
-                return CharacterSheet.Create(Experience);
-            } else {
-                throw new Exception.MissingInitializationException();
-            }
+            return CharacterSheet.Create(Experience);
         }
 
         public CharacterSheet CreateCharacter(IPlayerClassData aPlayerClass) {
-            if (IsInitialized) {
-                return CharacterSheet.Create(aPlayerClass, Experience);
-            } else {
-                throw new Exception.MissingInitializationException();
-            }
+            return CharacterSheet.Create(aPlayerClass, Experience);
         }
 
         public void SetLanguage(LanguageEnum aLanguage) {
             Localisation.Language = aLanguage;
+        }
+
+        public void SetExperience4LevelUp(int aValue) {
+            Experience = aValue;
         }
         #endregion
     }

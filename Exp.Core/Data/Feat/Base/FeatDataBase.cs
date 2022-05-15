@@ -1,6 +1,6 @@
 ﻿using Exp.Data.General;
-using Exp.Extension;
 using Exp.Util;
+using Exp.Util.Extension;
 
 namespace Exp.Data.Feat {
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
@@ -36,7 +36,7 @@ namespace Exp.Data.Feat {
             } else {
                 ExceptionHandler.Add(new Exception.MissingParameterException(nameof(aDamageTypes)));
             }
-            
+
             return false;
         }
         #endregion

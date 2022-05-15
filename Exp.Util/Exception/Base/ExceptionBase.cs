@@ -1,5 +1,6 @@
 ﻿using Exp.Util;
 using Exp.Util.Extension;
+using System.Text;
 
 namespace Exp.Exception {
     public abstract class ExceptionBase : System.Exception {
@@ -23,9 +24,33 @@ namespace Exp.Exception {
             Priority = PriorityEnum.Error;
 
             if (aArguments.HasData()) {
-                Message = string.Format(Localisation.GetText(ID, this.GetType().Assembly), aArguments);
+                Message = ConcatWithInnerException(string.Format(Localisation.GetText(ID, this.GetType().Assembly), aArguments), aEx);
             } else {
-                Message = Localisation.GetText(base.Message, this.GetType().Assembly);
+                Message = ConcatWithInnerException(Localisation.GetText(base.Message, this.GetType().Assembly), aEx);
+            }
+        }
+
+        private string ConcatWithInnerException(string aMessage, System.Exception? aEx) {
+            if (aEx == null) {
+                return aMessage;
+            } else {
+                string? lStacktrace = aEx.StackTrace;
+                StringBuilder lMessage = new();
+
+                if (!string.IsNullOrWhiteSpace(aMessage)) {
+                    lMessage.AppendLine(aMessage);
+                }
+
+                do {
+                    lMessage.AppendLine(aEx.Message);
+                    aEx = aEx.InnerException;
+                } while (aEx != null);
+
+                if (!string.IsNullOrWhiteSpace(lStacktrace)) {
+                    lMessage.AppendLine(lStacktrace);
+                }
+
+                return lMessage.ToString();
             }
         }
         #endregion

@@ -7,7 +7,7 @@ namespace Exp.Api {
         #endregion
 
         #region Konstruktor
-        protected ApiBase() { }
+        public ApiBase() { }
         #endregion
 
         #region Methoden
@@ -15,8 +15,13 @@ namespace Exp.Api {
             return GetItem(aID).Any();
         }
 
+        //Patrik: Neuer Get berücksichtigen
         private protected void Remove(string aID) {
-            mDataList.Remove(Get(aID));
+            T? lItem = Get(aID);
+
+            if (lItem != null) {
+                mDataList.Remove(lItem);
+            }
         }
 
         private protected void Clear() {
@@ -35,10 +40,11 @@ namespace Exp.Api {
             T? lItem = GetItem(aID).FirstOrDefault();
 
             if (lItem == null) {
-                throw new Exception.ItemNotFoundException(aID);
-            } else {
-                return lItem;
+                ExceptionHandler.Add(new Exception.ItemNotFoundException(aID));
+                lItem = mDataList.First();
             }
+
+            return lItem;
         }
 
         /// <summary>Liest die Anzahl der Einträge in der Aufzählung.</summary>

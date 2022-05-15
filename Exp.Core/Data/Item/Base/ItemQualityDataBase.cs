@@ -1,4 +1,4 @@
-﻿using Exp.Extension;
+﻿using Exp.Util.Extension;
 
 namespace Exp.Data.Item {
     public abstract class ItemQualityDataBase : DataBase {

@@ -1,5 +1,9 @@
 ﻿namespace Exp.DefaultMod {
     public class Main : IMain {
+        public string Description { get; } = "Standardimplementierung von Expired";
+
+        public Main() { }
+
         public void Initialize() {
             // General
             AddActionTypeData();

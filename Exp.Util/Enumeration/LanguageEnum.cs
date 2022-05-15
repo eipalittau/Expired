@@ -2,9 +2,9 @@
     public sealed class LanguageEnum : EnumerationBase {
         #region Properties / Felder
         #region Static
-        internal static LanguageEnum None = new(0, nameof(None), string.Empty);
-        public static LanguageEnum Deutsch = new(1, nameof(Deutsch), "de");
-        public static LanguageEnum English = new(2, nameof(English), "en");
+        internal static LanguageEnum None = new(-1, nameof(None), string.Empty);
+        public static LanguageEnum Deutsch = new(0, nameof(Deutsch), "de");
+        public static LanguageEnum English = new(1, nameof(English), "en");
         #endregion
 
         #region Instance
@@ -14,7 +14,7 @@
 
         #region Konstruktor
         private LanguageEnum(int aID, string aLanguage, string aISO)
-            :base(aID, aLanguage, string.Empty)
+            : base(aID, aLanguage, string.Empty)
             => ISO = aISO;
         #endregion
 

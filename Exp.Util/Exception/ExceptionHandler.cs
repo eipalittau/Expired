@@ -16,6 +16,10 @@ namespace Exp.Util {
             }
         }
 
+        public static void Add(System.Exception aEx) {
+            Add(new GeneralException(aEx));
+        }
+
         public static IList<ExceptionBase> GetExceptionList() {
             return ExceptionList.AsReadOnly();
         }
