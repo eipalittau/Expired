@@ -1,4 +1,4 @@
-﻿using Exp.Util;
+using Exp.Util;
 using Exp.Util.Extension;
 using System.Text;
 
@@ -24,9 +24,9 @@ namespace Exp.Exception {
             Priority = PriorityEnum.Error;
 
             if (aArguments.HasData()) {
-                Message = ConcatWithInnerException(string.Format(Localisation.GetText(ID, this.GetType().Assembly), aArguments), aEx);
+                Message = ConcatWithInnerException(string.Format(Localisation.GetText(ID, lType.Assembly), aArguments), aEx);
             } else {
-                Message = ConcatWithInnerException(Localisation.GetText(base.Message, this.GetType().Assembly), aEx);
+                Message = ConcatWithInnerException(Localisation.GetText(ID, lType.Assembly), aEx);
             }
         }
 
