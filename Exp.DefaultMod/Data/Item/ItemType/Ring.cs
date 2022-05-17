@@ -1,8 +1,10 @@
-﻿namespace Exp.DefaultMod.Item.ItemType {
-    public sealed class Ring : Exp.Data.Item.ItemTypeDataBase, Exp.Data.Item.IItemTypeData {
+﻿using Exp.Data.Item.ItemType;
+
+namespace Exp.DefaultMod.Item.ItemType {
+    public sealed class Ring : ItemTypeDataBase, IItemTypeData {
         #region Konstruktor
         private Ring()
-            : base(nameof(Ring), 1300, null, 
+            : base(nameof(Ring), 1300, 
                   Api.Player.Slot.Singleton.Get(nameof(Player.Slot.RingFingerLeft)), 
                   Api.Player.Slot.Singleton.Get(nameof(Player.Slot.RingFingerRight))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Ring");

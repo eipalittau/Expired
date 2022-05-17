@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Feat.Wonder {
-    public sealed class ThingT : Exp.Data.Feat.WonderDataBase, Exp.Data.Feat.IWonderData {
+﻿using Exp.Data.Feat.Wonder;
+
+namespace Exp.DefaultMod.Feat.Wonder {
+    public sealed class ThingT : WonderDataBase, IWonderData {
         #region Konstruktor
         private ThingT()
             : base(nameof(ThingT), 400, Api.General.Tier.Singleton.Get(nameof(General.Tier.One)), Api.General.ActionType.Singleton.Get(nameof(General.ActionType.Standard))) {

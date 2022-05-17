@@ -1,5 +1,7 @@
+using Exp.Data.Misc.Recollection;
+
 namespace Exp.DefaultMod.Misc.Recollection {
-    public sealed class DrinkSpilled : Exp.Data.Misc.RecollectionDataBase, Exp.Data.Misc.IRecollectionData {
+    public sealed class DrinkSpilled : RecollectionDataBase, IRecollectionData {
         #region Konstruktor
         private DrinkSpilled()
             : base(nameof(DrinkSpilled), 400, 21, 25) {

@@ -1,8 +1,11 @@
-﻿namespace Exp.DefaultMod.Feat.Offensive {
-    public sealed class BattleHardened : Exp.Data.Feat.OffensiveDataBase, Exp.Data.Feat.IOffensiveData {
+﻿using Exp.Data.Feat.Offensive;
+using Exp.Data.General.DamageType;
+
+namespace Exp.DefaultMod.Feat.Offensive {
+    public sealed class BattleHardened : OffensiveDataBase, IOffensiveData {
         #region Konstruktor
         private BattleHardened()
-            : base(nameof(BattleHardened), 100, Api.General.Tier.Singleton.Get(nameof(General.Tier.One)), null) {
+            : base(nameof(BattleHardened), 100, Api.General.Tier.Singleton.Get(nameof(General.Tier.One))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Kampferprobt");
             Name.Set(Util.LanguageEnum.English, "Battle hardened");
             LoreDescription.Set(Util.LanguageEnum.Deutsch, "Immer Mitten in die Fresse rein...");
@@ -17,11 +20,11 @@
             AddInstance(new BattleHardened());
         }
 
-        public new int OnAttackPassiv(params Exp.Data.General.IDamageTypeData[] aDamageTypes) {
+        public new int OnAttackPassiv(params IDamageTypeData[] aDamageTypes) {
             return 1;
         }
 
-        public new int OnDamagePassiv(params Exp.Data.General.IDamageTypeData[] aDamageTypes) {
+        public new int OnDamagePassiv(params IDamageTypeData[] aDamageTypes) {
             return 1;
         }
         #endregion

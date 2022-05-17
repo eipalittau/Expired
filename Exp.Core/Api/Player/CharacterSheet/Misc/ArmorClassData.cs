@@ -1,6 +1,8 @@
 ﻿namespace Exp.Api.Player.Sheet {
     public sealed class ArmorClassData : SheetBase {
         #region Properties / Felder
+
+        public int Natural { get; set; }
         #endregion
 
         #region Konstruktor

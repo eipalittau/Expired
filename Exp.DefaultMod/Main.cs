@@ -1,7 +1,5 @@
 ﻿namespace Exp.DefaultMod {
     public class Main : IMain {
-        public string Description { get; } = "Standardimplementierung von Expired";
-
         public Main() { }
 
         public void Initialize() {
@@ -274,6 +272,7 @@
 
         #region Player
         private static void AddLevelUp() {
+            Player.LevelUp.Armor.Add();
             Player.LevelUp.Feat.Add();
             Player.LevelUp.Health.Add();
             Player.LevelUp.Movement.Add();

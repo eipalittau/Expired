@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Item.Effect {
-    public sealed class Primary : Exp.Data.Item.EffectDataBase, Exp.Data.Item.IEffectData {
+﻿using Exp.Data.Item.Effect;
+
+namespace Exp.DefaultMod.Item.Effect {
+    public sealed class Primary : EffectDataBase, IEffectData {
         #region Konstruktor
         private Primary()
             : base(nameof(Primary), 100) {

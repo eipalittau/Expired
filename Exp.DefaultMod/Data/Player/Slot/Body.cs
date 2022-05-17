@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Player.Slot {
-    public sealed class Body : Exp.Data.Player.SlotDataBase, Exp.Data.Player.ISlotData {
+﻿using Exp.Data.Player.Slot;
+
+namespace Exp.DefaultMod.Player.Slot {
+    public sealed class Body : SlotDataBase, ISlotData {
         #region Konstruktor
         private Body()
             : base(nameof(Body), 100, true) {

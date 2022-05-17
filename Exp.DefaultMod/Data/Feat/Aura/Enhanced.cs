@@ -1,8 +1,10 @@
-﻿namespace Exp.DefaultMod.Feat.Aura {
-    public sealed class Enhanced : Exp.Data.Feat.AuraDataBase, Exp.Data.Feat.IAuraData {
+﻿using Exp.Data.Feat.Aura;
+
+namespace Exp.DefaultMod.Feat.Aura {
+    public sealed class Enhanced : AuraDataBase, IAuraData {
         #region Konstruktor
         private Enhanced()
-            : base(nameof(Enhanced), 800, Api.General.Tier.Singleton.Get(nameof(General.Tier.One)), null) {
+            : base(nameof(Enhanced), 800, Api.General.Tier.Singleton.Get(nameof(General.Tier.One))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Verstärkte Aura");
             Name.Set(Util.LanguageEnum.English, "Enhanced aura");
             LoreDescription.Set(Util.LanguageEnum.Deutsch, "");

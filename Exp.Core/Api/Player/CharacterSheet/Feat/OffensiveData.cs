@@ -1,6 +1,8 @@
-﻿namespace Exp.Api.Player.Sheet {
+﻿using Exp.Data.Feat.Offensive;
+
+namespace Exp.Api.Player.Sheet {
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-    public sealed class OffensiveData : FeatDataBase<Data.Feat.IOffensiveData> {
+    public sealed class OffensiveData : FeatDataBase<IOffensiveData> {
         #region Properties / Felder
         public int AttackBonus { get; private set; }
         public int DamageBonus { get; private set; }
@@ -11,11 +13,11 @@
         #endregion
 
         #region Methoden
-        public new void AddTalent(Data.Feat.IOffensiveData aTalent) {
+        public new void AddTalent(IOffensiveData aTalent) {
             base.AddTalent(aTalent);
         }
 
-        public void LevelUp(Data.Feat.IOffensiveData aTalent) {
+        public void LevelUp(IOffensiveData aTalent) {
             base.AddTalent(aTalent);
             IncreaseBonus();
         }
@@ -25,7 +27,7 @@
             DamageBonus++;
         }
 
-        public new IList<Data.Feat.IOffensiveData> Enumerate() {
+        public new IList<IOffensiveData> Enumerate() {
             return base.Enumerate();
         }
         #endregion

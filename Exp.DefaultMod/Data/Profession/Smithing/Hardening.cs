@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Profession.Smithing {
-    public sealed class Hardening : Data.Profession.SmithingDataBase, Data.Profession.ISmithingData {
+﻿using Exp.Data.Profession.Smithing;
+
+namespace Exp.DefaultMod.Profession.Smithing {
+    public sealed class Hardening : SmithingDataBase, ISmithingData {
         #region Konstruktor
         private Hardening()
             : base(nameof(Hardening), 200,

@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Feat.Wizardry {
-    public sealed class Shield : Exp.Data.Feat.WizardryDataBase, Exp.Data.Feat.IWizardryData {
+﻿using Exp.Data.Feat.Wizardry;
+
+namespace Exp.DefaultMod.Feat.Wizardry {
+    public sealed class Shield : WizardryDataBase, IWizardryData {
         #region Konstruktor
         private Shield()
             : base(nameof(Shield), 400, Api.General.Tier.Singleton.Get(nameof(General.Tier.One)), Api.General.ActionType.Singleton.Get(nameof(General.ActionType.Free))) {

@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Feat.Wonder {
-    public sealed class Tartaros : Exp.Data.Feat.WonderDataBase, Exp.Data.Feat.IWonderData {
+﻿using Exp.Data.Feat.Wonder;
+
+namespace Exp.DefaultMod.Feat.Wonder {
+    public sealed class Tartaros : WonderDataBase, IWonderData {
         #region Konstruktor
         private Tartaros()
             : base(nameof(Tartaros), 1600, Api.General.Tier.Singleton.Get(nameof(General.Tier.Three))) {

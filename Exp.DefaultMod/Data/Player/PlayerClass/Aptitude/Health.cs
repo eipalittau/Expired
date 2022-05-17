@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Player.PlayerClass.Aptitude {
-    public sealed class Health : Data.Misc.AptitudeDataBase, Data.Misc.IAptitudeData {
+﻿using Exp.Data.Misc.Aptitude;
+
+namespace Exp.DefaultMod.Player.PlayerClass.Aptitude {
+    public sealed class Health : AptitudeDataBase, IAptitudeData {
         #region Konstruktor
         public Health()
             : base(nameof(Health), Api.General.TargetEffectEnum.Health) {

@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.General.ActionType {
-    public sealed class Standard : Exp.Data.General.ActionTypeBase, Exp.Data.General.IActionTypeData {
+﻿using Exp.Data.General.ActionType;
+
+namespace Exp.DefaultMod.General.ActionType {
+    public sealed class Standard : ActionTypeBase, IActionTypeData {
         #region Konstruktor
         private Standard()
             : base(nameof(Standard), 3, 1.5) {

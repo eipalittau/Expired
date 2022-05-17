@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Feat.Wizardry {
-    public sealed class Thanos : Exp.Data.Feat.WizardryDataBase, Exp.Data.Feat.IWizardryData {
+﻿using Exp.Data.Feat.Wizardry;
+
+namespace Exp.DefaultMod.Feat.Wizardry {
+    public sealed class Thanos : WizardryDataBase, IWizardryData {
         #region Konstruktor
         private Thanos()
             : base(nameof(Thanos), 1800, Api.General.Tier.Singleton.Get(nameof(General.Tier.Three)), Api.General.ActionType.Singleton.Get(nameof(General.ActionType.Standard))) {

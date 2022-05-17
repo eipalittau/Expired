@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Misc.Recollection {
-    public sealed class BeenPushed : Exp.Data.Misc.RecollectionDataBase, Exp.Data.Misc.IRecollectionData {
+﻿using Exp.Data.Misc.Recollection;
+
+namespace Exp.DefaultMod.Misc.Recollection {
+    public sealed class BeenPushed : RecollectionDataBase, IRecollectionData {
         #region Konstruktor
         private BeenPushed()
             : base(nameof(BeenPushed), 200, 11, 15) {

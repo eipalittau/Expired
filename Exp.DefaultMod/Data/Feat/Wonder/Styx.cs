@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Feat.Wonder {
-    public sealed class Styx : Exp.Data.Feat.WonderDataBase, Exp.Data.Feat.IWonderData {
+﻿using Exp.Data.Feat.Wonder;
+
+namespace Exp.DefaultMod.Feat.Wonder {
+    public sealed class Styx : WonderDataBase, IWonderData {
         #region Konstruktor
         private Styx()
             : base(nameof(Styx), 1800, Api.General.Tier.Singleton.Get(nameof(General.Tier.Three)), Api.General.ActionType.Singleton.Get(nameof(General.ActionType.Standard))) {

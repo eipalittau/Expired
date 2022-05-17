@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Feat.Wonder {
-    public sealed class ChannelingNegativeEnergy : Exp.Data.Feat.WonderDataBase, Exp.Data.Feat.IWonderData {
+﻿using Exp.Data.Feat.Wonder;
+
+namespace Exp.DefaultMod.Feat.Wonder {
+    public sealed class ChannelingNegativeEnergy : WonderDataBase, IWonderData {
         #region Konstruktor
         private ChannelingNegativeEnergy()
             : base(nameof(ChannelingNegativeEnergy), 1100, Api.General.Tier.Singleton.Get(nameof(General.Tier.Two)), Api.General.ActionType.Singleton.Get(nameof(General.ActionType.Standard))) {

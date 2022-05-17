@@ -1,5 +1,7 @@
-﻿namespace Exp.Api.General {
-    public sealed class Tier : ApiBase<Data.General.ITierData> {
+﻿using Exp.Data.General.Tier;
+
+namespace Exp.Api.General {
+    public sealed class Tier : ApiBase<ITierData> {
         #region Properties / Felder
         public static Tier Singleton { get; } = new();
         #endregion
@@ -17,11 +19,11 @@
             base.Clear();
         }
 
-        public new IList<Data.General.ITierData> Enumerate() {
+        public new IList<ITierData> Enumerate() {
             return base.Enumerate();
         }
 
-        public new Data.General.ITierData Get(string aID) {
+        public new ITierData Get(string aID) {
             return base.Get(aID);
         }
 
@@ -29,7 +31,7 @@
             return base.Count();
         }
 
-        internal new void Add(Data.General.ITierData aItem) {
+        internal new void Add(ITierData aItem) {
             base.Add(aItem);
         }
         #endregion

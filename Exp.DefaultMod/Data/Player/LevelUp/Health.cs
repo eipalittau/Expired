@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Player.LevelUp {
-    public sealed class Health : Data.Player.LevelUpDataBase, Data.Player.ILevelUpData {
+﻿using Exp.Data.Player.LevelUp;
+
+namespace Exp.DefaultMod.Player.LevelUp {
+    public sealed class Health : LevelUpDataBase, ILevelUpData {
         #region Konstruktor
         private Health()
             : base(Api.General.TargetEffectEnum.Health, new Api.Helper.ModifierData(1, 0, 4)) {

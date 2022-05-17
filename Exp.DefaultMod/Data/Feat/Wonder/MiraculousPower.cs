@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Feat.Wonder {
-    public sealed class MiraculousPower : Exp.Data.Feat.WonderDataBase, Exp.Data.Feat.IWonderData {
+﻿using Exp.Data.Feat.Wonder;
+
+namespace Exp.DefaultMod.Feat.Wonder {
+    public sealed class MiraculousPower : WonderDataBase, IWonderData {
         #region Konstruktor
         private MiraculousPower()
             : base(nameof(MiraculousPower), 800, Api.General.Tier.Singleton.Get(nameof(General.Tier.One))) {

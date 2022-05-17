@@ -1,5 +1,7 @@
-﻿namespace Exp.Api.Profession {
-    public sealed class Smithing : ApiBase<Data.Profession.ISmithingData> {
+﻿using Exp.Data.Profession.Smithing;
+
+namespace Exp.Api.Profession {
+    public sealed class Smithing : ApiBase<ISmithingData> {
         #region Properties / Felder
         public static Smithing Singleton { get; } = new();
         #endregion
@@ -17,11 +19,11 @@
             base.Clear();
         }
 
-        public new IList<Data.Profession.ISmithingData> Enumerate() {
+        public new IList<ISmithingData> Enumerate() {
             return base.Enumerate();
         }
 
-        public new Data.Profession.ISmithingData Get(string aID) {
+        public new ISmithingData Get(string aID) {
             return base.Get(aID);
         }
 
@@ -29,7 +31,7 @@
             return base.Count();
         }
 
-        public new void Add(Data.Profession.ISmithingData aItem) {
+        public new void Add(ISmithingData aItem) {
             base.Add(aItem);
         }
         #endregion

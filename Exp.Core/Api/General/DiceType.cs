@@ -1,8 +1,8 @@
-﻿using Exp.Data.General;
+﻿using Exp.Data.General.DiceType;
 using Exp.Util;
 
 namespace Exp.Api.General {
-    public sealed class DiceType : ApiBase<Data.General.IDiceTypeData> {
+    public sealed class DiceType : ApiBase<IDiceTypeData> {
         #region Properties / Felder
         public static DiceType Singleton { get; } = new();
         #endregion

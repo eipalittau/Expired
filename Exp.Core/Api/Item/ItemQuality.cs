@@ -1,5 +1,7 @@
-﻿namespace Exp.Api.Item {
-    public sealed class ItemQuality : ApiBase<Data.Item.IItemQualityData> {
+﻿using Exp.Data.Item.ItemQuality;
+
+namespace Exp.Api.Item {
+    public sealed class ItemQuality : ApiBase<IItemQualityData> {
         #region Properties / Felder
         public static ItemQuality Singleton { get; } = new();
         #endregion
@@ -17,11 +19,11 @@
             base.Clear();
         }
 
-        public new IList<Data.Item.IItemQualityData> Enumerate() {
+        public new IList<IItemQualityData> Enumerate() {
             return base.Enumerate();
         }
 
-        public new Data.Item.IItemQualityData Get(string aID) {
+        public new IItemQualityData Get(string aID) {
             return base.Get(aID);
         }
 
@@ -29,7 +31,7 @@
             return base.Count();
         }
 
-        public new void Add(Data.Item.IItemQualityData aItem) {
+        public new void Add(IItemQualityData aItem) {
             base.Add(aItem);
         }
         #endregion

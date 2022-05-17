@@ -1,5 +1,7 @@
-﻿namespace Exp.Api.Enemy {
-    public sealed class EnemyClass : ApiBase<Data.Enemy.IEnemyClassData> {
+﻿using Exp.Data.Enemy.EnemyClass;
+
+namespace Exp.Api.Enemy {
+    public sealed class EnemyClass : ApiBase<IEnemyClassData> {
         #region Properties / Felder
         public static EnemyClass Singleton { get; } = new();
         #endregion
@@ -17,11 +19,11 @@
             base.Clear();
         }
         
-        public new IList<Data.Enemy.IEnemyClassData> Enumerate() {
+        public new IList<IEnemyClassData> Enumerate() {
             return base.Enumerate();
         }
 
-        public new Data.Enemy.IEnemyClassData Get(string aID) {
+        public new IEnemyClassData Get(string aID) {
             return base.Get(aID);
         }
 
@@ -29,7 +31,7 @@
             return base.Count();
         }
 
-        public new void Add(Data.Enemy.IEnemyClassData aItem) {
+        public new void Add(IEnemyClassData aItem) {
             base.Add(aItem);
         }
         #endregion

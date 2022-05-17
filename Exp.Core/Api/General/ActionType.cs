@@ -1,5 +1,7 @@
-﻿namespace Exp.Api.General {
-    public sealed class ActionType : ApiBase<Data.General.IActionTypeData> {
+﻿using Exp.Data.General.ActionType;
+
+namespace Exp.Api.General {
+    public sealed class ActionType : ApiBase<IActionTypeData> {
         #region Properties / Felder
         public static ActionType Singleton { get; } = new();
 
@@ -22,11 +24,11 @@
             base.Clear();
         }
 
-        public new IList<Data.General.IActionTypeData> Enumerate() {
+        public new IList<IActionTypeData> Enumerate() {
             return base.Enumerate();
         }
 
-        public new Data.General.IActionTypeData Get(string aID) {
+        public new IActionTypeData Get(string aID) {
             return base.Get(aID);
         }
 
@@ -34,7 +36,7 @@
             return base.Count();
         }
 
-        internal new void Add(Data.General.IActionTypeData aItem) {
+        internal new void Add(IActionTypeData aItem) {
             base.Add(aItem);
         }
 
@@ -42,7 +44,7 @@
             RemainingActions = Limit;
         }
 
-        public bool ExecuteAction(Data.General.IActionTypeData aAction) {
+        public bool ExecuteAction(IActionTypeData aAction) {
             if (RemainingActions - aAction.Weight < 0) {
                 return false;
             } 

@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Item.Item {
-    public sealed class ArmorFighter1 : Exp.Data.Item.ItemDataBase, Exp.Data.Item.IItemData {
+﻿using Exp.Data.Item.Item;
+
+namespace Exp.DefaultMod.Item.Item {
+    public sealed class ArmorFighter1 : ItemDataBase, IItemData {
         #region Konstruktor
         private ArmorFighter1()
             : base(nameof(ArmorFighter1), 1, 

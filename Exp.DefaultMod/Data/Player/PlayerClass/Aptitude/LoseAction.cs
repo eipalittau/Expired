@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Player.PlayerClass.Aptitude {
-    public sealed class LoseAction : Data.Misc.AptitudeDataBase, Data.Misc.IAptitudeData {
+﻿using Exp.Data.Misc.Aptitude;
+
+namespace Exp.DefaultMod.Player.PlayerClass.Aptitude {
+    public sealed class LoseAction : AptitudeDataBase, IAptitudeData {
         #region Konstruktor
         public LoseAction()
             : base(nameof(LoseAction), Api.General.TargetEffectEnum.LoseAction, Api.General.ActionType.Singleton.Get(nameof(General.ActionType.Free))) {

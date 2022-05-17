@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Profession.Smithing {
-    public sealed class Refining : Data.Profession.SmithingDataBase, Data.Profession.ISmithingData {
+﻿using Exp.Data.Profession.Smithing;
+
+namespace Exp.DefaultMod.Profession.Smithing {
+    public sealed class Refining : SmithingDataBase, ISmithingData {
         #region Konstruktor
         private Refining()
             : base(nameof(Refining), 300,

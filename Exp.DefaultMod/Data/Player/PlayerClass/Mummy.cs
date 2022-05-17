@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Player.PlayerClass {
-    public sealed class Mummy : Exp.Data.Player.PlayerClassDataBase, Exp.Data.Player.IPlayerClassData {
+﻿using Exp.Data.Player.PlayerClass;
+
+namespace Exp.DefaultMod.Player.PlayerClass {
+    public sealed class Mummy : PlayerClassDataBase, IPlayerClassData {
         #region Konstruktor
         private Mummy()
             : base(nameof(Mummy), 300, "Justin", new Aptitude.Skill()) {

@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Misc.Recollection {
-    public sealed class ReceivedSlap : Exp.Data.Misc.RecollectionDataBase, Exp.Data.Misc.IRecollectionData {
+﻿using Exp.Data.Misc.Recollection;
+
+namespace Exp.DefaultMod.Misc.Recollection {
+    public sealed class ReceivedSlap : RecollectionDataBase, IRecollectionData {
         #region Konstruktor
         private ReceivedSlap()
             : base(nameof(ReceivedSlap), 100, 1, 10) {

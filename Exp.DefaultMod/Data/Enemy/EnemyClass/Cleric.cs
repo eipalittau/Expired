@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Enemy.EnemyClass {
-    public sealed class Cleric : Exp.Data.Enemy.EnemyClassBase, Exp.Data.Enemy.IEnemyClassData {
+﻿using Exp.Data.Enemy.EnemyClass;
+
+namespace Exp.DefaultMod.Enemy.EnemyClass {
+    public sealed class Cleric : EnemyClassBase, IEnemyClassData {
         #region Konstruktor
         private Cleric()
             : base(nameof(Cleric), 200, 200) {

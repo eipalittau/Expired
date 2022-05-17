@@ -1,6 +1,8 @@
-﻿namespace Exp.Api.Player.Sheet {
+﻿using Exp.Data.Feat.Wizardry;
+
+namespace Exp.Api.Player.Sheet {
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-    public sealed class WizardryData : FeatDataBase<Data.Feat.IWizardryData> {
+    public sealed class WizardryData : FeatDataBase<IWizardryData> {
         #region Properties / Felder
         public int ManaBonus { get; private set; }
         #endregion
@@ -10,11 +12,11 @@
         #endregion
 
         #region Methoden
-        public new void AddTalent(Data.Feat.IWizardryData aTalent) {
+        public new void AddTalent(IWizardryData aTalent) {
             base.AddTalent(aTalent);
         }
 
-        public void LevelUp(Data.Feat.IWizardryData aTalent) {
+        public void LevelUp(IWizardryData aTalent) {
             base.AddTalent(aTalent);
             IncreaseBonus();
         }
@@ -23,7 +25,7 @@
             ManaBonus++;
         }
 
-        public new IList<Data.Feat.IWizardryData> Enumerate() {
+        public new IList<IWizardryData> Enumerate() {
             return base.Enumerate();
         }
         #endregion

@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Feat.Wizardry {
-    public sealed class ImprovedMagicWave : Exp.Data.Feat.WizardryDataBase, Exp.Data.Feat.IWizardryData {
+﻿using Exp.Data.Feat.Wizardry;
+
+namespace Exp.DefaultMod.Feat.Wizardry {
+    public sealed class ImprovedMagicWave : WizardryDataBase, IWizardryData {
         #region Konstruktor
         private ImprovedMagicWave()
             : base(nameof(ImprovedMagicWave), 1300, 

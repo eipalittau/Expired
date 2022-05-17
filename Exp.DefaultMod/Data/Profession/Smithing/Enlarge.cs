@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Profession.Smithing {
-    public sealed class Enlarge : Data.Profession.SmithingDataBase, Data.Profession.ISmithingData {
+﻿using Exp.Data.Profession.Smithing;
+
+namespace Exp.DefaultMod.Profession.Smithing {
+    public sealed class Enlarge : SmithingDataBase, ISmithingData {
         #region Konstruktor
         private Enlarge()
             : base(nameof(Enlarge), 1100,

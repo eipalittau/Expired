@@ -1,5 +1,7 @@
-﻿namespace Exp.Api.Player {
-    public sealed class LevelUp : ApiBase<Data.Player.ILevelUpData> {
+﻿using Exp.Data.Player.LevelUp;
+
+namespace Exp.Api.Player {
+    public sealed class LevelUp : ApiBase<ILevelUpData> {
         #region Properties / Felder
         public static LevelUp Singleton { get; } = new();
         #endregion
@@ -21,11 +23,11 @@
             base.Clear();
         }
 
-        public new IList<Data.Player.ILevelUpData> Enumerate() {
+        public new IList<ILevelUpData> Enumerate() {
             return base.Enumerate();
         }
 
-        public Data.Player.ILevelUpData Get(General.TargetEffectEnum aChanger) {
+        public ILevelUpData Get(General.TargetEffectEnum aChanger) {
             return base.Get(aChanger.Name);
         }
 
@@ -33,7 +35,7 @@
             return base.Count();
         }
 
-        public new void Add(Data.Player.ILevelUpData aItem) {
+        public new void Add(ILevelUpData aItem) {
             base.Add(aItem);
         }
         #endregion

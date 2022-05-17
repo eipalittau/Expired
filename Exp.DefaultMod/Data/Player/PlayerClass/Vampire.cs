@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Player.PlayerClass {
-    public sealed class Vampire : Exp.Data.Player.PlayerClassDataBase, Exp.Data.Player.IPlayerClassData {
+﻿using Exp.Data.Player.PlayerClass;
+
+namespace Exp.DefaultMod.Player.PlayerClass {
+    public sealed class Vampire : PlayerClassDataBase, IPlayerClassData {
         #region Konstruktor
         private Vampire()
             : base(nameof(Vampire), 400, "Chantal", new Aptitude.Movement()) {

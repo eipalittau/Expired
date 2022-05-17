@@ -1,5 +1,9 @@
-﻿namespace Exp.DefaultMod.Feat.Offensive {
-    public sealed class Stonethrower : Exp.Data.Feat.OffensiveDataBase, Exp.Data.Feat.IOffensiveData {
+﻿using Exp.Data.Feat.Offensive;
+using Exp.Data.General.DamageType;
+using Exp.Data.General.DiceType;
+
+namespace Exp.DefaultMod.Feat.Offensive {
+    public sealed class Stonethrower : OffensiveDataBase, IOffensiveData {
         #region Konstruktor
         private Stonethrower()
             : base(nameof(Stonethrower), 200, Api.General.Tier.Singleton.Get(nameof(General.Tier.One)), Api.General.ActionType.Singleton.Get(nameof(General.ActionType.Standard))) {
@@ -25,7 +29,7 @@
             return 1;
         }
 
-        public new Exp.Data.General.IDiceTypeData? OverrideDiceType(params Exp.Data.General.IDamageTypeData[] aDamageTypes) {
+        public new IDiceTypeData? OverrideDiceType(params IDamageTypeData[] aDamageTypes) {
             if (base.CheckDamageType(Api.General.DamageType.Singleton.Get(nameof(General.DamageType.RangedCombat)), aDamageTypes)) {
                 return Api.General.DiceType.Singleton.Get(nameof(General.DiceType.D4));
             } else {

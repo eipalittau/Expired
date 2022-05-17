@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Profession.Smithing {
-    public sealed class WitchSmithy : Data.Profession.SmithingDataBase, Data.Profession.ISmithingData {
+﻿using Exp.Data.Profession.Smithing;
+
+namespace Exp.DefaultMod.Profession.Smithing {
+    public sealed class WitchSmithy : SmithingDataBase, ISmithingData {
         #region Konstruktor
         private WitchSmithy()
             : base(nameof(WitchSmithy), 1500, Api.General.Tier.Singleton.Get(nameof(General.Tier.Three))) {

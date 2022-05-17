@@ -1,6 +1,8 @@
-﻿namespace Exp.Api.Player.Sheet {
+﻿using Exp.Data.Feat.Wonder;
+
+namespace Exp.Api.Player.Sheet {
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-    public sealed class WonderData : FeatDataBase<Data.Feat.IWonderData> {
+    public sealed class WonderData : FeatDataBase<IWonderData> {
         #region Properties / Felder
         public int ManaBonus { get; private set; }
         #endregion
@@ -10,11 +12,11 @@
         #endregion
 
         #region Methoden
-        public new void AddTalent(Data.Feat.IWonderData aTalent) {
+        public new void AddTalent(IWonderData aTalent) {
             base.AddTalent(aTalent);
         }
 
-        public void LevelUp(Data.Feat.IWonderData aTalent) {
+        public void LevelUp(IWonderData aTalent) {
             base.AddTalent(aTalent);
             IncreaseBonus();
         }
@@ -23,7 +25,7 @@
             ManaBonus++;
         }
 
-        public new IList<Data.Feat.IWonderData> Enumerate() {
+        public new IList<IWonderData> Enumerate() {
             return base.Enumerate();
         }
         #endregion

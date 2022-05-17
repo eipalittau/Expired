@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Player.PlayerClass {
-    public sealed class RyldsShowerWater : Data.Player.PlayerClassDataBase, Data.Player.IPlayerClassData {
+﻿using Exp.Data.Player.PlayerClass;
+
+namespace Exp.DefaultMod.Player.PlayerClass {
+    public sealed class RyldsShowerWater : PlayerClassDataBase, IPlayerClassData {
         #region Konstruktor
         private RyldsShowerWater()
             : base(nameof(RyldsShowerWater), 700, "*Würg*") {

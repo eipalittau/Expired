@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Feat.Defensive {
-    public sealed class SecondWind : Exp.Data.Feat.DefensiveDataBase, Exp.Data.Feat.IDefensiveData {
+﻿using Exp.Data.Feat.Defensive;
+
+namespace Exp.DefaultMod.Feat.Defensive {
+    public sealed class SecondWind : DefensiveDataBase, IDefensiveData {
         #region Konstruktor
         private SecondWind()
             : base(nameof(SecondWind), 1000, Api.General.Tier.Singleton.Get(nameof(General.Tier.Two)), Api.General.ActionType.Singleton.Get(nameof(General.ActionType.Standard))) {

@@ -1,8 +1,10 @@
-﻿namespace Exp.DefaultMod.Item.ItemType {
-    public sealed class OneHandedWeapon : Exp.Data.Item.ItemTypeDataBase, Exp.Data.Item.IItemTypeData {
+﻿using Exp.Data.Item.ItemType;
+
+namespace Exp.DefaultMod.Item.ItemType {
+    public sealed class OneHandedWeapon : ItemTypeDataBase, IItemTypeData {
         #region Konstruktor
         private OneHandedWeapon()
-            : base(nameof(OneHandedWeapon), 300, null, 
+            : base(nameof(OneHandedWeapon), 300, 
                   Api.Player.Slot.Singleton.Get(nameof(Player.Slot.Mainhand)), 
                   Api.Player.Slot.Singleton.Get(nameof(Player.Slot.Offhand))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Einhandwaffe");

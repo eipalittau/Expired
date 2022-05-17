@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Feat.Wonder {
-    public sealed class AccurateWeapon : Exp.Data.Feat.WonderDataBase, Exp.Data.Feat.IWonderData {
+﻿using Exp.Data.Feat.Wonder;
+
+namespace Exp.DefaultMod.Feat.Wonder {
+    public sealed class AccurateWeapon : WonderDataBase, IWonderData {
         #region Konstruktor
         private AccurateWeapon()
             : base(nameof(AccurateWeapon), 1000, Api.General.Tier.Singleton.Get(nameof(General.Tier.Two))) {

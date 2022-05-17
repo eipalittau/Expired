@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Player.PlayerClass.Aptitude {
-    public sealed class Skill : Data.Misc.AptitudeDataBase, Data.Misc.IAptitudeData {
+﻿using Exp.Data.Misc.Aptitude;
+
+namespace Exp.DefaultMod.Player.PlayerClass.Aptitude {
+    public sealed class Skill : AptitudeDataBase, IAptitudeData {
         #region Konstruktor
         public Skill()
             : base(nameof(Skill), Api.General.TargetEffectEnum.SkillPoints) {

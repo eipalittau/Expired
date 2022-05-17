@@ -1,4 +1,4 @@
-﻿using Exp.Util;
+﻿using Exp.Data.Skill.SkillType;
 
 namespace Exp.Api.Player.Sheet {
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
@@ -6,17 +6,17 @@ namespace Exp.Api.Player.Sheet {
         #region Properties / Felder
         public int Level { get; set; } = 0;
         public int MaxLevel { get; set; } = int.MaxValue;
-        public Data.Skill.ISkillTypeData SkillType { get; init; }
+        public ISkillTypeData SkillType { get; init; }
         #endregion
 
         #region Konstruktor
-        internal SkillData(Data.Skill.ISkillTypeData aSkillType) {
+        internal SkillData(ISkillTypeData aSkillType) {
             SkillType = aSkillType;
         }
 
         internal void LevelUp() {
             if (Level == MaxLevel) {
-                ExceptionHandler.Add(new Exception.MaximumExceededException(SkillType.ID, MaxLevel));
+                Util.ExceptionHandler.Add(new Exception.MaximumExceededException(SkillType.ID, MaxLevel));
             } else {
                 Level++;
             }

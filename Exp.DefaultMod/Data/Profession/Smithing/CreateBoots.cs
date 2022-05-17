@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Profession.Smithing {
-    public sealed class CreateBoots : Data.Profession.SmithingDataBase, Data.Profession.ISmithingData {
+﻿using Exp.Data.Profession.Smithing;
+
+namespace Exp.DefaultMod.Profession.Smithing {
+    public sealed class CreateBoots : SmithingDataBase, ISmithingData {
         #region Konstruktor
         private CreateBoots()
             : base(nameof(CreateBoots), 500,

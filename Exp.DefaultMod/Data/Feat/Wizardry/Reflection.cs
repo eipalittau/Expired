@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Feat.Wizardry {
-    public sealed class Reflection : Exp.Data.Feat.WizardryDataBase, Exp.Data.Feat.IWizardryData {
+﻿using Exp.Data.Feat.Wizardry;
+
+namespace Exp.DefaultMod.Feat.Wizardry {
+    public sealed class Reflection : WizardryDataBase, IWizardryData {
         #region Konstruktor
         private Reflection()
             : base(nameof(Reflection), 300, Api.General.Tier.Singleton.Get(nameof(General.Tier.One)), Api.General.ActionType.Singleton.Get(nameof(General.ActionType.Standard))) {

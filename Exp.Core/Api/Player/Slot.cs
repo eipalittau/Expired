@@ -1,5 +1,7 @@
-﻿namespace Exp.Api.Player {
-    public sealed class Slot : ApiBase<Data.Player.ISlotData> {
+﻿using Exp.Data.Player.Slot;
+
+namespace Exp.Api.Player {
+    public sealed class Slot : ApiBase<ISlotData> {
         #region Properties / Felder
         public static Slot Singleton { get; } = new();
         #endregion
@@ -17,11 +19,11 @@
             base.Clear();
         }
 
-        public new IList<Data.Player.ISlotData> Enumerate() {
+        public new IList<ISlotData> Enumerate() {
             return base.Enumerate();
         }
 
-        public new Data.Player.ISlotData Get(string aID) {
+        public new ISlotData Get(string aID) {
             return base.Get(aID);
         }
 
@@ -29,7 +31,7 @@
             return base.Count();
         }
 
-        public new void Add(Data.Player.ISlotData aItem) {
+        public new void Add(ISlotData aItem) {
             base.Add(aItem);
         }
         #endregion

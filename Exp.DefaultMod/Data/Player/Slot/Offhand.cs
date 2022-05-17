@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Player.Slot {
-    public sealed class Offhand : Exp.Data.Player.SlotDataBase, Exp.Data.Player.ISlotData {
+﻿using Exp.Data.Player.Slot;
+
+namespace Exp.DefaultMod.Player.Slot {
+    public sealed class Offhand : SlotDataBase, ISlotData {
         #region Konstruktor
         private Offhand()
             : base(nameof(Offhand), 400, true) {

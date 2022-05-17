@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Enemy.EnemyClass {
-    public sealed class Rogue : Exp.Data.Enemy.EnemyClassBase, Exp.Data.Enemy.IEnemyClassData {
+﻿using Exp.Data.Enemy.EnemyClass;
+
+namespace Exp.DefaultMod.Enemy.EnemyClass {
+    public sealed class Rogue :EnemyClassBase, IEnemyClassData {
         #region Konstruktor
         private Rogue()
             : base(nameof(Rogue), 300, 300) {

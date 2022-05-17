@@ -1,5 +1,7 @@
+using Exp.Data.Misc.Recollection;
+
 namespace Exp.DefaultMod.Misc.Recollection {
-    public sealed class RippedOff : Exp.Data.Misc.RecollectionDataBase, Exp.Data.Misc.IRecollectionData {
+    public sealed class RippedOff : RecollectionDataBase, IRecollectionData {
         #region Konstruktor
         private RippedOff()
             : base(nameof(RippedOff), 300, 26, 30) {

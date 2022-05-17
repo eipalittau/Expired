@@ -1,5 +1,7 @@
-﻿namespace Exp.Api.Skill {
-    public sealed class SkillGroup : ApiBase<Data.Skill.ISkillGroupData> {
+﻿using Exp.Data.Skill.SkillGroup;
+
+namespace Exp.Api.Skill {
+    public sealed class SkillGroup : ApiBase<ISkillGroupData> {
         #region Properties / Felder
         public static SkillGroup Singleton { get; } = new();
         #endregion
@@ -17,11 +19,11 @@
             base.Clear();
         }
 
-        public new IList<Data.Skill.ISkillGroupData> Enumerate() {
+        public new IList<ISkillGroupData> Enumerate() {
             return base.Enumerate();
         }
 
-        public new Data.Skill.ISkillGroupData Get(string aID) {
+        public new ISkillGroupData Get(string aID) {
             return base.Get(aID);
         }
 
@@ -29,7 +31,7 @@
             return base.Count();
         }
 
-        public new void Add(Data.Skill.ISkillGroupData aItem) {
+        public new void Add(ISkillGroupData aItem) {
             base.Add(aItem);
         }
         #endregion

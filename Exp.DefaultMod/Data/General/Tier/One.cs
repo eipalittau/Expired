@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.General.Tier {
-    public sealed class One : Exp.Data.General.TierBase, Exp.Data.General.ITierData {
+﻿using Exp.Data.General.Tier;
+
+namespace Exp.DefaultMod.General.Tier {
+    public sealed class One : TierBase, ITierData {
         #region Konstruktor
         private One()
             : base(nameof(One), 1, 1) {

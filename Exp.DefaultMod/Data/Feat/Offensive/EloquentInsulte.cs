@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Feat.Offensive {
-    public sealed class EloquentInsulte : Exp.Data.Feat.OffensiveDataBase, Exp.Data.Feat.IOffensiveData {
+﻿using Exp.Data.Feat.Offensive;
+
+namespace Exp.DefaultMod.Feat.Offensive {
+    public sealed class EloquentInsulte : OffensiveDataBase, IOffensiveData {
         #region Konstruktor
         private EloquentInsulte()
             : base(nameof(EloquentInsulte), 300, Api.General.Tier.Singleton.Get(nameof(General.Tier.One)), Api.General.ActionType.Singleton.Get(nameof(General.ActionType.Standard))) {

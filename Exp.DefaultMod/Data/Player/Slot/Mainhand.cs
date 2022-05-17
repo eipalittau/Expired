@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Player.Slot {
-    public sealed class Mainhand : Exp.Data.Player.SlotDataBase, Exp.Data.Player.ISlotData {
+﻿using Exp.Data.Player.Slot;
+
+namespace Exp.DefaultMod.Player.Slot {
+    public sealed class Mainhand : SlotDataBase, ISlotData {
         #region Konstruktor
         private Mainhand()
             : base(nameof(Mainhand), 300, true) {

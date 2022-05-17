@@ -1,5 +1,7 @@
-﻿namespace Exp.Api.Misc {
-    public sealed class Recollection : ApiBase<Data.Misc.IRecollectionData> {
+﻿using Exp.Data.Misc.Recollection;
+
+namespace Exp.Api.Misc {
+    public sealed class Recollection : ApiBase<IRecollectionData> {
         #region Properties / Felder
         public static Recollection Singleton { get; } = new();
         #endregion
@@ -17,11 +19,11 @@
             base.Clear();
         }
 
-        public new IList<Data.Misc.IRecollectionData> Enumerate() {
+        public new IList<IRecollectionData> Enumerate() {
             return base.Enumerate();
         }
 
-        public new Data.Misc.IRecollectionData Get(string aID) {
+        public new IRecollectionData Get(string aID) {
             return base.Get(aID);
         }
 
@@ -29,7 +31,7 @@
             return base.Count();
         }
 
-        public new void Add(Data.Misc.IRecollectionData aItem) {
+        public new void Add(IRecollectionData aItem) {
             base.Add(aItem);
         }
         #endregion

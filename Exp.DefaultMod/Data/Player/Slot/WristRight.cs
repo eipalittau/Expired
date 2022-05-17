@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Player.Slot {
-    public sealed class WristRight : Exp.Data.Player.SlotDataBase, Exp.Data.Player.ISlotData {
+﻿using Exp.Data.Player.Slot;
+
+namespace Exp.DefaultMod.Player.Slot {
+    public sealed class WristRight : SlotDataBase, ISlotData {
         #region Konstruktor
         private WristRight()
             : base(nameof(WristRight), 800, false) {

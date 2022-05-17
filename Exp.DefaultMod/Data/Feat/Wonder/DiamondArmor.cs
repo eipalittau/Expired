@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Feat.Wonder {
-    public sealed class DiamondArmor : Exp.Data.Feat.WonderDataBase, Exp.Data.Feat.IWonderData {
+﻿using Exp.Data.Feat.Wonder;
+
+namespace Exp.DefaultMod.Feat.Wonder {
+    public sealed class DiamondArmor : WonderDataBase, IWonderData {
         #region Konstruktor
         private DiamondArmor()
             : base(nameof(DiamondArmor), 900, Api.General.Tier.Singleton.Get(nameof(General.Tier.Two))) {

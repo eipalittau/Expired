@@ -1,61 +1,146 @@
 ﻿using System.Reflection;
-using System.Text.Json;
 
 namespace Exp.Util {
     public class ModHandler {
         #region Properties / Felder
-        public DirectoryInfo? PathName { get; init; }
-        public FileInfo? ConfigPathFile { get; init; }
+        public static ModHandler Singleton { get; } = new("MODS", "ModSort.json", "Exp.DefaultMod");
+        public DirectoryInfo ModPath { get; init; }
+        public FileInfo ConfigPathFile { get; init; }
+        private List<ModData> ModData { get; } = new();
+        private JsonModSort JsonMods { get; set; }
+        private bool Proceed { get; set; }
+        private string DefaultMod { get; init; }
         #endregion
 
         #region Konstruktor
-        public ModHandler(string aModDirectoryName, string aModSortJsonName)
-            : this(Assembly.GetCallingAssembly(), aModDirectoryName, aModSortJsonName) { }
-
-        public ModHandler(Assembly aAssembly, string aModDirectoryName, string aModSortJsonName) {
-            bool lProceed = true;
-
+        private ModHandler(string aModDirectoryName, string aModSortJsonName, string aDefaultMod) {
             if (string.IsNullOrWhiteSpace(aModDirectoryName)) {
-                lProceed = false;
+                Proceed = false;
                 ExceptionHandler.Add(new Exception.MissingParameterException(nameof(aModDirectoryName)));
             }
             if (string.IsNullOrWhiteSpace(aModSortJsonName)) {
-                lProceed = false;
+                Proceed = false;
                 ExceptionHandler.Add(new Exception.MissingParameterException(nameof(aModSortJsonName)));
             }
-
-            if (lProceed) {
-                PathName = Filesystem.DirectoryHandler.GetDirectory(aAssembly, aModDirectoryName);
-
-                if (PathName.Exists) {
-                    ConfigPathFile = new FileInfo(Path.Combine(PathName.FullName, aModSortJsonName));
-
-                    if (!ConfigPathFile.Exists) {
-                        int lCounter = 0;
-                        List<ModSortData> lList = new();
-
-                        foreach (FileInfo lFile in GetDllListFromFS()) {
-                            lList.Add(new() {
-                                Filename = lFile.Name,
-                                SortWeight = lCounter++,
-                                IsActive = false
-                            });
-                        }
-
-                        File.WriteAllText(ConfigPathFile.FullName, JsonSerializer.Serialize(lList));
-                    }
-                    //Laden
-                } else {
-                    ExceptionHandler.Add(new Exception.Filesystem.MissingDirectoryOrFileException(PathName));
-                }
+            if (string.IsNullOrWhiteSpace(aDefaultMod)) {
+                Proceed = false;
+                ExceptionHandler.Add(new Exception.MissingParameterException(nameof(aDefaultMod)));
             }
-        }
+
+            DefaultMod = aDefaultMod;
+            ModPath = Filesystem.DirectoryHandler.GetDirectory(Assembly.GetCallingAssembly(), aModDirectoryName);
+            ConfigPathFile = new FileInfo(Path.Combine(ModPath.FullName, aModSortJsonName));
+            JsonMods = new(ConfigPathFile);
+
+            if (ModPath.Exists) {
+                Proceed = true;
+            } else {
+                ExceptionHandler.Add(new Exception.Filesystem.MissingDirectoryOrFileException(ModPath));
+            }
+        }        
         #endregion
 
         #region Methoden
+        public void LoadList(Type aInterface) {
+            int lCounter = 0;
+
+            if (!CanProceed()) {
+                return;
+            }
+
+            if (JsonMods.Json.Count > 0) {
+                lCounter = Math.Max(0, JsonMods.Json.Max(x => x.SortWeight));
+            }
+
+            foreach (FileInfo lFile in GetDllListFromFS()) {
+                try {
+                    List<Type> lTypes = LoadAssembly(lFile.FullName, aInterface);
+
+                    if (lTypes.Count > 0) {
+                        JsonModSort.ModSortData? lJsonItem = JsonMods.Json
+                            .Where(x => x.Filename.Equals(lFile.Name, StringComparison.InvariantCultureIgnoreCase))
+                            .FirstOrDefault();
+                        ModData lModItem = new(lFile, Activator.CreateInstance(lTypes.First()));
+
+                        if (lModItem.IsLoaded) {
+                            if (lModItem.Name.Equals(DefaultMod, StringComparison.InvariantCultureIgnoreCase)) {
+                                lModItem.SortWeight = int.MinValue;
+                            } else {
+                                if (lJsonItem != null) {
+                                    lModItem.SortWeight = lJsonItem.SortWeight;
+                                } else {
+                                    lModItem.SortWeight = ++lCounter;
+                                }
+                            }
+
+                            if (lJsonItem != null) {
+                                lModItem.IsActive = lJsonItem.IsActive;
+                            } else {
+                                lModItem.IsActive = false;
+                            }
+
+                            ModData.Add(lModItem);
+                        }
+                    }
+
+                } catch (System.Exception aEx) {
+                    ExceptionHandler.Add(aEx);
+                }
+            }
+        }
+
+        #region Get
+        public List<ModData> GetList(bool aOnlyActive) {
+            IEnumerable<ModData> lList = ModData.OrderBy(x => x.SortWeight);
+
+            if (aOnlyActive) {
+                lList = lList.Where(x => x.IsActive);
+            }
+
+            return lList.ToList();
+        }
+
+        public List<ModData> GetList() {
+            return GetList(false);
+        }
+
+        public ModData GetItem(string aName) {
+            return ModData
+                .Where(x => x.Name.Equals(aName, StringComparison.InvariantCultureIgnoreCase))
+                .First();
+        }
+        #endregion
+
+        public void Save() {
+            if (ConfigPathFile.Exists) {
+                ConfigPathFile.Delete();
+            }
+            JsonMods.Json.Clear();
+
+            foreach (ModData aData in ModData) {
+                JsonMods.Json.Add(new() {
+                    Filename = aData.PathFile.Name,
+                    SortWeight = aData.SortWeight,
+                    IsActive = aData.IsActive
+                });
+            }
+            JsonMods.Save();
+        }
+
+        public void InitializeActiveMods() {
+            GetList(true).ForEach(x => x.Initialize());
+        }
+
+        private List<Type> LoadAssembly(string aPathFileName, Type aInterface) {
+            return Assembly.Load(File.ReadAllBytes(aPathFileName)).GetTypes()
+                .Where(x => x.IsClass && !x.IsAbstract)
+                .Where(aInterface.IsAssignableFrom).ToList() ?? new();
+        }
+
         private List<FileInfo> GetDllListFromFS() {
             List<FileInfo> lResult = new();
-            string[] lFiles = Directory.GetFiles(PathName.FullName, "*.dll", SearchOption.AllDirectories);
+
+            string[] lFiles = Directory.GetFiles(ModPath.FullName, "*.dll", SearchOption.AllDirectories);
 
             if (lFiles != null) {
                 lFiles.ToList().ForEach(x => lResult.Add(new FileInfo(x)));
@@ -64,74 +149,13 @@ namespace Exp.Util {
             return lResult;
         }
 
-
-
-
-
-
-
-
-        /*
-        public List<ModData> GetModList() {
-            FileInfo lPathFile = new(Path.Combine(PathName.FullName, "ModSort.json"));
-
-            if (lPathFile.Exists) {
-                using (StreamReader lReader = new("ModSort.json")) {
-                    string json = lReader.ReadToEnd();
-                    List<Item> items = JsonConvert.DeserializeObject<List<Item>>(json);
-                }
-
-                ModSortData? weatherForecast =
-                JsonSerializer.Deserialize<ModSortData>(jsonString);
-            }
-        }
-        
-        public List<ModData> GetModList(bool aIsActive) {
-            List<ModData> lResult = new();
-            string[] lFiles = Directory.GetFiles(PathName.FullName, "*.dll", SearchOption.AllDirectories);
-
-            if (lFiles != null) {
-                lFiles.ToList().ForEach(x => lResult.Add(new ModData(x, aIsActive)));
+        private bool CanProceed() {
+            if (!Proceed) {
+                ExceptionHandler.Add(new Exception.Filesystem.MissingDirectoryOrFileException(ModPath));
             }
 
-            return lResult;
-        }
-*/
-
-
-        public void LoadMods(List<ModData> aModList, Type aInterface) {
-            foreach (ModData lMod in aModList.Where(x => x.IsActive)) {
-                lMod.Instance = LoadMod(lMod.PathFile, aInterface);
-            }
-        }
-
-        public dynamic? LoadMod(FileInfo aPathFile, Type aInterface) {
-            try {
-                aPathFile.Refresh();
-
-                if (aPathFile.Exists) {
-                    List<Type> lTypes = Assembly.Load(File.ReadAllBytes(aPathFile.FullName)).GetTypes()
-                        .Where(x => x.IsClass && !x.IsAbstract)
-                        .Where(aInterface.IsAssignableFrom).ToList() ?? new();
-
-                    if (lTypes.Count > 0) {
-                        return Activator.CreateInstance(lTypes.First());
-                    }
-                }
-
-            } catch (System.Exception aEx) {
-                ExceptionHandler.Add(aEx);
-            }
-
-            return null;
+            return Proceed;
         }
         #endregion
-
-        private class ModSortData {
-            public string Filename { get; set; } = string.Empty;
-            public int SortWeight { get; set; } = 0;
-            public bool IsActive { get; set; } = false;
-
-        }
     }
 }

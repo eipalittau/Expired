@@ -1,8 +1,10 @@
-﻿namespace Exp.DefaultMod.Feat.Defensive {
-    public sealed class FelineReflex : Exp.Data.Feat.DefensiveDataBase, Exp.Data.Feat.IDefensiveData {
+﻿using Exp.Data.Feat.Defensive;
+
+namespace Exp.DefaultMod.Feat.Defensive {
+    public sealed class FelineReflex : DefensiveDataBase, IDefensiveData {
         #region Konstruktor
         private FelineReflex()
-            : base(nameof(FelineReflex), 300, Api.General.Tier.Singleton.Get(nameof(General.Tier.One)), null) {
+            : base(nameof(FelineReflex), 300, Api.General.Tier.Singleton.Get(nameof(General.Tier.One))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Katzenreflex");
             Name.Set(Util.LanguageEnum.English, "Feline reflex");
             LoreDescription.Set(Util.LanguageEnum.Deutsch, "");

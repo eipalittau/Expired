@@ -1,5 +1,8 @@
-﻿namespace Exp.Api.Skill {
-    public sealed class SkillType : ApiBase<Data.Skill.ISkillTypeData> {
+﻿using Exp.Data.Skill.SkillGroup;
+using Exp.Data.Skill.SkillType;
+
+namespace Exp.Api.Skill {
+    public sealed class SkillType : ApiBase<ISkillTypeData> {
         #region Properties / Felder
         public static SkillType Singleton { get; } = new();
         #endregion
@@ -17,17 +20,17 @@
             base.Clear();
         }
 
-        public new IList<Data.Skill.ISkillTypeData> Enumerate() {
+        public new IList<ISkillTypeData> Enumerate() {
             return base.Enumerate();
         }
 
-        public IList<Data.Skill.ISkillTypeData> Enumerate(Data.Skill.ISkillGroupData aGroup) {
+        public IList<ISkillTypeData> Enumerate(ISkillGroupData aGroup) {
             return base.Enumerate()
                 .Where(x => x.Group.Name.Get().Equals(aGroup.Name.Get(), StringComparison.InvariantCultureIgnoreCase))
                 .ToList();
         }
 
-        public new Data.Skill.ISkillTypeData Get(string aID) {
+        public new ISkillTypeData Get(string aID) {
             return base.Get(aID);
         }
 
@@ -35,7 +38,7 @@
             return base.Count();
         }
 
-        public new void Add(Data.Skill.ISkillTypeData aItem) {
+        public new void Add(ISkillTypeData aItem) {
             base.Add(aItem);
         }
         #endregion

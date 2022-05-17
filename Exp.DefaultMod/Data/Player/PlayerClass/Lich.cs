@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Player.PlayerClass {
-    public sealed class Lich : Exp.Data.Player.PlayerClassDataBase, Exp.Data.Player.IPlayerClassData {
+﻿using Exp.Data.Player.PlayerClass;
+
+namespace Exp.DefaultMod.Player.PlayerClass {
+    public sealed class Lich : PlayerClassDataBase, IPlayerClassData {
         #region Konstruktor
         private Lich()
             : base(nameof(Lich), 600, "Jacqueline", new Aptitude.Mana()) {

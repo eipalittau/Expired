@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Skill.Group {
-    public sealed class Dungeon : Exp.Data.Skill.SkillGroupDataBase, Exp.Data.Skill.ISkillGroupData {
+﻿using Exp.Data.Skill.SkillGroup;
+
+namespace Exp.DefaultMod.Skill.Group {
+    public sealed class Dungeon : SkillGroupDataBase, ISkillGroupData {
         #region Konstruktor
         private Dungeon()
             : base(nameof(Dungeon), 100) {

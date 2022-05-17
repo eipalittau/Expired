@@ -1,8 +1,10 @@
-﻿namespace Exp.DefaultMod.Item.ItemType {
-    public sealed class Shield : Exp.Data.Item.ItemTypeDataBase, Exp.Data.Item.IItemTypeData {
+﻿using Exp.Data.Item.ItemType;
+
+namespace Exp.DefaultMod.Item.ItemType {
+    public sealed class Shield : ItemTypeDataBase, IItemTypeData {
         #region Konstruktor
         private Shield()
-            : base(nameof(Shield), 1000, null, 
+            : base(nameof(Shield), 1000, 
                   Api.Player.Slot.Singleton.Get(nameof(Player.Slot.Offhand))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Schild");
             Name.Set(Util.LanguageEnum.English, "Shield");

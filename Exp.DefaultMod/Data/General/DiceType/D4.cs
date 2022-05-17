@@ -1,5 +1,7 @@
+using Exp.Data.General.DiceType;
+
 namespace Exp.DefaultMod.General.DiceType {
-    public sealed class D4 : Exp.Data.General.DiceTypeBase, Exp.Data.General.IDiceTypeData {
+    public sealed class D4 : DiceTypeBase, IDiceTypeData {
         #region Konstruktor
         private D4()
             : base(nameof(D4), 100, 4) {

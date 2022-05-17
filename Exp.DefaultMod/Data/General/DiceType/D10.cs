@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.General.DiceType {
-    public sealed class D10 : Exp.Data.General.DiceTypeBase, Exp.Data.General.IDiceTypeData {
+﻿using Exp.Data.General.DiceType;
+
+namespace Exp.DefaultMod.General.DiceType {
+    public sealed class D10 : DiceTypeBase, IDiceTypeData {
         #region Konstruktor
         private D10()
             : base(nameof(D10), 400, 10) {

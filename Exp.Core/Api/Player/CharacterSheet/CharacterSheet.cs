@@ -1,12 +1,16 @@
 ﻿using Exp.Api.General;
 using Exp.Api.Helper;
+using Exp.Data.Misc.Aptitude;
+using Exp.Data.Misc.Recollection;
+using Exp.Data.Player.PlayerClass;
+using Exp.Data.Skill.SkillType;
 
 namespace Exp.Api.Player {
     public sealed class CharacterSheet : Data.Player.ICharacterSheetData {
         #region Properties / Felder
         public bool IsDead { get; internal set; } = true;
         public int Level { get; private set; } = 0;
-        public Data.Player.IPlayerClassData PlayerClass { get; init; }
+        public IPlayerClassData PlayerClass { get; init; }
         public Sheet.ExperienceData Experience { get; init; }
         public Sheet.HealthData Health { get; init; }
         public Sheet.ArmorClassData ArmorClass { get; init; }
@@ -28,14 +32,14 @@ namespace Exp.Api.Player {
         public Sheet.FeatData Feat { get; init; }
         public IList<Sheet.SkillData> SkillList { get; } = new List<Sheet.SkillData>();
         public IList<Sheet.EquipmentData> EquipmentList { get; } = new List<Sheet.EquipmentData>();
-        public IList<Data.Misc.IRecollectionData> RecollectionList { get; } = new List<Data.Misc.IRecollectionData>();
+        public IList<IRecollectionData> RecollectionList { get; } = new List<IRecollectionData>();
 
         private readonly List<Sheet.AttackData> _Attack = new();
         private readonly List<Sheet.DamageData> _Damage = new();
         #endregion
 
         #region Konstruktor
-        private CharacterSheet(Data.Player.IPlayerClassData aPlayerClass, int aExperience4LevelUp) { 
+        private CharacterSheet(IPlayerClassData aPlayerClass, int aExperience4LevelUp) { 
             PlayerClass = aPlayerClass;
             Experience = new Sheet.ExperienceData(this) {
                 Max = aExperience4LevelUp
@@ -63,18 +67,22 @@ namespace Exp.Api.Player {
         #region Methoden
         #region Create
         public static CharacterSheet Create(int aExperience4LevelUp) {
-            int lRandomResult = new Random().Next(1, Player.PlayerClass.Singleton.Count());
+            int lPlayerClasses = Player.PlayerClass.Singleton.Count();
+
+            if (lPlayerClasses == 0) {
+                Util.ExceptionHandler.Add(new Exception.MissingInitializationException());
+            }
             
-            return Create(Player.PlayerClass.Singleton.Enumerate().ElementAt(lRandomResult), aExperience4LevelUp);
+            return Create(Player.PlayerClass.Singleton.Enumerate().ElementAt(new Random().Next(1, lPlayerClasses)), aExperience4LevelUp);
         }
 
-        public static CharacterSheet Create(Data.Player.IPlayerClassData aPlayerClass, int aExperience4LevelUp) {
+        public static CharacterSheet Create(IPlayerClassData aPlayerClass, int aExperience4LevelUp) {
             return new(aPlayerClass, aExperience4LevelUp);
         }
         #endregion
 
         #region LevelUp
-        public bool LevelUp(Data.Feat.IFeatDataBase[] aFeatTalents, Data.Skill.ISkillTypeData[] aSkills) {
+        public bool LevelUp(Data.Feat.IFeatDataBase[] aFeatTalents, ISkillTypeData[] aSkills) {
             if (Experience.Current < Experience.Max) {
                 return false;
             } else {
@@ -86,6 +94,9 @@ namespace Exp.Api.Player {
 
                 Health.Max = LevelUpMax(TargetEffectEnum.Health);
                 ArmorClass.Max = LevelUpMax(TargetEffectEnum.Armor);
+                if (Player.LevelUp.Singleton.Contains(TargetEffectEnum.NaturalArmor)) {
+                    ArmorClass.Natural = Player.LevelUp.Singleton.Get(TargetEffectEnum.NaturalArmor).Base.Value;
+                }
                 Resistence.Max = LevelUpMax(TargetEffectEnum.Resistence);
                 Attack.ToList().ForEach(x => x.Max = lAttackMax);
                 Damage.ToList().ForEach(x => x.Max = lDamagekMax);
@@ -127,7 +138,7 @@ namespace Exp.Api.Player {
             }
 
             // Änderung durch Charakterklasse
-            Data.Misc.IAptitudeData? lAptitude = PlayerClass.AptitudeList.Where(x => aEffect.Equals(x.Effect)).FirstOrDefault();
+            IAptitudeData? lAptitude = PlayerClass.AptitudeList.Where(x => aEffect.Equals(x.Effect)).FirstOrDefault();
 
             if (lAptitude != null) {
                 if (lAptitude.Base.HasData) {

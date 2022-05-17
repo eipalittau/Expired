@@ -1,5 +1,7 @@
-﻿namespace Exp.Api.Player {
-    public sealed class PlayerClass : ApiBase<Data.Player.IPlayerClassData> {
+﻿using Exp.Data.Player.PlayerClass;
+
+namespace Exp.Api.Player {
+    public sealed class PlayerClass : ApiBase<IPlayerClassData> {
         #region Properties / Felder
         public static PlayerClass Singleton { get; } = new();
         #endregion
@@ -17,11 +19,11 @@
             base.Clear();
         }
 
-        public new IList<Data.Player.IPlayerClassData> Enumerate() {
+        public new IList<IPlayerClassData> Enumerate() {
             return base.Enumerate();
         }
 
-        public new Data.Player.IPlayerClassData Get(string aID) {
+        public new IPlayerClassData Get(string aID) {
             return base.Get(aID);
         }
 
@@ -29,7 +31,7 @@
             return base.Count();
         }
 
-        public new void Add(Data.Player.IPlayerClassData aItem) {
+        public new void Add(IPlayerClassData aItem) {
             base.Add(aItem);
         }
         #endregion

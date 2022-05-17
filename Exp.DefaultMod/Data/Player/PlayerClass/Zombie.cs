@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Player.PlayerClass {
-    public sealed class Zombie : Exp.Data.Player.PlayerClassDataBase, Exp.Data.Player.IPlayerClassData {
+﻿using Exp.Data.Player.PlayerClass;
+
+namespace Exp.DefaultMod.Player.PlayerClass {
+    public sealed class Zombie : PlayerClassDataBase, IPlayerClassData {
         #region Konstruktor
         private Zombie()
             : base(nameof(Zombie), 200, "Marvin", new Aptitude.Health()) {

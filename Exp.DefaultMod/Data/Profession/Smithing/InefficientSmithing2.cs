@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Profession.Smithing {
-    public sealed class InefficientSmithing2 : Data.Profession.SmithingDataBase, Data.Profession.ISmithingData {
+﻿using Exp.Data.Profession.Smithing;
+
+namespace Exp.DefaultMod.Profession.Smithing {
+    public sealed class InefficientSmithing2 : SmithingDataBase, ISmithingData {
         #region Konstruktor
         private InefficientSmithing2()
             : base(nameof(InefficientSmithing2), 1200,

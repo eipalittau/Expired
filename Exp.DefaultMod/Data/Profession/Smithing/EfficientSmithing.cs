@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Profession.Smithing {
-    public sealed class EfficientSmithing : Data.Profession.SmithingDataBase, Data.Profession.ISmithingData {
+﻿using Exp.Data.Profession.Smithing;
+
+namespace Exp.DefaultMod.Profession.Smithing {
+    public sealed class EfficientSmithing : SmithingDataBase, ISmithingData {
         #region Konstruktor
         private EfficientSmithing()
             : base(nameof(EfficientSmithing), 800, Api.General.Tier.Singleton.Get(nameof(General.Tier.One))) {

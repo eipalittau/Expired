@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Player.PlayerClass {
-    public sealed class Banshee : Exp.Data.Player.PlayerClassDataBase, Exp.Data.Player.IPlayerClassData {
+﻿using Exp.Data.Player.PlayerClass;
+
+namespace Exp.DefaultMod.Player.PlayerClass {
+    public sealed class Banshee : PlayerClassDataBase, IPlayerClassData {
         #region Properties / Felder
         #endregion
 

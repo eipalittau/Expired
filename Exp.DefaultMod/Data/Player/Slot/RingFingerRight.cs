@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Player.Slot {
-    public sealed class RingFingerRight : Exp.Data.Player.SlotDataBase, Exp.Data.Player.ISlotData {
+﻿using Exp.Data.Player.Slot;
+
+namespace Exp.DefaultMod.Player.Slot {
+    public sealed class RingFingerRight : SlotDataBase, ISlotData {
         #region Konstruktor
         private RingFingerRight()
             : base(nameof(RingFingerRight), 600, true) {

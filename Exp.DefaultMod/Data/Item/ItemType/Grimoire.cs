@@ -1,8 +1,10 @@
-﻿namespace Exp.DefaultMod.Item.ItemType {
-    public sealed class Grimoire : Exp.Data.Item.ItemTypeDataBase, Exp.Data.Item.IItemTypeData {
+﻿using Exp.Data.Item.ItemType;
+
+namespace Exp.DefaultMod.Item.ItemType {
+    public sealed class Grimoire : ItemTypeDataBase, IItemTypeData {
         #region Konstruktor
         private Grimoire()
-            : base(nameof(Grimoire), 1200, null, 
+            : base(nameof(Grimoire), 1200, 
                   Api.Player.Slot.Singleton.Get(nameof(Player.Slot.Offhand))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Zauberbuch");
             Name.Set(Util.LanguageEnum.English, "Grimoire");

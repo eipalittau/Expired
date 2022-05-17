@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Player.LevelUp {
-    public sealed class Movement : Data.Player.LevelUpDataBase, Data.Player.ILevelUpData {
+﻿using Exp.Data.Player.LevelUp;
+
+namespace Exp.DefaultMod.Player.LevelUp {
+    public sealed class Movement : LevelUpDataBase, ILevelUpData {
         #region Konstruktor
         private Movement()
             : base(Api.General.TargetEffectEnum.Movement, new Api.Helper.ModifierData(0, 0, 4)) {

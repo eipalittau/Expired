@@ -1,8 +1,10 @@
-﻿namespace Exp.DefaultMod.Feat.Defensive {
-    public sealed class Dodge : Exp.Data.Feat.DefensiveDataBase, Exp.Data.Feat.IDefensiveData {
+﻿using Exp.Data.Feat.Defensive;
+
+namespace Exp.DefaultMod.Feat.Defensive {
+    public sealed class Dodge : DefensiveDataBase, IDefensiveData {
         #region Konstruktor
         private Dodge()
-            : base(nameof(Dodge), 500, Api.General.Tier.Singleton.Get(nameof(General.Tier.One)), null) {
+            : base(nameof(Dodge), 500, Api.General.Tier.Singleton.Get(nameof(General.Tier.One))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Ausweichen");
             Name.Set(Util.LanguageEnum.English, "Dodge");
             LoreDescription.Set(Util.LanguageEnum.Deutsch, "");

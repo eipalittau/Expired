@@ -1,5 +1,7 @@
+using Exp.Data.General.DamageType;
+
 namespace Exp.Api.General {
-    public sealed class DamageType : ApiBase<Data.General.IDamageTypeData> {
+    public sealed class DamageType : ApiBase<IDamageTypeData> {
         #region Properties / Felder
         public static DamageType Singleton { get; } = new();
         #endregion
@@ -17,11 +19,11 @@ namespace Exp.Api.General {
             base.Clear();
         }
 
-        public new IList<Data.General.IDamageTypeData> Enumerate() {
+        public new IList<IDamageTypeData> Enumerate() {
             return base.Enumerate();
         }
 
-        public new Data.General.IDamageTypeData Get(string aID) {
+        public new IDamageTypeData Get(string aID) {
             return base.Get(aID);
         }
 
@@ -29,7 +31,7 @@ namespace Exp.Api.General {
             return base.Count();
         }
 
-        internal new void Add(Data.General.IDamageTypeData aItem) {
+        internal new void Add(IDamageTypeData aItem) {
             base.Add(aItem);
         }
         #endregion

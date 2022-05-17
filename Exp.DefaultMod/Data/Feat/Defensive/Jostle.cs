@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Feat.Defensive {
-    public sealed class Jostle : Exp.Data.Feat.DefensiveDataBase, Exp.Data.Feat.IDefensiveData {
+﻿using Exp.Data.Feat.Defensive;
+
+namespace Exp.DefaultMod.Feat.Defensive {
+    public sealed class Jostle : DefensiveDataBase, IDefensiveData {
         #region Konstruktor
         private Jostle()
             : base(nameof(Jostle), 100, Api.General.Tier.Singleton.Get(nameof(General.Tier.One)), Api.General.ActionType.Singleton.Get(nameof(General.ActionType.Free))) {

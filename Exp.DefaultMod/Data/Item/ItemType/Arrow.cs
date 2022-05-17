@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Item.ItemType {
-    public sealed class Arrow : Exp.Data.Item.ItemTypeDataBase, Exp.Data.Item.IItemTypeData {
+﻿using Exp.Data.Item.ItemType;
+
+namespace Exp.DefaultMod.Item.ItemType {
+    public sealed class Arrow : ItemTypeDataBase, IItemTypeData {
         #region Konstruktor
         private Arrow()
             : base(nameof(Arrow), 700, 

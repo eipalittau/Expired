@@ -1,5 +1,7 @@
-﻿namespace Exp.Api.Item {
-    public sealed class Effect : ApiBase<Data.Item.IEffectData> {
+﻿using Exp.Data.Item.Effect;
+
+namespace Exp.Api.Item {
+    public sealed class Effect : ApiBase<IEffectData> {
         #region Properties / Felder
         public static Effect Singleton { get; } = new();
         #endregion
@@ -17,11 +19,11 @@
             base.Clear();
         }
 
-        public new IList<Data.Item.IEffectData> Enumerate() {
+        public new IList<IEffectData> Enumerate() {
             return base.Enumerate();
         }
 
-        public new Data.Item.IEffectData Get(string aID) {
+        public new IEffectData Get(string aID) {
             return base.Get(aID);
         }
 
@@ -29,7 +31,7 @@
             return base.Count();
         }
 
-        public new void Add(Data.Item.IEffectData aItem) {
+        public new void Add(IEffectData aItem) {
             base.Add(aItem);
         }
         #endregion

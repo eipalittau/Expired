@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Player.PlayerClass.Aptitude {
-    public sealed class ArmorClass : Data.Misc.AptitudeDataBase, Data.Misc.IAptitudeData {
+﻿using Exp.Data.Misc.Aptitude;
+
+namespace Exp.DefaultMod.Player.PlayerClass.Aptitude {
+    public sealed class ArmorClass : AptitudeDataBase, IAptitudeData {
         #region Konstruktor
         public ArmorClass()
             : base(nameof(ArmorClass), Api.General.TargetEffectEnum.Armor) {

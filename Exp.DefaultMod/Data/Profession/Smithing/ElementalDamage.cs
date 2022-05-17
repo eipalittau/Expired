@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Profession.Smithing {
-    public sealed class ElementalDamage : Data.Profession.SmithingDataBase, Data.Profession.ISmithingData {
+﻿using Exp.Data.Profession.Smithing;
+
+namespace Exp.DefaultMod.Profession.Smithing {
+    public sealed class ElementalDamage : SmithingDataBase, ISmithingData {
         #region Konstruktor
         private ElementalDamage()
             : base(nameof(ElementalDamage), 900,

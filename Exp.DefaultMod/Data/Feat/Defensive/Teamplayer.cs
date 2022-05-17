@@ -1,8 +1,10 @@
-﻿namespace Exp.DefaultMod.Feat.Defensive {
-    public sealed class Teamplayer : Exp.Data.Feat.DefensiveDataBase, Exp.Data.Feat.IDefensiveData {
+﻿using Exp.Data.Feat.Defensive;
+
+namespace Exp.DefaultMod.Feat.Defensive {
+    public sealed class Teamplayer : DefensiveDataBase, IDefensiveData {
         #region Konstruktor
         private Teamplayer()
-            : base(nameof(Teamplayer), 700, Api.General.Tier.Singleton.Get(nameof(General.Tier.One)), null) {
+            : base(nameof(Teamplayer), 700, Api.General.Tier.Singleton.Get(nameof(General.Tier.One))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Teamplayer");
             Name.Set(Util.LanguageEnum.English, "Teamplayer");
             LoreDescription.Set(Util.LanguageEnum.Deutsch, "");

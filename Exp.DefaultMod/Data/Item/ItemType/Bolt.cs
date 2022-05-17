@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Item.ItemType {
-    public sealed class Bolt : Exp.Data.Item.ItemTypeDataBase, Exp.Data.Item.IItemTypeData {
+﻿using Exp.Data.Item.ItemType;
+
+namespace Exp.DefaultMod.Item.ItemType {
+    public sealed class Bolt : ItemTypeDataBase, IItemTypeData {
         #region Konstruktor
         private Bolt()
             : base(nameof(Bolt), 800, 

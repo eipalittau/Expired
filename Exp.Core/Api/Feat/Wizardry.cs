@@ -1,5 +1,7 @@
-﻿namespace Exp.Api.Feat {
-    public sealed class Wizardry : ApiBase<Data.Feat.IWizardryData> {
+﻿using Exp.Data.Feat.Wizardry;
+
+namespace Exp.Api.Feat {
+    public sealed class Wizardry : ApiBase<IWizardryData> {
         #region Properties / Felder
         public static Wizardry Singleton { get; } = new();
         #endregion
@@ -17,11 +19,11 @@
             base.Clear();
         }
 
-        public new IList<Data.Feat.IWizardryData> Enumerate() {
+        public new IList<IWizardryData> Enumerate() {
             return base.Enumerate();
         }
 
-        public new Data.Feat.IWizardryData Get(string aID) {
+        public new IWizardryData Get(string aID) {
             return base.Get(aID);
         }
 
@@ -29,7 +31,7 @@
             return base.Count();
         }
 
-        public new void Add(Data.Feat.IWizardryData aItem) {
+        public new void Add(IWizardryData aItem) {
             base.Add(aItem);
         }
         #endregion

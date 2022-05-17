@@ -1,5 +1,7 @@
-﻿namespace Exp.Api.Feat {
-    public sealed class Aura : ApiBase<Data.Feat.IAuraData> {
+﻿using Exp.Data.Feat.Aura;
+
+namespace Exp.Api.Feat {
+    public sealed class Aura : ApiBase<IAuraData> {
         #region Properties / Felder
         public static Aura Singleton { get; } = new();
         #endregion
@@ -17,11 +19,11 @@
             base.Clear();
         }
 
-        public new IList<Data.Feat.IAuraData> Enumerate() {
+        public new IList<IAuraData> Enumerate() {
             return base.Enumerate();
         }
 
-        public new Data.Feat.IAuraData Get(string aID) {
+        public new IAuraData Get(string aID) {
             return base.Get(aID);
         }
 
@@ -29,7 +31,7 @@
             return base.Count();
         }
 
-        public new void Add(Data.Feat.IAuraData aItem) {
+        public new void Add(IAuraData aItem) {
             base.Add(aItem);
         }
         #endregion

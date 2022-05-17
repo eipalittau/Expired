@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Feat.Aura {
-    public sealed class BrokenWingsGambit : Exp.Data.Feat.AuraDataBase, Exp.Data.Feat.IAuraData {
+﻿using Exp.Data.Feat.Aura;
+
+namespace Exp.DefaultMod.Feat.Aura {
+    public sealed class BrokenWingsGambit : AuraDataBase, IAuraData {
         #region Konstruktor
         private BrokenWingsGambit()
             : base(nameof(BrokenWingsGambit), 1000, Api.General.Tier.Singleton.Get(nameof(General.Tier.One)), Api.General.ActionType.Singleton.Get(nameof(General.ActionType.Free))) {

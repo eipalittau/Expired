@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Feat.Wizardry {
-    public sealed class FitOfLaughter : Exp.Data.Feat.WizardryDataBase, Exp.Data.Feat.IWizardryData {
+﻿using Exp.Data.Feat.Wizardry;
+
+namespace Exp.DefaultMod.Feat.Wizardry {
+    public sealed class FitOfLaughter : WizardryDataBase, IWizardryData {
         #region Konstruktor
         private FitOfLaughter()
             : base(nameof(FitOfLaughter), 600, Api.General.Tier.Singleton.Get(nameof(General.Tier.One)), Api.General.ActionType.Singleton.Get(nameof(General.ActionType.Standard))) {

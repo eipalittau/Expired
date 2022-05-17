@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Misc.Recollection {
-    public sealed class HittingYourself : Exp.Data.Misc.RecollectionDataBase, Exp.Data.Misc.IRecollectionData {
+﻿using Exp.Data.Misc.Recollection;
+
+namespace Exp.DefaultMod.Misc.Recollection {
+    public sealed class HittingYourself : RecollectionDataBase, IRecollectionData {
         #region Konstruktor
         private HittingYourself()
             : base(nameof(HittingYourself), 300, 16, 20) {

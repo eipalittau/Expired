@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Player.LevelUp {
-    public sealed class Skill : Data.Player.LevelUpDataBase, Data.Player.ILevelUpData {
+﻿using Exp.Data.Player.LevelUp;
+
+namespace Exp.DefaultMod.Player.LevelUp {
+    public sealed class Skill : LevelUpDataBase, ILevelUpData {
         #region Konstruktor
         private Skill()
             : base(Api.General.TargetEffectEnum.SkillPoints, new Api.Helper.ModifierData(1, 0, 2)) {

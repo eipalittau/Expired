@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Player.Slot {
-    public sealed class Shoulders : Exp.Data.Player.SlotDataBase, Exp.Data.Player.ISlotData {
+﻿using Exp.Data.Player.Slot;
+
+namespace Exp.DefaultMod.Player.Slot {
+    public sealed class Shoulders : SlotDataBase, ISlotData {
         #region Konstruktor
         private Shoulders()
             : base(nameof(Shoulders), 1000, true) {

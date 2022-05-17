@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Player.PlayerClass {
-    public sealed class Skeleton : Data.Player.PlayerClassDataBase, Data.Player.IPlayerClassData {
+﻿using Exp.Data.Player.PlayerClass;
+
+namespace Exp.DefaultMod.Player.PlayerClass {
+    public sealed class Skeleton : PlayerClassDataBase, IPlayerClassData {
         #region Konstruktor
         private Skeleton()
             : base(nameof(Skeleton), 100, "Kevin", new Aptitude.ArmorClass()) {

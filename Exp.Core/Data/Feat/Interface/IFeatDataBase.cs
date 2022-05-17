@@ -1,7 +1,10 @@
-﻿namespace Exp.Data.Feat {
+﻿using Exp.Data.General.ActionType;
+using Exp.Data.General.Tier;
+
+namespace Exp.Data.Feat {
     public interface IFeatDataBase : IDataBase {
-        General.ITierData Tier { get; set; }
-        General.IActionTypeData? ActionType { get; set; }
+        ITierData Tier { get; set; }
+        IActionTypeData? ActionType { get; set; }
         Util.LanguageBasedData EffektDescription { get; }
     }
 }

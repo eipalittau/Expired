@@ -1,8 +1,10 @@
-﻿namespace Exp.DefaultMod.Feat.Defensive {
-    public sealed class StoneSkin : Exp.Data.Feat.DefensiveDataBase, Exp.Data.Feat.IDefensiveData {
+﻿using Exp.Data.Feat.Defensive;
+
+namespace Exp.DefaultMod.Feat.Defensive {
+    public sealed class StoneSkin : DefensiveDataBase, IDefensiveData {
         #region Konstruktor
         private StoneSkin()
-            : base(nameof(StoneSkin), 1200, Api.General.Tier.Singleton.Get(nameof(General.Tier.Two)), null) {
+            : base(nameof(StoneSkin), 1200, Api.General.Tier.Singleton.Get(nameof(General.Tier.Two))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Steinhaut");
             Name.Set(Util.LanguageEnum.English, "Stone skin");
             LoreDescription.Set(Util.LanguageEnum.Deutsch, "");

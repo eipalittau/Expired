@@ -1,11 +1,13 @@
-﻿namespace Exp.Api.Player.Sheet {
+﻿using Exp.Data.General.DamageType;
+
+namespace Exp.Api.Player.Sheet {
     public sealed class DamageData : SheetBase {
         #region Properties / Felder
-        public Data.General.IDamageTypeData DamageType { get; init; }
+        public IDamageTypeData DamageType { get; init; }
         #endregion
 
         #region Konstruktor
-        internal DamageData(CharacterSheet aMain, Data.General.IDamageTypeData aDamageType)
+        internal DamageData(CharacterSheet aMain, IDamageTypeData aDamageType)
             : base(aMain) {
             DamageType = aDamageType;
         }

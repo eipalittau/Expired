@@ -1,4 +1,5 @@
-﻿using Exp.Data.General;
+﻿using Exp.Data.General.DamageType;
+using Exp.Data.General.Tier;
 using Exp.Util;
 using Exp.Util.Extension;
 
@@ -7,7 +8,7 @@ namespace Exp.Data.Feat {
     public abstract class FeatDataBase<T> : DataBase {
         #region Properties / Felder
         /// <summary>Stufe der Fähigkeit.</summary>
-        public General.ITierData Tier { get; set; }
+        public ITierData Tier { get; set; }
         /// <summary>Liste der Voraussetzungen.</summary>
         public List<T> PrerequisiteList { get; init; }
         public LanguageBasedData EffektDescription { get; } = new();

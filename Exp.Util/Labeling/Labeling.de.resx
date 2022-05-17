@@ -123,6 +123,9 @@
   <data name="Exp.Exception.DublicateItemException" xml:space="preserve">
     <value>Das Item mit der ID '{0}' existiert bereits.</value>
   </data>
+  <data name="Exp.Exception.Filesystem.WrongJsonFormatException" xml:space="preserve">
+    <value>Die Json-Datei '{0}' enthält ein unbekanntes Format.</value>
+  </data>
   <data name="Exp.Exception.ItemNotFoundException" xml:space="preserve">
     <value>Das Item mit der ID '{0}' kann in der Aufzählung nicht gefunden werden.</value>
   </data>

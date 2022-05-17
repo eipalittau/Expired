@@ -1,5 +1,7 @@
-﻿namespace Exp.Api.Feat {
-    public sealed class Defensive : ApiBase<Data.Feat.IDefensiveData> {
+﻿using Exp.Data.Feat.Defensive;
+
+namespace Exp.Api.Feat {
+    public sealed class Defensive : ApiBase<IDefensiveData> {
         #region Properties / Felder
         public static Defensive Singleton { get; } = new();
         #endregion
@@ -17,11 +19,11 @@
             base.Clear();
         }
 
-        public new IList<Data.Feat.IDefensiveData> Enumerate() {
+        public new IList<IDefensiveData> Enumerate() {
             return base.Enumerate();
         }
 
-        public new Data.Feat.IDefensiveData Get(string aID) {
+        public new IDefensiveData Get(string aID) {
             return base.Get(aID);
         }
 
@@ -29,7 +31,7 @@
             return base.Count();
         }
 
-        public new void Add(Data.Feat.IDefensiveData aItem) {
+        public new void Add(IDefensiveData aItem) {
             base.Add(aItem);
         }
         #endregion

@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Feat.Offensive {
-    public sealed class Sneaky : Exp.Data.Feat.OffensiveDataBase, Exp.Data.Feat.IOffensiveData {
+﻿using Exp.Data.Feat.Offensive;
+
+namespace Exp.DefaultMod.Feat.Offensive {
+    public sealed class Sneaky : OffensiveDataBase, IOffensiveData {
         #region Konstruktor
         private Sneaky()
             : base(nameof(Sneaky), 1200, Api.General.Tier.Singleton.Get(nameof(General.Tier.Two)), Api.General.ActionType.Singleton.Get(nameof(General.ActionType.Standard))) {

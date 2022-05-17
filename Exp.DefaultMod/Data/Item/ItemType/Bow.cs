@@ -1,8 +1,10 @@
-﻿namespace Exp.DefaultMod.Item.ItemType {
-    public sealed class Bow : Exp.Data.Item.ItemTypeDataBase, Exp.Data.Item.IItemTypeData {
+﻿using Exp.Data.Item.ItemType;
+
+namespace Exp.DefaultMod.Item.ItemType {
+    public sealed class Bow : ItemTypeDataBase, IItemTypeData {
         #region Konstruktor
         private Bow()
-            : base(nameof(Bow), 500, null, 
+            : base(nameof(Bow), 500, 
                   Api.Player.Slot.Singleton.Get(nameof(Player.Slot.Mainhand)), 
                   Api.Player.Slot.Singleton.Get(nameof(Player.Slot.Offhand))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Bogen");

@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Skill.Group {
-    public sealed class Fight : Exp.Data.Skill.SkillGroupDataBase, Exp.Data.Skill.ISkillGroupData {
+﻿using Exp.Data.Skill.SkillGroup;
+
+namespace Exp.DefaultMod.Skill.Group {
+    public sealed class Fight : SkillGroupDataBase, ISkillGroupData {
         #region Konstruktor
         private Fight()
             : base(nameof(Fight), 100) {

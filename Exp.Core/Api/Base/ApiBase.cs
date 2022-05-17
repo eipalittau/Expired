@@ -15,11 +15,10 @@ namespace Exp.Api {
             return GetItem(aID).Any();
         }
 
-        //Patrik: Neuer Get berücksichtigen
         private protected void Remove(string aID) {
             T? lItem = Get(aID);
 
-            if (lItem != null) {
+            if (lItem != null && !lItem.ID.Equals(Core.Properties.Resources.NameDefaultObject)) {
                 mDataList.Remove(lItem);
             }
         }
@@ -29,7 +28,7 @@ namespace Exp.Api {
         }
 
         private protected IList<T> Enumerate() {
-            return mDataList.AsReadOnly();
+            return GetItems().AsReadOnly();
         }
 
         /// <summary>Sucht aufgrund der ID den entsprechenden Datensatz.</summary>
@@ -41,7 +40,11 @@ namespace Exp.Api {
 
             if (lItem == null) {
                 ExceptionHandler.Add(new Exception.ItemNotFoundException(aID));
-                lItem = mDataList.First();
+
+                lItem = GetItem(Core.Properties.Resources.NameDefaultObject).FirstOrDefault();
+                if (lItem == null) {
+                    throw new Exception.ItemNotFoundException(aID);
+                }
             }
 
             return lItem;
@@ -50,7 +53,7 @@ namespace Exp.Api {
         /// <summary>Liest die Anzahl der Einträge in der Aufzählung.</summary>
         /// <returns>Die Anzahl der Items in der Aufzählung.</returns>
         private protected int Count() {
-            return mDataList.Count;
+            return GetItems().Count;
         }
 
         /// <summary>Fügt das übergebene Item der Sammlung hinzu.</summary>
@@ -66,6 +69,12 @@ namespace Exp.Api {
 
         private IEnumerable<T> GetItem(string aID) {
             return mDataList.Where(x => x.ID.Equals(aID, StringComparison.InvariantCultureIgnoreCase));
+        }
+
+        private List<T> GetItems() {
+            return mDataList
+                .Where(x => !x.ID.Equals(Core.Properties.Resources.NameDefaultObject, StringComparison.InvariantCultureIgnoreCase))
+                .ToList();
         }
         #endregion
     }

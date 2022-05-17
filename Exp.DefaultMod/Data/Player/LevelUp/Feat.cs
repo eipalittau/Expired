@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Player.LevelUp {
-    public sealed class Feat : Data.Player.LevelUpDataBase, Data.Player.ILevelUpData {
+﻿using Exp.Data.Player.LevelUp;
+
+namespace Exp.DefaultMod.Player.LevelUp {
+    public sealed class Feat : LevelUpDataBase, ILevelUpData {
         #region Konstruktor
         private Feat()
             : base(Api.General.TargetEffectEnum.FeatPoints, new Api.Helper.ModifierData(1, 0, 1)) {

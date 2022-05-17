@@ -1,8 +1,10 @@
-﻿namespace Exp.DefaultMod.Item.ItemType {
-    public sealed class Amulet : Exp.Data.Item.ItemTypeDataBase, Exp.Data.Item.IItemTypeData {
+﻿using Exp.Data.Item.ItemType;
+
+namespace Exp.DefaultMod.Item.ItemType {
+    public sealed class Amulet : ItemTypeDataBase, IItemTypeData {
         #region Konstruktor
         private Amulet()
-            : base(nameof(Amulet), 1400, null, 
+            : base(nameof(Amulet), 1400, 
                   Api.Player.Slot.Singleton.Get(nameof(Player.Slot.Neck))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Amulett");
             Name.Set(Util.LanguageEnum.English, "Amulet");

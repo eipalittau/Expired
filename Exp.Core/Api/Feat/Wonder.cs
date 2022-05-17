@@ -1,5 +1,7 @@
-﻿namespace Exp.Api.Feat {
-    public sealed class Wonder : ApiBase<Data.Feat.IWonderData> {
+﻿using Exp.Data.Feat.Wonder;
+
+namespace Exp.Api.Feat {
+    public sealed class Wonder : ApiBase<IWonderData> {
         #region Properties / Felder
         public static Wonder Singleton { get; } = new();
         #endregion
@@ -17,11 +19,11 @@
             base.Clear();
         }
 
-        public new IList<Data.Feat.IWonderData> Enumerate() {
+        public new IList<IWonderData> Enumerate() {
             return base.Enumerate();
         }
 
-        public new Data.Feat.IWonderData Get(string aID) {
+        public new IWonderData Get(string aID) {
             return base.Get(aID);
         }
 
@@ -29,7 +31,7 @@
             return base.Count();
         }
 
-        public new void Add(Data.Feat.IWonderData aItem) {
+        public new void Add(IWonderData aItem) {
             base.Add(aItem);
         }
         #endregion

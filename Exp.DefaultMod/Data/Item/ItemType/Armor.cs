@@ -1,9 +1,10 @@
-﻿namespace Exp.DefaultMod.Item.ItemType {
-    public sealed class Armor : Exp.Data.Item.ItemTypeDataBase, Exp.Data.Item.IItemTypeData {
+﻿using Exp.Data.Item.ItemType;
+
+namespace Exp.DefaultMod.Item.ItemType {
+    public sealed class Armor : ItemTypeDataBase, IItemTypeData {
         #region Konstruktor
         private Armor()
-            : base(nameof(Armor), 100, null, 
-                  Api.Player.Slot.Singleton.Get(nameof(Player.Slot.Body))) {
+            : base(nameof(Armor), 100, Api.Player.Slot.Singleton.Get(nameof(Player.Slot.Body))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Rüstung");
             Name.Set(Util.LanguageEnum.English, "Armor");
             LoreDescription.Set(Util.LanguageEnum.Deutsch, "");

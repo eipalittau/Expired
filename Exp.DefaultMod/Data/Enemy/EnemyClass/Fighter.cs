@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Enemy.EnemyClass {
-    public sealed class Fighter : Exp.Data.Enemy.EnemyClassBase, Exp.Data.Enemy.IEnemyClassData {
+﻿using Exp.Data.Enemy.EnemyClass;
+
+namespace Exp.DefaultMod.Enemy.EnemyClass {
+    public sealed class Fighter : EnemyClassBase, IEnemyClassData {
         #region Konstruktor
         private Fighter()
             : base(nameof(Fighter), 400, 400) {

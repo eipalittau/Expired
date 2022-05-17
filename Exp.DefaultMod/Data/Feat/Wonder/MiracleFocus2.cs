@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Feat.Wonder {
-    public sealed class MiracleFocus2 : Exp.Data.Feat.WonderDataBase, Exp.Data.Feat.IWonderData {
+﻿using Exp.Data.Feat.Wonder;
+
+namespace Exp.DefaultMod.Feat.Wonder {
+    public sealed class MiracleFocus2 : WonderDataBase, IWonderData {
         #region Konstruktor
         private MiracleFocus2()
             : base(nameof(MiracleFocus2), 1400, Api.General.Tier.Singleton.Get(nameof(General.Tier.Two)), Api.Feat.Wonder.Singleton.Get(nameof(MiracleFocus))) {

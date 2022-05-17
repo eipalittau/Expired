@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Player.PlayerClass.Aptitude {
-    public sealed class Movement : Data.Misc.AptitudeDataBase, Data.Misc.IAptitudeData {
+﻿using Exp.Data.Misc.Aptitude;
+
+namespace Exp.DefaultMod.Player.PlayerClass.Aptitude {
+    public sealed class Movement : AptitudeDataBase, IAptitudeData {
         #region Konstruktor
         public Movement()
             : base(nameof(Movement), Api.General.TargetEffectEnum.Movement) {

@@ -1,4 +1,4 @@
-﻿using Exp.Data.Profession;
+﻿using Exp.Data.Profession.Smithing;
 using Exp.Util;
 
 namespace Exp.Api.Player.Sheet {

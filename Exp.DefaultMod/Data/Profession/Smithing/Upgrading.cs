@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Profession.Smithing {
-    public sealed class Upgrading : Data.Profession.SmithingDataBase, Data.Profession.ISmithingData {
+﻿using Exp.Data.Profession.Smithing;
+
+namespace Exp.DefaultMod.Profession.Smithing {
+    public sealed class Upgrading : SmithingDataBase, ISmithingData {
         #region Konstruktor
         private Upgrading()
             : base(nameof(Upgrading), 600,

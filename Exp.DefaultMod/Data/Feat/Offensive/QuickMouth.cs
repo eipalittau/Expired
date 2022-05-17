@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Feat.Offensive {
-    public sealed class QuickMouth : Exp.Data.Feat.OffensiveDataBase, Exp.Data.Feat.IOffensiveData {
+﻿using Exp.Data.Feat.Offensive;
+
+namespace Exp.DefaultMod.Feat.Offensive {
+    public sealed class QuickMouth : OffensiveDataBase, IOffensiveData {
         #region Konstruktor
         private QuickMouth()
             : base(nameof(QuickMouth), 1100, Api.General.Tier.Singleton.Get(nameof(General.Tier.Two)), Api.General.ActionType.Singleton.Get(nameof(General.ActionType.Move)), Api.Feat.Offensive.Singleton.Get(nameof(EloquentInsulte))) {

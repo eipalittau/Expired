@@ -1,5 +1,7 @@
-﻿namespace Exp.DefaultMod.Profession.Smithing {
-    public sealed class RaisePower : Data.Profession.SmithingDataBase, Data.Profession.ISmithingData {
+﻿using Exp.Data.Profession.Smithing;
+
+namespace Exp.DefaultMod.Profession.Smithing {
+    public sealed class RaisePower : SmithingDataBase, ISmithingData {
         #region Konstruktor
         private RaisePower()
             : base(nameof(RaisePower), 400,

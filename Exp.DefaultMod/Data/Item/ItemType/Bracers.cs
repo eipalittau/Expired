@@ -1,8 +1,10 @@
-﻿namespace Exp.DefaultMod.Item.ItemType {
-    public sealed class Bracers : Exp.Data.Item.ItemTypeDataBase, Exp.Data.Item.IItemTypeData {
+﻿using Exp.Data.Item.ItemType;
+
+namespace Exp.DefaultMod.Item.ItemType {
+    public sealed class Bracers : ItemTypeDataBase, IItemTypeData {
         #region Konstruktor
         private Bracers()
-            : base(nameof(Bracers), 1700, null, 
+            : base(nameof(Bracers), 1700, 
                   Api.Player.Slot.Singleton.Get(nameof(Player.Slot.WristLeft)), 
                   Api.Player.Slot.Singleton.Get(nameof(Player.Slot.WristRight))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Armschutz");

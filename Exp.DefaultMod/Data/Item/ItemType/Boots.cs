@@ -1,8 +1,10 @@
-﻿namespace Exp.DefaultMod.Item.ItemType {
-    public sealed class Boots : Exp.Data.Item.ItemTypeDataBase, Exp.Data.Item.IItemTypeData {
+﻿using Exp.Data.Item.ItemType;
+
+namespace Exp.DefaultMod.Item.ItemType {
+    public sealed class Boots : ItemTypeDataBase, IItemTypeData {
         #region Konstruktor
         private Boots()
-            : base(nameof(Boots), 200, null, 
+            : base(nameof(Boots), 200, 
                   Api.Player.Slot.Singleton.Get(nameof(Player.Slot.Feet))) {
             Name.Set(Util.LanguageEnum.Deutsch, "Stiefel");
             Name.Set(Util.LanguageEnum.English, "Boots");
