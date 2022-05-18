@@ -46,7 +46,7 @@ namespace Exp.Api.General {
         }
 
         public new void Add(IDiceTypeData aItem) {
-            if (aItem.Faces <= 1) {
+            if (aItem.Faces <= 1 && !aItem.ID.Equals(Core.Properties.Resources.NameDefaultObject, StringComparison.InvariantCultureIgnoreCase)) {
                 ExceptionHandler.Add(new Exception.BadArgumentException(nameof(aItem.Faces), aItem.Faces));
             } else {
                 base.Add(aItem);

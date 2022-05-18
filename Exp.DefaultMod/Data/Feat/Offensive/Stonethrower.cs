@@ -11,11 +11,11 @@ namespace Exp.DefaultMod.Feat.Offensive {
             Name.Set(Util.LanguageEnum.English, "Stone thrower");
             LoreDescription.Set(Util.LanguageEnum.Deutsch, @"{\rtf1Komm her und kämpfe wie ein richtiger Mann!}");
             LoreDescription.Set(Util.LanguageEnum.English, @"{\rtf1Come here and fight like a real man!}");
-            EffektDescription.Set(Util.LanguageEnum.Deutsch, @"{\rtf1Fernkampf: +1 Angriff, +1 Schaden\lineFernkampfangriff: 1W4 Schaden}");
-            EffektDescription.Set(Util.LanguageEnum.English, @"{\rtf1Fernkampf: +1 Angriff, +1 Schaden\lineFernkampfangriff: 1W4 Schaden}");
+            EffectDescription.Set(Util.LanguageEnum.Deutsch, @"{\rtf1Fernkampf: +1 Angriff, +1 Schaden\lineFernkampfangriff: 1W4 Schaden}");
+            EffectDescription.Set(Util.LanguageEnum.English, @"{\rtf1Fernkampf: +1 Angriff, +1 Schaden\lineFernkampfangriff: 1W4 Schaden}");
         }
         #endregion
-        
+
         #region Methoden
         public static void Add() {
             AddInstance(new Stonethrower());

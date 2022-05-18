@@ -123,8 +123,24 @@
   <data name="Exp.Exception.DublicateItemException" xml:space="preserve">
     <value>Das Item mit der ID '{0}' existiert bereits.</value>
   </data>
+  <data name="Exp.Exception.Filesystem.DirectoryCreationException" xml:space="preserve">
+    <value>Das Verzeichnis '{0}' konnte nicht erstellt werden.</value>
+  </data>
+  <data name="Exp.Exception.Filesystem.MissingDirectoryException" xml:space="preserve">
+    <value>Das Verzeichins '{0}' existiert nicht.</value>
+  </data>
+  <data name="Exp.Exception.Filesystem.MissingFileException" xml:space="preserve">
+    <value>Die Datei'{0}' existiert nicht.</value>
+  </data>
+  <data name="Exp.Exception.Filesystem.NoWritePermissionException" xml:space="preserve">
+    <value>In das neu erstellte Verzeichnis '{0}' kann nicht geschrieben werden.</value>
+  </data>
   <data name="Exp.Exception.Filesystem.WrongJsonFormatException" xml:space="preserve">
     <value>Die Json-Datei '{0}' enthält ein unbekanntes Format.</value>
+  </data>
+  <data name="Exp.Exception.GeneralException" xml:space="preserve">
+    <value />
+    <comment>Wrapper für System.Exception</comment>
   </data>
   <data name="Exp.Exception.ItemNotFoundException" xml:space="preserve">
     <value>Das Item mit der ID '{0}' kann in der Aufzählung nicht gefunden werden.</value>

@@ -7,12 +7,12 @@ namespace Exp.Test {
         }
 
         private void frmModList_Load(object sender, EventArgs e) {
-            Util.ModHandler.Singleton.GetList().ForEach(x => checkedListBox1.Items.Add(x.Name, x.IsActive));
+            Internal.Mod.ModHandler.Singleton.GetList().ForEach(x => checkedListBox1.Items.Add(x.Name, x.IsActive));
         }
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e) {
             if (sender is CheckedListBox aObject) {
-                textBox1.Text = Util.ModHandler.Singleton.GetItem(aObject.SelectedItem.Null2String())
+                textBox1.Text = Internal.Mod.ModHandler.Singleton.GetItem(aObject.SelectedItem.Null2String())
                     .GetFullDescription();
             } else {
                 textBox1.Text = string.Empty;
@@ -24,13 +24,13 @@ namespace Exp.Test {
         }
 
         private void button1_Click(object sender, EventArgs e) {
-            Util.ModHandler.Singleton.Save();
+            Internal.Mod.ModHandler.Singleton.Save();
             Close();
         }
 
         private void checkedListBox1_ItemCheck(object sender, ItemCheckEventArgs e) {
             if (sender is CheckedListBox aObject && !aObject.SelectedItem.Null2String().Equals(string.Empty)) {
-                Util.ModHandler.Singleton.GetItem(aObject.SelectedItem.Null2String()).IsActive = e.NewValue == CheckState.Checked;
+                Internal.Mod.ModHandler.Singleton.GetItem(aObject.SelectedItem.Null2String()).IsActive = e.NewValue == CheckState.Checked;
             }
         }
     }

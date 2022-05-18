@@ -30,6 +30,10 @@ namespace Exp.Api.Player.Sheet {
         public new IList<IOffensiveData> Enumerate() {
             return base.Enumerate();
         }
+
+        public IList<IOffensiveData> EnumerateUnused() {
+            return Feat.Offensive.Singleton.Enumerate().Except(Enumerate()).ToList().AsReadOnly();
+        }
         #endregion
     }
 }

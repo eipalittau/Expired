@@ -8,11 +8,11 @@ namespace Exp.Api {
         #endregion
 
         #region Konstruktor
-        public Main(bool aThrowException, LanguageEnum aLanguage) {
+        public Main(LanguageEnum aLanguage, bool aThrowException) {
             try {
+                ExceptionHandler.ThrowException = aThrowException;
                 Localisation.AddResourceFile("Labeling.Labeling");
                 SetLanguage(aLanguage);
-                ExceptionHandler.ThrowException = aThrowException;
                 AddNone();
 
             } catch (System.Exception aEx) {
@@ -60,6 +60,7 @@ namespace Exp.Api {
             Data.Feat.Offensive.None.Add();
             Data.Feat.Wizardry.None.Add();
             Data.Feat.Wonder.None.Add();
+
             //Misc
             Data.Misc.Recollection.None.Add();
 

@@ -23,51 +23,55 @@
         ///  the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnSelectMods = new System.Windows.Forms.Button();
+            this.btnInitialize = new System.Windows.Forms.Button();
+            this.btnNewCharacter = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btnSelectMods
             // 
-            this.button1.Location = new System.Drawing.Point(12, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(267, 34);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Select Mods";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSelectMods.Location = new System.Drawing.Point(8, 7);
+            this.btnSelectMods.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSelectMods.Name = "btnSelectMods";
+            this.btnSelectMods.Size = new System.Drawing.Size(187, 20);
+            this.btnSelectMods.TabIndex = 0;
+            this.btnSelectMods.Text = "Select Mods";
+            this.btnSelectMods.UseVisualStyleBackColor = true;
+            this.btnSelectMods.Click += new System.EventHandler(this.btnSelectMods_Click);
             // 
-            // button2
+            // btnInitialize
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(457, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(267, 34);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Initialize";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnInitialize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInitialize.Location = new System.Drawing.Point(320, 7);
+            this.btnInitialize.Margin = new System.Windows.Forms.Padding(2);
+            this.btnInitialize.Name = "btnInitialize";
+            this.btnInitialize.Size = new System.Drawing.Size(187, 20);
+            this.btnInitialize.TabIndex = 1;
+            this.btnInitialize.Text = "Initialize";
+            this.btnInitialize.UseVisualStyleBackColor = true;
+            this.btnInitialize.Click += new System.EventHandler(this.btnInitialize_Click);
             // 
-            // button3
+            // btnNewCharacter
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(457, 52);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(267, 34);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "New Character";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnNewCharacter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNewCharacter.Location = new System.Drawing.Point(320, 31);
+            this.btnNewCharacter.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNewCharacter.Name = "btnNewCharacter";
+            this.btnNewCharacter.Size = new System.Drawing.Size(187, 20);
+            this.btnNewCharacter.TabIndex = 2;
+            this.btnNewCharacter.Text = "New Character";
+            this.btnNewCharacter.UseVisualStyleBackColor = true;
+            this.btnNewCharacter.Click += new System.EventHandler(this.btnNewCharacter_Click);
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 417);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(515, 250);
+            this.Controls.Add(this.btnNewCharacter);
+            this.Controls.Add(this.btnInitialize);
+            this.Controls.Add(this.btnSelectMods);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmMain";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -77,8 +81,8 @@
 
         #endregion
 
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private Button btnSelectMods;
+        private Button btnInitialize;
+        private Button btnNewCharacter;
     }
 }

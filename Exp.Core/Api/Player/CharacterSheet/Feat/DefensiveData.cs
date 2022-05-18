@@ -28,6 +28,10 @@ namespace Exp.Api.Player.Sheet {
         public new IList<IDefensiveData> Enumerate() {
             return base.Enumerate();
         }
+
+        public IList<IDefensiveData> EnumerateUnused() {
+            return Feat.Defensive.Singleton.Enumerate().Except(Enumerate()).ToList().AsReadOnly();
+        }
         #endregion
     }
 }

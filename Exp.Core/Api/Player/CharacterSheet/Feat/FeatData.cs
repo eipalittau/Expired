@@ -37,6 +37,6 @@ namespace Exp.Api.Player.Sheet {
                 Wonder.LevelUp((IWonderData)aTalent);
             }
         }
-    #endregion
-}
+        #endregion
+    }
 }

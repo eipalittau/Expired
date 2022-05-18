@@ -28,6 +28,10 @@ namespace Exp.Api.Player.Sheet {
         public new IList<IWizardryData> Enumerate() {
             return base.Enumerate();
         }
+
+        public IList<IWizardryData> EnumerateUnused() {
+            return Feat.Wizardry.Singleton.Enumerate().Except(Enumerate()).ToList().AsReadOnly();
+        }
         #endregion
     }
 }

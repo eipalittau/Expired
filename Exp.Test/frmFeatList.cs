@@ -1,4 +1,6 @@
-﻿using Exp.Util;
+﻿using Exp.Data.Feat.Aura;
+using Exp.Util;
+using Exp.Util.Extension;
 
 namespace Exp.Test {
     public partial class frmFeatList : Form {
@@ -7,17 +9,19 @@ namespace Exp.Test {
         }
 
         private void frmFeatList_Load(object sender, EventArgs e) {
-            Exp.Api.Feat.Aura.Singleton.Enumerate().ToList().ForEach(x => checkedListBox1.Items.Add(x.Name.Get(Localisation.Language), false));
+        }
+
+        public void AuraList(IList<IAuraData> aDataList) {
+            aDataList.ToList().ForEach(x => checkedListBox1.Items.Add(x.Name.Get(Localisation.Language), false));
         }
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e) {
             if (sender is CheckedListBox aObject) {
-                textBox1.Text = Exp.Api.Feat.Aura.Singleton.Get(aObject.SelectedItem.Null2String())
-                    .GetFullDescription();
+                textBox1.Text = Api.Feat.Aura.Singleton.Get(aObject.SelectedItem.Null2String()).GetFullDescription();
             } else {
                 textBox1.Text = string.Empty;
             }
-            Exp.Api.Feat.Aura.Singleton.Get(sender.)
+            //Exp.Api.Feat.Aura.Singleton.Get(sender.)
         }
     }
 }

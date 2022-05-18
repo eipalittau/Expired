@@ -17,7 +17,8 @@ namespace Exp.Util {
         }
 
         public string Get(LanguageEnum aLanguage) {
-            return string.Concat(@"{\rtf1", mValue[aLanguage.ID], @"}");
+            return mValue[aLanguage.ID];
+            //return string.Concat(@"{\rtf1", mValue[aLanguage.ID], @"}");
         }
 
         public string? Get(string aValue) {

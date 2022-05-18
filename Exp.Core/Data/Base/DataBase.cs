@@ -16,10 +16,20 @@
         protected DataBase(string aID, int aSortWeight) {
             if (string.IsNullOrWhiteSpace(aID)) {
                 throw new Exception.MissingParameterException(nameof(aID));
-            } 
-            
+            }
+
             ID = aID;
             SortWeight = aSortWeight;
+        }
+        #endregion
+
+        #region Methoden
+        public string GetName() {
+            return Name.Get(Util.Localisation.Language);
+        }
+
+        public string GetLoreDescription() {
+            return LoreDescription.Get(Util.Localisation.Language);
         }
         #endregion
     }

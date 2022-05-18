@@ -2,6 +2,7 @@
 using Exp.Data.General.DamageType;
 using Exp.Data.General.DiceType;
 using Exp.Data.General.Tier;
+using System.Text;
 
 namespace Exp.Data.Feat.Aura {
     public abstract class AuraDataBase : FeatDataBase<IAuraData> {
@@ -20,6 +21,23 @@ namespace Exp.Data.Feat.Aura {
         #endregion
 
         #region Methoden
+        public new string GetFullDescription() {
+            StringBuilder lDescription = base.GetFullDescription();
+
+            if (ActionType != null) {
+                lDescription.AppendLine(string.Empty);
+                lDescription.AppendLine("Action-Type:");
+                lDescription.AppendLine($"{ActionType.GetName()} ({ActionType.LoreDescription.Get(Util.Localisation.Language)})");
+            }
+
+            if (PrerequisiteList.Count > 0) {
+                lDescription.AppendLine(string.Empty);
+                PrerequisiteList.ForEach(x => lDescription.AppendLine($"- {x.GetName()}"));
+            }
+
+            return lDescription.ToString();
+        }
+
         public void OnNewDay() { }
 
         public void OnNewBattle() { }

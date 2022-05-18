@@ -28,6 +28,10 @@ namespace Exp.Api.Player.Sheet {
         public new IList<IWonderData> Enumerate() {
             return base.Enumerate();
         }
+
+        public IList<IWonderData> EnumerateUnused() {
+            return Feat.Wonder.Singleton.Enumerate().Except(Enumerate()).ToList().AsReadOnly();
+        }
         #endregion
     }
 }

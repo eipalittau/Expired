@@ -36,6 +36,7 @@ namespace Exp.Api {
         /// <returns>Das gefunden Item.</returns>
         /// <exception cref="DublicateItemException ">Falls die ID des Items nicht existiert, wird diese Exception geworfen.</exception>
         private protected T Get(string aID) {
+
             T? lItem = GetItem(aID).FirstOrDefault();
 
             if (lItem == null) {

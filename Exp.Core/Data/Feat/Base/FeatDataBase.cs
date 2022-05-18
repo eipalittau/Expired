@@ -2,6 +2,7 @@
 using Exp.Data.General.Tier;
 using Exp.Util;
 using Exp.Util.Extension;
+using System.Text;
 
 namespace Exp.Data.Feat {
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
@@ -11,7 +12,7 @@ namespace Exp.Data.Feat {
         public ITierData Tier { get; set; }
         /// <summary>Liste der Voraussetzungen.</summary>
         public List<T> PrerequisiteList { get; init; }
-        public LanguageBasedData EffektDescription { get; } = new();
+        public LanguageBasedData EffectDescription { get; } = new();
         #endregion
 
         #region Konstruktor
@@ -31,6 +32,25 @@ namespace Exp.Data.Feat {
         #endregion
 
         #region Methoden
+        public string GetEffectDescription() {
+            return EffectDescription.Get(Localisation.Language);
+        }
+
+        protected StringBuilder GetFullDescription() {
+            StringBuilder lDescription = new();
+
+            lDescription.AppendLine(GetName());
+            lDescription.AppendLine(string.Empty);
+            lDescription.AppendLine("Beschreibung:");
+            lDescription.AppendLine(GetLoreDescription());
+            lDescription.AppendLine(GetEffectDescription());
+            lDescription.AppendLine(string.Empty);
+            lDescription.AppendLine("Stufe:");
+            lDescription.AppendLine(Tier.GetName());
+
+            return lDescription;
+        }
+
         protected bool CheckDamageType(IDamageTypeData aNeededDamageType, params IDamageTypeData[] aDamageTypes) {
             if (aDamageTypes.HasData()) {
                 return aDamageTypes.Contains(Api.General.DamageType.Singleton.Get(aNeededDamageType.ID));

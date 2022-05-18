@@ -20,27 +20,6 @@ namespace Exp.Util {
             }
             AddResourceFile(aResourceName, Assembly.GetCallingAssembly());
         }
-        #endregion
-
-        public static string GetText(string aName) {
-            return GetText(aName, Assembly.GetCallingAssembly());
-        }
-
-        public static string GetText(string aName, Assembly aAssembly) {
-            ResourceData? lItem = GetItem(aAssembly);
-
-            if (lItem == null) {
-                throw new Exception.ResourceNotFoundException(aName, aAssembly);
-            } else {
-                return lItem.GetText(Language, aName);
-            }
-        }
-
-        private static ResourceData? GetItem(Assembly aAssembly) {
-            return ResourceList
-                .Where(x => x.Caller.TryGetName().Equals(aAssembly.TryGetName(), StringComparison.CurrentCultureIgnoreCase))
-                .FirstOrDefault();
-        }
 
         private static void AddResourceFile(string aResourceName, Assembly aAssembly) {
             ResourceData? lItem = GetItem(aAssembly);
@@ -51,7 +30,59 @@ namespace Exp.Util {
                 lItem.LoadedLanguage = Language;
             }
         }
+        #endregion
 
+        #region GetText
+        public static string GetText(string aID) {
+            return GetText(aID, Assembly.GetCallingAssembly());
+        }
+
+        public static string GetText(string aID, params string[] aArguments) {
+            string lText = GetText(aID);
+
+            if (aArguments.HasData()) {
+                return string.Format(lText, aArguments);
+            } else {
+                return lText;
+            }
+        }
+
+        public static string GetText(string aID, Assembly aAssembly) {
+            ResourceData? lItem = GetItem(aAssembly);
+
+            if (lItem == null) {
+                ExceptionHandler.Add(new Exception.ResourceNotFoundException(aID, aAssembly));
+
+                return string.Empty;
+            } else {
+                return lItem.GetText(Language, aID);
+            }
+        }
+
+        public static string GetText(string aID, Assembly aAssembly, params string[] aArguments) {
+            string lText = GetText(aID, aAssembly);
+
+            if (aArguments.HasData()) {
+                return GetTextFormatted(lText, aArguments);
+            } else {
+                return lText;
+            }
+        }
+
+        private static string GetTextFormatted(string aText, params string[] aArguments) {
+            if (aText.Equals(string.Empty)) {
+                return aText;
+            }
+
+            return string.Format(aText, aArguments);
+        }
+        #endregion
+
+        private static ResourceData? GetItem(Assembly aAssembly) {
+            return ResourceList
+                .Where(x => x.Caller.IsEqual(aAssembly))
+                .FirstOrDefault();
+        }
         #endregion
 
         private class ResourceData {

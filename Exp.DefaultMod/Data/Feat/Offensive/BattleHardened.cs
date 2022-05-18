@@ -10,8 +10,8 @@ namespace Exp.DefaultMod.Feat.Offensive {
             Name.Set(Util.LanguageEnum.English, "Battle hardened");
             LoreDescription.Set(Util.LanguageEnum.Deutsch, "Immer Mitten in die Fresse rein...");
             LoreDescription.Set(Util.LanguageEnum.English, "Always right in the face...");
-            EffektDescription.Set(Util.LanguageEnum.Deutsch, "+1 Angriff, +1 Schaden");
-            EffektDescription.Set(Util.LanguageEnum.English, "+1 Angriff, +1 Schaden");
+            EffectDescription.Set(Util.LanguageEnum.Deutsch, "+1 Angriff, +1 Schaden");
+            EffectDescription.Set(Util.LanguageEnum.English, "+1 Angriff, +1 Schaden");
         }
         #endregion
 
