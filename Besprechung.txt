@@ -3,3 +3,5 @@ Definition der PlayerClass:
 
 CharacterSheet:
 - Smithing
+
+Soll Exp.Core.Internal.Mod nach Exp.Test verschoben werden?
