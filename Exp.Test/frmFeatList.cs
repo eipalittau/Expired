@@ -4,6 +4,8 @@ using Exp.Util.Extension;
 
 namespace Exp.Test {
     public partial class frmFeatList : Form {
+        private IList<IAuraData>? AuraDataList { get; set; }
+
         public frmFeatList() {
             InitializeComponent();
         }
@@ -12,7 +14,8 @@ namespace Exp.Test {
         }
 
         public void AuraList(IList<IAuraData> aDataList) {
-            aDataList.ToList().ForEach(x => checkedListBox1.Items.Add(x.Name.Get(Localisation.Language), false));
+            AuraDataList = aDataList;
+            AuraDataList.ToList().ForEach(x => checkedListBox1.Items.Add(x.Name.Get(Localisation.Language), false));
         }
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e) {

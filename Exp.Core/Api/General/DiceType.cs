@@ -1,5 +1,6 @@
 ﻿using Exp.Data.General.DiceType;
 using Exp.Util;
+using Exp.Util.Extension;
 
 namespace Exp.Api.General {
     public sealed class DiceType : ApiBase<IDiceTypeData> {
@@ -28,7 +29,7 @@ namespace Exp.Api.General {
             return base.Get(aID);
         }
 
-        public IDiceTypeData Get(int aFaces) {
+        public new IDiceTypeData Get(int aFaces) {
             IDiceTypeData? lItem = Singleton.Enumerate()
                 .Where(x => x.Faces == aFaces)
                 .FirstOrDefault();
@@ -46,7 +47,7 @@ namespace Exp.Api.General {
         }
 
         public new void Add(IDiceTypeData aItem) {
-            if (aItem.Faces <= 1 && !aItem.ID.Equals(Core.Properties.Resources.NameDefaultObject, StringComparison.InvariantCultureIgnoreCase)) {
+            if (aItem.Faces <= 1 && !aItem.IsDefaultObject()) {
                 ExceptionHandler.Add(new Exception.BadArgumentException(nameof(aItem.Faces), aItem.Faces));
             } else {
                 base.Add(aItem);

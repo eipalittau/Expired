@@ -1,4 +1,5 @@
 ﻿using Exp.Util;
+using Exp.Util.Extension;
 
 namespace Exp.Api {
     public abstract class ApiBase<T> where T : Data.IDataBase {
@@ -18,7 +19,7 @@ namespace Exp.Api {
         private protected void Remove(string aID) {
             T? lItem = Get(aID);
 
-            if (lItem != null && !lItem.ID.Equals(Core.Properties.Resources.NameDefaultObject)) {
+            if (lItem != null && !lItem.IsDefaultObject()) {
                 mDataList.Remove(lItem);
             }
         }
@@ -34,9 +35,8 @@ namespace Exp.Api {
         /// <summary>Sucht aufgrund der ID den entsprechenden Datensatz.</summary>
         /// <param name="aID">ID des gesuchten Datensatzes.</param>
         /// <returns>Das gefunden Item.</returns>
-        /// <exception cref="DublicateItemException ">Falls die ID des Items nicht existiert, wird diese Exception geworfen.</exception>
+        /// <exception cref="ItemNotFoundException ">Falls die ID des Items nicht existiert, wird diese Exception geworfen.</exception>
         private protected T Get(string aID) {
-
             T? lItem = GetItem(aID).FirstOrDefault();
 
             if (lItem == null) {
@@ -44,11 +44,24 @@ namespace Exp.Api {
 
                 lItem = GetItem(Core.Properties.Resources.NameDefaultObject).FirstOrDefault();
                 if (lItem == null) {
-                    throw new Exception.ItemNotFoundException(aID);
+                    Exception.ItemNotFoundException lException = new(aID);
+
+                    ExceptionHandler.Add(lException);
+                    throw lException;
                 }
             }
 
             return lItem;
+        }
+
+        /// <summary>Sucht aufgrund des Indexes den entsprechenden Datensatz.</summary>
+        /// <param name="aIndex"></param>
+        /// <returns>Das gefunden Item.</returns>
+        private protected T Get(int aIndex) {
+            if (aIndex < 0 || aIndex > mDataList.Count) {
+            } else {
+                return GetItems()[aIndex];
+            }
         }
 
         /// <summary>Liest die Anzahl der Einträge in der Aufzählung.</summary>
@@ -74,7 +87,7 @@ namespace Exp.Api {
 
         private List<T> GetItems() {
             return mDataList
-                .Where(x => !x.ID.Equals(Core.Properties.Resources.NameDefaultObject, StringComparison.InvariantCultureIgnoreCase))
+                .Where(x => !x.IsDefaultObject())
                 .ToList();
         }
         #endregion
