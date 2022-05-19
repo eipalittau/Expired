@@ -4,7 +4,7 @@ using Exp.Data.Feat.Offensive;
 using Exp.Data.Feat.Wizardry;
 using Exp.Data.Feat.Wonder;
 
-namespace Exp.Api.Player.Sheet {
+namespace Exp.Core.Sheet {
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
     public sealed class FeatData {
         #region Properties / Felder

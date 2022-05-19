@@ -1,7 +1,7 @@
 ﻿using Exp.Data.Profession.Smithing;
 using Exp.Util;
 
-namespace Exp.Api.Player.Sheet {
+namespace Exp.Core.Sheet {
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
     public sealed class SmithingData {
         #region Properties / Felder

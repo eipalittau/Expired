@@ -2,7 +2,7 @@
 using Exp.Data.Item.ItemQuality;
 using Exp.Data.Player.Slot;
 
-namespace Exp.Api.Player.Sheet {
+namespace Exp.Core.Sheet {
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
     public sealed class EquipmentData {
         #region Properties / Felder

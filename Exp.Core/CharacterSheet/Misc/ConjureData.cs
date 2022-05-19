@@ -1,4 +1,4 @@
-﻿namespace Exp.Api.Player.Sheet {
+﻿namespace Exp.Core.Sheet {
     public sealed class ConjureData {
         #region Properties / Felder
         public int CasterLevel { get; internal set; }

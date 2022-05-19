@@ -1,6 +1,6 @@
 ﻿using Exp.Data.General.DamageType;
 
-namespace Exp.Api.Player.Sheet {
+namespace Exp.Core.Sheet {
     public sealed class DamageData : SheetBase {
         #region Properties / Felder
         public IDamageTypeData DamageType { get; init; }

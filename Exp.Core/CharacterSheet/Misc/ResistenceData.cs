@@ -1,4 +1,4 @@
-﻿namespace Exp.Api.Player.Sheet {
+﻿namespace Exp.Core.Sheet {
     public sealed class ResistenceData : SheetBase {
         #region Properties / Felder
         #endregion

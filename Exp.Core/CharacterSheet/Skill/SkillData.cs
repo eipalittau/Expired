@@ -1,6 +1,6 @@
 ﻿using Exp.Data.Skill.SkillType;
 
-namespace Exp.Api.Player.Sheet {
+namespace Exp.Core.Sheet {
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
     public sealed class SkillData {
         #region Properties / Felder

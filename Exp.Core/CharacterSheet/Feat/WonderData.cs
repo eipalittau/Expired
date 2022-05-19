@@ -1,6 +1,6 @@
 ﻿using Exp.Data.Feat.Wonder;
 
-namespace Exp.Api.Player.Sheet {
+namespace Exp.Core.Sheet {
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
     public sealed class WonderData : FeatDataBase<IWonderData> {
         #region Properties / Felder

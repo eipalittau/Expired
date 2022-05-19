@@ -1,6 +1,6 @@
 ﻿using Exp.Util;
 
-namespace Exp.Api.Player.Sheet {
+namespace Exp.Core.Sheet {
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
     public abstract class FeatDataBase<T> where T : Data.IDataBase {
         #region Properties / Felder

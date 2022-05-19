@@ -1,6 +1,6 @@
 ﻿using Exp.Data.Feat.Wizardry;
 
-namespace Exp.Api.Player.Sheet {
+namespace Exp.Core.Sheet {
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
     public sealed class WizardryData : FeatDataBase<IWizardryData> {
         #region Properties / Felder

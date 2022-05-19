@@ -1,4 +1,4 @@
-﻿namespace Exp.Api.Player.Sheet {
+﻿namespace Exp.Core.Sheet {
     public sealed class ArmorClassData : SheetBase {
         #region Properties / Felder
 

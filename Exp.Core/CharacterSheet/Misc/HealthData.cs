@@ -1,4 +1,4 @@
-﻿namespace Exp.Api.Player.Sheet {
+﻿namespace Exp.Core.Sheet {
     public sealed class HealthData : SheetBase {
         #region Properties / Felder
         public bool CanOverheal { get; set; }

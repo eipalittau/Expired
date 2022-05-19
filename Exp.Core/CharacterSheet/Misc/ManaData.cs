@@ -1,4 +1,4 @@
-﻿namespace Exp.Api.Player.Sheet {
+﻿namespace Exp.Core.Sheet {
     public sealed class ManaData : SheetBase {
         #region Properties / Felder
         #endregion

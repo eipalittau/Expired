@@ -1,4 +1,4 @@
-﻿namespace Exp.Api.Player.Sheet {
+﻿namespace Exp.Core.Sheet {
     public abstract class SheetBase {
         #region Properties / Felder
         public int Max { get; internal set; }
