@@ -2,10 +2,10 @@
     public sealed class None : PlayerClassDataBase, IPlayerClassData {
         #region Konstruktor
         private None()
-            : base(Core.Properties.Resources.NameDefaultObject, int.MinValue, Core.Properties.Resources.NameDefaultObject) {
+            : base(Public.Properties.Resources.NameDefaultObject, int.MinValue, Public.Properties.Resources.NameDefaultObject) {
             foreach (Util.LanguageEnum lItem in Util.LanguageEnum.Enumerate()) {
-                Name.Set(lItem, Core.Properties.Resources.NameDefaultObject);
-                LoreDescription.Set(lItem, Core.Properties.Resources.NameDefaultObject);
+                Name.Set(lItem, Public.Properties.Resources.NameDefaultObject);
+                LoreDescription.Set(lItem, Public.Properties.Resources.NameDefaultObject);
             }
         }
         #endregion

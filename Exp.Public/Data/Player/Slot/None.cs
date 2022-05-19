@@ -2,10 +2,10 @@
     public sealed class None : SlotDataBase, ISlotData {
         #region Konstruktor
         private None()
-            : base(Core.Properties.Resources.NameDefaultObject, int.MinValue, false) {
+            : base(Public.Properties.Resources.NameDefaultObject, int.MinValue, false) {
             foreach (Util.LanguageEnum lItem in Util.LanguageEnum.Enumerate()) {
-                Name.Set(lItem, Core.Properties.Resources.NameDefaultObject);
-                LoreDescription.Set(lItem, Core.Properties.Resources.NameDefaultObject);
+                Name.Set(lItem, Public.Properties.Resources.NameDefaultObject);
+                LoreDescription.Set(lItem, Public.Properties.Resources.NameDefaultObject);
             }
         }
         #endregion

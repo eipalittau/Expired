@@ -1,7 +1,7 @@
 ﻿namespace Exp.Api.General {
     public class TargetEffectEnum : Util.EnumerationBase {
         #region Properties / Felder
-        internal static TargetEffectEnum None = new(Core.Properties.Resources.NameDefaultObject, Core.Properties.Resources.NameDefaultObject);
+        internal static TargetEffectEnum None = new(Public.Properties.Resources.NameDefaultObject, Public.Properties.Resources.NameDefaultObject);
         public static TargetEffectEnum Armor = new(nameof(Armor), "Verändert die Rüstungsklasse");
         public static TargetEffectEnum NaturalArmor = new(nameof(NaturalArmor), "Verändert die natürliche Rüstungsklasse");
         public static TargetEffectEnum Health = new(nameof(Health), "Verändert die maximale anzahl Lebenspunkte");

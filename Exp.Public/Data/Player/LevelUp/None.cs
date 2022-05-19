@@ -4,8 +4,8 @@
         private None()
             : base(Api.General.TargetEffectEnum.None, new Api.Helper.ModifierData(int.MinValue, int.MinValue, int.MinValue)) {
             foreach (Util.LanguageEnum lItem in Util.LanguageEnum.Enumerate()) {
-                Name.Set(lItem, Core.Properties.Resources.NameDefaultObject);
-                LoreDescription.Set(lItem, Core.Properties.Resources.NameDefaultObject);
+                Name.Set(lItem, Public.Properties.Resources.NameDefaultObject);
+                LoreDescription.Set(lItem, Public.Properties.Resources.NameDefaultObject);
             }
         }
         #endregion

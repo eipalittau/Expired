@@ -151,6 +151,9 @@
   <data name="Exp.Exception.MissingParameterException" xml:space="preserve">
     <value>Für den Parameter '{0}' wurden keine Daten angegeben.</value>
   </data>
+  <data name="Exp.Exception.OutOfRangeException" xml:space="preserve">
+    <value>Der Angegebene Wert ({0}: {1}) muss zwischen {2} und {3} liegen.</value>
+  </data>
   <data name="Exp.Exception.ResourceNotFoundException" xml:space="preserve">
     <value>Die Ressource '{0}' konnte in der Assembly '{1}' nicht gefunden werden.</value>
   </data>

@@ -9,7 +9,7 @@ namespace Exp.Test {
         public frmMain() {
             InitializeComponent();
 
-            ExpiredApi = new Api.Main(Util.LanguageEnum.Deutsch, false);
+            ExpiredApi = new Main(Util.LanguageEnum.Deutsch, false);
         }
 
         private void Form1_Load(object sender, EventArgs e) {

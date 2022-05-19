@@ -8,7 +8,7 @@
             if (aData == null) {
                 return false;
             } else {
-                return aData.ID.Equals(Core.Properties.Resources.NameDefaultObject, StringComparison.InvariantCultureIgnoreCase);
+                return aData.ID.Equals(Public.Properties.Resources.NameDefaultObject, StringComparison.InvariantCultureIgnoreCase);
             }
         }
     }

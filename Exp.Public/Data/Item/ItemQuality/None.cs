@@ -2,10 +2,10 @@
     public sealed class None : ItemQualityDataBase, IItemQualityData {
         #region Konstruktor
         private None()
-            : base(Core.Properties.Resources.NameDefaultObject, int.MinValue, false, false) {
+            : base(Public.Properties.Resources.NameDefaultObject, int.MinValue, false, false) {
             foreach (Util.LanguageEnum lItem in Util.LanguageEnum.Enumerate()) {
-                Name.Set(lItem, Core.Properties.Resources.NameDefaultObject);
-                LoreDescription.Set(lItem, Core.Properties.Resources.NameDefaultObject);
+                Name.Set(lItem, Public.Properties.Resources.NameDefaultObject);
+                LoreDescription.Set(lItem, Public.Properties.Resources.NameDefaultObject);
             }
         }
         #endregion

@@ -42,7 +42,7 @@ namespace Exp.Api {
             if (lItem == null) {
                 ExceptionHandler.Add(new Exception.ItemNotFoundException(aID));
 
-                lItem = GetItem(Core.Properties.Resources.NameDefaultObject).FirstOrDefault();
+                lItem = GetItem(Public.Properties.Resources.NameDefaultObject).FirstOrDefault();
                 if (lItem == null) {
                     Exception.ItemNotFoundException lException = new(aID);
 
@@ -59,6 +59,9 @@ namespace Exp.Api {
         /// <returns>Das gefunden Item.</returns>
         private protected T Get(int aIndex) {
             if (aIndex < 0 || aIndex > mDataList.Count) {
+                ExceptionHandler.Add(new Exception.OutOfRangeException(nameof(aIndex), aIndex, 0, mDataList.Count));
+
+                return Get(Public.Properties.Resources.NameDefaultObject);
             } else {
                 return GetItems()[aIndex];
             }
