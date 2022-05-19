@@ -3,8 +3,5 @@
     public sealed class OutOfRangeException : ExceptionBase {
         public OutOfRangeException(string aArgumentname, string aValue)
             : base(aArgumentname, aValue) { }
-
-        public OutOfRangeException(string aArgumentname, int aValue)
-            : base(aArgumentname, aValue.ToString()) { }
     }
 }

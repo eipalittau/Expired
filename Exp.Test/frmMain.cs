@@ -1,8 +1,9 @@
 using Exp.Api.Player;
+using Exp.Core;
 
 namespace Exp.Test {
     public partial class frmMain : Form {
-        private Api.Main ExpiredApi { get; init; }
+        private Main ExpiredApi { get; init; }
         private CharacterSheet? Character { get; set; }
 
         public frmMain() {
