@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Exp.DefaultMod.Feat.Offensive.Anatomy" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Offensive.OffensiveDataBase" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.75" Y="2.062" />
+        <Point X="10.361" Y="2.062" />
+        <Point X="10.361" Y="1.46" />
+        <Point X="1.062" Y="1.46" />
+        <Point X="1.062" Y="1.191" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Offensive\Anatomy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Offensive.BattleHardened" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Offensive.OffensiveDataBase" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.75" Y="2.062" />
+        <Point X="10.345" Y="2.062" />
+        <Point X="10.345" Y="1.458" />
+        <Point X="3" Y="1.458" />
+        <Point X="3" Y="1.191" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAEAAAAAAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Offensive\BattleHardened.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Offensive.BetterTwoWeapons" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Offensive.OffensiveDataBase" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.75" Y="2.062" />
+        <Point X="10.354" Y="2.062" />
+        <Point X="10.354" Y="1.446" />
+        <Point X="4.688" Y="1.446" />
+        <Point X="4.688" Y="1.191" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Offensive\BetterTwoWeapons.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Offensive.Chaos" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Offensive.OffensiveDataBase" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.75" Y="2.062" />
+        <Point X="10.375" Y="2.062" />
+        <Point X="10.375" Y="1.439" />
+        <Point X="6.5" Y="1.439" />
+        <Point X="6.5" Y="1.191" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Offensive\Chaos.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Offensive.Charge" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Offensive.OffensiveDataBase" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.75" Y="2.062" />
+        <Point X="10.356" Y="2.062" />
+        <Point X="10.356" Y="1.444" />
+        <Point X="8.188" Y="1.444" />
+        <Point X="8.188" Y="1.191" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Offensive\Charge.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Offensive.Cthulhu" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Offensive.OffensiveDataBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.75" Y="2.062" />
+        <Point X="10.375" Y="2.062" />
+        <Point X="10.375" Y="3.066" />
+        <Point X="1.25" Y="3.066" />
+        <Point X="1.25" Y="2.691" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Offensive\Cthulhu.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Offensive.EloquentInsulte" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="2" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Offensive.OffensiveDataBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.75" Y="2.062" />
+        <Point X="10.375" Y="2.062" />
+        <Point X="10.375" Y="3.066" />
+        <Point X="2.938" Y="3.066" />
+        <Point X="2.938" Y="2.691" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Offensive\EloquentInsulte.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Offensive.Hades" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="2" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Offensive.OffensiveDataBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.75" Y="2.062" />
+        <Point X="10.375" Y="2.062" />
+        <Point X="10.375" Y="3.066" />
+        <Point X="4.75" Y="3.066" />
+        <Point X="4.75" Y="2.691" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Offensive\Hades.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Offensive.PreciseShot" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="2" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Offensive.OffensiveDataBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.75" Y="2.062" />
+        <Point X="10.375" Y="2.062" />
+        <Point X="10.375" Y="3.066" />
+        <Point X="6.5" Y="3.066" />
+        <Point X="6.5" Y="2.691" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Offensive\PreciseShot.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Offensive.QuickMouth" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="2" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Offensive.OffensiveDataBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.75" Y="2.062" />
+        <Point X="10.375" Y="2.062" />
+        <Point X="10.375" Y="3.066" />
+        <Point X="8.25" Y="3.066" />
+        <Point X="8.25" Y="2.691" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Offensive\QuickMouth.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Offensive.QuickShot" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Offensive.OffensiveDataBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.75" Y="2.062" />
+        <Point X="10.375" Y="2.062" />
+        <Point X="10.375" Y="4.566" />
+        <Point X="1.25" Y="4.566" />
+        <Point X="1.25" Y="4.191" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Offensive\QuickShot.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Offensive.Riposte" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Offensive.OffensiveDataBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.75" Y="2.062" />
+        <Point X="10.375" Y="2.062" />
+        <Point X="10.375" Y="4.566" />
+        <Point X="3" Y="4.566" />
+        <Point X="3" Y="4.191" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Offensive\Riposte.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Offensive.Sneaky" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Offensive.OffensiveDataBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.75" Y="2.062" />
+        <Point X="10.375" Y="2.062" />
+        <Point X="10.375" Y="4.566" />
+        <Point X="4.75" Y="4.566" />
+        <Point X="4.75" Y="4.191" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Offensive\Sneaky.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Offensive.Stonethrower" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Offensive.OffensiveDataBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.75" Y="2.062" />
+        <Point X="10.375" Y="2.062" />
+        <Point X="10.375" Y="4.566" />
+        <Point X="6.5" Y="4.566" />
+        <Point X="6.5" Y="4.191" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AiIABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Offensive\Stonethrower.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Offensive.StrongCharge" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Offensive.OffensiveDataBase" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.75" Y="2.062" />
+        <Point X="10.375" Y="2.062" />
+        <Point X="10.375" Y="4.566" />
+        <Point X="8.25" Y="4.566" />
+        <Point X="8.25" Y="4.191" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Offensive\StrongCharge.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Offensive.SweepingBlow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Offensive.OffensiveDataBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.75" Y="2.062" />
+        <Point X="10.375" Y="2.062" />
+        <Point X="10.375" Y="6.066" />
+        <Point X="1.188" Y="6.066" />
+        <Point X="1.188" Y="5.691" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAEAEAAAAAAAAAAAAAAAABQACAAQAAAA=</HashCode>
+      <FileName>Data\Feat\Offensive\SweepingBlow.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Offensive.Teamplayer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="5" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Offensive.OffensiveDataBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.75" Y="2.062" />
+        <Point X="10.375" Y="2.062" />
+        <Point X="10.375" Y="6.066" />
+        <Point X="3" Y="6.066" />
+        <Point X="3" Y="5.691" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Offensive\Teamplayer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Offensive.Teamwork" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="5" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Offensive.OffensiveDataBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.75" Y="2.062" />
+        <Point X="10.375" Y="2.062" />
+        <Point X="10.375" Y="6.066" />
+        <Point X="4.75" Y="6.066" />
+        <Point X="4.75" Y="5.691" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Offensive\Teamwork.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Offensive.ThornSkin" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="5" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Offensive.OffensiveDataBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.75" Y="2.062" />
+        <Point X="10.375" Y="2.062" />
+        <Point X="10.375" Y="6.066" />
+        <Point X="6.5" Y="6.066" />
+        <Point X="6.5" Y="5.691" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Offensive\ThornSkin.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Offensive.TwoWeapons" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="5" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Offensive.OffensiveDataBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.75" Y="2.062" />
+        <Point X="10.375" Y="2.062" />
+        <Point X="10.375" Y="6.066" />
+        <Point X="8.25" Y="6.066" />
+        <Point X="8.25" Y="5.691" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Offensive\TwoWeapons.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.Data.Feat.Offensive.OffensiveDataBase">
+    <Position X="10.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

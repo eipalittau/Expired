@@ -30,7 +30,7 @@ namespace Exp.Core.Sheet {
         }
 
         public IList<IAuraData> EnumerateUnused() {
-            return Feat.Aura.Singleton.Enumerate().Except(Enumerate()).ToList().AsReadOnly();
+            return Api.Feat.Aura.Singleton.Enumerate().Except(Enumerate()).ToList().AsReadOnly();
         }
         #endregion
     }

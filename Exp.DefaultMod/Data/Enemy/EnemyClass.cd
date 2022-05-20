@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Exp.DefaultMod.Enemy.EnemyClass.Cleric" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="2.25" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Enemy.EnemyClass.EnemyClassBase" FixedFromPoint="true">
+      <Path>
+        <Point X="3" Y="3.75" />
+        <Point X="2.625" Y="3.75" />
+        <Point X="2.625" Y="2.963" />
+        <Point X="2" Y="2.963" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Enemy\EnemyClass\Cleric.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Enemy.EnemyClass.Fighter" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Enemy.EnemyClass.EnemyClassBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3" Y="3.75" />
+        <Point X="2.625" Y="3.75" />
+        <Point X="2.625" Y="1.125" />
+        <Point X="2" Y="1.125" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Enemy\EnemyClass\Fighter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Enemy.EnemyClass.Mage" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Enemy.EnemyClass.EnemyClassBase" FixedFromPoint="true">
+      <Path>
+        <Point X="3" Y="3.75" />
+        <Point X="2.625" Y="3.75" />
+        <Point X="2.625" Y="6.463" />
+        <Point X="2" Y="6.463" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Enemy\EnemyClass\Mage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Enemy.EnemyClass.Rogue" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="4" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Enemy.EnemyClass.EnemyClassBase" FixedFromPoint="true">
+      <Path>
+        <Point X="3" Y="3.75" />
+        <Point X="2.625" Y="3.75" />
+        <Point X="2.625" Y="4.713" />
+        <Point X="2" Y="4.713" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Enemy\EnemyClass\Rogue.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.Data.Enemy.EnemyClass.EnemyClassBase">
+    <Position X="3" Y="2.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

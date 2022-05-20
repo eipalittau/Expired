@@ -32,10 +32,11 @@
             AddItemQualityData();
             AddItemTypeData();
 
-            // Level Up
-            AddLevelUp();
+            //Misc
+            AddRecollectionData();
 
             // Player
+            AddLevelUp();
             AddPlayerClassData();
             AddSlotData();
         }
@@ -267,6 +268,16 @@
             Item.ItemType.Headgear.Add();
             Item.ItemType.Bracers.Add();
             Item.ItemType.Consumable.Add();
+        }
+        #endregion
+
+        #region Misc
+        private static void AddRecollectionData() {
+            Misc.Recollection.ReceivedSlap.Add();
+            Misc.Recollection.BeenPushed.Add();
+            Misc.Recollection.HittingYourself.Add();
+            Misc.Recollection.DrinkSpilled.Add();
+            Misc.Recollection.RippedOff.Add();
         }
         #endregion
 

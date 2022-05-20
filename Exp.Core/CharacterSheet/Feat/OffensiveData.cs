@@ -32,7 +32,7 @@ namespace Exp.Core.Sheet {
         }
 
         public IList<IOffensiveData> EnumerateUnused() {
-            return Feat.Offensive.Singleton.Enumerate().Except(Enumerate()).ToList().AsReadOnly();
+            return Api.Feat.Offensive.Singleton.Enumerate().Except(Enumerate()).ToList().AsReadOnly();
         }
         #endregion
     }

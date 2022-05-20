@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Exp.Core.Sheet.SheetBase">
+    <Position X="0.5" Y="10" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAABAAAAAAgACAAAAAAAAAAAAAAAAAhBAAAAA=</HashCode>
+      <FileName>CharacterSheet\Base\SheetBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Exp.Core.Sheet.EquipmentData">
+    <Position X="25.25" Y="6.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAgAAgA=</HashCode>
+      <FileName>CharacterSheet\Equipment\EquipmentData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Exp.Core.Sheet.FeatDataBase&lt;T&gt;">
+    <Position X="17.25" Y="15.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAQAAAAAAAARIAAAAAAAAEA=</HashCode>
+      <FileName>CharacterSheet\Feat\Base\FeatDataBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Exp.Core.Sheet.AuraData">
+    <Position X="16.25" Y="11" Width="2" />
+    <InheritanceLine Type="Exp.Core.Sheet.FeatDataBase&lt;T&gt;" ManuallyRouted="true">
+      <Path>
+        <Point X="18.25" Y="15.5" />
+        <Point X="18.25" Y="14.49" />
+        <Point X="17.25" Y="14.49" />
+        <Point X="17.25" Y="13.646" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAEAAAAABAAAAAABAIABAAAAAAAA=</HashCode>
+      <FileName>CharacterSheet\Feat\AuraData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Exp.Core.Sheet.DefensiveData">
+    <Position X="18.5" Y="11" Width="2" />
+    <InheritanceLine Type="Exp.Core.Sheet.FeatDataBase&lt;T&gt;" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="18.25" Y="15.5" />
+        <Point X="18.25" Y="14.563" />
+        <Point X="19.5" Y="14.563" />
+        <Point X="19.5" Y="13.646" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAEAAAAABAACAAAAAIABAAAAAAAA=</HashCode>
+      <FileName>CharacterSheet\Feat\DefensiveData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Exp.Core.Sheet.FeatData">
+    <Position X="29.75" Y="6.5" Width="2" />
+    <AssociationLine Name="Aura" Type="Exp.Core.Sheet.AuraData" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="30.688" Y="7.796" />
+        <Point X="30.688" Y="10.612" />
+        <Point X="17.312" Y="10.612" />
+        <Point X="17.312" Y="11" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Defensive" Type="Exp.Core.Sheet.DefensiveData" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="30.688" Y="7.796" />
+        <Point X="30.688" Y="10.612" />
+        <Point X="19.625" Y="10.612" />
+        <Point X="19.625" Y="11" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Offensive" Type="Exp.Core.Sheet.OffensiveData" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="30.688" Y="7.796" />
+        <Point X="30.688" Y="10.612" />
+        <Point X="21.688" Y="10.612" />
+        <Point X="21.688" Y="11" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Wizardry" Type="Exp.Core.Sheet.WizardryData" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="30.688" Y="7.796" />
+        <Point X="30.688" Y="10.612" />
+        <Point X="23.938" Y="10.612" />
+        <Point X="23.938" Y="11" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Wonder" Type="Exp.Core.Sheet.WonderData" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="30.688" Y="7.796" />
+        <Point X="30.688" Y="10.612" />
+        <Point X="26.125" Y="10.612" />
+        <Point X="26.125" Y="11" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAACAAAAABAAAAAAAAAAAAAAAIABg=</HashCode>
+      <FileName>CharacterSheet\Feat\FeatData.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Aura" />
+      <Property Name="Defensive" />
+      <Property Name="Offensive" />
+      <Property Name="Wizardry" />
+      <Property Name="Wonder" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Exp.Core.Sheet.OffensiveData">
+    <Position X="20.75" Y="11" Width="2" />
+    <InheritanceLine Type="Exp.Core.Sheet.FeatDataBase&lt;T&gt;" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="18.25" Y="15.5" />
+        <Point X="18.25" Y="14.517" />
+        <Point X="21.688" Y="14.517" />
+        <Point X="21.688" Y="13.838" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAgAABAAAAAAAAAEAAAAABAAAAQAAAIABAAAAAAAA=</HashCode>
+      <FileName>CharacterSheet\Feat\OffensiveData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Exp.Core.Sheet.WizardryData">
+    <Position X="23" Y="11" Width="2" />
+    <InheritanceLine Type="Exp.Core.Sheet.FeatDataBase&lt;T&gt;" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="18.25" Y="15.5" />
+        <Point X="18.25" Y="14.517" />
+        <Point X="24.125" Y="14.517" />
+        <Point X="24.125" Y="13.646" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAQEAAAAABAAAAAAAAIABAAAAAAAA=</HashCode>
+      <FileName>CharacterSheet\Feat\WizardryData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Exp.Core.Sheet.WonderData">
+    <Position X="25.25" Y="11" Width="2" />
+    <InheritanceLine Type="Exp.Core.Sheet.FeatDataBase&lt;T&gt;" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="18.25" Y="15.5" />
+        <Point X="18.25" Y="14.548" />
+        <Point X="26.188" Y="14.548" />
+        <Point X="26.188" Y="13.646" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAQEAAAAABAAAAAAAAIABAAAAAAAA=</HashCode>
+      <FileName>CharacterSheet\Feat\WonderData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Exp.Core.Sheet.ArmorClassData">
+    <Position X="0.5" Y="6.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>CharacterSheet\Misc\ArmorClassData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Exp.Core.Sheet.AttackData">
+    <Position X="20.75" Y="6.5" Width="2" />
+    <InheritanceLine Type="Exp.Core.Sheet.SheetBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.5" Y="10" />
+        <Point X="1.5" Y="9.625" />
+        <Point X="21.625" Y="9.625" />
+        <Point X="21.625" Y="8.184" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CharacterSheet\Misc\AttackData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Exp.Core.Sheet.ConjureData">
+    <Position X="16.25" Y="6.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAiAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>CharacterSheet\Misc\ConjureData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Exp.Core.Sheet.DamageData">
+    <Position X="18.5" Y="6.5" Width="2" />
+    <InheritanceLine Type="Exp.Core.Sheet.SheetBase" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.5" Y="10" />
+        <Point X="1.5" Y="9.625" />
+        <Point X="19.5" Y="9.625" />
+        <Point X="19.5" Y="8.184" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CharacterSheet\Misc\DamageData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Exp.Core.Sheet.ExperienceData">
+    <Position X="2.75" Y="6.5" Width="2" />
+    <InheritanceLine Type="Exp.Core.Sheet.SheetBase" FixedFromPoint="true">
+      <Path>
+        <Point X="1.5" Y="10" />
+        <Point X="1.5" Y="9.625" />
+        <Point X="3.75" Y="9.625" />
+        <Point X="3.75" Y="7.925" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CharacterSheet\Misc\ExperienceData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Exp.Core.Sheet.HealthData">
+    <Position X="5" Y="6.5" Width="2" />
+    <InheritanceLine Type="Exp.Core.Sheet.SheetBase" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.5" Y="10" />
+        <Point X="1.5" Y="9.608" />
+        <Point X="6.062" Y="9.608" />
+        <Point X="6.062" Y="8.569" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAACAAAAAE=</HashCode>
+      <FileName>CharacterSheet\Misc\HealthData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Exp.Core.Sheet.ManaData">
+    <Position X="23" Y="6.5" Width="2" />
+    <InheritanceLine Type="Exp.Core.Sheet.SheetBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.5" Y="10" />
+        <Point X="1.5" Y="9.625" />
+        <Point X="23.875" Y="9.625" />
+        <Point X="23.875" Y="8.117" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>CharacterSheet\Misc\ManaData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Exp.Core.Sheet.MovementData">
+    <Position X="7.25" Y="6.5" Width="2" />
+    <InheritanceLine Type="Exp.Core.Sheet.SheetBase" FixedToPoint="true">
+      <Path>
+        <Point X="1.5" Y="10" />
+        <Point X="1.5" Y="9.625" />
+        <Point X="8.312" Y="9.625" />
+        <Point X="8.312" Y="7.733" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CharacterSheet\Misc\MovementData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Exp.Core.Sheet.ResistenceData">
+    <Position X="9.5" Y="6.5" Width="2" />
+    <InheritanceLine Type="Exp.Core.Sheet.SheetBase" FixedToPoint="true">
+      <Path>
+        <Point X="1.5" Y="10" />
+        <Point X="1.5" Y="9.625" />
+        <Point X="10.438" Y="9.625" />
+        <Point X="10.438" Y="7.733" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CharacterSheet\Misc\ResistenceData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Exp.Core.Sheet.SneakyData">
+    <Position X="11.75" Y="6.5" Width="2" />
+    <InheritanceLine Type="Exp.Core.Sheet.SheetBase" FixedToPoint="true">
+      <Path>
+        <Point X="1.5" Y="10" />
+        <Point X="1.5" Y="9.625" />
+        <Point X="12.688" Y="9.625" />
+        <Point X="12.688" Y="7.733" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CharacterSheet\Misc\SneakyData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Exp.Core.Sheet.SmithingData">
+    <Position X="14" Y="6.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAEAAAAQAAAAAAAABIAAAAAAAAEA=</HashCode>
+      <FileName>CharacterSheet\Profession\SmithingData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Exp.Core.Sheet.SkillData">
+    <Position X="27.5" Y="6.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAhAAAAAAAAAEA=</HashCode>
+      <FileName>CharacterSheet\Skill\SkillData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Exp.Core.CharacterSheet" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <AssociationLine Name="ArmorClass" Type="Exp.Core.Sheet.ArmorClassData" FixedFromPoint="true">
+      <Path>
+        <Point X="1.312" Y="5.007" />
+        <Point X="1.312" Y="6.5" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Conjure" Type="Exp.Core.Sheet.ConjureData" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.312" Y="5.007" />
+        <Point X="1.312" Y="5.382" />
+        <Point X="17.125" Y="5.382" />
+        <Point X="17.125" Y="6.5" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Experience" Type="Exp.Core.Sheet.ExperienceData" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.312" Y="5.007" />
+        <Point X="1.312" Y="5.395" />
+        <Point X="3.75" Y="5.395" />
+        <Point X="3.75" Y="6.5" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Feat" Type="Exp.Core.Sheet.FeatData" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.312" Y="5.007" />
+        <Point X="1.312" Y="5.382" />
+        <Point X="30.562" Y="5.382" />
+        <Point X="30.562" Y="6.5" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Health" Type="Exp.Core.Sheet.HealthData" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.312" Y="5.007" />
+        <Point X="1.312" Y="5.382" />
+        <Point X="5.938" Y="5.382" />
+        <Point X="5.938" Y="6.5" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Movement" Type="Exp.Core.Sheet.MovementData" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.312" Y="5.007" />
+        <Point X="1.312" Y="5.382" />
+        <Point X="8.25" Y="5.382" />
+        <Point X="8.25" Y="6.5" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Resistence" Type="Exp.Core.Sheet.ResistenceData" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.312" Y="5.007" />
+        <Point X="1.312" Y="5.382" />
+        <Point X="10.438" Y="5.382" />
+        <Point X="10.438" Y="6.5" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Smithing" Type="Exp.Core.Sheet.SmithingData" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.312" Y="5.007" />
+        <Point X="1.312" Y="5.382" />
+        <Point X="14.812" Y="5.382" />
+        <Point X="14.812" Y="6.5" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Sneaky" Type="Exp.Core.Sheet.SneakyData" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.312" Y="5.007" />
+        <Point X="1.312" Y="5.382" />
+        <Point X="12.562" Y="5.382" />
+        <Point X="12.562" Y="6.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAKACICBAAAQAIAAhIAAEAgBAIEEAEABAMAAAACAQAg=</HashCode>
+      <FileName>CharacterSheet\CharacterSheet.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ArmorClass" />
+      <Property Name="Conjure" />
+      <Property Name="Experience" />
+      <Property Name="Feat" />
+      <Property Name="Health" />
+      <Property Name="Movement" />
+      <Property Name="Resistence" />
+      <Property Name="Smithing" />
+      <Property Name="Sneaky" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

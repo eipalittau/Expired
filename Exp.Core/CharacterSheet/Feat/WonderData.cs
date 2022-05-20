@@ -30,7 +30,7 @@ namespace Exp.Core.Sheet {
         }
 
         public IList<IWonderData> EnumerateUnused() {
-            return Feat.Wonder.Singleton.Enumerate().Except(Enumerate()).ToList().AsReadOnly();
+            return Api.Feat.Wonder.Singleton.Enumerate().Except(Enumerate()).ToList().AsReadOnly();
         }
         #endregion
     }

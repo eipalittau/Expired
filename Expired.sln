@@ -11,7 +11,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exp.Util", "Exp.Util\Exp.Ut
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exp.Test", "Exp.Test\Exp.Test.csproj", "{0BB02BC5-5BDB-45BE-B6B7-3AF7BA708DEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exp.Public", "Exp.Public\Exp.Public.csproj", "{D8388D47-113D-4E30-AD1D-BA2052206790}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exp.Public", "Exp.Public\Exp.Public.csproj", "{D8388D47-113D-4E30-AD1D-BA2052206790}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projektmappenelemente", "Projektmappenelemente", "{76ED5662-F35C-49BC-9745-F49E0A88CEF5}"
+	ProjectSection(SolutionItems) = preProject
+		Besprechung.txt = Besprechung.txt
+		Expired.xlsx = Expired.xlsx
+		Ideen.txt = Ideen.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

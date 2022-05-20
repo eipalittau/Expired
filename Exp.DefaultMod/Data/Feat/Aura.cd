@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Exp.DefaultMod.Feat.Aura.Agile" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Aura.AuraDataBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.25" Y="2.125" />
+        <Point X="1.188" Y="2.125" />
+        <Point X="1.188" Y="1.925" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Aura\Agile.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Aura.Anger" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Aura.AuraDataBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.25" Y="2.125" />
+        <Point X="3" Y="2.125" />
+        <Point X="3" Y="1.925" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Aura\Anger.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Aura.BannerBearer" BaseTypeListCollapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Aura.AuraDataBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.25" Y="2.125" />
+        <Point X="4.688" Y="2.125" />
+        <Point X="4.688" Y="1.925" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Aura\BannerBearer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Aura.BrokenWingsGambit" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Aura.AuraDataBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.25" Y="2.125" />
+        <Point X="6.562" Y="2.125" />
+        <Point X="6.562" Y="1.925" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Aura\BrokenWingsGambit.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Aura.Coordinated" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Aura.AuraDataBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.25" Y="2.125" />
+        <Point X="8.25" Y="2.125" />
+        <Point X="8.25" Y="1.925" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Aura\Coordinated.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Aura.Defense" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Aura.AuraDataBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.25" Y="2.125" />
+        <Point X="9.875" Y="2.125" />
+        <Point X="9.875" Y="4.55" />
+        <Point X="1.312" Y="4.55" />
+        <Point X="1.312" Y="4.175" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Aura\Defense.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Aura.Enhanced" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="2.75" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Aura.AuraDataBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.25" Y="2.125" />
+        <Point X="9.875" Y="2.125" />
+        <Point X="9.875" Y="4.55" />
+        <Point X="3" Y="4.55" />
+        <Point X="3" Y="4.175" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Aura\Enhanced.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Aura.Fencer" BaseTypeListCollapsed="true">
+    <Position X="4" Y="2.75" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Aura.AuraDataBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.25" Y="2.125" />
+        <Point X="9.875" Y="2.125" />
+        <Point X="9.875" Y="4.55" />
+        <Point X="4.812" Y="4.55" />
+        <Point X="4.812" Y="4.175" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Aura\Fencer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Aura.Flatulence" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="2.75" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Aura.AuraDataBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.25" Y="2.125" />
+        <Point X="9.875" Y="2.125" />
+        <Point X="9.875" Y="4.55" />
+        <Point X="6.5" Y="4.55" />
+        <Point X="6.5" Y="4.175" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Aura\Flatulence.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Aura.Focus" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="2.75" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Aura.AuraDataBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.25" Y="2.125" />
+        <Point X="9.875" Y="2.125" />
+        <Point X="9.875" Y="4.55" />
+        <Point X="8.125" Y="4.55" />
+        <Point X="8.125" Y="4.175" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Aura\Focus.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Aura.Interdisciplinary" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Aura.AuraDataBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.25" Y="2.125" />
+        <Point X="9.875" Y="2.125" />
+        <Point X="9.875" Y="6.8" />
+        <Point X="1.25" Y="6.8" />
+        <Point X="1.25" Y="6.425" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Aura\Interdisciplinary.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Aura.LoveAndPieces" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="5" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Aura.AuraDataBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.25" Y="2.125" />
+        <Point X="9.875" Y="2.125" />
+        <Point X="9.875" Y="6.8" />
+        <Point X="3" Y="6.8" />
+        <Point X="3" Y="6.425" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Aura\LoveAndPieces.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Aura.Masochist" BaseTypeListCollapsed="true">
+    <Position X="4" Y="5" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Aura.AuraDataBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.25" Y="2.125" />
+        <Point X="9.875" Y="2.125" />
+        <Point X="9.875" Y="6.8" />
+        <Point X="4.75" Y="6.8" />
+        <Point X="4.75" Y="6.425" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Aura\Masochist.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Aura.Perfection" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="5" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Aura.AuraDataBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.25" Y="2.125" />
+        <Point X="9.875" Y="2.125" />
+        <Point X="9.875" Y="6.8" />
+        <Point X="6.5" Y="6.8" />
+        <Point X="6.5" Y="6.425" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Aura\Perfection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Aura.Power" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="5" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Aura.AuraDataBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.25" Y="2.125" />
+        <Point X="9.875" Y="2.125" />
+        <Point X="9.875" Y="6.8" />
+        <Point X="8.125" Y="6.8" />
+        <Point X="8.125" Y="6.425" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Aura\Power.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Aura.Reflexes" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="7.25" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Aura.AuraDataBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.25" Y="2.125" />
+        <Point X="9.875" Y="2.125" />
+        <Point X="9.875" Y="9.05" />
+        <Point X="1.25" Y="9.05" />
+        <Point X="1.25" Y="8.675" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Aura\Reflexes.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Aura.Sadist" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="7.25" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Aura.AuraDataBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.25" Y="2.125" />
+        <Point X="9.875" Y="2.125" />
+        <Point X="9.875" Y="9.05" />
+        <Point X="2.938" Y="9.05" />
+        <Point X="2.938" Y="8.675" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Aura\Sadist.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.DefaultMod.Feat.Aura.Will" BaseTypeListCollapsed="true">
+    <Position X="4" Y="7.25" Width="1.5" />
+    <InheritanceLine Type="Exp.Data.Feat.Aura.AuraDataBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.25" Y="2.125" />
+        <Point X="9.875" Y="2.125" />
+        <Point X="9.875" Y="9.05" />
+        <Point X="4.625" Y="9.05" />
+        <Point X="4.625" Y="8.675" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Feat\Aura\Will.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exp.Data.Feat.Aura.AuraDataBase">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
