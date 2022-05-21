@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using System.Text;
 
-namespace Exp.Internal.Mod {
+namespace Exp.Core.Mod {
     public class ModData {
         #region Properties / Felder
         public FileInfo PathFile { get; init; }

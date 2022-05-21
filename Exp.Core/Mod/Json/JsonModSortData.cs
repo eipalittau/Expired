@@ -1,4 +1,4 @@
-﻿namespace Exp.Internal.Mod {
+﻿namespace Exp.Core.Mod {
     internal class JsonModSortData {
         public string Filename { get; set; } = string.Empty;
         public int SortWeight { get; set; } = 0;

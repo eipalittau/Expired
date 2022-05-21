@@ -8,34 +8,46 @@ namespace Exp.Core.Sheet {
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
     public sealed class FeatData {
         #region Properties / Felder
-        public OffensiveData Offensive { get; } = new();
-        public DefensiveData Defensive { get; } = new();
-        public WizardryData Wizardry { get; } = new();
-        public WonderData Wonder { get; } = new();
-        public AuraData Aura { get; } = new();
+        public OffensiveData Offensive { get; init; }
+        public DefensiveData Defensive { get; init; }
+        public WizardryData Wizardry { get; init; }
+        public WonderData Wonder { get; init; }
+        public AuraData Aura { get; init; }
+        public int AvailableFeatPoints { get; internal set; }
         #endregion
 
         #region Konstruktor
-        internal FeatData() { }
+        internal FeatData(int aMaxLevel)
+            => (Aura, Defensive, Offensive, Wizardry, Wonder) = (new(aMaxLevel), new(aMaxLevel), new(aMaxLevel), new(aMaxLevel), new(aMaxLevel));
         #endregion
 
         #region Methoden
-        internal void LevelUp(Data.Feat.IFeatDataBase aTalent) {
-            if (aTalent.GetType() == typeof(IAuraData)) {
-                Aura.LevelUp((IAuraData)aTalent);
+        internal bool LevelUp(Data.Feat.IFeatDataBase aFeat) {
+            bool lResult = false;
 
-            } else if (aTalent.GetType() == typeof(IDefensiveData)) {
-                Defensive.LevelUp((IDefensiveData)aTalent);
+            if (AvailableFeatPoints > 0) {
+                if (aFeat.GetType() == typeof(IAuraData)) {
+                    lResult = Aura.LevelUp((IAuraData)aFeat);
 
-            } else if (aTalent.GetType() == typeof(IOffensiveData)) {
-                Offensive.LevelUp((IOffensiveData)aTalent);
+                } else if (aFeat.GetType() == typeof(IDefensiveData)) {
+                    lResult = Defensive.LevelUp((IDefensiveData)aFeat);
 
-            } else if (aTalent.GetType() == typeof(IWizardryData)) {
-                Wizardry.LevelUp((IWizardryData)aTalent);
+                } else if (aFeat.GetType() == typeof(IOffensiveData)) {
+                    lResult = Offensive.LevelUp((IOffensiveData)aFeat);
 
-            } else if (aTalent.GetType() == typeof(IWonderData)) {
-                Wonder.LevelUp((IWonderData)aTalent);
+                } else if (aFeat.GetType() == typeof(IWizardryData)) {
+                    lResult = Wizardry.LevelUp((IWizardryData)aFeat);
+
+                } else if (aFeat.GetType() == typeof(IWonderData)) {
+                    lResult = Wonder.LevelUp((IWonderData)aFeat);
+                }
+
+                if (lResult) {
+                    AvailableFeatPoints--;
+                }
             }
+
+            return lResult;
         }
         #endregion
     }

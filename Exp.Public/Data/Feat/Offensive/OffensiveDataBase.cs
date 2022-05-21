@@ -3,6 +3,7 @@ using Exp.Data.General.DamageType;
 using Exp.Data.General.DiceType;
 using Exp.Data.General.Tier;
 using Exp.Data.Feat;
+using System.Text;
 
 namespace Exp.Data.Feat.Offensive {
     public abstract class OffensiveDataBase : FeatDataBase<IOffensiveData> {
@@ -21,6 +22,23 @@ namespace Exp.Data.Feat.Offensive {
         #endregion
 
         #region Methoden
+        public new string GetFullDescription() {
+            StringBuilder lDescription = base.GetFullDescription();
+
+            if (ActionType != null) {
+                lDescription.AppendLine(string.Empty);
+                lDescription.AppendLine("Action-Type:");
+                lDescription.AppendLine($"{ActionType.GetName()} ({ActionType.GetLoreDescription()})");
+            }
+
+            if (PrerequisiteList.Count > 0) {
+                lDescription.AppendLine(string.Empty);
+                PrerequisiteList.ForEach(x => lDescription.AppendLine($"- {x.GetName()}"));
+            }
+
+            return lDescription.ToString();
+        }
+
         public void OnNewDay() { }
 
         public void OnNewBattle() { }

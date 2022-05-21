@@ -5,12 +5,13 @@ namespace Exp.Core.Sheet {
     public abstract class FeatDataBase<T> where T : Data.IDataBase {
         #region Properties / Felder
         public int Level { get; private set; } = 0;
-        public int MaxLevel { get; private protected set; } = 10;
+        public int MaxLevel { get; init; }
         private List<T> FeatList { get; } = new List<T>();
         #endregion
 
         #region Konstruktor
-        private protected FeatDataBase() { }
+        private protected FeatDataBase(int aMaxLevel)
+            => MaxLevel = aMaxLevel;
         #endregion
 
         #region Methoden

@@ -1,6 +1,6 @@
 ﻿using Exp.Data.General.ActionType;
 using Exp.Data.General.Tier;
-using Exp.Data.Feat;
+using System.Text;
 
 namespace Exp.Data.Feat.Wonder {
     public abstract class WonderDataBase : FeatDataBase<IWonderData> {
@@ -19,6 +19,23 @@ namespace Exp.Data.Feat.Wonder {
         #endregion
 
         #region Methoden
+        public new string GetFullDescription() {
+            StringBuilder lDescription = base.GetFullDescription();
+
+            if (ActionType != null) {
+                lDescription.AppendLine(string.Empty);
+                lDescription.AppendLine("Action-Type:");
+                lDescription.AppendLine($"{ActionType.GetName()} ({ActionType.GetLoreDescription()})");
+            }
+
+            if (PrerequisiteList.Count > 0) {
+                lDescription.AppendLine(string.Empty);
+                PrerequisiteList.ForEach(x => lDescription.AppendLine($"- {x.GetName()}"));
+            }
+
+            return lDescription.ToString();
+        }
+
         protected static void AddInstance(IWonderData aInstance) {
             Api.Feat.Wonder.Singleton.Add(aInstance);
         }

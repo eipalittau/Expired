@@ -1,14 +1,14 @@
 ﻿using System.Reflection;
 
-namespace Exp.Internal.Mod {
+namespace Exp.Core.Mod {
     public class ModHandler {
         #region Properties / Felder
         public static ModHandler Singleton { get; } = new("MODS", "ModSort.json", "Exp.DefaultMod");
         public DirectoryInfo ModPath { get; init; }
         public FileInfo ConfigPathFile { get; init; }
         private List<ModData> ModData { get; } = new();
-        private JsonModSortHandler JsonMods { get; set; }
-        private bool Proceed { get; set; }
+        private JsonModSortHandler JsonMods { get; init; }
+        private bool Proceed { get; init; }
         private string DefaultMod { get; init; }
         #endregion
 
@@ -74,10 +74,10 @@ namespace Exp.Internal.Mod {
                                 }
                             }
 
-                            if (lJsonItem != null) {
-                                lModItem.IsActive = lJsonItem.IsActive;
-                            } else {
+                            if (lJsonItem == null) {
                                 lModItem.IsActive = false;
+                            } else {
+                                lModItem.IsActive = lJsonItem.IsActive;
                             }
 
                             ModData.Add(lModItem);
@@ -130,6 +130,11 @@ namespace Exp.Internal.Mod {
 
         public void InitializeActiveMods() {
             GetList(true).ForEach(x => x.Initialize());
+        }
+
+        public void InitializeActiveMods(Type aInterface) {
+            LoadList(aInterface);
+            InitializeActiveMods();
         }
 
         private List<Type> LoadAssembly(string aPathFileName, Type aInterface) {

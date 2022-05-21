@@ -1,5 +1,7 @@
 ﻿namespace Exp.DefaultMod {
     public class Main : IMain {
+        public List<string> Dependency { get; } = new ();
+
         public Main() { }
 
         public void Initialize() {

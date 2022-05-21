@@ -5,6 +5,7 @@ namespace Exp.Data.Feat.Offensive {
     public interface IOffensiveData : IFeatDataBase {
         List<IOffensiveData> PrerequisiteList { get; }
 
+        string GetFullDescription();
         void OnNewDay();
         void OnNewBattle();
         void OnNewRound();

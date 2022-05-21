@@ -36,6 +36,10 @@ namespace Exp.Api.Player {
         }
 
         public new void Add(ILevelUpData aItem) {
+            if (base.Contains(aItem.ID)) {
+                base.Remove(aItem.ID);
+            }
+
             base.Add(aItem);
         }
         #endregion

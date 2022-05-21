@@ -5,11 +5,15 @@
         public int Current { get; private set; }
         public int Temp { get; internal set; }
         internal CharacterSheet Main { get; init; }
+        private bool IgnoreDeath { get; init; }
         #endregion
 
-        #region Konstruktor
+        #region Konstruktor0
         private protected SheetBase(CharacterSheet aMain)
-            => Main = aMain;
+            : this(aMain, false) { }
+
+        private protected SheetBase(CharacterSheet aMain, bool aIgnoreDeath)
+            => (Main, IgnoreDeath) = (aMain, aIgnoreDeath);
         #endregion
 
         #region Methoden
@@ -33,7 +37,7 @@
         }
 
         private protected void OnIncrease(int aPoints, bool aForceOverMax) {
-            if (!Main.IsDead) {
+            if (!Main.IsDead || IgnoreDeath) {
                 Current += aPoints;
 
                 if (Current > Max + Temp && !aForceOverMax) {

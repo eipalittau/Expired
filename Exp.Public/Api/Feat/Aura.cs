@@ -27,6 +27,10 @@ namespace Exp.Api.Feat {
             return base.Get(aID);
         }
 
+        public new IAuraData Get(int aIndex) {
+            return base.Get(aIndex);
+        }
+
         public new int Count() {
             return base.Count();
         }

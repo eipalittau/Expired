@@ -5,12 +5,16 @@
 
         #region Konstruktor
         internal ExperienceData(CharacterSheet aMain)
-            : base(aMain) { }
+            : base(aMain, true) { }
         #endregion
 
         #region Methoden
         internal void LevelUp() {
             base.OnDecrease(base.Max);
+        }
+
+        internal void Add(int aPoints) {
+            OnIncrease(aPoints, true);
         }
         #endregion
     }

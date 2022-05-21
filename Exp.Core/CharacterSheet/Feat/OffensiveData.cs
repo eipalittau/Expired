@@ -9,7 +9,7 @@ namespace Exp.Core.Sheet {
         #endregion
 
         #region Konstruktor
-        internal OffensiveData() : base() { }
+        internal OffensiveData(int aMaxLevel) : base(aMaxLevel) { }
         #endregion
 
         #region Methoden
@@ -17,14 +17,16 @@ namespace Exp.Core.Sheet {
             base.AddTalent(aTalent);
         }
 
-        public void LevelUp(IOffensiveData aTalent) {
+        public bool LevelUp(IOffensiveData aTalent) {
             base.AddTalent(aTalent);
-            IncreaseBonus();
+            return IncreaseBonus();
         }
 
-        public void IncreaseBonus() {
+        public bool IncreaseBonus() {
             AttackBonus++;
             DamageBonus++;
+
+            return true;
         }
 
         public new IList<IOffensiveData> Enumerate() {

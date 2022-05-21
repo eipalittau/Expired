@@ -8,7 +8,7 @@ namespace Exp.Core.Sheet {
         #endregion
 
         #region Konstruktor
-        internal WizardryData() : base() { }
+        internal WizardryData(int aMaxLevel) : base(aMaxLevel) { }
         #endregion
 
         #region Methoden
@@ -16,13 +16,15 @@ namespace Exp.Core.Sheet {
             base.AddTalent(aTalent);
         }
 
-        public void LevelUp(IWizardryData aTalent) {
+        public bool LevelUp(IWizardryData aTalent) {
             base.AddTalent(aTalent);
-            IncreaseBonus();
+            return IncreaseBonus();
         }
 
-        public void IncreaseBonus() {
+        public bool IncreaseBonus() {
             ManaBonus++;
+
+            return true;
         }
 
         public new IList<IWizardryData> Enumerate() {

@@ -1,5 +1,6 @@
 ﻿using Exp.Data.General.ActionType;
 using Exp.Data.General.Tier;
+using System.Text;
 
 namespace Exp.Data.Feat.Wizardry {
     public abstract class WizardryDataBase : FeatDataBase<IWizardryData> {
@@ -18,6 +19,23 @@ namespace Exp.Data.Feat.Wizardry {
         #endregion
 
         #region Methoden
+        public new string GetFullDescription() {
+            StringBuilder lDescription = base.GetFullDescription();
+
+            if (ActionType != null) {
+                lDescription.AppendLine(string.Empty);
+                lDescription.AppendLine("Action-Type:");
+                lDescription.AppendLine($"{ActionType.GetName()} ({ActionType.GetLoreDescription()})");
+            }
+
+            if (PrerequisiteList.Count > 0) {
+                lDescription.AppendLine(string.Empty);
+                PrerequisiteList.ForEach(x => lDescription.AppendLine($"- {x.GetName()}"));
+            }
+
+            return lDescription.ToString();
+        }
+
         protected static void AddInstance(IWizardryData aInstance) {
             Api.Feat.Wizardry.Singleton.Add(aInstance);
         }

@@ -1,6 +1,6 @@
 ﻿using Exp.Util.Filesystem;
 
-namespace Exp.Internal.Mod {
+namespace Exp.Core.Mod {
     internal class JsonModSortHandler : JsonBase<List<JsonModSortData>> {
         #region Properties / Felder
         public new List<JsonModSortData> Json {

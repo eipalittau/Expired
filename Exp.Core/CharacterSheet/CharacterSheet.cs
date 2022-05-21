@@ -26,7 +26,7 @@ namespace Exp.Core {
         public Sheet.ConjureData Conjure { get; init; }
         public Sheet.MovementData Movement { get; init; }
         public Sheet.FeatData Feat { get; init; }
-        public IList<Sheet.SkillData> SkillList { get; } = new List<Sheet.SkillData>();
+        public Sheet.SkillData Skill { get; init; }
         public IList<Sheet.EquipmentData> EquipmentList { get; } = new List<Sheet.EquipmentData>();
         public IList<Data.Misc.Recollection.IRecollectionData> RecollectionList { get; } = new List<Data.Misc.Recollection.IRecollectionData>();
 
@@ -38,8 +38,9 @@ namespace Exp.Core {
         private CharacterSheet(Data.Player.PlayerClass.IPlayerClassData aPlayerClass, int aExperience4LevelUp) { 
             PlayerClass = aPlayerClass;
             Experience = new Sheet.ExperienceData(this) {
-                Max = aExperience4LevelUp
+                Max = aExperience4LevelUp                
             };
+            Experience.OnNewDay();
             Health = new Sheet.HealthData(this);
             ArmorClass = new Sheet.ArmorClassData(this);
             Resistence = new Sheet.ResistenceData(this);
@@ -47,13 +48,13 @@ namespace Exp.Core {
                 _Attack.Add(new Sheet.AttackData(this, x)); 
                 _Damage.Add(new Sheet.DamageData(this, x)); 
             });
-            Smithing = new Sheet.SmithingData();
             Sneaky = new Sheet.SneakyData(this);
             Conjure = new Sheet.ConjureData(this);
             Movement = new Sheet.MovementData(this);
-            Feat = new Sheet.FeatData();
-            Api.Skill.SkillType.Singleton.Enumerate().ToList()
-                .ForEach(x => SkillList.Add(new Sheet.SkillData(x)));
+            Smithing = new Sheet.SmithingData(5);
+            Feat = new Sheet.FeatData(10);
+            Skill = new Sheet.SkillData(int.MaxValue);
+            
             Api.Player.Slot.Singleton.Enumerate()
                 .Where(x => x.Available).ToList()
                 .ForEach(x => EquipmentList.Add(new Sheet.EquipmentData(x)));
@@ -78,7 +79,7 @@ namespace Exp.Core {
         #endregion
 
         #region LevelUp
-        public bool LevelUp(Data.Feat.IFeatDataBase[] aFeatTalents, Data.Skill.SkillType.ISkillTypeData[] aSkills) {
+        public bool LevelUp() {
             if (Experience.Current < Experience.Max) {
                 return false;
             } else {
@@ -99,31 +100,27 @@ namespace Exp.Core {
                 Sneaky.Max = LevelUpMax(TargetEffectEnum.Sneaky);
                 Conjure.Mana.Max = LevelUpMax(TargetEffectEnum.Mana);
                 Movement.Max = LevelUpMax(TargetEffectEnum.Movement);
-                if (Api.Player.LevelUp.Singleton.Contains(TargetEffectEnum.FeatPoints) && aFeatTalents != null) {
-                    int lFeatPoints = Api.Player.LevelUp.Singleton.Get(TargetEffectEnum.FeatPoints).Base.Value;
-
-                    for (int lI = 0; lI < Math.Min(aFeatTalents.Length, lFeatPoints); lI++) {
-                        Feat.LevelUp(aFeatTalents[lI]);
-                    }
+                if (Api.Player.LevelUp.Singleton.Contains(TargetEffectEnum.FeatPoints)) {
+                    Feat.AvailableFeatPoints = Api.Player.LevelUp.Singleton.Get(TargetEffectEnum.FeatPoints).Base.Value;
                 }
-                if (Api.Player.LevelUp.Singleton.Contains(TargetEffectEnum.SkillPoints) && aSkills != null) {
-                    int lSkillPoints = Api.Player.LevelUp.Singleton.Get(TargetEffectEnum.SkillPoints).Base.Value;
-
-                    for (int lI = 0; lI < Math.Min(aSkills.Length, lSkillPoints); lI++) {
-                        IEnumerable<Sheet.SkillData> lSkill = SkillList
-                            .Where(x => x.SkillType.Equals(aSkills[lI]));
-
-                        if (lSkill.Any()) {
-                            lSkill.First().LevelUp();
-                        }
-                    }
+                if (Api.Player.LevelUp.Singleton.Contains(TargetEffectEnum.SkillPoints)) {
+                    Skill.AvailableSkillPoints = Api.Player.LevelUp.Singleton.Get(TargetEffectEnum.SkillPoints).Base.Value;
                 }
-
-                OnNewDay();
 
                 return true;
             }
         }
+
+        //Mirko: Wirklich?
+        public void AddFeat(Data.Feat.IFeatDataBase aFeat) {
+            Feat.LevelUp(aFeat);
+        }
+
+        //Mirko: Wirklich?
+        public void AddSkill(Data.Skill.SkillType.ISkillTypeData aSkill) {
+            Skill.LevelUp(aSkill);
+        }
+        //Patrik: Neue Methode für Beruf und Erinnerungen.
 
         private int LevelUpMax(TargetEffectEnum aEffect) {
             int lResult = 0;

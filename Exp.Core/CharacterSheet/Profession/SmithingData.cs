@@ -5,13 +5,15 @@ namespace Exp.Core.Sheet {
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
     public sealed class SmithingData {
         #region Properties / Felder
-        public int Level { get; internal set; }
-        public int MaxLevel { get; } = 5;
+        public int Level { get; private set; }
+        public int MaxLevel { get; init; }
+        public int AvailableSmithingPoints { get; internal set; }
         private List<ISmithingData> ProfessionList { get; } = new List<ISmithingData>();
         #endregion
 
         #region Konstruktor
-        internal SmithingData() { }
+        internal SmithingData(int aMaxLevel)
+            => MaxLevel = aMaxLevel;
         #endregion
 
         #region Methoden

@@ -8,21 +8,23 @@ namespace Exp.Core.Sheet {
         #endregion
 
         #region Konstruktor
-        internal AuraData() : base() { }
+        internal AuraData(int aMaxLevel) : base(aMaxLevel) { }
         #endregion
 
         #region Methoden
-        public new void AddTalent(IAuraData aTalent) {
-            base.AddTalent(aTalent);
+        public new void AddTalent(IAuraData aFeat) {
+            base.AddTalent(aFeat);
         }
 
-        public void LevelUp(IAuraData aTalent) {
-            base.AddTalent(aTalent);
-            IncreaseBonus();
+        public bool LevelUp(IAuraData aFeat) {
+            base.AddTalent(aFeat);
+            return IncreaseBonus();
         }
 
-        public void IncreaseBonus() {
+        public bool IncreaseBonus() {
             HealthBonus++;
+
+            return true;
         }
 
         public new IList<IAuraData> Enumerate() {

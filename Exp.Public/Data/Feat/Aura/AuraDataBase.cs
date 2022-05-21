@@ -27,7 +27,7 @@ namespace Exp.Data.Feat.Aura {
             if (ActionType != null) {
                 lDescription.AppendLine(string.Empty);
                 lDescription.AppendLine("Action-Type:");
-                lDescription.AppendLine($"{ActionType.GetName()} ({ActionType.LoreDescription.Get(Util.Localisation.Language)})");
+                lDescription.AppendLine($"{ActionType.GetName()} ({ActionType.GetLoreDescription()})");
             }
 
             if (PrerequisiteList.Count > 0) {

@@ -1,22 +1,17 @@
-using Exp.Api.Player;
 using Exp.Core;
 
 namespace Exp.Test {
     public partial class frmMain : Form {
-        private Main ExpiredApi { get; init; }
-        private CharacterSheet? Character { get; set; }
+        private List<CharacterSheet> CharacterList { get; } = new();
+        private int Experience4LevelUp { get; } = 4;
 
         public frmMain() {
             InitializeComponent();
-
-            ExpiredApi = new Main(Util.LanguageEnum.Deutsch, false);
         }
 
         private void Form1_Load(object sender, EventArgs e) {
-            ExpiredApi.SetLanguage(Util.LanguageEnum.Deutsch);
-            ExpiredApi.SetExperience4LevelUp(4);
-
-            Internal.Mod.ModHandler.Singleton.LoadList(typeof(IMain));
+            Util.Localisation.Language = Util.LanguageEnum.Deutsch;
+            Util.ExceptionHandler.ThrowException = false;
         }
 
         private void btnSelectMods_Click(object sender, EventArgs e) {
@@ -24,17 +19,17 @@ namespace Exp.Test {
         }
 
         private void btnInitialize_Click(object sender, EventArgs e) {
-            Internal.Mod.ModHandler.Singleton.InitializeActiveMods();
+            Core.Mod.ModHandler.Singleton.InitializeActiveMods(typeof(IMain));
         }
 
         private void btnNewCharacter_Click(object sender, EventArgs e) {
-            frmFeatList lFeatForm = new();
-            Character = ExpiredApi.CreateCharacter();
+            CharacterSheet lSheet = CharacterSheet.Create(Experience4LevelUp);
+            frmFeatList lFeatForm = new(lSheet);
 
-            lFeatForm.AuraList(Character.Feat.Aura.EnumerateUnused());
+            CharacterList.Add(lSheet);
 
             if (lFeatForm.ShowDialog(this) == DialogResult.OK) {
-
+                lSheet.LevelUp(aFeatTalents: null, aSkills: null);
             }
         }
     }
