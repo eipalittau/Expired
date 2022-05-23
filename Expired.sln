@@ -20,6 +20,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projektmappenelemente", "Pr
 		Ideen.txt = Ideen.txt
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ablauf", "Ablauf", "{D45B2C70-65FC-4B5E-B2B8-A91B4A16C7B6}"
+	ProjectSection(SolutionItems) = preProject
+		New Character.txt = New Character.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +54,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D45B2C70-65FC-4B5E-B2B8-A91B4A16C7B6} = {76ED5662-F35C-49BC-9745-F49E0A88CEF5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FC91925A-027A-425F-B590-5E0F4CB560C8}

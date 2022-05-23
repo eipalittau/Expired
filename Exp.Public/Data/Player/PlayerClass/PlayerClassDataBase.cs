@@ -1,4 +1,5 @@
-﻿using Exp.Data.Misc.Aptitude;
+﻿using Exp.Api.General;
+using Exp.Data.Misc.Aptitude;
 
 namespace Exp.Data.Player.PlayerClass {
     public abstract class PlayerClassDataBase : DataBase {
@@ -26,6 +27,10 @@ namespace Exp.Data.Player.PlayerClass {
         #region Methoden
         protected static void AddInstance(IPlayerClassData aInstance) {
             Api.Player.PlayerClass.Singleton.Add(aInstance);
+        }
+
+        public IAptitudeData? GetAptitude(TargetEffectEnum aEffect) {
+            return AptitudeList.Where(x => aEffect.Equals(x.Effect)).FirstOrDefault();
         }
         #endregion
     }

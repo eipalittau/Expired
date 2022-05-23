@@ -1,4 +1,5 @@
-﻿using Exp.Data.Skill.SkillType;
+﻿using Exp.Api.General;
+using Exp.Data.Skill.SkillType;
 
 namespace Exp.Core.Sheet {
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
@@ -16,6 +17,12 @@ namespace Exp.Core.Sheet {
         #endregion
 
         #region Methoden
+        internal void SetSkillPoints() {
+            if (Api.Player.LevelUp.Singleton.Contains(TargetEffectEnum.SkillPoints)) {
+                AvailableSkillPoints = Api.Player.LevelUp.Singleton.Get(TargetEffectEnum.SkillPoints).Base.Value;
+            }
+        }
+
         internal bool LevelUp(ISkillTypeData aSkillType) {
             bool lResult = false;
 

@@ -5,55 +5,38 @@ namespace Exp.Core {
     public sealed class CharacterSheet : Data.Player.ICharacterSheetData {
         #region Properties / Felder
         public bool IsDead { get; internal set; } = true;
-        public int Level { get; private set; } = 0;
         public Data.Player.PlayerClass.IPlayerClassData PlayerClass { get; init; }
         public Sheet.ExperienceData Experience { get; init; }
         public Sheet.HealthData Health { get; init; }
         public Sheet.ArmorClassData ArmorClass { get; init; }
         public Sheet.ResistenceData Resistence { get; init; }
-        public IList<Sheet.AttackData> Attack { 
-            get { 
-                return _Attack.AsReadOnly();
-            } 
-        }
-        public IList<Sheet.DamageData> Damage {
-            get {
-                return _Damage.AsReadOnly();
-            }
-        }
-        public Sheet.SmithingData Smithing { get; init; }
+        public Sheet.AttackData Attack { get; init; }
+        public Sheet.DamageData Damage { get; init; }
         public Sheet.SneakyData Sneaky { get; init; }
         public Sheet.ConjureData Conjure { get; init; }
         public Sheet.MovementData Movement { get; init; }
         public Sheet.FeatData Feat { get; init; }
         public Sheet.SkillData Skill { get; init; }
+        public Sheet.SmithingData Smithing { get; init; }
         public IList<Sheet.EquipmentData> EquipmentList { get; } = new List<Sheet.EquipmentData>();
         public IList<Data.Misc.Recollection.IRecollectionData> RecollectionList { get; } = new List<Data.Misc.Recollection.IRecollectionData>();
-
-        private readonly List<Sheet.AttackData> _Attack = new();
-        private readonly List<Sheet.DamageData> _Damage = new();
         #endregion
 
         #region Konstruktor
         private CharacterSheet(Data.Player.PlayerClass.IPlayerClassData aPlayerClass, int aExperience4LevelUp) { 
             PlayerClass = aPlayerClass;
-            Experience = new Sheet.ExperienceData(this) {
-                Max = aExperience4LevelUp                
-            };
-            Experience.OnNewDay();
+            Experience = new(this, aExperience4LevelUp);
             Health = new Sheet.HealthData(this);
             ArmorClass = new Sheet.ArmorClassData(this);
             Resistence = new Sheet.ResistenceData(this);
-            DamageType.Singleton.Enumerate().ToList().ForEach(x => { 
-                _Attack.Add(new Sheet.AttackData(this, x)); 
-                _Damage.Add(new Sheet.DamageData(this, x)); 
-            });
+            Attack = new Sheet.AttackData(this);
+            Damage = new Sheet.DamageData(this);
             Sneaky = new Sheet.SneakyData(this);
             Conjure = new Sheet.ConjureData(this);
             Movement = new Sheet.MovementData(this);
-            Smithing = new Sheet.SmithingData(5);
             Feat = new Sheet.FeatData(10);
             Skill = new Sheet.SkillData(int.MaxValue);
+            Smithing = new Sheet.SmithingData(5);
             
             Api.Player.Slot.Singleton.Enumerate()
                 .Where(x => x.Available).ToList()
@@ -80,34 +63,22 @@ namespace Exp.Core {
 
         #region LevelUp
         public bool LevelUp() {
-            if (Experience.Current < Experience.Max) {
-                return false;
-            } else {
-                int lAttackMax = LevelUpMax(TargetEffectEnum.Attack);
-                int lDamagekMax = LevelUpMax(TargetEffectEnum.Damage);
-
-                Experience.LevelUp(); // Erfahrungspunkte zurücksetzen
-                Level++;
-
-                Health.Max = LevelUpMax(TargetEffectEnum.Health);
-                ArmorClass.Max = LevelUpMax(TargetEffectEnum.Armor);
-                if (Api.Player.LevelUp.Singleton.Contains(TargetEffectEnum.NaturalArmor)) {
-                    ArmorClass.Natural = Api.Player.LevelUp.Singleton.Get(TargetEffectEnum.NaturalArmor).Base.Value;
-                }
-                Resistence.Max = LevelUpMax(TargetEffectEnum.Resistence);
-                Attack.ToList().ForEach(x => x.Max = lAttackMax);
-                Damage.ToList().ForEach(x => x.Max = lDamagekMax);
-                Sneaky.Max = LevelUpMax(TargetEffectEnum.Sneaky);
-                Conjure.Mana.Max = LevelUpMax(TargetEffectEnum.Mana);
-                Movement.Max = LevelUpMax(TargetEffectEnum.Movement);
-                if (Api.Player.LevelUp.Singleton.Contains(TargetEffectEnum.FeatPoints)) {
-                    Feat.AvailableFeatPoints = Api.Player.LevelUp.Singleton.Get(TargetEffectEnum.FeatPoints).Base.Value;
-                }
-                if (Api.Player.LevelUp.Singleton.Contains(TargetEffectEnum.SkillPoints)) {
-                    Skill.AvailableSkillPoints = Api.Player.LevelUp.Singleton.Get(TargetEffectEnum.SkillPoints).Base.Value;
-                }
+            if (Experience.LevelUp()) {
+                Health.LevelUp();
+                ArmorClass.LevelUp();
+                Resistence.LevelUp();
+                Attack.LevelUp();
+                Damage.LevelUp();
+                Sneaky.LevelUp();
+                Conjure.LevelUp();
+                Movement.LevelUp();
+                Feat.SetFeatPoints();
+                Skill.SetSkillPoints();
+                Smithing.SetSmithingPoints();
 
                 return true;
+            } else {
+                return false;
             }
         }
 
@@ -121,38 +92,6 @@ namespace Exp.Core {
             Skill.LevelUp(aSkill);
         }
         //Patrik: Neue Methode für Beruf und Erinnerungen.
-
-        private int LevelUpMax(TargetEffectEnum aEffect) {
-            int lResult = 0;
-
-            // Änderung durch Level-Up
-            if (Api.Player.LevelUp.Singleton.Contains(aEffect)) {
-                lResult = Api.Player.LevelUp.Singleton.Get(aEffect).Base.Value * Level;
-            }
-
-            // Änderung durch Charakterklasse
-            Data.Misc.Aptitude.IAptitudeData? lAptitude = PlayerClass.AptitudeList.Where(x => aEffect.Equals(x.Effect)).FirstOrDefault();
-
-            if (lAptitude != null) {
-                if (lAptitude.Base.HasData) {
-                    lResult = lAptitude.Base.Value * Level;
-                }
-
-                lResult += IncreaseModifierData(lAptitude.Modifier, 0);
-                lResult *= IncreaseModifierData(lAptitude.Multiplicator, 1);
-                lResult /= IncreaseModifierData(lAptitude.Divisor, 1);
-            }
-
-            return lResult;
-        }
-
-        private int IncreaseModifierData(ModifierData aModifier, int aDefault) {
-            if (aModifier.HasData) {
-                return aModifier.GetValueByLevel(Level);
-            } else {
-                return aDefault;
-            }
-        }
         #endregion
 
         public void OnNewDay() {

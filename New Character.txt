@@ -1,0 +1,15 @@
+Zufalls-Character?
+Ja:
+	Zufallsnummer zwischen 1 und Anzahl PlayerClass
+	Character aufgrund Zufallsnummer auswählen
+Nein:
+	
+CharacterSheet instanzieren:
+	Properties instanzieren:
+		IsDead = true.
+		Level = 0.
+		PlayerClass = Übergebene
+		Experience
+Werte setzen:
+	Benötigte Punkte (Max) für den Level-Up.
+	Aktuelle Punkte für den Level-Up auf Max setzen.

@@ -1,16 +1,30 @@
-﻿namespace Exp.Core.Sheet {
+﻿using Exp.Api.General;
+
+namespace Exp.Core.Sheet {
     public sealed class ExperienceData : SheetBase {
         #region Properties / Felder
+        public int Level { get; private set; } = 0;
         #endregion
 
         #region Konstruktor
-        internal ExperienceData(CharacterSheet aMain)
-            : base(aMain, true) { }
+        internal ExperienceData(CharacterSheet aMain, int aExperience4LevelUp)
+            : base(aMain, true)
+            => Max = aExperience4LevelUp;
         #endregion
 
         #region Methoden
-        internal void LevelUp() {
-            base.OnDecrease(base.Max);
+        internal bool LevelUp() {
+            if (base.Current < base.Max) {
+                if (Level == 0) {
+                    Add(base.Max);
+                } else {
+                    return false;
+                }
+            }
+
+            Level++;
+
+            return base.LevelUp(TargetEffectEnum.Exp4LevelUp);
         }
 
         internal void Add(int aPoints) {

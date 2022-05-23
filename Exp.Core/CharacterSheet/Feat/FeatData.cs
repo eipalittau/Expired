@@ -1,4 +1,5 @@
-﻿using Exp.Data.Feat.Aura;
+﻿using Exp.Api.General;
+using Exp.Data.Feat.Aura;
 using Exp.Data.Feat.Defensive;
 using Exp.Data.Feat.Offensive;
 using Exp.Data.Feat.Wizardry;
@@ -13,15 +14,27 @@ namespace Exp.Core.Sheet {
         public WizardryData Wizardry { get; init; }
         public WonderData Wonder { get; init; }
         public AuraData Aura { get; init; }
-        public int AvailableFeatPoints { get; internal set; }
+        public int AvailableFeatPoints { get; private set; }
         #endregion
 
         #region Konstruktor
-        internal FeatData(int aMaxLevel)
-            => (Aura, Defensive, Offensive, Wizardry, Wonder) = (new(aMaxLevel), new(aMaxLevel), new(aMaxLevel), new(aMaxLevel), new(aMaxLevel));
+        internal FeatData(int aMaxLevel) {
+            Aura = new(aMaxLevel);
+            Defensive = new(aMaxLevel);
+            Offensive = new(aMaxLevel);
+            Wizardry = new(aMaxLevel);
+            Wonder = new(aMaxLevel);
+        }
+
         #endregion
 
         #region Methoden
+        internal void SetFeatPoints() {
+            if (Api.Player.LevelUp.Singleton.Contains(TargetEffectEnum.FeatPoints)) {
+                AvailableFeatPoints = Api.Player.LevelUp.Singleton.Get(TargetEffectEnum.FeatPoints).Base.Value;
+            }
+        }
+
         internal bool LevelUp(Data.Feat.IFeatDataBase aFeat) {
             bool lResult = false;
 

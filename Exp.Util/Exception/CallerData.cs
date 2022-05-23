@@ -1,7 +1,10 @@
-﻿using System.Diagnostics;
+﻿using System.ComponentModel;
+using System.Diagnostics;
 using System.Reflection;
 
 namespace Exp.Exception {
+    [Browsable(false)]
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public class CallerData {
         #region Properties / Felder
         public string AssemblyName { get; init; } = string.Empty;
@@ -11,7 +14,7 @@ namespace Exp.Exception {
         #endregion
 
         #region Konstruktor
-        public CallerData(StackFrame aFrame) {
+        internal CallerData(StackFrame aFrame) {
             MethodBase? lMethodBase = aFrame.GetMethod();
 
             LineNumber = aFrame.GetFileLineNumber();

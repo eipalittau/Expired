@@ -10,7 +10,6 @@ namespace Exp.DefaultMod.Player.PlayerClass.Aptitude {
             base.LoreDescription.Set(Util.LanguageEnum.Deutsch, "Ändert die Anzahl Lebenspunkte pro Level um +2");
             base.LoreDescription.Set(Util.LanguageEnum.English, "");
             base.Modifier = new Api.Helper.ModifierData(1, 0, 2);
-
             base.EffectList.Add(new Api.Helper.TargetEffect(base.ID, base.Effect, true, false, base.Modifier, null));
         }
         #endregion

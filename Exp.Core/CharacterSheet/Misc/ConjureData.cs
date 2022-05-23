@@ -11,6 +11,10 @@
         #endregion
 
         #region Methoden
+        internal void LevelUp() {
+            Mana.LevelUp();
+        }
+
         internal void OnNewDay() {
             Mana.OnNewDay();
         }

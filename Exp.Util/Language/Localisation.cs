@@ -1,5 +1,4 @@
 ﻿using Exp.Util.Extension;
-using System.Globalization;
 using System.Reflection;
 using System.Resources;
 
@@ -22,12 +21,8 @@ namespace Exp.Util {
         }
 
         private static void AddResourceFile(string aResourceName, Assembly aAssembly) {
-            ResourceData? lItem = GetItem(aAssembly);
-
-            if (lItem == null) {
-                ResourceList.Add(new ResourceData(aAssembly, aResourceName, Language));
-            } else {
-                lItem.LoadedLanguage = Language;
+            if (!GetItem(aAssembly).Any()) {
+                ResourceList.Add(new ResourceData(aAssembly, aResourceName));
             }
         }
         #endregion
@@ -48,14 +43,14 @@ namespace Exp.Util {
         }
 
         public static string GetText(string aID, Assembly aAssembly) {
-            ResourceData? lItem = GetItem(aAssembly);
+            IEnumerable<ResourceData> lItem = GetItem(aAssembly);
 
-            if (lItem == null) {
+            if (lItem.Any()) {
+                return lItem.First().GetText(Language, aID);
+            } else {
                 ExceptionHandler.Add(new Exception.ResourceNotFoundException(aID, aAssembly));
 
                 return string.Empty;
-            } else {
-                return lItem.GetText(Language, aID);
             }
         }
 
@@ -78,45 +73,33 @@ namespace Exp.Util {
         }
         #endregion
 
-        private static ResourceData? GetItem(Assembly aAssembly) {
-            return ResourceList
-                .Where(x => x.Caller.IsEqual(aAssembly))
-                .FirstOrDefault();
+        private static IEnumerable<ResourceData> GetItem(Assembly aAssembly) {
+            return ResourceList.Where(x => x.Caller.IsEqual(aAssembly));
         }
         #endregion
 
         private class ResourceData {
             #region Properties / Felder
             internal Assembly Caller { get; }
-            private LanguageEnum _LoadedLanguage = LanguageEnum.None;
-            internal LanguageEnum LoadedLanguage {
-                get {
-                    return _LoadedLanguage;
-                }
-                set {
-                    if (value != LanguageEnum.None) {
-                        if (_LoadedLanguage != value || ResourceSet == null) {
-                            _LoadedLanguage = value;
-                            ResourceSet = ResMan.GetResourceSet(new CultureInfo(value.ISO), true, true);
-                        }
-                    }
-                }
-            }
-            private ResourceManager ResMan { get; init; }
+            private ResourceManager Manager { get; init; }
             private ResourceSet? ResourceSet { get; set; }
+
+            private LanguageEnum? mLoadedLanguage;
             #endregion
 
             #region Konstruktor
-            internal ResourceData(Assembly aCaller, string aResourceName, LanguageEnum aLanguage) {
-                ResMan = new ResourceManager(aCaller.TryGetName(aSuffix: $".{aResourceName}"), aCaller);
+            internal ResourceData(Assembly aCaller, string aResourceName) {
                 Caller = aCaller;
-                LoadedLanguage = aLanguage;
+                Manager = new ResourceManager(aCaller.TryGetName(aSuffix: $".{aResourceName}"), aCaller);
             }
             #endregion
 
             #region Methoden
             internal string GetText(LanguageEnum aLanguage, string aName) {
-                LoadedLanguage = aLanguage;
+                if (mLoadedLanguage != aLanguage || ResourceSet == null) {
+                    ResourceSet = Manager.GetResourceSet(aLanguage.CI, true, true);
+                    mLoadedLanguage = aLanguage;
+                }
 
                 if (ResourceSet == null) {
                     return string.Empty;

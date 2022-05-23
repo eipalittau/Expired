@@ -1,4 +1,5 @@
-﻿using Exp.Data.Profession.Smithing;
+﻿using Exp.Api.General;
+using Exp.Data.Profession.Smithing;
 using Exp.Util;
 
 namespace Exp.Core.Sheet {
@@ -17,6 +18,12 @@ namespace Exp.Core.Sheet {
         #endregion
 
         #region Methoden
+        internal void SetSmithingPoints() {
+            if (Api.Player.LevelUp.Singleton.Contains(TargetEffectEnum.SmithingPoints)) {
+                AvailableSmithingPoints = Api.Player.LevelUp.Singleton.Get(TargetEffectEnum.SmithingPoints).Base.Value;
+            }
+        }
+
         internal int Count() {
             return ProfessionList.Count;
         }

@@ -1,4 +1,6 @@
-﻿namespace Exp.Core.Sheet {
+﻿using Exp.Api.General;
+
+namespace Exp.Core.Sheet {
     public sealed class MovementData : SheetBase {
         #region Properties / Felder
         #endregion
@@ -9,6 +11,9 @@
         #endregion
 
         #region Methoden
+        internal void LevelUp() {
+            base.LevelUp(TargetEffectEnum.Movement);
+        }
         #endregion
     }
 }

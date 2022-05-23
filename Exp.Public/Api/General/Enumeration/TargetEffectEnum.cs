@@ -8,12 +8,15 @@
         public static TargetEffectEnum Mana = new(nameof(Mana), "Verändert die Anzahl der Manapunkte");
         public static TargetEffectEnum FeatPoints = new(nameof(FeatPoints), "Verändert die Anzahl der Attributspunkte");
         public static TargetEffectEnum SkillPoints = new(nameof(SkillPoints), "Verändert die Anzahl der Fertigkeitspunkte");
+        public static TargetEffectEnum SmithingPoints = new(nameof(SmithingPoints), "Verändert die Anzahl der Fertigkeitspunkte für den Beruf.");
         public static TargetEffectEnum Resistence = new(nameof(Resistence), "Verändert die Resistenz");
         public static TargetEffectEnum Attack = new(nameof(Attack), "Verändert den Angriffs-Bonus/-Malus");
         public static TargetEffectEnum Damage = new(nameof(Damage), "Verändert den Schadens-Bonus/-Malus");
         public static TargetEffectEnum Sneaky = new(nameof(Sneaky), "Verändert den Angriffs-Bonus/-Malus beim Schleichen");
         public static TargetEffectEnum Movement = new(nameof(Movement), "Verändert die Bewegungsrate");
         public static TargetEffectEnum LoseAction = new(nameof(LoseAction), "Das Ziel verliert alle Aktionen");
+        public static TargetEffectEnum Overheal = new(nameof(Overheal), "Charakter kann über das Maximum geheilt werden.");
+        public static TargetEffectEnum Exp4LevelUp = new(nameof(Exp4LevelUp), "Setzt die Anzahl Punkte bis zum Level-Up.");
         private static int mCounter = 0;
         #endregion
 
