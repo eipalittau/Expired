@@ -1,7 +1,9 @@
 ﻿using Exp.Data.Feat.Offensive;
+using System.ComponentModel;
 
 namespace Exp.Core.Sheet {
-    [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+    [Browsable(false)]
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public sealed class OffensiveData : FeatDataBase<IOffensiveData> {
         #region Properties / Felder
         public int AttackBonus { get; private set; }
@@ -30,11 +32,11 @@ namespace Exp.Core.Sheet {
         }
 
         public new IList<IOffensiveData> Enumerate() {
-            return base.Enumerate();
+            return base.Enumerate().AsReadOnly();
         }
 
         public IList<IOffensiveData> EnumerateUnused() {
-            return Api.Feat.Offensive.Singleton.Enumerate().Except(Enumerate()).ToList().AsReadOnly();
+            return base.EnumerateUnused(Api.Feat.Offensive.Singleton.Enumerate());
         }
         #endregion
     }

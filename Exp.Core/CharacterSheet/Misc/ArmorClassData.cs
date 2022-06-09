@@ -1,6 +1,9 @@
 ﻿using Exp.Api.General;
+using System.ComponentModel;
 
 namespace Exp.Core.Sheet {
+    [Browsable(false)]
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public sealed class ArmorClassData : SheetBase {
         #region Properties / Felder
 

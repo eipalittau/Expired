@@ -1,7 +1,4 @@
-﻿using Exp.Api.General;
-using Exp.Api.Helper;
-
-namespace Exp.Core {
+﻿namespace Exp.Core {
     public sealed class CharacterSheet : Data.Player.ICharacterSheetData {
         #region Properties / Felder
         public bool IsDead { get; internal set; } = true;
@@ -18,8 +15,8 @@ namespace Exp.Core {
         public Sheet.FeatData Feat { get; init; }
         public Sheet.SkillData Skill { get; init; }
         public Sheet.SmithingData Smithing { get; init; }
-        public IList<Sheet.EquipmentData> EquipmentList { get; } = new List<Sheet.EquipmentData>();
-        public IList<Data.Misc.Recollection.IRecollectionData> RecollectionList { get; } = new List<Data.Misc.Recollection.IRecollectionData>();
+        public Sheet.EquipmentData Equipment { get; init; }
+        public Sheet.RecollectionData Recollection { get; init; }
         #endregion
 
         #region Konstruktor
@@ -35,25 +32,19 @@ namespace Exp.Core {
             Conjure = new Sheet.ConjureData(this);
             Movement = new Sheet.MovementData(this);
             Feat = new Sheet.FeatData(10);
-            Skill = new Sheet.SkillData(int.MaxValue);
+            Skill = new Sheet.SkillData(this, int.MaxValue);
             Smithing = new Sheet.SmithingData(5);
-            
-            Api.Player.Slot.Singleton.Enumerate()
-                .Where(x => x.Available).ToList()
-                .ForEach(x => EquipmentList.Add(new Sheet.EquipmentData(x)));
+            Equipment = new Sheet.EquipmentData(this);
+            Recollection = new Sheet.RecollectionData(this);
+
+            RaiseAfterCharacterCreated(new EventArgs.AfterCharacterCreatedEventArgs(aPlayerClass));
         }
         #endregion
 
         #region Methoden
         #region Create
         public static CharacterSheet Create(int aExperience4LevelUp) {
-            int lPlayerClasses = Api.Player.PlayerClass.Singleton.Count();
-
-            if (lPlayerClasses == 0) {
-                Util.ExceptionHandler.Add(new Exception.MissingInitializationException());
-            }
-            
-            return Create(Api.Player.PlayerClass.Singleton.Enumerate().ElementAt(new Random().Next(1, lPlayerClasses)), aExperience4LevelUp);
+            return new(Api.Player.PlayerClass.Singleton.GetRandom(), aExperience4LevelUp);
         }
 
         public static CharacterSheet Create(Data.Player.PlayerClass.IPlayerClassData aPlayerClass, int aExperience4LevelUp) {
@@ -62,8 +53,10 @@ namespace Exp.Core {
         #endregion
 
         #region LevelUp
-        public bool LevelUp() {
-            if (Experience.LevelUp()) {
+        public void LevelUp() {
+            bool lExecute = Experience.LevelUp();
+
+            if (lExecute) {
                 Health.LevelUp();
                 ArmorClass.LevelUp();
                 Resistence.LevelUp();
@@ -72,40 +65,86 @@ namespace Exp.Core {
                 Sneaky.LevelUp();
                 Conjure.LevelUp();
                 Movement.LevelUp();
+
                 Feat.SetFeatPoints();
                 Skill.SetSkillPoints();
                 Smithing.SetSmithingPoints();
 
-                return true;
-            } else {
-                return false;
+                // Equipment: Keine Änderung durch Level-Up.
+                // Recollection: Keine Änderung durch Level-Up.
             }
+            
+            RaiseOnLevelUp(new EventArgs.OnLevelUpEventArgs(lExecute));
         }
 
-        //Mirko: Wirklich?
-        public void AddFeat(Data.Feat.IFeatDataBase aFeat) {
-            Feat.LevelUp(aFeat);
-        }
-
-        //Mirko: Wirklich?
-        public void AddSkill(Data.Skill.SkillType.ISkillTypeData aSkill) {
-            Skill.LevelUp(aSkill);
-        }
         //Patrik: Neue Methode für Beruf und Erinnerungen.
         #endregion
 
         public void OnNewDay() {
             IsDead = false;
 
+            RaiseBeforeNewDay(nameof(Health));
             Health.OnNewDay();
+            RaiseAfterNewDay(nameof(Health));
+
+            RaiseBeforeNewDay(nameof(ArmorClass));
             ArmorClass.OnNewDay();
+            RaiseAfterNewDay(nameof(ArmorClass));
+
             Resistence.OnNewDay();
-            Attack.ToList().ForEach(x => x.OnNewDay());
-            Damage.ToList().ForEach(x => x.OnNewDay());
+            Attack.OnNewDay();
+            Damage.OnNewDay();
             Sneaky.OnNewDay();
             Conjure.OnNewDay();
             Movement.OnNewDay();
         }
+        #endregion
+
+        #region Events
+        #region Recollection
+        public event EventHandler<EventArgs.NewRecollectionEventArgs>? NewRecollection;
+
+        internal void RaiseNewRecollection(EventArgs.NewRecollectionEventArgs aArgs) {
+            NewRecollection?.Invoke(this, aArgs);
+        }
+        #endregion
+
+        #region CharacterCreated
+        public event EventHandler<EventArgs.AfterCharacterCreatedEventArgs>? AfterCharacterCreated;
+
+        internal void RaiseAfterCharacterCreated(EventArgs.AfterCharacterCreatedEventArgs aArgs) {
+            AfterCharacterCreated?.Invoke(this, aArgs);
+        }
+        #endregion
+
+        #region OnLevelUp
+        public event EventHandler<EventArgs.OnLevelUpEventArgs>? OnLevelUp;
+
+        internal void RaiseOnLevelUp(EventArgs.OnLevelUpEventArgs aArgs) {
+            OnLevelUp?.Invoke(this, aArgs);
+        }
+        #endregion
+
+        #region NewDay
+        public event EventHandler<EventArgs.BeforeNewDayEventArgs>? BeforeNewDay;
+        public event EventHandler<EventArgs.AfterNewDayEventArgs>? AfterNewDay;
+
+        internal void RaiseBeforeNewDay(string aSection) {
+            RaiseBeforeNewDay(new EventArgs.BeforeNewDayEventArgs(aSection));
+        }
+
+        internal void RaiseBeforeNewDay(EventArgs.BeforeNewDayEventArgs aArgs) {
+            BeforeNewDay?.Invoke(this, aArgs);
+        }
+
+        internal void RaiseAfterNewDay(string aSection) {
+            RaiseAfterNewDay(new EventArgs.AfterNewDayEventArgs(aSection));
+        }
+
+        internal void RaiseAfterNewDay(EventArgs.AfterNewDayEventArgs aArgs) {
+            AfterNewDay?.Invoke(this, aArgs);
+        }
+        #endregion
         #endregion
     }
 }

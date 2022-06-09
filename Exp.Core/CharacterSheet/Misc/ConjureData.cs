@@ -1,4 +1,8 @@
-﻿namespace Exp.Core.Sheet {
+﻿using System.ComponentModel;
+
+namespace Exp.Core.Sheet {
+    [Browsable(false)]
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public sealed class ConjureData {
         #region Properties / Felder
         public int CasterLevel { get; internal set; }

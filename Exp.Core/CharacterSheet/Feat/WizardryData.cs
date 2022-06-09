@@ -1,7 +1,9 @@
 ﻿using Exp.Data.Feat.Wizardry;
+using System.ComponentModel;
 
 namespace Exp.Core.Sheet {
-    [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+    [Browsable(false)]
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public sealed class WizardryData : FeatDataBase<IWizardryData> {
         #region Properties / Felder
         public int ManaBonus { get; private set; }
@@ -32,7 +34,7 @@ namespace Exp.Core.Sheet {
         }
 
         public IList<IWizardryData> EnumerateUnused() {
-            return Api.Feat.Wizardry.Singleton.Enumerate().Except(Enumerate()).ToList().AsReadOnly();
+            return base.EnumerateUnused(Api.Feat.Wizardry.Singleton.Enumerate());
         }
         #endregion
     }

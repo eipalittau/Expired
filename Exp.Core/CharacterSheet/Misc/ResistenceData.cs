@@ -1,10 +1,10 @@
 ﻿using Exp.Api.General;
+using System.ComponentModel;
 
 namespace Exp.Core.Sheet {
+    [Browsable(false)]
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public sealed class ResistenceData : SheetBase {
-        #region Properties / Felder
-        #endregion
-
         #region Konstruktor
         internal ResistenceData(CharacterSheet aMain)
             : base(aMain) { }

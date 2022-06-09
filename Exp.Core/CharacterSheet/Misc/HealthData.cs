@@ -1,6 +1,9 @@
 ﻿using Exp.Api.General;
+using System.ComponentModel;
 
 namespace Exp.Core.Sheet {
+    [Browsable(false)]
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public sealed class HealthData : SheetBase {
         #region Properties / Felder
         public bool CanOverheal { get; set; }

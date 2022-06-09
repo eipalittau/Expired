@@ -1,24 +1,25 @@
 ﻿using Exp.Data.Skill.SkillType;
+using System.ComponentModel;
 
 namespace Exp.Core.Sheet {
-    [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-    public sealed class SkillItemData {
+    [Browsable(false)]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public sealed class SkillItemData : SheetBase {
         #region Properties / Felder
-        public int Level { get; private set; }
-        public int MaxLevel { get; init; }
         public ISkillTypeData SkillType { get; init; }
         #endregion
 
         #region Konstruktor
-        internal SkillItemData(ISkillTypeData aSkillType, int aMaxLevel)
-            => (SkillType, MaxLevel) = (aSkillType, aMaxLevel);
+        internal SkillItemData(CharacterSheet aMain, ISkillTypeData aSkillType, int aMaxLevel)
+            : base(aMain)
+            => (SkillType, base.Max) = (aSkillType, aMaxLevel);
 
         internal bool LevelUp() {
-            if (Level == MaxLevel) {
-                Util.ExceptionHandler.Add(new Exception.MaximumExceededException(SkillType.ID, MaxLevel));
+            if (base.Current == base.Max) {
+                Util.ExceptionHandler.Add(new Exception.MaximumExceededException(SkillType.ID, base.Max));
                 return false;
             } else {
-                Level++;
+                base.OnIncrease();
                 return true;
             }
         }

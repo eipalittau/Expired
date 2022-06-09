@@ -1,6 +1,9 @@
 ﻿using Exp.Api.General;
+using System.ComponentModel;
 
 namespace Exp.Core.Sheet {
+    [Browsable(false)]
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public sealed class ExperienceData : SheetBase {
         #region Properties / Felder
         public int Level { get; private set; } = 0;

@@ -1,7 +1,9 @@
-﻿using Exp.Util;
-using Exp.Util.Extension;
+﻿using Exp.Util.Extension;
+using System.ComponentModel;
 
 namespace Exp.Api {
+    [Browsable(false)]
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public abstract class ApiBase<T> where T : Data.IDataBase {
         #region Properties / Felder
         private readonly List<T> mDataList = new();
@@ -12,6 +14,28 @@ namespace Exp.Api {
         #endregion
 
         #region Methoden
+        /// <summary>Fügt das übergebene Item der Sammlung hinzu.</summary>
+        /// <param name="aItem">Der neue Datensatz, welcher der Sammlung hinzugefügt werden soll.</param>
+        /// <exception cref="DublicateItemException">Falls die ID des Items bereits existiert, wird diese Exception geworfen.</exception>
+        private protected void Add(T aItem) {
+            if (Contains(aItem.ID)) {
+                Util.ExceptionHandler.Add(new Exception.DublicateItemException(aItem.ID));
+            } else {
+                mDataList.Add(aItem);
+            }
+        }
+
+        private protected T GetRandom() {
+            if (Count() == 0) {
+                Exception.EmptyListException lException = new(this.GetType());
+
+                Util.ExceptionHandler.Add(lException);
+                throw lException;
+            } else {
+                return Enumerate().ElementAt(Util.Radomizer.Get(Count()));
+            }
+        }
+
         private protected bool Contains(string aID) {
             return GetItem(aID).Any();
         }
@@ -28,8 +52,10 @@ namespace Exp.Api {
             mDataList.Clear();
         }
 
-        private protected IList<T> Enumerate() {
-            return GetItems().AsReadOnly();
+        private protected List<T> Enumerate() {
+            return mDataList
+                .Where(x => !x.IsDefaultObject())
+                .ToList();
         }
 
         /// <summary>Sucht aufgrund der ID den entsprechenden Datensatz.</summary>
@@ -40,15 +66,9 @@ namespace Exp.Api {
             T? lItem = GetItem(aID).FirstOrDefault();
 
             if (lItem == null) {
-                ExceptionHandler.Add(new Exception.ItemNotFoundException(aID));
+                Util.ExceptionHandler.Add(new Exception.ItemNotFoundException(aID));
 
-                lItem = GetItem(Public.Properties.Resources.NameDefaultObject).FirstOrDefault();
-                if (lItem == null) {
-                    Exception.ItemNotFoundException lException = new(aID);
-
-                    ExceptionHandler.Add(lException);
-                    throw lException;
-                }
+                lItem = GetDefault();
             }
 
             return lItem;
@@ -59,39 +79,35 @@ namespace Exp.Api {
         /// <returns>Das gefunden Item.</returns>
         private protected T Get(int aIndex) {
             if (aIndex < 0 || aIndex > mDataList.Count) {
-                ExceptionHandler.Add(new Exception.OutOfRangeException(nameof(aIndex), aIndex, 0, mDataList.Count));
+                Util.ExceptionHandler.Add(new Exception.OutOfRangeException(nameof(aIndex), aIndex, 0, mDataList.Count));
 
-                return Get(Public.Properties.Resources.NameDefaultObject);
+                return GetDefault();
             } else {
-                return GetItems()[aIndex];
+                return Enumerate()[aIndex];
             }
         }
 
         /// <summary>Liest die Anzahl der Einträge in der Aufzählung.</summary>
         /// <returns>Die Anzahl der Items in der Aufzählung.</returns>
         private protected int Count() {
-            return GetItems().Count;
-        }
-
-        /// <summary>Fügt das übergebene Item der Sammlung hinzu.</summary>
-        /// <param name="aItem">Der neue Datensatz, welcher der Sammlung hinzugefügt werden soll.</param>
-        /// <exception cref="DublicateItemException">Falls die ID des Items bereits existiert, wird diese Exception geworfen.</exception>
-        private protected void Add(T aItem) {
-            if (Contains(aItem.ID)) {
-                ExceptionHandler.Add(new Exception.DublicateItemException(aItem.ID));
-            } else {
-                mDataList.Add(aItem);
-            }
+            return Enumerate().Count;
         }
 
         private IEnumerable<T> GetItem(string aID) {
             return mDataList.Where(x => x.ID.Equals(aID, StringComparison.InvariantCultureIgnoreCase));
         }
 
-        private List<T> GetItems() {
-            return mDataList
-                .Where(x => !x.IsDefaultObject())
-                .ToList();
+        private T GetDefault() {
+            T? lItem = GetItem(Public.Properties.Resources.NameDefaultObject).FirstOrDefault();
+
+            if (lItem == null) {
+                Exception.MissingInitializationException lException = new();
+
+                Util.ExceptionHandler.Add(lException);
+                throw lException;
+            }
+
+            return lItem;
         }
         #endregion
     }

@@ -20,7 +20,17 @@ namespace Exp.Api.Player {
         }
 
         public new IList<ISlotData> Enumerate() {
-            return base.Enumerate();
+            return Enumerate(false);
+        }
+
+        public IList<ISlotData> Enumerate(bool aOnlyAvailable) {
+            List<ISlotData> lList = base.Enumerate();
+
+            if (aOnlyAvailable) {
+                lList = lList.Where(x => x.Available).ToList();
+            }
+
+            return lList.AsReadOnly();
         }
 
         public new ISlotData Get(string aID) {

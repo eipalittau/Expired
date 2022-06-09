@@ -1,12 +1,15 @@
 ﻿using Exp.Util;
+using System.ComponentModel;
 
 namespace Exp.Core.Sheet {
-    [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+    [Browsable(false)]
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public abstract class FeatDataBase<T> where T : Data.IDataBase {
         #region Properties / Felder
         public int Level { get; private set; } = 0;
         public int MaxLevel { get; init; }
-        private List<T> FeatList { get; } = new List<T>();
+
+        private readonly List<T> mDataList = new();
         #endregion
 
         #region Konstruktor
@@ -16,18 +19,22 @@ namespace Exp.Core.Sheet {
 
         #region Methoden
         public int Count() {
-            return FeatList.Count;
+            return mDataList.Count;
         }
 
-        private protected IList<T> Enumerate() {
-            return FeatList.AsReadOnly();
+        private protected List<T> Enumerate() {
+            return mDataList;
+        }
+
+        private protected IList<T> EnumerateUnused(IList<T> aMainList) {
+            return aMainList.Except(Enumerate()).ToList().AsReadOnly();
         }
 
         private protected void AddTalent(T aTalent) {
-            if (FeatList.Contains(aTalent)) {
+            if (mDataList.Contains(aTalent)) {
                 ExceptionHandler.Add(new Exception.DublicateItemException(aTalent.ID));
             } else {
-                FeatList.Add(aTalent);
+                mDataList.Add(aTalent);
             }
         }
         #endregion

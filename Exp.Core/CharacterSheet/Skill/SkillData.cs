@@ -1,18 +1,19 @@
 ﻿using Exp.Api.General;
 using Exp.Data.Skill.SkillType;
+using System.ComponentModel;
 
 namespace Exp.Core.Sheet {
-    [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-    public sealed class SkillData {
+    [Browsable(false)]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public sealed class SkillData : DataListBase<SkillItemData> {
         #region Properties / Felder
-        public IList<SkillItemData> SkillList { get; } = new List<SkillItemData>();
         public int AvailableSkillPoints { get; internal set; }
         #endregion
 
         #region Konstruktor
-        internal SkillData(int aMaxLevel) {
+        internal SkillData(CharacterSheet aMain, int aMaxLevel) {
             Api.Skill.SkillType.Singleton.Enumerate().ToList()
-                .ForEach(x => SkillList.Add(new SkillItemData(x, aMaxLevel)));
+                .ForEach(x => base.Add(new SkillItemData(aMain, x, aMaxLevel)));
         }
         #endregion
 
@@ -27,13 +28,13 @@ namespace Exp.Core.Sheet {
             bool lResult = false;
 
             if (AvailableSkillPoints > 0) {
-                IEnumerable<SkillItemData> lItem = SkillList.Where(x => x.SkillType == aSkillType);
+                SkillItemData lItem = base.Get(x => x.SkillType == aSkillType);
 
-                if (lItem.Any()) {
-                    lResult = lItem.First().LevelUp();
-                    AvailableSkillPoints--;
-                } else {
+                if (lItem == null) {
                     Util.ExceptionHandler.Add(new Exception.ItemNotFoundException(aSkillType.ID));
+                } else {
+                    lResult = lItem.LevelUp();
+                    AvailableSkillPoints--;
                 }
             }
 

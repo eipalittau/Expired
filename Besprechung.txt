@@ -3,3 +3,5 @@ Definition der PlayerClass:
 
 CharacterSheet:
 - Smithing
+
+Besserer Name für Exp.Core.Sheet.ArmorClassData.Natural

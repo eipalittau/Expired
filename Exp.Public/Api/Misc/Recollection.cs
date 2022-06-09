@@ -11,6 +11,10 @@ namespace Exp.Api.Misc {
         #endregion
 
         #region Methoden
+        public new IRecollectionData GetRandom() {
+            return base.GetRandom();
+        }
+
         public new void Remove(string aID) {
             base.Remove(aID);
         }

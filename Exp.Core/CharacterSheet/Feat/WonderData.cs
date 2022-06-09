@@ -1,7 +1,9 @@
 ﻿using Exp.Data.Feat.Wonder;
+using System.ComponentModel;
 
 namespace Exp.Core.Sheet {
-    [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+    [Browsable(false)]
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public sealed class WonderData : FeatDataBase<IWonderData> {
         #region Properties / Felder
         public int ManaBonus { get; private set; }
@@ -32,7 +34,7 @@ namespace Exp.Core.Sheet {
         }
 
         public IList<IWonderData> EnumerateUnused() {
-            return Api.Feat.Wonder.Singleton.Enumerate().Except(Enumerate()).ToList().AsReadOnly();
+            return base.EnumerateUnused(Api.Feat.Wonder.Singleton.Enumerate());
         }
         #endregion
     }

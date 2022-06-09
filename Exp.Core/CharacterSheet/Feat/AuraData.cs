@@ -1,7 +1,9 @@
 ﻿using Exp.Data.Feat.Aura;
+using System.ComponentModel;
 
 namespace Exp.Core.Sheet {
-    [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+    [Browsable(false)]
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public sealed class AuraData : FeatDataBase<IAuraData> {
         #region Properties / Felder
         public int HealthBonus { get; private set; }
@@ -28,11 +30,11 @@ namespace Exp.Core.Sheet {
         }
 
         public new IList<IAuraData> Enumerate() {
-            return base.Enumerate();
+            return base.Enumerate().AsReadOnly();
         }
 
         public IList<IAuraData> EnumerateUnused() {
-            return Api.Feat.Aura.Singleton.Enumerate().Except(Enumerate()).ToList().AsReadOnly();
+            return base.EnumerateUnused(Api.Feat.Aura.Singleton.Enumerate());
         }
         #endregion
     }

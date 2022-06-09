@@ -29,7 +29,7 @@ namespace Exp.Test {
             CharacterList.Add(lSheet);
 
             if (lFeatForm.ShowDialog(this) == DialogResult.OK) {
-                lSheet.LevelUp(aFeatTalents: null, aSkills: null);
+                //lSheet.LevelUp(aFeatTalents: null, aSkills: null);
             }
         }
     }

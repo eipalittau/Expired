@@ -1,10 +1,10 @@
 ﻿using Exp.Api.General;
+using System.ComponentModel;
 
 namespace Exp.Core.Sheet {
+    [Browsable(false)]
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public sealed class SneakyData : SheetBase {
-        #region Properties / Felder
-        #endregion
-
         #region Konstruktor
         internal SneakyData(CharacterSheet aMain)
             : base(aMain) { }

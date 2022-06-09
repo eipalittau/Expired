@@ -4,9 +4,11 @@ using Exp.Data.Feat.Defensive;
 using Exp.Data.Feat.Offensive;
 using Exp.Data.Feat.Wizardry;
 using Exp.Data.Feat.Wonder;
+using System.ComponentModel;
 
 namespace Exp.Core.Sheet {
-    [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+    [Browsable(false)]
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public sealed class FeatData {
         #region Properties / Felder
         public OffensiveData Offensive { get; init; }

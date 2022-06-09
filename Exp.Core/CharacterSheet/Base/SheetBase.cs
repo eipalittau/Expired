@@ -1,7 +1,10 @@
 ﻿using Exp.Api.General;
 using Exp.Api.Helper;
+using System.ComponentModel;
 
 namespace Exp.Core.Sheet {
+    [Browsable(false)]
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public abstract class SheetBase {
         #region Properties / Felder
         public int Max { get; internal set; }
@@ -20,7 +23,7 @@ namespace Exp.Core.Sheet {
         #endregion
 
         #region Methoden
-        private protected bool LevelUp(TargetEffectEnum aEffect) {
+        internal bool LevelUp(TargetEffectEnum aEffect) {
             OnDecrease(Max);
             Max = CalcMax(aEffect);
 
@@ -45,6 +48,10 @@ namespace Exp.Core.Sheet {
         #endregion
 
         #region OnIncrease
+        private protected void OnIncrease() {
+            OnIncrease(1);
+        }
+
         private protected void OnIncrease(int aPoints) {
             OnIncrease(aPoints, false);
         }

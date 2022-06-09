@@ -1,15 +1,17 @@
 ﻿using Exp.Api.General;
 using Exp.Data.Profession.Smithing;
 using Exp.Util;
+using System.ComponentModel;
 
 namespace Exp.Core.Sheet {
-    [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+    [Browsable(false)]
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public sealed class SmithingData {
         #region Properties / Felder
         public int Level { get; private set; }
         public int MaxLevel { get; init; }
         public int AvailableSmithingPoints { get; internal set; }
-        private List<ISmithingData> ProfessionList { get; } = new List<ISmithingData>();
+        private List<ISmithingData> SmithingList { get; } = new List<ISmithingData>();
         #endregion
 
         #region Konstruktor
@@ -24,20 +26,28 @@ namespace Exp.Core.Sheet {
             }
         }
 
+        internal void LevelUp(ISmithingData aSmithing) {
+            AddTalent(aSmithing);
+        }
+
         internal int Count() {
-            return ProfessionList.Count;
+            return SmithingList.Count;
         }
 
         internal IList<ISmithingData> Enumerate() {
-            return ProfessionList.AsReadOnly();
+            return SmithingList.AsReadOnly();
         }
 
         internal void AddTalent(ISmithingData aProfession) {
-            if (ProfessionList.Contains(aProfession)) {
+            if (SmithingList.Contains(aProfession)) {
                 ExceptionHandler.Add(new Exception.DublicateItemException(aProfession.ID));
             } else {
-                ProfessionList.Add(aProfession);
+                SmithingList.Add(aProfession);
             }
+        }
+
+        public IList<ISmithingData> EnumerateUnused() {
+            return Api.Profession.Smithing.Singleton.Enumerate().Except(Enumerate()).ToList().AsReadOnly();
         }
         #endregion
     }

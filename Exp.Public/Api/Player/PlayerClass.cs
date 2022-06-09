@@ -11,6 +11,10 @@ namespace Exp.Api.Player {
         #endregion
 
         #region Methoden
+        public new IPlayerClassData GetRandom() {
+            return base.GetRandom();
+        }
+
         public new void Remove(string aID) {
             base.Remove(aID);
         }

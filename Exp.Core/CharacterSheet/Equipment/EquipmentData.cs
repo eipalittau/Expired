@@ -1,19 +1,21 @@
-﻿using Exp.Data.Item.Item;
-using Exp.Data.Item.ItemQuality;
-using Exp.Data.Player.Slot;
+﻿using Exp.Data.Player.Slot;
+using System.ComponentModel;
 
 namespace Exp.Core.Sheet {
-    [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-    public sealed class EquipmentData {
-        #region Properties / Felder
-        public ISlotData Slot { get; init; }
-        public IItemData? Item { get; set; }
-        public IItemQualityData? ItemQuality { get; set; }
+    [Browsable(false)]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public sealed class EquipmentData : DataListBase<EquipmentItemData> {
+        #region Konstruktor
+        internal EquipmentData(CharacterSheet aMain)
+            : base() {
+            Api.Player.Slot.Singleton.Enumerate(true).ToList()
+                .ForEach(x => base.Add(new EquipmentItemData(aMain, x)));
+        }
         #endregion
 
-        #region Konstruktor
-        internal EquipmentData(ISlotData aSlot) {
-            Slot = aSlot;
+        #region Methoden
+        internal EquipmentItemData Get(ISlotData aSlot) {
+            return base.Get(x => x.Slot == aSlot);
         }
         #endregion
     }

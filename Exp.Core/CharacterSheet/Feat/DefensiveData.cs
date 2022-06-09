@@ -1,7 +1,9 @@
 ﻿using Exp.Data.Feat.Defensive;
+using System.ComponentModel;
 
 namespace Exp.Core.Sheet {
-    [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+    [Browsable(false)]
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public sealed class DefensiveData : FeatDataBase<IDefensiveData> {
         #region Properties / Felder
         public int ArmorClassBonus { get; private set; }
@@ -28,11 +30,11 @@ namespace Exp.Core.Sheet {
         }
 
         public new IList<IDefensiveData> Enumerate() {
-            return base.Enumerate();
+            return base.Enumerate().AsReadOnly();
         }
 
         public IList<IDefensiveData> EnumerateUnused() {
-            return Api.Feat.Defensive.Singleton.Enumerate().Except(Enumerate()).ToList().AsReadOnly();
+            return base.EnumerateUnused(Api.Feat.Defensive.Singleton.Enumerate());
         }
         #endregion
     }
