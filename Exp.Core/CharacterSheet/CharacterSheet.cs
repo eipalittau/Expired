@@ -81,22 +81,18 @@
         #endregion
 
         public void OnNewDay() {
+            RaiseBeforeNewDay(new EventArgs.BeforeNewDayEventArgs());
             IsDead = false;
 
-            RaiseBeforeNewDay(nameof(Health));
             Health.OnNewDay();
-            RaiseAfterNewDay(nameof(Health));
-
-            RaiseBeforeNewDay(nameof(ArmorClass));
             ArmorClass.OnNewDay();
-            RaiseAfterNewDay(nameof(ArmorClass));
-
             Resistence.OnNewDay();
             Attack.OnNewDay();
             Damage.OnNewDay();
             Sneaky.OnNewDay();
             Conjure.OnNewDay();
             Movement.OnNewDay();
+            RaiseAfterNewDay(new EventArgs.AfterNewDayEventArgs());
         }
         #endregion
 
@@ -129,16 +125,8 @@
         public event EventHandler<EventArgs.BeforeNewDayEventArgs>? BeforeNewDay;
         public event EventHandler<EventArgs.AfterNewDayEventArgs>? AfterNewDay;
 
-        internal void RaiseBeforeNewDay(string aSection) {
-            RaiseBeforeNewDay(new EventArgs.BeforeNewDayEventArgs(aSection));
-        }
-
         internal void RaiseBeforeNewDay(EventArgs.BeforeNewDayEventArgs aArgs) {
             BeforeNewDay?.Invoke(this, aArgs);
-        }
-
-        internal void RaiseAfterNewDay(string aSection) {
-            RaiseAfterNewDay(new EventArgs.AfterNewDayEventArgs(aSection));
         }
 
         internal void RaiseAfterNewDay(EventArgs.AfterNewDayEventArgs aArgs) {
