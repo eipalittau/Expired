@@ -26,7 +26,7 @@
 
         protected static List<T> Enumerate<T>(SortDirectionEnum aSortDirection) where T : EnumerationBase {
             List<T>? lList = typeof(T).GetFields()
-                .Where(x => x.IsStatic).Where(x => x.IsPublic)
+                .Where(x => x.IsStatic && x.IsPublic)
                 .Select(x => (T?)x.GetValue(null)).OfType<T>().ToList();
 
             return aSortDirection switch {
@@ -41,11 +41,11 @@
         }
 
         protected static T Convert<T>(int aID, T aDefault) where T : EnumerationBase {
-            return Enumerate<T>().Where(x => x.ID == aID).FirstOrDefault() ?? aDefault;
+            return Enumerate<T>().Find(x => x.ID == aID) ?? aDefault;
         }
 
         protected static T Convert<T>(string aName, T aDefault) where T : EnumerationBase {
-            return Enumerate<T>().Where(x => x.Name.Equals(aName, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault() ?? aDefault;
+            return Enumerate<T>().Find(x => x.Name.Equals(aName, StringComparison.InvariantCultureIgnoreCase)) ?? aDefault;
         }
 
         public virtual new string ToString() {
