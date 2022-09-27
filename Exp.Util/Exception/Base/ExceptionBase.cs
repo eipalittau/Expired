@@ -62,11 +62,9 @@ namespace Exp.Exception {
                 lMessage.AppendLine(aMessage);
             }
 
-            if (aEx != null) {
-                do {
-                    lMessage.AppendLine(aEx.Message);
-                    aEx = aEx.InnerException;
-                } while (aEx != null);
+            while (aEx != null) {
+                lMessage.AppendLine(aEx.Message);
+                aEx = aEx.InnerException;
             }
 
             return lMessage.ToString();
