@@ -28,7 +28,7 @@ namespace Exp.Util {
 
         #region Methoden
         public static LanguageEnum GetDefault() {
-            return Enumerate().Where(x => x.IsDefault).First();
+            return Enumerate().First(x => x.IsDefault);
         }
 
         public static List<LanguageEnum> Enumerate() {
