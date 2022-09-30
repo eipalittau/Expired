@@ -1,14 +1,16 @@
 ﻿using Exp.Data.Misc.Recollection;
+using Exp.Util.Enumeration;
 
-namespace Exp.DefaultMod.Misc.Recollection {
+namespace Exp.DefaultMod.Misc.Recollection
+{
     public sealed class ReceivedSlap : RecollectionDataBase, IRecollectionData {
         #region Konstruktor
         private ReceivedSlap()
             : base(nameof(ReceivedSlap), 100, 1, 10) {
-            Name.Set(Util.LanguageEnum.Deutsch, "Ohrfeige erhalten");
-            Name.Set(Util.LanguageEnum.English, "Received slap");
-            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
-            LoreDescription.Set(Util.LanguageEnum.English, "");
+            Name.Set(LanguageEnum.Deutsch, "Ohrfeige erhalten");
+            Name.Set(LanguageEnum.English, "Received slap");
+            LoreDescription.Set(LanguageEnum.Deutsch, "");
+            LoreDescription.Set(LanguageEnum.English, "");
         }
         #endregion
 

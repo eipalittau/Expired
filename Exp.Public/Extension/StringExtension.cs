@@ -1,9 +1,5 @@
 ﻿namespace Exp.Util.Extension {
     public static class StringExtension {
-        public static bool HasData<T>(this T[] aDatas) {
-            return aDatas != null && aDatas.Length > 0;
-        }
-
         public static bool IsDefaultObject<T>(this T? aData) where T : Data.IDataBase {
             if (aData == null) {
                 return false;

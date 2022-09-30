@@ -1,6 +1,8 @@
-﻿using Exp.Util.Extension;
+﻿using Exp.Util.Enumeration;
+using Exp.Util.Extension;
 
-namespace Exp.Util.Filesystem {
+namespace Exp.Util.Filesystem
+{
     public class LogHandler {
         #region Properties / Felder
         public FileInfo LogPathFile { get; init; }

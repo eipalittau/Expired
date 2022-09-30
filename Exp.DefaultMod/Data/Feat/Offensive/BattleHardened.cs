@@ -1,17 +1,19 @@
 ﻿using Exp.Data.Feat.Offensive;
 using Exp.Data.General.DamageType;
+using Exp.Util.Enumeration;
 
-namespace Exp.DefaultMod.Feat.Offensive {
+namespace Exp.DefaultMod.Feat.Offensive
+{
     public sealed class BattleHardened : OffensiveDataBase, IOffensiveData {
         #region Konstruktor
         private BattleHardened()
             : base(nameof(BattleHardened), 100, Api.General.Tier.Singleton.Get(nameof(General.Tier.One))) {
-            Name.Set(Util.LanguageEnum.Deutsch, "Kampferprobt");
-            Name.Set(Util.LanguageEnum.English, "Battle hardened");
-            LoreDescription.Set(Util.LanguageEnum.Deutsch, "Immer Mitten in die Fresse rein...");
-            LoreDescription.Set(Util.LanguageEnum.English, "Always right in the face...");
-            EffectDescription.Set(Util.LanguageEnum.Deutsch, "+1 Angriff, +1 Schaden");
-            EffectDescription.Set(Util.LanguageEnum.English, "+1 Angriff, +1 Schaden");
+            Name.Set(LanguageEnum.Deutsch, "Kampferprobt");
+            Name.Set(LanguageEnum.English, "Battle hardened");
+            LoreDescription.Set(LanguageEnum.Deutsch, "Immer Mitten in die Fresse rein...");
+            LoreDescription.Set(LanguageEnum.English, "Always right in the face...");
+            EffectDescription.Set(LanguageEnum.Deutsch, "+1 Angriff, +1 Schaden");
+            EffectDescription.Set(LanguageEnum.English, "+1 Angriff, +1 Schaden");
         }
         #endregion
 

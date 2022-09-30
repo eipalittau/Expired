@@ -1,15 +1,17 @@
 ﻿using Exp.Data.Item.Effect;
 using Exp.Data.Item.ItemQuality;
+using Exp.Util.Enumeration;
 
-namespace Exp.DefaultMod.Item.ItemQuality {
+namespace Exp.DefaultMod.Item.ItemQuality
+{
     public sealed class Hardened : ItemQualityDataBase, IItemQualityData {
         #region Konstruktor
         private Hardened()
             : base(nameof(Hardened), 400, true, false, GetEffects()) {
-            Name.Set(Util.LanguageEnum.Deutsch, "Gehärtet");
-            Name.Set(Util.LanguageEnum.English, "Hardened");
-            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
-            LoreDescription.Set(Util.LanguageEnum.English, "");
+            Name.Set(LanguageEnum.Deutsch, "Gehärtet");
+            Name.Set(LanguageEnum.English, "Hardened");
+            LoreDescription.Set(LanguageEnum.Deutsch, "");
+            LoreDescription.Set(LanguageEnum.English, "");
         }
         #endregion
 

@@ -1,9 +1,10 @@
 ﻿using System.Globalization;
 using Exp.Util.Enumeration.Base;
 
-namespace Exp.Util
+namespace Exp.Util.Enumeration
 {
-    public sealed class LanguageEnum : EnumerationBase {
+    public sealed class LanguageEnum : EnumerationBase
+    {
         #region Properties / Felder
         #region Static
         internal readonly static LanguageEnum None = new(nameof(None), string.Empty);
@@ -31,23 +32,28 @@ namespace Exp.Util
         #endregion
 
         #region Methoden
-        public static LanguageEnum GetDefault() {
+        public static LanguageEnum GetDefault()
+        {
             return Enumerate().Where(x => x.IsDefault).First();
         }
 
-        public static List<LanguageEnum> Enumerate() {
+        public static List<LanguageEnum> Enumerate()
+        {
             return EnumerateByName<LanguageEnum>(SortDirectionEnum.ASC);
         }
 
-        public static int Count() {
+        public static int Count()
+        {
             return Count<LanguageEnum>();
         }
 
-        public static LanguageEnum Convert(long aIndex) {
+        public static LanguageEnum Convert(long aIndex)
+        {
             return Convert(aIndex, None);
         }
 
-        public static LanguageEnum Convert(string aName) {
+        public static LanguageEnum Convert(string aName)
+        {
             return Convert(aName, None);
         }
         #endregion

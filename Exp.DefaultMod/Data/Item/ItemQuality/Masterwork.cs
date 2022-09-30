@@ -1,15 +1,17 @@
 ﻿using Exp.Data.Item.Effect;
 using Exp.Data.Item.ItemQuality;
+using Exp.Util.Enumeration;
 
-namespace Exp.DefaultMod.Item.ItemQuality {
+namespace Exp.DefaultMod.Item.ItemQuality
+{
     public sealed class Masterwork : ItemQualityDataBase, IItemQualityData {
         #region Konstruktor
         private Masterwork()
             : base(nameof(Masterwork), 500, false, false, GetEffects()) {
-            Name.Set(Util.LanguageEnum.Deutsch, "Meisterarbeit");
-            Name.Set(Util.LanguageEnum.English, "Masterwork");
-            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
-            LoreDescription.Set(Util.LanguageEnum.English, "");
+            Name.Set(LanguageEnum.Deutsch, "Meisterarbeit");
+            Name.Set(LanguageEnum.English, "Masterwork");
+            LoreDescription.Set(LanguageEnum.Deutsch, "");
+            LoreDescription.Set(LanguageEnum.English, "");
         }
         #endregion
 

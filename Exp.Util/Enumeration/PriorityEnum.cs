@@ -1,8 +1,9 @@
 ﻿using Exp.Util.Enumeration.Base;
 
-namespace Exp.Util
+namespace Exp.Util.Enumeration
 {
-    public sealed class PriorityEnum : EnumerationBase {
+    public sealed class PriorityEnum : EnumerationBase
+    {
         #region Properties / Felder
         public static PriorityEnum None = new(nameof(None));
         public static PriorityEnum Debug = new(nameof(Debug));
@@ -19,23 +20,28 @@ namespace Exp.Util
         #endregion
 
         #region Methoden
-        public static List<PriorityEnum> Enumerate() {
+        public static List<PriorityEnum> Enumerate()
+        {
             return Enumerate<PriorityEnum>();
         }
 
-        public static int Count() {
+        public static int Count()
+        {
             return Count<PriorityEnum>();
         }
 
-        public static PriorityEnum Convert(long aIndex) {
+        public static PriorityEnum Convert(long aIndex)
+        {
             return Convert(aIndex, None);
         }
 
-        public static PriorityEnum Convert(string aLanguage) {
+        public static PriorityEnum Convert(string aLanguage)
+        {
             return Convert(aLanguage, None);
         }
 
-        public override string ToString() {
+        public override string ToString()
+        {
             return Name.PadRight(Enumerate().Max(x => x.Name.Length));
         }
         #endregion

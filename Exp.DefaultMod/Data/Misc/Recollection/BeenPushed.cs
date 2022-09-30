@@ -1,14 +1,16 @@
 ﻿using Exp.Data.Misc.Recollection;
+using Exp.Util.Enumeration;
 
-namespace Exp.DefaultMod.Misc.Recollection {
+namespace Exp.DefaultMod.Misc.Recollection
+{
     public sealed class BeenPushed : RecollectionDataBase, IRecollectionData {
         #region Konstruktor
         private BeenPushed()
             : base(nameof(BeenPushed), 200, 11, 15) {
-            Name.Set(Util.LanguageEnum.Deutsch, "Geschubst worden");
-            Name.Set(Util.LanguageEnum.English, "Been pushed");
-            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
-            LoreDescription.Set(Util.LanguageEnum.English, "");
+            Name.Set(LanguageEnum.Deutsch, "Geschubst worden");
+            Name.Set(LanguageEnum.English, "Been pushed");
+            LoreDescription.Set(LanguageEnum.Deutsch, "");
+            LoreDescription.Set(LanguageEnum.English, "");
         }
         #endregion
 

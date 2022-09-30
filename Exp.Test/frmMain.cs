@@ -1,6 +1,8 @@
 using Exp.Core;
+using Exp.Util.Enumeration;
 
-namespace Exp.Test {
+namespace Exp.Test
+{
     public partial class frmMain : Form {
         private List<CharacterSheet> CharacterList { get; } = new();
         private int Experience4LevelUp { get; } = 4;
@@ -10,7 +12,7 @@ namespace Exp.Test {
         }
 
         private void Form1_Load(object sender, EventArgs e) {
-            Util.Localisation.Language = Util.LanguageEnum.Deutsch;
+            Util.Localisation.Language = LanguageEnum.Deutsch;
             Util.ExceptionHandler.ThrowException = false;
         }
 

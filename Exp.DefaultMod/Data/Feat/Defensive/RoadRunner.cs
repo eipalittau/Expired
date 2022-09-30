@@ -1,14 +1,16 @@
 ﻿using Exp.Data.Feat.Defensive;
+using Exp.Util.Enumeration;
 
-namespace Exp.DefaultMod.Feat.Defensive {
+namespace Exp.DefaultMod.Feat.Defensive
+{
     public sealed class RoadRunner : DefensiveDataBase, IDefensiveData {
         #region Konstruktor
         private RoadRunner()
             : base(nameof(RoadRunner), 1500, Api.General.Tier.Singleton.Get(nameof(General.Tier.Two))) {
-            Name.Set(Util.LanguageEnum.Deutsch, "Road runner");
-            Name.Set(Util.LanguageEnum.English, "Straßenläufer");
-            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
-            LoreDescription.Set(Util.LanguageEnum.English, "");
+            Name.Set(LanguageEnum.Deutsch, "Road runner");
+            Name.Set(LanguageEnum.English, "Straßenläufer");
+            LoreDescription.Set(LanguageEnum.Deutsch, "");
+            LoreDescription.Set(LanguageEnum.English, "");
         }
         #endregion
 

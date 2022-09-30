@@ -1,14 +1,16 @@
 ﻿using Exp.Data.Misc.Recollection;
+using Exp.Util.Enumeration;
 
-namespace Exp.DefaultMod.Misc.Recollection {
+namespace Exp.DefaultMod.Misc.Recollection
+{
     public sealed class HittingYourself : RecollectionDataBase, IRecollectionData {
         #region Konstruktor
         private HittingYourself()
             : base(nameof(HittingYourself), 300, 16, 20) {
-            Name.Set(Util.LanguageEnum.Deutsch, "Warum schlägst du dich selbst?");
-            Name.Set(Util.LanguageEnum.English, "Why are you hitting yourself?");
-            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
-            LoreDescription.Set(Util.LanguageEnum.English, "");
+            Name.Set(LanguageEnum.Deutsch, "Warum schlägst du dich selbst?");
+            Name.Set(LanguageEnum.English, "Why are you hitting yourself?");
+            LoreDescription.Set(LanguageEnum.Deutsch, "");
+            LoreDescription.Set(LanguageEnum.English, "");
         }
         #endregion
 

@@ -1,8 +1,10 @@
-﻿using Exp.Util.Extension;
+﻿using Exp.Util.Enumeration;
+using Exp.Util.Extension;
 using System.Reflection;
 using System.Resources;
 
-namespace Exp.Util {
+namespace Exp.Util
+{
     public static class Localisation {
         #region Properties / Felder
         public static LanguageEnum Language { get; set; } = LanguageEnum.None;

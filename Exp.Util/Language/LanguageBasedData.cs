@@ -1,11 +1,9 @@
+using Exp.Util.Enumeration;
+
 namespace Exp.Util {
     public sealed class LanguageBasedData {
         #region Properties / Felder
         private readonly string[] mValue = new string[LanguageEnum.Count()];
-        #endregion
-
-        #region Konstruktor
-        public LanguageBasedData() { }
         #endregion
 
         #region Methoden
@@ -22,11 +20,11 @@ namespace Exp.Util {
         }
 
         public string? Get(string aValue) {
-            return mValue.Where(x => x.Equals(aValue, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
+            return Array.Find(mValue, x => x.Equals(aValue, StringComparison.InvariantCultureIgnoreCase));
         }
 
         public string Get() {
-            return Get(LanguageEnum.Deutsch);
+            return Get(LanguageEnum.GetDefault());
         }
         #endregion
     }

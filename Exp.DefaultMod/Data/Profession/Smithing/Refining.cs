@@ -1,6 +1,8 @@
 ﻿using Exp.Data.Profession.Smithing;
+using Exp.Util.Enumeration;
 
-namespace Exp.DefaultMod.Profession.Smithing {
+namespace Exp.DefaultMod.Profession.Smithing
+{
     public sealed class Refining : SmithingDataBase, ISmithingData {
         #region Konstruktor
         private Refining()
@@ -8,12 +10,12 @@ namespace Exp.DefaultMod.Profession.Smithing {
                    Api.General.Tier.Singleton.Get(nameof(General.Tier.One)),
                    Api.Item.ItemType.Singleton.Get(nameof(Item.ItemType.Ring)),
                    Api.Item.ItemType.Singleton.Get(nameof(Item.ItemType.Amulet))) {
-            Name.Set(Util.LanguageEnum.Deutsch, "Veredeln");
-            Name.Set(Util.LanguageEnum.English, "Refining");
-            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
-            LoreDescription.Set(Util.LanguageEnum.English, "");
-            EffektDescription.Set(Util.LanguageEnum.Deutsch, "");
-            EffektDescription.Set(Util.LanguageEnum.English, "");
+            Name.Set(LanguageEnum.Deutsch, "Veredeln");
+            Name.Set(LanguageEnum.English, "Refining");
+            LoreDescription.Set(LanguageEnum.Deutsch, "");
+            LoreDescription.Set(LanguageEnum.English, "");
+            EffektDescription.Set(LanguageEnum.Deutsch, "");
+            EffektDescription.Set(LanguageEnum.English, "");
         }
         #endregion
 

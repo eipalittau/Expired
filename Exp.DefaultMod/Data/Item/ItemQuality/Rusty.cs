@@ -1,15 +1,17 @@
 ﻿using Exp.Data.Item.Effect;
 using Exp.Data.Item.ItemQuality;
+using Exp.Util.Enumeration;
 
-namespace Exp.DefaultMod.Item.ItemQuality {
+namespace Exp.DefaultMod.Item.ItemQuality
+{
     public sealed class Rusty : ItemQualityDataBase, IItemQualityData {
         #region Konstruktor
         private Rusty()
             : base(nameof(Rusty), 100, true, false, GetEffects()) {
-            Name.Set(Util.LanguageEnum.Deutsch, "Rostig");
-            Name.Set(Util.LanguageEnum.English, "Rusty");
-            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
-            LoreDescription.Set(Util.LanguageEnum.English, "");
+            Name.Set(LanguageEnum.Deutsch, "Rostig");
+            Name.Set(LanguageEnum.English, "Rusty");
+            LoreDescription.Set(LanguageEnum.Deutsch, "");
+            LoreDescription.Set(LanguageEnum.English, "");
         }
         #endregion
 

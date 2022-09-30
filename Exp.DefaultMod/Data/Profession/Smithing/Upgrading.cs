@@ -1,6 +1,8 @@
 ﻿using Exp.Data.Profession.Smithing;
+using Exp.Util.Enumeration;
 
-namespace Exp.DefaultMod.Profession.Smithing {
+namespace Exp.DefaultMod.Profession.Smithing
+{
     public sealed class Upgrading : SmithingDataBase, ISmithingData {
         #region Konstruktor
         private Upgrading()
@@ -18,12 +20,12 @@ namespace Exp.DefaultMod.Profession.Smithing {
                    Api.Item.ItemType.Singleton.Get(nameof(Item.ItemType.Shield)),
                    Api.Item.ItemType.Singleton.Get(nameof(Item.ItemType.Bracers)),
                    Api.Item.ItemType.Singleton.Get(nameof(Item.ItemType.Headgear))) {
-            Name.Set(Util.LanguageEnum.Deutsch, "Aufwertung");
-            Name.Set(Util.LanguageEnum.English, "Upgrading");
-            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
-            LoreDescription.Set(Util.LanguageEnum.English, "");
-            EffektDescription.Set(Util.LanguageEnum.Deutsch, "");
-            EffektDescription.Set(Util.LanguageEnum.English, "");
+            Name.Set(LanguageEnum.Deutsch, "Aufwertung");
+            Name.Set(LanguageEnum.English, "Upgrading");
+            LoreDescription.Set(LanguageEnum.Deutsch, "");
+            LoreDescription.Set(LanguageEnum.English, "");
+            EffektDescription.Set(LanguageEnum.Deutsch, "");
+            EffektDescription.Set(LanguageEnum.English, "");
         }
         #endregion
 

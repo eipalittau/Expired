@@ -1,14 +1,16 @@
 ﻿using Exp.Data.Feat.Offensive;
+using Exp.Util.Enumeration;
 
-namespace Exp.DefaultMod.Feat.Offensive {
+namespace Exp.DefaultMod.Feat.Offensive
+{
     public sealed class TwoWeapons : OffensiveDataBase, IOffensiveData {
         #region Konstruktor
         private TwoWeapons()
             : base(nameof(TwoWeapons), 800, Api.General.Tier.Singleton.Get(nameof(General.Tier.One))) {
-            Name.Set(Util.LanguageEnum.Deutsch, "Kampf mit zwei Waffen");
-            Name.Set(Util.LanguageEnum.English, "Fight with two weapons");
-            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
-            LoreDescription.Set(Util.LanguageEnum.English, "");
+            Name.Set(LanguageEnum.Deutsch, "Kampf mit zwei Waffen");
+            Name.Set(LanguageEnum.English, "Fight with two weapons");
+            LoreDescription.Set(LanguageEnum.Deutsch, "");
+            LoreDescription.Set(LanguageEnum.English, "");
         }
         #endregion
 

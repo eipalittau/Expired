@@ -8,7 +8,7 @@ namespace Exp.Util.Filesystem {
         }
 
         public static void CreateDirectory(string aPathName, bool aCheckPermission) {
-            CreateDirectory(new DirectoryInfo(aPathName), false);
+            CreateDirectory(new DirectoryInfo(aPathName), aCheckPermission);
         }
 
         public static void CreateDirectory(DirectoryInfo aPath) {
@@ -18,6 +18,7 @@ namespace Exp.Util.Filesystem {
         public static void CreateDirectory(DirectoryInfo aPath, bool aCheckPermission) {
             // Verzeichnis erstellen
             try {
+                aPath.Refresh();
                 if (!aPath.Exists) {
                     aPath.Create();
                 }

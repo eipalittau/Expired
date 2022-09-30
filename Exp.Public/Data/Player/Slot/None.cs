@@ -1,9 +1,12 @@
-﻿namespace Exp.Data.Player.Slot {
+﻿using Exp.Util.Enumeration;
+
+namespace Exp.Data.Player.Slot
+{
     public sealed class None : SlotDataBase, ISlotData {
         #region Konstruktor
         private None()
             : base(Public.Properties.Resources.NameDefaultObject, int.MinValue, false) {
-            foreach (Util.LanguageEnum lItem in Util.LanguageEnum.Enumerate()) {
+            foreach (LanguageEnum lItem in LanguageEnum.Enumerate()) {
                 Name.Set(lItem, Public.Properties.Resources.NameDefaultObject);
                 LoreDescription.Set(lItem, Public.Properties.Resources.NameDefaultObject);
             }

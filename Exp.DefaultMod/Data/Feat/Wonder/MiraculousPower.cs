@@ -1,14 +1,16 @@
 ﻿using Exp.Data.Feat.Wonder;
+using Exp.Util.Enumeration;
 
-namespace Exp.DefaultMod.Feat.Wonder {
+namespace Exp.DefaultMod.Feat.Wonder
+{
     public sealed class MiraculousPower : WonderDataBase, IWonderData {
         #region Konstruktor
         private MiraculousPower()
             : base(nameof(MiraculousPower), 800, Api.General.Tier.Singleton.Get(nameof(General.Tier.One))) {
-            Name.Set(Util.LanguageEnum.Deutsch, "Wundermacht");
-            Name.Set(Util.LanguageEnum.English, "Miraculous power");
-            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
-            LoreDescription.Set(Util.LanguageEnum.English, "");
+            Name.Set(LanguageEnum.Deutsch, "Wundermacht");
+            Name.Set(LanguageEnum.English, "Miraculous power");
+            LoreDescription.Set(LanguageEnum.Deutsch, "");
+            LoreDescription.Set(LanguageEnum.English, "");
         }
         #endregion
 

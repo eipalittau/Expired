@@ -1,14 +1,16 @@
 ﻿using Exp.Data.Feat.Offensive;
+using Exp.Util.Enumeration;
 
-namespace Exp.DefaultMod.Feat.Offensive {
+namespace Exp.DefaultMod.Feat.Offensive
+{
     public sealed class StrongCharge : OffensiveDataBase, IOffensiveData {
         #region Konstruktor
         private StrongCharge()
             : base(nameof(StrongCharge), 900, Api.General.Tier.Singleton.Get(nameof(General.Tier.One)), Api.General.ActionType.Singleton.Get(nameof(General.ActionType.Full))) {
-            Name.Set(Util.LanguageEnum.Deutsch, "CHAAAARGE!!!");
-            Name.Set(Util.LanguageEnum.English, "CHAAAARGE!!!");
-            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
-            LoreDescription.Set(Util.LanguageEnum.English, "");
+            Name.Set(LanguageEnum.Deutsch, "CHAAAARGE!!!");
+            Name.Set(LanguageEnum.English, "CHAAAARGE!!!");
+            LoreDescription.Set(LanguageEnum.Deutsch, "");
+            LoreDescription.Set(LanguageEnum.English, "");
         }
         #endregion
 

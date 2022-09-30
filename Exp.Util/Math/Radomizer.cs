@@ -19,7 +19,7 @@
         }
         #endregion
 
-        private class Constants {
+        private static class Constants {
             internal const int Min = 1;
         }
     }

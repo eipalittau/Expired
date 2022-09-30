@@ -22,11 +22,7 @@ namespace Exp.Util.Filesystem {
                 }
             }
 
-            if (lJson == null) {
-                Json = new T();
-            } else {
-                Json = lJson;
-            }
+            Json = lJson is null ? new T() : lJson;
         }
         #endregion
 

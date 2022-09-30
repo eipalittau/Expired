@@ -1,9 +1,11 @@
 using Exp.Util;
+using Exp.Util.Enumeration;
 using Exp.Util.Extension;
 using System.Diagnostics;
 using System.Text;
 
-namespace Exp.Exception {
+namespace Exp.Exception
+{
     public abstract class ExceptionBase : System.Exception {
         #region Properties / Felder
         public string ID { get; init; }
@@ -16,7 +18,7 @@ namespace Exp.Exception {
             }
         }
 
-        private List<CallerData> _CallerList;
+        private readonly List<CallerData> _CallerList;
         #endregion
 
         #region Konstruktor
@@ -24,7 +26,7 @@ namespace Exp.Exception {
             : this(null, aArguments) { }
 
         protected ExceptionBase(System.Exception? aEx, params string[] aArguments)
-            : base() {
+            : base("Custom Exception", aEx) {
             StackTrace lStackTrace;
             Type lType = this.GetType();
 

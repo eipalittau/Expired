@@ -1,6 +1,8 @@
 ﻿using Exp.Data.Profession.Smithing;
+using Exp.Util.Enumeration;
 
-namespace Exp.DefaultMod.Profession.Smithing {
+namespace Exp.DefaultMod.Profession.Smithing
+{
     public sealed class ElementalDamage : SmithingDataBase, ISmithingData {
         #region Konstruktor
         private ElementalDamage()
@@ -19,12 +21,12 @@ namespace Exp.DefaultMod.Profession.Smithing {
                    Api.Item.ItemType.Singleton.Get(nameof(Item.ItemType.Shield)),
                    Api.Item.ItemType.Singleton.Get(nameof(Item.ItemType.Bracers)),
                    Api.Item.ItemType.Singleton.Get(nameof(Item.ItemType.Headgear))) {
-            Name.Set(Util.LanguageEnum.Deutsch, "Elementarschaden");
-            Name.Set(Util.LanguageEnum.English, "Elemental damage");
-            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
-            LoreDescription.Set(Util.LanguageEnum.English, "");
-            EffektDescription.Set(Util.LanguageEnum.Deutsch, "");
-            EffektDescription.Set(Util.LanguageEnum.English, "");
+            Name.Set(LanguageEnum.Deutsch, "Elementarschaden");
+            Name.Set(LanguageEnum.English, "Elemental damage");
+            LoreDescription.Set(LanguageEnum.Deutsch, "");
+            LoreDescription.Set(LanguageEnum.English, "");
+            EffektDescription.Set(LanguageEnum.Deutsch, "");
+            EffektDescription.Set(LanguageEnum.English, "");
         }
 
         #region Methoden

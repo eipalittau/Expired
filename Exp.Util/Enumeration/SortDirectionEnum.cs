@@ -3,16 +3,23 @@
 namespace Exp.Util {
     public sealed class SortDirectionEnum : EnumerationBase {
         #region Properties / Felder
-        public readonly static SortDirectionEnum None = new(nameof(None));
-        public readonly static SortDirectionEnum ASC = new(nameof(ASC));
-        public readonly static SortDirectionEnum DESC = new(nameof(DESC));
+        #region Static
+        public readonly static SortDirectionEnum None = new(nameof(None), " ");
+        public readonly static SortDirectionEnum ASC = new(nameof(ASC), " ASC ");
+        public readonly static SortDirectionEnum DESC = new(nameof(DESC), " DESC ");
 
-        private static int mIndexCounter = 0;
+        private static int mIndexCounter;
+        #endregion
+
+        #region Instance
+        public string SqlKey { get; }
+        #endregion
         #endregion
 
         #region Konstruktor
-        public SortDirectionEnum(string aName)
-            : base(mIndexCounter++, aName, string.Empty) { }
+        public SortDirectionEnum(string aName, string aSqlKey)
+            : base(mIndexCounter++, aName, string.Empty)
+            => SqlKey = aSqlKey;
         #endregion
 
         #region Methoden

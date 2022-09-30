@@ -1,14 +1,16 @@
 ﻿using Exp.Data.Feat.Wonder;
+using Exp.Util.Enumeration;
 
-namespace Exp.DefaultMod.Feat.Wonder {
+namespace Exp.DefaultMod.Feat.Wonder
+{
     public sealed class MiracleFocus : WonderDataBase, IWonderData {
         #region Konstruktor
         private MiracleFocus()
             : base(nameof(MiracleFocus), 700, Api.General.Tier.Singleton.Get(nameof(General.Tier.One))) {
-            Name.Set(Util.LanguageEnum.Deutsch, "Wunderfokus");
-            Name.Set(Util.LanguageEnum.English, "Miracle focus");
-            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
-            LoreDescription.Set(Util.LanguageEnum.English, "");
+            Name.Set(LanguageEnum.Deutsch, "Wunderfokus");
+            Name.Set(LanguageEnum.English, "Miracle focus");
+            LoreDescription.Set(LanguageEnum.Deutsch, "");
+            LoreDescription.Set(LanguageEnum.English, "");
         }
         #endregion
 

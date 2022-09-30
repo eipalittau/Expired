@@ -1,14 +1,16 @@
 ﻿using Exp.Data.Feat.Defensive;
+using Exp.Util.Enumeration;
 
-namespace Exp.DefaultMod.Feat.Defensive {
+namespace Exp.DefaultMod.Feat.Defensive
+{
     public sealed class Pindown : DefensiveDataBase, IDefensiveData {
         #region Konstruktor
         private Pindown()
             : base(nameof(Pindown), 800, Api.General.Tier.Singleton.Get(nameof(General.Tier.One))) {
-            Name.Set(Util.LanguageEnum.Deutsch, "Anpinnen");
-            Name.Set(Util.LanguageEnum.English, "Pindown");
-            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
-            LoreDescription.Set(Util.LanguageEnum.English, "");
+            Name.Set(LanguageEnum.Deutsch, "Anpinnen");
+            Name.Set(LanguageEnum.English, "Pindown");
+            LoreDescription.Set(LanguageEnum.Deutsch, "");
+            LoreDescription.Set(LanguageEnum.English, "");
         }
         #endregion
 

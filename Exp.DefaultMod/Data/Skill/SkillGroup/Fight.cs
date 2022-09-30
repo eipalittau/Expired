@@ -1,14 +1,16 @@
 ﻿using Exp.Data.Skill.SkillGroup;
+using Exp.Util.Enumeration;
 
-namespace Exp.DefaultMod.Skill.Group {
+namespace Exp.DefaultMod.Skill.Group
+{
     public sealed class Fight : SkillGroupDataBase, ISkillGroupData {
         #region Konstruktor
         private Fight()
             : base(nameof(Fight), 100) {
-            Name.Set(Util.LanguageEnum.Deutsch, "Kampf");
-            Name.Set(Util.LanguageEnum.English, "Fight");
-            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
-            LoreDescription.Set(Util.LanguageEnum.English, "");
+            Name.Set(LanguageEnum.Deutsch, "Kampf");
+            Name.Set(LanguageEnum.English, "Fight");
+            LoreDescription.Set(LanguageEnum.Deutsch, "");
+            LoreDescription.Set(LanguageEnum.English, "");
         }
         #endregion
 

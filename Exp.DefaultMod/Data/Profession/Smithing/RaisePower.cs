@@ -1,6 +1,8 @@
 ﻿using Exp.Data.Profession.Smithing;
+using Exp.Util.Enumeration;
 
-namespace Exp.DefaultMod.Profession.Smithing {
+namespace Exp.DefaultMod.Profession.Smithing
+{
     public sealed class RaisePower : SmithingDataBase, ISmithingData {
         #region Konstruktor
         private RaisePower()
@@ -15,12 +17,12 @@ namespace Exp.DefaultMod.Profession.Smithing {
                    Api.Item.ItemType.Singleton.Get(nameof(Item.ItemType.Bracers)),
                    Api.Item.ItemType.Singleton.Get(nameof(Item.ItemType.Boots)),
                    Api.Item.ItemType.Singleton.Get(nameof(Item.ItemType.Armor))) {
-            Name.Set(Util.LanguageEnum.Deutsch, "Machterhöhung");
-            Name.Set(Util.LanguageEnum.English, "Raise power");
-            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
-            LoreDescription.Set(Util.LanguageEnum.English, "");
-            EffektDescription.Set(Util.LanguageEnum.Deutsch, "");
-            EffektDescription.Set(Util.LanguageEnum.English, "");
+            Name.Set(LanguageEnum.Deutsch, "Machterhöhung");
+            Name.Set(LanguageEnum.English, "Raise power");
+            LoreDescription.Set(LanguageEnum.Deutsch, "");
+            LoreDescription.Set(LanguageEnum.English, "");
+            EffektDescription.Set(LanguageEnum.Deutsch, "");
+            EffektDescription.Set(LanguageEnum.English, "");
         }
         #endregion
 

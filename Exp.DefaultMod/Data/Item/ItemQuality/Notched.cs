@@ -1,15 +1,17 @@
 ﻿using Exp.Data.Item.Effect;
 using Exp.Data.Item.ItemQuality;
+using Exp.Util.Enumeration;
 
-namespace Exp.DefaultMod.Item.ItemQuality {
+namespace Exp.DefaultMod.Item.ItemQuality
+{
     public sealed class Notched : ItemQualityDataBase, IItemQualityData {
         #region Konstruktor
         private Notched()
             : base(nameof(Notched), 200, true, false, GetEffects()) {
-            Name.Set(Util.LanguageEnum.Deutsch, "Schartig");
-            Name.Set(Util.LanguageEnum.English, "Notched");
-            LoreDescription.Set(Util.LanguageEnum.Deutsch, "");
-            LoreDescription.Set(Util.LanguageEnum.English, "");
+            Name.Set(LanguageEnum.Deutsch, "Schartig");
+            Name.Set(LanguageEnum.English, "Notched");
+            LoreDescription.Set(LanguageEnum.Deutsch, "");
+            LoreDescription.Set(LanguageEnum.English, "");
         }
         #endregion
 

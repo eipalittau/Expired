@@ -32,7 +32,7 @@
             return string.Concat(DateFormat.Full(), aSeparator, TimeFormat.Short());
         }
 
-        private class Constants {
+        private static class Constants {
             internal const string DateTimeSeparator = "T";
         }
     }
