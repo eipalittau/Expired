@@ -1,12 +1,16 @@
 ﻿using System.Globalization;
+using Exp.Util.Enumeration.Base;
 
-namespace Exp.Util {
+namespace Exp.Util
+{
     public sealed class LanguageEnum : EnumerationBase {
         #region Properties / Felder
         #region Static
-        internal static LanguageEnum None = new(-1, nameof(None), string.Empty);
-        public static LanguageEnum Deutsch = new(0, nameof(Deutsch), "de", true);
-        public static LanguageEnum English = new(1, nameof(English), "en");
+        internal readonly static LanguageEnum None = new(nameof(None), string.Empty);
+        public readonly static LanguageEnum Deutsch = new(nameof(Deutsch), "de", true);
+        public readonly static LanguageEnum English = new(nameof(English), "en");
+
+        private static int mIndexCounter = -1;
         #endregion
 
         #region Instance
@@ -17,34 +21,34 @@ namespace Exp.Util {
         #endregion
 
         #region Konstruktor
-        private LanguageEnum(int aID, string aLanguage, string aISO)
-            : base(aID, aLanguage, string.Empty)
+        private LanguageEnum(string aLanguage, string aISO)
+            : base(mIndexCounter++, aLanguage, string.Empty)
             => (ISO, CI) = (aISO, new CultureInfo(aISO));
 
-        private LanguageEnum(int aID, string aLanguage, string aISO, bool aIsDefault)
-            : this(aID, aLanguage, aISO)
+        private LanguageEnum(string aLanguage, string aISO, bool aIsDefault)
+            : this(aLanguage, aISO)
             => IsDefault = aIsDefault;
         #endregion
 
         #region Methoden
         public static LanguageEnum GetDefault() {
-            return Enumerate().First(x => x.IsDefault);
+            return Enumerate().Where(x => x.IsDefault).First();
         }
 
         public static List<LanguageEnum> Enumerate() {
-            return EnumerationBase.Enumerate<LanguageEnum>(SortDirectionEnum.ASC);
+            return EnumerateByName<LanguageEnum>(SortDirectionEnum.ASC);
         }
 
         public static int Count() {
-            return EnumerationBase.Count<LanguageEnum>();
+            return Count<LanguageEnum>();
         }
 
-        public static LanguageEnum Convert(int aID) {
-            return EnumerationBase.Convert<LanguageEnum>(aID, None);
+        public static LanguageEnum Convert(long aIndex) {
+            return Convert(aIndex, None);
         }
 
         public static LanguageEnum Convert(string aName) {
-            return EnumerationBase.Convert<LanguageEnum>(aName, None);
+            return Convert(aName, None);
         }
         #endregion
     }

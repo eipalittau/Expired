@@ -1,33 +1,38 @@
-﻿namespace Exp.Util {
+﻿using Exp.Util.Enumeration.Base;
+
+namespace Exp.Util
+{
     public sealed class PriorityEnum : EnumerationBase {
         #region Properties / Felder
-        public static PriorityEnum None = new(0, nameof(None));
-        public static PriorityEnum Debug = new(1, nameof(Debug));
-        public static PriorityEnum Information = new(2, nameof(Information));
-        public static PriorityEnum Warning = new(3, nameof(Warning));
-        public static PriorityEnum Error = new(4, nameof(Error));
+        public static PriorityEnum None = new(nameof(None));
+        public static PriorityEnum Debug = new(nameof(Debug));
+        public static PriorityEnum Information = new(nameof(Information));
+        public static PriorityEnum Warning = new(nameof(Warning));
+        public static PriorityEnum Error = new(nameof(Error));
+
+        private static int mIndexCounter = 0;
         #endregion
 
         #region Konstruktor
-        private PriorityEnum(int aID, string aName)
-            : base(aID, aName, string.Empty) { }
+        private PriorityEnum(string aName)
+            : base(mIndexCounter++, aName, string.Empty) { }
         #endregion
 
         #region Methoden
         public static List<PriorityEnum> Enumerate() {
-            return EnumerationBase.Enumerate<PriorityEnum>();
+            return Enumerate<PriorityEnum>();
         }
 
         public static int Count() {
-            return EnumerationBase.Count<PriorityEnum>();
+            return Count<PriorityEnum>();
         }
 
-        public static PriorityEnum Convert(int aID) {
-            return EnumerationBase.Convert<PriorityEnum>(aID, None);
+        public static PriorityEnum Convert(long aIndex) {
+            return Convert(aIndex, None);
         }
 
         public static PriorityEnum Convert(string aLanguage) {
-            return EnumerationBase.Convert<PriorityEnum>(aLanguage, None);
+            return Convert(aLanguage, None);
         }
 
         public override string ToString() {

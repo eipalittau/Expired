@@ -13,11 +13,11 @@ namespace Exp.Util {
             if (string.IsNullOrWhiteSpace(aValue)) {
                 ExceptionHandler.Add(new Exception.MissingParameterException(nameof(aValue)));
             }
-            mValue[aLanguage.ID] = aValue;
+            mValue[aLanguage.Index] = aValue;
         }
 
         public string Get(LanguageEnum aLanguage) {
-            return mValue[aLanguage.ID];
+            return mValue[aLanguage.Index];
             //return string.Concat(@"{\rtf1", mValue[aLanguage.ID], @"}");
         }
 

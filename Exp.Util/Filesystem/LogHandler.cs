@@ -24,7 +24,7 @@ namespace Exp.Util.Filesystem {
         #region Methoden
         private string CreateLogLine(DateTime aOccurrence, PriorityEnum aPriority, string aMessage) {
             return string.Format("{0} {1}   {2}",
-                LogLevel.ID >= PriorityEnum.Information.ID ? aOccurrence.DateTimeFull() : aOccurrence.DateTimeFull4Debug(),
+                LogLevel.Index >= PriorityEnum.Information.Index ? aOccurrence.DateTimeFull() : aOccurrence.DateTimeFull4Debug(),
                 aPriority.ToString(),
                 aMessage);
         }
